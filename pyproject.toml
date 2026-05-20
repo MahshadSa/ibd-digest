@@ -8,6 +8,9 @@ version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
     "python-dotenv>=1.0",
+    "numpy>=1.26",
+    "torch>=2.0",
+    "transformers>=4.40",
 ]
 
 [tool.setuptools.packages.find]
