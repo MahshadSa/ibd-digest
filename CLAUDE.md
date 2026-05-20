@@ -156,8 +156,21 @@ Scope includes adult and pediatric IBD imaging, treatment response and monitorin
 - Europe PMC, bioRxiv, medRxiv, arXiv sources
 - Telegram or email notification for top-tier hits
 
-## Open items
+## Step 4: Obsidian integration (done)
 
-- Validate PubMed query against pubmed.ncbi.nlm.nih.gov, check 30-day result count and quality
-- Select 20 to 50 seed papers from Zotero for the initial corpus
-- Decide Obsidian vault path: is the repo itself the vault, or does it sync into a separate vault?
+Digest writer renders papers grouped by tier with Obsidian callouts.
+
+### Rendering conventions
+- Must-read tier: `> [!important]` banner, papers rendered outside the callout with `- [ ]` at column 0.
+- Skim tier: `> [!note]` banner, same pattern.
+- Archive tier: `> [!abstract]-` container (collapsed), papers rendered inside with `> ` prefix on every line.
+- Empty tiers are skipped entirely. Header counts still show zeros.
+- Each paper: `- [ ] **Title**` followed by 2-space-indented metadata (authors, journal, date, DOI, score), then a nested `> [!abstract]-` callout for the abstract.
+- DOI format is always `[10.xxxx/yyyy](https://doi.org/10.xxxx/yyyy)`.
+
+### Step 6 parsing contract (do not break)
+- Checked papers match `^>?\s*- \[[xX]\] \*\*` (handles both column-0 must-read/skim and `> `-prefixed archive).
+- DOI extraction on the same paper block: `\[([^\]]+)\]\(https://doi\.org/[^\)]+\)`.
+- Score extraction if needed: `Score: (\d+\.\d+)`.
+
+Any change to the writer must preserve these patterns or update Step 6 in lockstep.

@@ -9,11 +9,22 @@ logger = logging.getLogger(__name__)
 
 DB_PATH = "data/papers.db"
 
+_TIER_CALLOUT = {
+    "must-read": "> [!important]",
+    "skim": "> [!note]",
+    "archive": "> [!abstract]-",
+}
+_TIER_LABEL = {
+    "must-read": "Must-read",
+    "skim": "Skim",
+    "archive": "Archive",
+}
+
 
 def fetch_papers(conn: sqlite3.Connection, target_date: date) -> list[sqlite3.Row]:
-    """Return all rows from papers where seen_date == target_date, ordered by source, title."""
+    """Return all rows for target_date, ordered by similarity_score descending."""
     return conn.execute(
-        "SELECT * FROM papers WHERE seen_date = ? ORDER BY source, title",
+        "SELECT * FROM papers WHERE seen_date = ? ORDER BY similarity_score DESC NULLS LAST, title",
         (target_date.isoformat(),),
     ).fetchall()
 
@@ -27,62 +38,101 @@ def format_authors(authors_json: str, corresponding_author: str | None) -> str:
     return ", ".join(display)
 
 
-def render_paper(paper: sqlite3.Row) -> str:
-    """Render one paper as a Markdown block."""
+def tier_papers(
+    papers: list[sqlite3.Row],
+) -> tuple[list[sqlite3.Row], list[sqlite3.Row], list[sqlite3.Row]]:
+    """Split papers into (must_read, skim, archive) using the stored tier column."""
+    must_read: list[sqlite3.Row] = []
+    skim: list[sqlite3.Row] = []
+    archive: list[sqlite3.Row] = []
+    for p in papers:
+        t = p["tier"]
+        if t == "must-read":
+            must_read.append(p)
+        elif t == "skim":
+            skim.append(p)
+        else:
+            archive.append(p)
+    return must_read, skim, archive
+
+
+def render_paper_full(paper: sqlite3.Row) -> str:
+    """Render a must-read or skim paper: task checkbox, metadata, collapsed abstract callout."""
     doi_url = f"https://doi.org/{paper['doi']}"
     authors_str = format_authors(paper["authors"], paper["corresponding_author"])
+    score = paper["similarity_score"]
+    score_str = f"{score:.2f}" if score is not None else "N/A"
     abstract = paper["abstract"] or ""
 
-    callout_body = abstract if abstract else "No abstract available."
-    callout_lines = "\n".join(f"> {line}" for line in callout_body.splitlines())
+    lines = [
+        f"- [ ] **{paper['title']}**",
+        f"  {authors_str}",
+        f"  {paper['journal']} | {paper['pub_date']}",
+        f"  [{paper['doi']}]({doi_url}) | Score: {score_str}",
+    ]
+    if abstract:
+        lines.append("")
+        lines.append("  > [!abstract]-")
+        lines.append(f"  > {abstract}")
 
-    return (
-        f"### {paper['title']}\n"
-        f"\n"
-        f"[{paper['doi']}]({doi_url})  \n"
-        f"**Authors:** {authors_str}  \n"
-        f"**Journal:** {paper['journal']} | **Date:** {paper['pub_date']}\n"
-        f"\n"
-        f"> [!abstract]-\n"
-        f"{callout_lines}\n"
-        f"\n"
-        f"- [ ] Relevant\n"
-    )
+    return "\n".join(lines)
+
+
+def render_paper_archive(paper: sqlite3.Row) -> str:
+    """Render an archive paper for inside a callout body: title, authors, DOI link only."""
+    doi_url = f"https://doi.org/{paper['doi']}"
+    authors_str = format_authors(paper["authors"], paper["corresponding_author"])
+    return "\n".join([
+        f"> - **{paper['title']}**",
+        f">   {authors_str}",
+        f">   [{paper['doi']}]({doi_url})",
+    ])
+
+
+def render_tier(papers: list[sqlite3.Row], tier: str) -> str:
+    """Render one tier section. Must-read/skim: callout banner + papers outside. Archive: papers inside callout so it collapses."""
+    n = len(papers)
+    header = f"{_TIER_CALLOUT[tier]} {_TIER_LABEL[tier]} ({n})"
+
+    if tier == "archive":
+        body = "\n>\n".join(render_paper_archive(p) for p in papers)
+        return f"{header}\n>\n{body}"
+
+    paper_blocks = "\n\n".join(render_paper_full(p) for p in papers)
+    return f"{header}\n\n{paper_blocks}"
 
 
 def render_digest(papers: list[sqlite3.Row], target_date: date) -> str:
-    """Render the complete digest: header, paper blocks, footer with per-source counts."""
+    """Render the complete digest: header with tier counts, tiered sections, source footer."""
     date_str = target_date.isoformat()
+    must_read, skim, archive = tier_papers(papers)
 
-    header = (
-        f"# IBD Imaging Digest - {date_str}\n"
-        f"\n"
-        f"**Date:** {date_str}  \n"
-        f"**New papers:** {len(papers)}\n"
-        f"\n"
-        f"---\n"
-        f"\n"
+    header_counts = (
+        f"**Date:** {date_str}\n"
+        f"**New papers:** {len(papers)}"
+        f" | Must-read: {len(must_read)}"
+        f" | Skim: {len(skim)}"
+        f" | Archive: {len(archive)}"
     )
+    header = f"# IBD Imaging Digest - {date_str}\n\n{header_counts}\n\n---\n\n"
 
     if not papers:
         return header + "No new papers today, pipeline ran successfully.\n"
 
-    paper_blocks = []
-    for i, paper in enumerate(papers):
-        paper_blocks.append(render_paper(paper))
-        if i < len(papers) - 1:
-            paper_blocks.append("---\n\n")
+    tier_sections = []
+    for tier_name, tier_list in [("must-read", must_read), ("skim", skim), ("archive", archive)]:
+        if tier_list:
+            tier_sections.append(render_tier(tier_list, tier_name))
+
+    body = "\n\n---\n\n".join(tier_sections)
 
     source_counts: dict[str, int] = {}
     for p in papers:
         source_counts[p["source"]] = source_counts.get(p["source"], 0) + 1
-    source_str = " | ".join(
-        f"{src}: {count}" for src, count in sorted(source_counts.items())
-    )
+    source_str = " | ".join(f"{src}: {count}" for src, count in sorted(source_counts.items()))
+    footer = f"\n\n---\n\n**Sources:** {source_str}\n"
 
-    footer = f"\n---\n\n**Sources:** {source_str}\n"
-
-    return header + "".join(paper_blocks) + footer
+    return header + body + footer
 
 
 def write_digest(vault_root: str, content: str, target_date: date) -> pathlib.Path:
