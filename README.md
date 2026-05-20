@@ -4,6 +4,15 @@ Automated daily digest of new IBD imaging papers, ranked by semantic relevance, 
 
 ## Log
 
+### 2026-05-20 - Step 2 complete: digest writer
+
+- Built `src/digest/writer.py`; entry point is `python -m src.digest.writer [vault_root]`.
+- Reads papers from SQLite where `seen_date` equals today (UTC), writes `Inbox/Papers/YYYY-MM-DD.md`, overwriting if the file already exists.
+- Per-paper block: title, DOI link, authors (first two + corresponding author deduplicated), journal and date, abstract in a collapsible Obsidian callout (`> [!abstract]-`), and a `- [ ] Relevant` checkbox.
+- Header carries date and total paper count; footer lists per-source counts.
+- Empty days produce a note with "no new papers today, pipeline ran successfully."
+- Fixed European Radiology fetcher: migrated from Springer RSS (missing authors and truncated abstracts) to Crossref API (ISSN 1432-1084), consistent with the other two journal sources.
+
 ### 2026-05-20 - Step 1 complete: source layer
 
 - Built PubMed fetcher (`src/fetchers/pubmed.py`) using NCBI E-utilities API with an API key; query covers IBD imaging, treatment response monitoring, and high-level IBD reviews/guidelines; parameterized lookback window (`days_back`).

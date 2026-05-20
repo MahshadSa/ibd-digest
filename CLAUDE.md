@@ -29,7 +29,7 @@ Daily Markdown digest of new IBD imaging papers in my Obsidian vault, with seman
 - PubMed E-utilities API, using NCBI API key
 - Radiology (Crossref API, ISSN 0033-8419)
 - Radiology: Artificial Intelligence (Crossref API, ISSN 2638-6100)
-- European Radiology (Springer RSS, journal ID 330)
+- European Radiology (Crossref API, ISSN 1432-1084)
 - Deduplication by DOI across all four sources
 
 ### Storage
