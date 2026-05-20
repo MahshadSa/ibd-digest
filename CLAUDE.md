@@ -174,3 +174,48 @@ Digest writer renders papers grouped by tier with Obsidian callouts.
 - Score extraction if needed: `Score: (\d+\.\d+)`.
 
 Any change to the writer must preserve these patterns or update Step 6 in lockstep.
+
+## Step 5: GitHub Actions scheduling — complete (2026-05-21)
+
+Workflow: `.github/workflows/daily-digest.yml`
+Schedule: `0 2 * * *` UTC (5:30 AM Tehran)
+Manual trigger: `workflow_dispatch` available in Actions tab
+
+Pipeline order: `src.fetch` -> `src.rank` -> `src.digest.writer . --force`
+The `--force` flag is required in the scheduled run because the writer guard
+(added pre-Step 5) refuses to overwrite existing daily digests by default.
+Local manual runs should omit `--force` to preserve any notes added to today's
+file.
+
+State persistence: `data/papers.db` and `Inbox/Papers/*.md` committed back to
+`main` by `github-actions[bot]` with `[skip ci]` in the commit message.
+Commit step is a no-op if nothing changed.
+
+Caches:
+- pip cache via `actions/setup-python` keyed on `pyproject.toml`
+- SPECTER2 model cache at `~/.cache/huggingface/hub`, key
+  `specter2-allenai-specter2_base`. Download step gated on cache miss,
+  runs without `local_files_only=True` to populate the cache; runtime
+  embedding uses `local_files_only=True` as before.
+
+Secrets: `NCBI_API_KEY`, `NCBI_EMAIL` set in repo settings.
+
+Local sync: workflow does not auto-update the local vault. `git pull` from
+vault root before opening Obsidian to read the day's digest.
+
+Dry run: passed on 2026-05-21.
+
+## Next steps — do not start before 2026-06-01
+
+System is at a natural rest point. Step 6 (feedback loop) is the planned next
+step per the project handoff, but the order is a hypothesis. Use the system
+daily for ~2 weeks first, then decide whether Step 6 is still the right
+priority or whether friction observed in actual use points elsewhere.
+
+While running, keep a friction log (in Obsidian, freeform) of things that
+felt awkward, missing, or wrong during reading sessions. That log is the
+real spec for what comes next.
+
+Failure monitoring: GitHub notifies on workflow failure via email. If
+notifications stop arriving for several days with no commits to `main`,
+check the Actions tab.
