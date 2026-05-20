@@ -49,7 +49,7 @@ jobs:
         run: python -m src.rank
 
       - name: Write digest
-        run: python -m src.digest.writer .
+        run: python -m src.digest.writer . --force
 
       - name: Commit and push
         run: |
