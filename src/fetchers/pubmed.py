@@ -80,9 +80,9 @@ def _esearch(query: str, api_key: str, email: str) -> list[str]:
         "retmax": 500,
         "api_key": api_key,
         "email": email,
-    })
-    url = f"{EUTILS_BASE}/esearch.fcgi?{params}"
-    with urllib.request.urlopen(url, timeout=30) as resp:
+    }).encode()
+    url = f"{EUTILS_BASE}/esearch.fcgi"
+    with urllib.request.urlopen(url, data=params, timeout=30) as resp:
         data = json.loads(resp.read())
     return data["esearchresult"]["idlist"]
 
