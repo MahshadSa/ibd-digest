@@ -1,37 +1,113 @@
 # IBD Imaging Digest
 
-Automated daily digest of new IBD imaging papers, ranked by semantic relevance, delivered to an Obsidian vault.
+A daily pipeline that surfaces newly published inflammatory bowel disease imaging
+research, ranks it for clinical and methodological relevance using SPECTER2
+scientific paper embeddings, and delivers a structured digest to a personal
+Obsidian knowledge vault.
 
-## Log
+Built to solve a concrete problem in my own research workflow: the literature on
+IBD imaging is spread across radiology, gastroenterology, and AI venues, and
+manual triage was costing more time than it returned. The system runs without
+supervision, ranks against a curated personal corpus, and is designed to learn
+from reading behavior over time.
 
-### 2026-05-21 - Step 3 complete: embedding layer and ranking
+## How it works
 
-- Added `src/ranking/embed.py`: loads SPECTER2 (`allenai/specter2_base`) from local HuggingFace cache (`local_files_only=True`), CPU inference only. Input format: `title + [SEP] + abstract`, max 512 tokens, truncated. Embedding is the CLS token (index 0 of last hidden state), float32, shape (N, 768). Batched to 16 texts at a time.
-- Added `src/corpus.py`: reads `Corpus/seed_dois.txt`, deduplicates, fetches title and abstract for each DOI via PubMed E-utilities first with Crossref as fallback. Failures are logged per-DOI with a summary count at the end. Each fetched paper is embedded, stored in the `corpus` table, and written as a Markdown note in `Corpus/` (title, DOI link, abstract). Idempotent: skips DOIs already in `corpus` with a non-null embedding. Entry point: `python -m src.corpus`.
-- Added `src/ranking/score.py`: `embed_pending` embeds all papers in `papers` with `embedding IS NULL` and stores the vector as a BLOB. `score_and_tier` loads all corpus embeddings, normalizes them, and computes max cosine similarity for each embedded paper; stores `similarity_score`, `matching_corpus_doi`, and `tier`. Tiers: must-read >= 0.75, skim 0.60-0.75, archive < 0.60.
-- Added `src/rank.py`: single daily entry point that runs `migrate_embedding_columns`, `embed_pending`, and `score_and_tier` in sequence. Run with `python -m src.rank [db_path]`.
-- Updated `src/db.py`: SCHEMA extended with `matching_corpus_doi TEXT` and `tier TEXT` on `papers`, and `abstract TEXT` on `corpus`. New `migrate_embedding_columns` handles existing databases idempotently using `PRAGMA table_info` and `sqlite_master` checks (no try/except).
-- Updated `pyproject.toml`: declared `numpy`, `torch`, `transformers` as dependencies.
+1. **Fetch.** Each day, the pipeline queries PubMed via E-utilities and Crossref
+   for three target journals (Radiology, Radiology: AI, European Radiology),
+   deduplicates by DOI, and stores new papers in SQLite.
+2. **Embed.** Each paper is embedded with SPECTER2 (`allenai/specter2_base`),
+   a scientific document embedding model, using the title and abstract.
+3. **Rank.** Each paper is scored by maximum cosine similarity against a corpus
+   of seed DOIs representing the research interests of the maintainer. Papers
+   are sorted into three tiers (must-read, skim, archive) using
+   percentile-anchored thresholds calibrated to the corpus.
+4. **Deliver.** A Markdown digest is written to the Obsidian vault, with each
+   tier in its own callout block, checkbox-driven, and structured for review.
+5. **Schedule.** A GitHub Actions workflow runs the pipeline daily and commits
+   state back to the repository.
 
-### 2026-05-20 - Step 2 complete: digest writer
+A feedback loop that adds checked papers to the corpus, refining the ranker over
+time, is planned as the next phase.
 
-- Built `src/digest/writer.py`; entry point is `python -m src.digest.writer [vault_root]`.
-- Reads papers from SQLite where `seen_date` equals today (UTC), writes `Inbox/Papers/YYYY-MM-DD.md`, overwriting if the file already exists.
-- Per-paper block: title, DOI link, authors (first two + corresponding author deduplicated), journal and date, abstract in a collapsible Obsidian callout (`> [!abstract]-`), and a `- [ ] Relevant` checkbox.
-- Header carries date and total paper count; footer lists per-source counts.
-- Empty days produce a note with "no new papers today, pipeline ran successfully."
-- Fixed European Radiology fetcher: migrated from Springer RSS (missing authors and truncated abstracts) to Crossref API (ISSN 1432-1084), consistent with the other two journal sources.
+## Status
 
-### 2026-05-20 - Step 1 complete: source layer
+Operational since May 2026. Step 5 (scheduling and persistence) complete.
+Step 6 (feedback loop) deferred pending two weeks of sustained daily use.
 
-- Built PubMed fetcher (`src/fetchers/pubmed.py`) using NCBI E-utilities API with an API key; query covers IBD imaging, treatment response monitoring, and high-level IBD reviews/guidelines; parameterized lookback window (`days_back`).
-- Replaced planned RSNA RSS feeds (inaccessible) with three working sources:
-  - Radiology via Crossref API (ISSN 0033-8419)
-  - Radiology: Artificial Intelligence via Crossref API (ISSN 2638-6100)
-  - European Radiology via Springer RSS (journal ID 330)
-- Crossref fetcher handles JSON response, strips JATS/HTML markup from abstracts, and resolves publication date from `published-online`, `published`, or `published-print` fields in that priority order.
-- Springer RSS fetcher reuses the same RSS parsing logic (prism/dc namespaces, RFC 2822 date parsing, DOI extraction from link as fallback).
-- All four sources normalize to the same schema: DOI, title, authors, corresponding author, journal, date, abstract, source.
-- Deduplication by DOI across the full batch before writing to SQLite; existing DOIs in the DB are also excluded.
-- Pipeline entry point is `src/fetch.py`; run with `python -m src.fetch` or pass `days_back` as a positional argument.
-- Confirmed pipeline runs end-to-end and writes new papers to `data/papers.db`.
+## Stack
+
+Python, SQLite, SPECTER2 via HuggingFace Transformers, NumPy, NCBI E-utilities,
+Crossref REST API, GitHub Actions, Obsidian.
+
+---
+
+## Operational notes
+
+### Project structure
+
+\`\`\`
+ibd-digest-vault/
+├── src/
+│   ├── fetch.py              entry point: fetch new papers
+│   ├── rank.py               entry point: embed pending + score and tier
+│   ├── corpus.py             entry point: rebuild corpus from seed DOIs
+│   ├── db.py                 SQLite schema and migrations
+│   ├── fetchers/             pubmed.py, crossref.py
+│   ├── ranking/              embed.py, score.py
+│   └── digest/writer.py      Markdown digest generator
+├── data/papers.db            SQLite, committed
+├── Corpus/seed_dois.txt      curated DOIs defining "relevant"
+├── Inbox/Papers/             daily digests, YYYY-MM-DD.md
+└── .github/workflows/daily-digest.yml
+\`\`\`
+
+### Local development
+
+\`\`\`
+.venv\Scripts\python.exe -m src.fetch
+.venv\Scripts\python.exe -m src.rank
+.venv\Scripts\python.exe -m src.digest.writer .
+\`\`\`
+
+The writer refuses to overwrite an existing daily digest by default. Pass
+`--force` to overwrite (used by the scheduled workflow).
+
+### Scheduled runs
+
+The workflow runs at 02:00 UTC daily (05:30 Tehran time). To trigger manually,
+use `workflow_dispatch` from the Actions tab.
+
+After a successful run, pull from the vault root to see the new digest locally:
+
+\`\`\`
+git pull
+\`\`\`
+
+### Configuration
+
+Required environment variables (local `.env`, or repo secrets for Actions):
+
+- `NCBI_API_KEY`
+- `NCBI_EMAIL`
+
+### Ranking calibration
+
+SPECTER2 produces high cosine similarities for in-domain biomedical text, so
+fixed thresholds do not generalize. Current tiers are anchored to corpus
+percentiles:
+
+- must-read: similarity >= 0.958 (top 10%)
+- skim: 0.924 to 0.958 (next 40%)
+- archive: < 0.924 (bottom 50%)
+
+Thresholds should be re-checked monthly as the corpus grows.
+
+### Known limitations
+
+- Corpus is provisional (~40 DOIs). Ranking will improve as it grows.
+- No feedback loop yet. Checking boxes in the digest does not currently affect
+  future rankings.
+- Preprint servers (bioRxiv, medRxiv) and additional journals not yet
+  integrated.
+- The system is single-user. No multi-user or sharing primitives.
