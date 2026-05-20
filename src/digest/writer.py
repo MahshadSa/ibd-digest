@@ -1,3 +1,4 @@
+import argparse
 import json
 import logging
 import pathlib
@@ -135,16 +136,18 @@ def render_digest(papers: list[sqlite3.Row], target_date: date) -> str:
     return header + body + footer
 
 
-def write_digest(vault_root: str, content: str, target_date: date) -> pathlib.Path:
-    """Write to Inbox/Papers/YYYY-MM-DD.md, overwriting if exists. Returns path."""
+def write_digest(vault_root: str, content: str, target_date: date, force: bool = False) -> pathlib.Path:
+    """Write to Inbox/Papers/YYYY-MM-DD.md. Raises FileExistsError if file exists and force is False."""
     out_dir = pathlib.Path(vault_root) / "Inbox" / "Papers"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{target_date.isoformat()}.md"
+    if out_path.exists() and not force:
+        raise FileExistsError(f"Digest already exists: {out_path}")
     out_path.write_text(content, encoding="utf-8")
     return out_path
 
 
-def run(db_path: str, vault_root: str, target_date: date | None = None) -> None:
+def run(db_path: str, vault_root: str, target_date: date | None = None, force: bool = False) -> None:
     """Fetch papers, render digest, write file. target_date defaults to today UTC."""
     if target_date is None:
         target_date = datetime.now(timezone.utc).date()
@@ -155,7 +158,7 @@ def run(db_path: str, vault_root: str, target_date: date | None = None) -> None:
         papers = fetch_papers(conn, target_date)
         logger.info("Found %d papers for %s", len(papers), target_date.isoformat())
         content = render_digest(papers, target_date)
-        out_path = write_digest(vault_root, content, target_date)
+        out_path = write_digest(vault_root, content, target_date, force=force)
         logger.info("Digest written to %s", out_path)
     finally:
         conn.close()
@@ -167,5 +170,8 @@ if __name__ == "__main__":
         format="%(asctime)s %(levelname)s %(name)s %(message)s",
         datefmt="%Y-%m-%dT%H:%M:%S",
     )
-    _vault_root = sys.argv[1] if len(sys.argv) > 1 else "."
-    run(DB_PATH, _vault_root)
+    _parser = argparse.ArgumentParser()
+    _parser.add_argument("vault_root", nargs="?", default=".")
+    _parser.add_argument("--force", action="store_true")
+    _args = _parser.parse_args()
+    run(DB_PATH, _args.vault_root, force=_args.force)

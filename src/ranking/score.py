@@ -8,8 +8,8 @@ from src.ranking.embed import load_model
 
 logger = logging.getLogger(__name__)
 
-TIER_MUST_READ = 0.75
-TIER_SKIM = 0.60
+TIER_MUST_READ = 0.958
+TIER_SKIM = 0.924
 
 
 def assign_tier(score: float) -> str:

@@ -1,0 +1,65 @@
+name: Daily IBD Digest
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: pyproject.toml
+
+      - name: Install dependencies
+        run: pip install -e .
+
+      - name: Cache SPECTER2 model
+        id: cache-specter2
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface/hub
+          key: specter2-allenai-specter2_base
+
+      - name: Download SPECTER2 (cold start)
+        if: steps.cache-specter2.outputs.cache-hit != 'true'
+        run: |
+          python -c "from transformers import AutoModel, AutoTokenizer; AutoTokenizer.from_pretrained('allenai/specter2_base'); AutoModel.from_pretrained('allenai/specter2_base')"
+          du -sh ~/.cache/huggingface/hub
+
+      - name: Fetch papers
+        env:
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
+        run: python -m src.fetch
+
+      - name: Embed and score
+        run: python -m src.rank
+
+      - name: Write digest
+        run: python -m src.digest.writer .
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/papers.db Inbox/Papers/
+          if git diff --staged --quiet; then
+            echo "Nothing to commit, skipping."
+            exit 0
+          fi
+          DATE=$(date -u '+%Y-%m-%d')
+          git commit -m "daily digest ${DATE} [skip ci]"
+          git push
