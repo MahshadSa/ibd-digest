@@ -22,18 +22,25 @@ from reading behavior over time.
    of seed DOIs representing the research interests of the maintainer. Papers
    are sorted into three tiers (must-read, skim, archive) using
    percentile-anchored thresholds calibrated to the corpus.
-4. **Deliver.** A Markdown digest is written to the Obsidian vault, with each
-   tier in its own callout block, checkbox-driven, and structured for review.
-5. **Schedule.** A GitHub Actions workflow runs the pipeline daily and commits
+4. **Deliver.** A Markdown digest is written to the Obsidian vault at
+   `Inbox/Papers/YYYY-MM-DD.md`, with each tier in its own callout block. Must-read
+   and skim papers each carry two independent checkboxes: `Relevant` feeds the
+   corpus feedback loop; `Read later` queues the paper for offline review.
+5. **Collect.** Running `src.digest.to_read` after reviewing a digest scans for
+   checked `Read later` boxes and appends each paper's title, authors, abstract,
+   and a backlink to a persistent rolling note at `Inbox/To Read.md`. Re-running
+   is idempotent: deduplication is by DOI.
+6. **Schedule.** A GitHub Actions workflow runs the pipeline daily and commits
    state back to the repository.
 
-A feedback loop that adds checked papers to the corpus, refining the ranker over
-time, is planned as the next phase.
+A feedback loop that adds `Relevant`-checked papers to the corpus, refining the
+ranker over time, is planned as the next phase.
 
 ## Status
 
-Operational since May 2026. Step 5 (scheduling and persistence) complete.
-Step 6 (feedback loop) deferred pending two weeks of sustained daily use.
+Operational since May 2026. Scheduling, persistence, and the Read later queue
+complete. The corpus feedback loop (Relevant checkbox to ranker) is deferred
+pending two weeks of sustained daily use.
 
 ## Stack
 
@@ -55,10 +62,13 @@ ibd-digest-vault/
 │   ├── db.py                 SQLite schema and migrations
 │   ├── fetchers/             pubmed.py, crossref.py
 │   ├── ranking/              embed.py, score.py
-│   └── digest/writer.py      Markdown digest generator
+│   └── digest/
+│       ├── writer.py         Markdown digest generator
+│       └── to_read.py        Read later queue scanner
 ├── data/papers.db            SQLite, committed
 ├── Corpus/seed_dois.txt      curated DOIs defining "relevant"
 ├── Inbox/Papers/             daily digests, YYYY-MM-DD.md
+├── Inbox/To Read.md          rolling Read later queue
 └── .github/workflows/daily-digest.yml
 \`\`\`
 
@@ -68,10 +78,15 @@ ibd-digest-vault/
 .venv\Scripts\python.exe -m src.fetch
 .venv\Scripts\python.exe -m src.rank
 .venv\Scripts\python.exe -m src.digest.writer .
+.venv\Scripts\python.exe -m src.digest.to_read .
 \`\`\`
 
 The writer refuses to overwrite an existing daily digest by default. Pass
 `--force` to overwrite (used by the scheduled workflow).
+
+After marking `Read later` boxes in a digest, run `src.digest.to_read` to append
+those papers to `Inbox/To Read.md`. Pass `--date YYYY-MM-DD` to process a past
+digest. Re-running the same date is safe; entries already in the note are skipped.
 
 ### Scheduled runs
 

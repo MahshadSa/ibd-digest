@@ -67,6 +67,7 @@ def render_paper_full(paper: sqlite3.Row) -> str:
 
     lines = [
         f"- [ ] **{paper['title']}**",
+        f"- [ ] Read later",
         f"  {authors_str}",
         f"  {paper['journal']} | {paper['pub_date']}",
         f"  [{paper['doi']}]({doi_url}) | Score: {score_str}",
