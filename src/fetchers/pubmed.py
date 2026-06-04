@@ -61,6 +61,58 @@ PUBMED_QUERY_BASE = """(
       OR "position paper"[tiab]
     )
   )
+  OR
+  (
+    (
+      "Radiology"[Journal]
+      OR "Radiol Artif Intell"[Journal]
+      OR "Eur Radiol"[Journal]
+      OR "AJR Am J Roentgenol"[Journal]
+      OR "Abdom Radiol (NY)"[Journal]
+      OR "Invest Radiol"[Journal]
+      OR "J Magn Reson Imaging"[Journal]
+      OR "Insights Imaging"[Journal]
+    )
+    AND
+    (
+      "deep learning"[tiab]
+      OR "artificial intelligence"[tiab]
+      OR radiomics[tiab]
+      OR "machine learning"[tiab]
+      OR "large language model"[tiab]
+      OR "foundation model"[tiab]
+      OR "convolutional neural network"[tiab]
+    )
+    AND
+    (
+      abdomin*[tiab]
+      OR gastrointestin*[tiab]
+      OR bowel[tiab]
+      OR intestin*[tiab]
+      OR colorect*[tiab]
+      OR colon*[tiab]
+      OR liver[tiab]
+      OR hepat*[tiab]
+      OR pancrea*[tiab]
+      OR pelvi*[tiab]
+    )
+  )
+  OR
+  (
+    (
+      "agentic AI"[tiab]
+      OR "AI agent"[tiab]
+      OR "autonomous AI agent"[tiab]
+      OR "agentic workflow"[tiab]
+    )
+    AND
+    (
+      radiology[tiab]
+      OR "medical imaging"[tiab]
+      OR diagnosis[tiab]
+      OR clinical[tiab]
+    )
+  )
 )
 AND English[Language]
 NOT "Case Reports"[Publication Type]"""

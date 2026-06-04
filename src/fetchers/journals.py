@@ -10,9 +10,23 @@ logger = logging.getLogger(__name__)
 
 # (source_label, issn, display_name)
 _CROSSREF_JOURNALS: list[tuple[str, str, str]] = [
-    ("radiology", "0033-8419", "Radiology"),
-    ("radiology_ai", "2638-6100", "Radiology: Artificial Intelligence"),
-    ("european_radiology", "1432-1084", "European Radiology"),
+    ("radiology",              "0033-8419", "Radiology"),
+    ("radiology_ai",           "2638-6100", "Radiology: Artificial Intelligence"),
+    ("european_radiology",     "1432-1084", "European Radiology"),
+    ("investigative_radiology","1536-0210", "Investigative Radiology"),
+    ("jmri",                   "1522-2586", "Journal of Magnetic Resonance Imaging"),
+    ("insights_imaging",       "1869-4101", "Insights into Imaging"),
+    ("ajr",                    "1546-3141", "American Journal of Roentgenology"),
+    ("abdominal_radiology",    "2366-0058", "Abdominal Radiology"),
+    ("jcc",                    "1876-4479", "Journal of Crohn's and Colitis"),
+    ("ibd",                    "1536-4844", "Inflammatory Bowel Diseases"),
+    ("medical_image_analysis", "1361-8415", "Medical Image Analysis"),
+    ("nature_medicine",        "1546-170X", "Nature Medicine"),
+    ("npj_digital_medicine",   "2398-6352", "npj Digital Medicine"),
+    ("lancet_digital_health",  "2589-7500", "The Lancet Digital Health"),
+    ("apt",                    "1365-2036", "Alimentary Pharmacology & Therapeutics"),
+    ("lancet_gi",              "2468-1253", "The Lancet Gastroenterology & Hepatology"),
+    ("cgh",                    "1542-3565", "Clinical Gastroenterology and Hepatology"),
 ]
 
 
@@ -80,7 +94,7 @@ def _fetch_crossref(issn: str, email: str, source_label: str, journal_name: str,
 
 
 def fetch_all_journals(email: str) -> list[dict]:
-    """Fetch from Radiology, Radiology AI, and European Radiology via Crossref."""
+    """Fetch recent papers from all journals in _CROSSREF_JOURNALS via Crossref."""
     papers: list[dict] = []
     for source_label, issn, journal_name in _CROSSREF_JOURNALS:
         papers.extend(_fetch_crossref(issn, email, source_label, journal_name))

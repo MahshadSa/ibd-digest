@@ -27,10 +27,14 @@ Daily Markdown digest of new IBD imaging papers in my Obsidian vault, with seman
 
 ### Sources (v1)
 - PubMed E-utilities API, using NCBI API key
-- Radiology (Crossref API, ISSN 0033-8419)
-- Radiology: Artificial Intelligence (Crossref API, ISSN 2638-6100)
-- European Radiology (Crossref API, ISSN 1432-1084)
-- Deduplication by DOI across all four sources
+- Crossref API, 17 journals (unfiltered 50-paper pull per journal):
+  - Focused radiology: Radiology (0033-8419), Radiology: Artificial Intelligence (2638-6100), European Radiology (1432-1084), Investigative Radiology (1536-0210), JMRI (1522-2586), Insights into Imaging (1869-4101), AJR (1546-3141), Abdominal Radiology (2366-0058)
+  - Focused IBD: Journal of Crohn's and Colitis (1876-4479), Inflammatory Bowel Diseases (1536-4844)
+  - Focused imaging AI: Medical Image Analysis (1361-8415)
+  - Broad (noise accepted until keyword prefilter is built): Nature Medicine (1546-170X), npj Digital Medicine (2398-6352), The Lancet Digital Health (2589-7500), Alimentary Pharmacology & Therapeutics (1365-2036), The Lancet Gastroenterology & Hepatology (2468-1253), Clinical Gastroenterology and Hepatology (1542-3565)
+- Deduplication by DOI across all sources
+
+Crossref journal policy: focused journals fetched unfiltered because hit rate is high. Broad journals included at the same 50-paper pull; a keyword prefilter is planned once observation data informs the term list (see Deferred). ISSNs are electronic except Medical Image Analysis (1361-8415) and CGH (1542-3565), whose electronic ISSNs are absent from Crossref.
 
 ### Storage
 - Single SQLite database
@@ -141,12 +145,64 @@ OR
     OR "position paper"[tiab]
   )
 )
+OR
+(
+  (
+    "Radiology"[Journal]
+    OR "Radiol Artif Intell"[Journal]
+    OR "Eur Radiol"[Journal]
+    OR "AJR Am J Roentgenol"[Journal]
+    OR "Abdom Radiol (NY)"[Journal]
+    OR "Invest Radiol"[Journal]
+    OR "J Magn Reson Imaging"[Journal]
+    OR "Insights Imaging"[Journal]
+  )
+  AND
+  (
+    "deep learning"[tiab]
+    OR "artificial intelligence"[tiab]
+    OR radiomics[tiab]
+    OR "machine learning"[tiab]
+    OR "large language model"[tiab]
+    OR "foundation model"[tiab]
+    OR "convolutional neural network"[tiab]
+  )
+  AND
+  (
+    abdomin*[tiab]
+    OR gastrointestin*[tiab]
+    OR bowel[tiab]
+    OR intestin*[tiab]
+    OR colorect*[tiab]
+    OR colon*[tiab]
+    OR liver[tiab]
+    OR hepat*[tiab]
+    OR pancrea*[tiab]
+    OR pelvi*[tiab]
+  )
+)
+OR
+(
+  (
+    "agentic AI"[tiab]
+    OR "AI agent"[tiab]
+    OR "autonomous AI agent"[tiab]
+    OR "agentic workflow"[tiab]
+  )
+  AND
+  (
+    radiology[tiab]
+    OR "medical imaging"[tiab]
+    OR diagnosis[tiab]
+    OR clinical[tiab]
+  )
+)
 )
 AND English[Language]
 NOT "Case Reports"[Publication Type]
 AND "last 30 days"[PDat]
 
-Scope includes adult and pediatric IBD imaging, treatment response and monitoring, plus high-level IBD reviews and guidelines (consensus papers, position statements, practice guidelines).
+Scope includes adult and pediatric IBD imaging, treatment response and monitoring, plus high-level IBD reviews and guidelines. Non-IBD-gated branch added 2026-06-04: abdominal radiology AI/DL/radiomics (journal-gated to 8 radiology journals, ~32 papers/month) and agentic AI in radiology/medicine (~11 papers/month). Combined new branch: ~43 papers/month observed over last 30 days.
 
 ## Deferred (not in v1)
 
@@ -155,6 +211,7 @@ Scope includes adult and pediatric IBD imaging, treatment response and monitorin
 - Author override filters (always surface specific authors regardless of score)
 - Europe PMC, bioRxiv, medRxiv, arXiv sources
 - Telegram or email notification for top-tier hits
+- Crossref keyword prefilter for broad journals (Nature Medicine, npj Digital Medicine, Lancet Digital Health, AP&T, Lancet GI, CGH): defer until 2-4 weeks of data at expanded volume shows which terms anchor relevant papers
 
 ## Step 4: Obsidian integration (done)
 
@@ -219,3 +276,13 @@ real spec for what comes next.
 Failure monitoring: GitHub notifies on workflow failure via email. If
 notifications stop arriving for several days with no commits to `main`,
 check the Actions tab.
+
+## Source expansion 2026-06-04
+
+Crossref expanded from 3 to 17 journals. PubMed query extended with a
+non-IBD-gated branch (abdominal radiology AI + agentic AI, ~43 papers/month).
+
+Off-cycle threshold re-check: this expansion increases total papers scored
+against the same corpus, which shifts the tier distribution. After one week
+of digests at the new volume, check whether the must-read/skim/archive splits
+(0.75/0.60) still produce useful groupings, and adjust if needed.
