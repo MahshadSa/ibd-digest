@@ -13,9 +13,11 @@ from reading behavior over time.
 
 ## How it works
 
-1. **Fetch.** Each day, the pipeline queries PubMed via E-utilities and Crossref
-   for three target journals (Radiology, Radiology: AI, European Radiology),
-   deduplicates by DOI, and stores new papers in SQLite.
+1. **Fetch.** Each day, the pipeline queries PubMed via E-utilities (a
+   topic-filtered, journal-agnostic search) and Crossref (a journal-filtered,
+   topic-agnostic pull of recent papers from a curated journal list),
+   deduplicates by DOI, and stores new papers in SQLite. See Source selection
+   below for why both paths exist.
 2. **Embed.** Each paper is embedded with SPECTER2 (`allenai/specter2_base`),
    a scientific document embedding model, using the title and abstract.
 3. **Rank.** Each paper is scored by maximum cosine similarity against a corpus
@@ -60,7 +62,7 @@ ibd-digest-vault/
 │   ├── rank.py               entry point: embed pending + score and tier
 │   ├── corpus.py             entry point: rebuild corpus from seed DOIs
 │   ├── db.py                 SQLite schema and migrations
-│   ├── fetchers/             pubmed.py, crossref.py
+│   ├── fetchers/             pubmed.py, journals.py
 │   ├── ranking/              embed.py, score.py
 │   └── digest/
 │       ├── writer.py         Markdown digest generator
@@ -71,6 +73,38 @@ ibd-digest-vault/
 ├── Inbox/To Read.md          rolling Read later queue
 └── .github/workflows/daily-digest.yml
 \`\`\`
+
+### Source selection
+
+Two independent fetch paths, merged and deduplicated by DOI:
+
+- **PubMed** is topic-filtered and journal-agnostic. The query gates on IBD terms
+  AND imaging/AI terms, plus a review/guideline branch and a non-IBD-gated branch
+  for abdominal radiology AI and agentic AI. It searches all indexed journals, so
+  broad venues are covered here on topic.
+- **Crossref** is journal-filtered and topic-agnostic. It pulls the most recent
+  papers from a fixed journal list, regardless of subject. Used because Crossref
+  surfaces DOIs days after online publication while PubMed indexing lags weeks.
+  Direct journal pulls are how we see key-journal papers early.
+
+Broad journals are pulled via Crossref despite the noise (they contribute mostly
+off-topic papers) because timeliness is prioritized over digest cleanliness.
+SPECTER2 ranking and percentile thresholds push off-topic papers to the archive
+tier. This is an accepted trade, not an oversight.
+
+Narrow journals (Radiology: AI, JCC, Inflammatory Bowel Diseases, etc.) are
+trusted wholesale. Broad journals (Gut-class, Alimentary Pharmacology &
+Therapeutics, Lancet Gastroenterology & Hepatology, Clinical Gastroenterology and
+Hepatology) carry significant off-topic volume.
+
+Planned mitigation: a keyword prefilter on the Crossref path only, applied to
+broad journals, gating on IBD/imaging terms before embedding to cut compute and
+digest length. Deferred until enough days of real data show what the term list
+needs to catch. Narrow journals will bypass the prefilter via an allowlist.
+
+Deliberately excluded: IEEE TMI and other foundational-methods venues (mostly
+non-abdominal, non-IBD). The input is kept IBD-imaging focused even though
+reading is wider than the column's scope.
 
 ### Local development
 
@@ -116,13 +150,16 @@ percentiles:
 - skim: 0.924 to 0.958 (next 40%)
 - archive: < 0.924 (bottom 50%)
 
-Thresholds should be re-checked monthly as the corpus grows.
+Thresholds should be re-checked monthly as the corpus grows, and off-cycle after
+any source expansion. Adding journals shifts the tier distribution because more
+papers are scored against the same corpus.
 
 ### Known limitations
 
 - Corpus is provisional (~40 DOIs). Ranking will improve as it grows.
 - No feedback loop yet. Checking boxes in the digest does not currently affect
   future rankings.
-- Preprint servers (bioRxiv, medRxiv) and additional journals not yet
-  integrated.
+- Broad-journal Crossref pulls are unfiltered, so the archive tier carries
+  significant off-topic volume until the planned keyword prefilter lands.
+- Preprint servers (bioRxiv, medRxiv) not yet integrated.
 - The system is single-user. No multi-user or sharing primitives.
