@@ -51,11 +51,14 @@ jobs:
       - name: Write digest
         run: python -m src.digest.writer . --force
 
+      - name: Sweep to-read
+        run: python -m src.digest.to_read . --window 7
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/papers.db Inbox/Papers/
+          git add data/papers.db Inbox/Papers/ "Inbox/To Read.md"
           if git diff --staged --quiet; then
             echo "Nothing to commit, skipping."
             exit 0
