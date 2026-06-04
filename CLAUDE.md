@@ -45,11 +45,12 @@ Crossref journal policy: focused journals fetched unfiltered because hit rate is
 - Embedding model: SPECTER2 (local, biomedical/scientific)
 - Initial corpus: 20 to 50 papers selected manually from Zotero
 - Score: max cosine similarity between candidate and corpus
-- Tiers:
-  - Must-read: score ≥ 0.75
-  - Skim: 0.60 to 0.75
-  - Archive: score < 0.60
-- Thresholds adjustable after seeing real numbers
+- Tiers (percentile-anchored to the corpus; SPECTER2 cosine sims run high for
+  in-domain biomedical text, so fixed round-number thresholds do not generalize):
+  - Must-read: score >= 0.958
+  - Skim: 0.924 to 0.958
+  - Archive: score < 0.924
+- Re-check monthly as the corpus grows, and off-cycle after any source expansion
 
 ### Daily digest format
 One Markdown note per day at `Inbox/Papers/YYYY-MM-DD.md` in the Obsidian vault.
@@ -63,7 +64,8 @@ For each paper in must-read and skim tiers:
 - Journal and date
 - Similarity score (numeric)
 - Full abstract inside a collapsible Markdown callout
-- Relevance checkbox: `- [ ] Relevant`
+- Two independent checkboxes: `- [ ] Relevant` (feeds the corpus feedback loop)
+  and `- [ ] Read later` (queues the paper into Inbox/To Read.md)
 
 Archive tier: collapsed section, title + DOI link + authors only, no checkboxes.
 
@@ -71,11 +73,14 @@ Footer: source breakdown (papers per source, duplicates merged).
 
 Empty days: note still generated, says "no new papers today, pipeline ran successfully."
 
-### Feedback loop
+### Feedback loop (NOT BUILT)
 - User ticks `- [x] Relevant` on papers in the digest
-- Weekly job scans past week's digest notes for checked boxes
+- A job scans recent digest notes for checked Relevant boxes only (must not pick
+  up Read later ticks; see the checkbox parsing contract)
 - Extracts those DOIs, pulls embeddings, adds to corpus table
 - Ranker sharpens over time
+- Filter-bubble risk: corpus growth from own reading narrows scope. Mitigate by
+  manually adding outside papers to the seed set periodically.
 
 ### Infrastructure
 - Python project in a GitHub repo
@@ -85,12 +90,13 @@ Empty days: note still generated, says "no new papers today, pipeline ran succes
 
 ## Build order
 
-- [ ] Step 1: Source layer (PubMed + Crossref + Springer RSS fetchers, dedup by DOI, write to SQLite)
-- [ ] Step 2: Digest writer (Markdown output from SQLite, no ranking yet)
-- [ ] Step 3: Embedding layer (SPECTER2, corpus from Zotero selection, scoring and tiering)
-- [ ] Step 4: Obsidian integration (file paths, callouts, checkbox convention)
-- [ ] Step 5: GitHub Actions scheduling and git sync
-- [ ] Step 6: Feedback loop (weekly job parses checkboxes, updates corpus)
+- [x] Step 1: Source layer (PubMed + Crossref fetchers, dedup by DOI, write to SQLite)
+- [x] Step 2: Digest writer (Markdown output from SQLite, no ranking yet)
+- [x] Step 3: Embedding layer (SPECTER2, corpus from Zotero selection, scoring and tiering)
+- [x] Step 4: Obsidian integration (file paths, callouts, checkbox convention)
+- [x] Step 5: GitHub Actions scheduling and git sync
+- [ ] Step 6: Feedback loop (job parses checked Relevant boxes, updates corpus) -- NOT BUILT
+- [x] Read later layer (to_read.py: parses checked Read later boxes into Inbox/To Read.md, windowed + automated)
 
 ## PubMed query (v1)
 
@@ -225,14 +231,26 @@ Digest writer renders papers grouped by tier with Obsidian callouts.
 - Each paper: `- [ ] **Title**` followed by 2-space-indented metadata (authors, journal, date, DOI, score), then a nested `> [!abstract]-` callout for the abstract.
 - DOI format is always `[10.xxxx/yyyy](https://doi.org/10.xxxx/yyyy)`.
 
-### Step 6 parsing contract (do not break)
-- Checked papers match `^>?\s*- \[[xX]\] \*\*` (handles both column-0 must-read/skim and `> `-prefixed archive).
+### Checkbox parsing contract (do not break)
+
+Two independent checkboxes per paper, parsed by two separate consumers. They
+must never be confused: a `Read later` tick must never reach the corpus, and a
+`Relevant` tick must never be treated as a Read later queue entry.
+
+- `Relevant` (feeds the corpus, consumed by the feedback loop, NOT YET BUILT):
+  match the checked Relevant box specifically, e.g. `^>?\s*- \[[xX]\] Relevant`.
+- `Read later` (feeds Inbox/To Read.md, consumed by `to_read.py`, BUILT):
+  match the checked Read later box specifically, e.g. `^>?\s*- \[[xX]\] Read later`.
 - DOI extraction on the same paper block: `\[([^\]]+)\]\(https://doi\.org/[^\)]+\)`.
 - Score extraction if needed: `Score: (\d+\.\d+)`.
+- Both patterns must handle column-0 (must-read/skim) and `> `-prefixed (archive)
+  rendering.
 
-Any change to the writer must preserve these patterns or update Step 6 in lockstep.
+Any change to the writer must preserve these patterns or update both consumers
+in lockstep. When the feedback loop is built, its parser must match ONLY the
+Relevant box and must not pick up Read later ticks.
 
-## Step 5: GitHub Actions scheduling — complete (2026-05-21)
+## Step 5: GitHub Actions scheduling, complete (2026-05-21)
 
 Workflow: `.github/workflows/daily-digest.yml`
 Schedule: `0 2 * * *` UTC (5:30 AM Tehran)
@@ -262,16 +280,25 @@ vault root before opening Obsidian to read the day's digest.
 
 Dry run: passed on 2026-05-21.
 
-## Next steps — do not start before 2026-06-01
+## Next steps (updated 2026-06-04)
 
-System is at a natural rest point. Step 6 (feedback loop) is the planned next
-step per the project handoff, but the order is a hypothesis. Use the system
-daily for ~2 weeks first, then decide whether Step 6 is still the right
-priority or whether friction observed in actual use points elsewhere.
+Observation period is over. Source expansion is done. The current decision,
+deliberately taken: write the first weekly column (post zero) before building
+any new feature, including the feedback loop. Rationale: writing reveals whether
+ranking quality is actually the bottleneck (which the feedback loop would
+address) or whether something else is. Do not build the feedback loop on the
+assumption that better ranking is needed until the writing demonstrates it.
 
-While running, keep a friction log (in Obsidian, freeform) of things that
-felt awkward, missing, or wrong during reading sessions. That log is the
-real spec for what comes next.
+Step 6 (feedback loop) remains the one unbuilt pipeline step. It is next in the
+pipeline's logic but NOT next in priority. Build only if post zero shows ranking
+is the limiting factor. Note: the Relevant checkbox is already
+rendered and the corpus table exists; the loop is the missing consumer that
+reads checked Relevant boxes and appends their embeddings to the corpus.
+
+Friction log (freeform in Obsidian) continues to be the real spec for what comes
+next. Candidate features, unordered until the writing ranks them: top-k nearest
+corpus DOIs per paper, in-context note capture during reading, Crossref keyword
+prefilter for broad journals, feedback loop.
 
 Failure monitoring: GitHub notifies on workflow failure via email. If
 notifications stop arriving for several days with no commits to `main`,
@@ -285,4 +312,4 @@ non-IBD-gated branch (abdominal radiology AI + agentic AI, ~43 papers/month).
 Off-cycle threshold re-check: this expansion increases total papers scored
 against the same corpus, which shifts the tier distribution. After one week
 of digests at the new volume, check whether the must-read/skim/archive splits
-(0.75/0.60) still produce useful groupings, and adjust if needed.
+(0.958/0.924) still produce useful groupings, and adjust if needed.

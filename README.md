@@ -40,9 +40,11 @@ ranker over time, is planned as the next phase.
 
 ## Status
 
-Operational since May 2026. Scheduling, persistence, and the Read later queue
-complete. The corpus feedback loop (Relevant checkbox to ranker) is deferred
-pending two weeks of sustained daily use.
+Operational since May 2026. Scheduling, persistence, the Read later queue, and
+an expanded source list (17 Crossref journals plus a broadened PubMed query) are
+complete. The corpus feedback loop (Relevant checkbox to ranker) is the one
+unbuilt pipeline step; it is deferred in favor of beginning the weekly column,
+which will reveal whether ranking quality is the real bottleneck.
 
 ## Stack
 
