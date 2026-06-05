@@ -75,7 +75,9 @@ def render_paper_full(paper: sqlite3.Row) -> str:
     if abstract:
         lines.append("")
         lines.append("  > [!abstract]-")
-        lines.append(f"  > {abstract}")
+        for abs_line in abstract.splitlines():
+            stripped = abs_line.strip()
+            lines.append(f"  > {stripped}" if stripped else "  >")
 
     return "\n".join(lines)
 

@@ -229,6 +229,7 @@ Digest writer renders papers grouped by tier with Obsidian callouts.
 - Archive tier: `> [!abstract]-` container (collapsed), papers rendered inside with `> ` prefix on every line.
 - Empty tiers are skipped entirely. Header counts still show zeros.
 - Each paper: `- [ ] **Title**` followed by 2-space-indented metadata (authors, journal, date, DOI, score), then a nested `> [!abstract]-` callout for the abstract.
+- Abstract callout body: every line (including blank separator lines between paragraphs) must carry its own `  > ` prefix. Blank lines use `  >` with no trailing space. The writer splits the abstract on `\n` and prefixes each line individually; structured abstracts (Introduction/Methods/Results) from Crossref have leading whitespace that is stripped per line.
 - DOI format is always `[10.xxxx/yyyy](https://doi.org/10.xxxx/yyyy)`.
 
 ### Checkbox parsing contract (do not break)
