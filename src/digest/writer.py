@@ -175,6 +175,7 @@ if __name__ == "__main__":
     )
     _parser = argparse.ArgumentParser()
     _parser.add_argument("vault_root", nargs="?", default=".")
+    _parser.add_argument("--date", type=date.fromisoformat, default=None, metavar="YYYY-MM-DD")
     _parser.add_argument("--force", action="store_true")
     _args = _parser.parse_args()
-    run(DB_PATH, _args.vault_root, force=_args.force)
+    run(DB_PATH, _args.vault_root, target_date=_args.date, force=_args.force)
