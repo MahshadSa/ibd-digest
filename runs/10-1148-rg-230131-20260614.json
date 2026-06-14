@@ -1,0 +1,4846 @@
+{
+  "schema_version": 1,
+  "run_id": "10-1148-rg-230131-20260614",
+  "created_at": "2026-06-14T23:34:03",
+  "seed": {
+    "doi": "10.1148/rg.230131",
+    "openalex_id": "W4390047599",
+    "title": "MR Enterography in Ulcerative Colitis: Beyond Endoscopy"
+  },
+  "depth": 2,
+  "top_k": 15,
+  "nodes": [
+    {
+      "openalex_id": "W4390047599",
+      "doi": "10.1148/rg.230131",
+      "title": "MR Enterography in Ulcerative Colitis: Beyond Endoscopy",
+      "pub_year": 2023,
+      "authors": [
+        "Amir Reza Radmard",
+        "Mehrnam Amouei",
+        "Ala Torabi",
+        "Ali Reza Sima",
+        "Hiva Saffar",
+        "Amine Geahchan",
+        "Amir H. Davarpanah",
+        "Bachir Taouli"
+      ],
+      "citation_count": 9,
+      "ref_complete": true,
+      "depth": 0,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W18247019",
+      "doi": "10.1148/rg.263055149",
+      "title": "Ulcerative Colitis",
+      "pub_year": 2006,
+      "authors": [
+        "Mark J. Roggeveen",
+        "Mikhail Tismenetsky",
+        "Robert A. Shapiro"
+      ],
+      "citation_count": 33,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1970875868",
+      "doi": "10.1016/j.crohns.2007.10.007",
+      "title": "Obstructing giant post-inflammatory polyposis in ulcerative colitis: Case report and review of the literature",
+      "pub_year": 2008,
+      "authors": [
+        "James Maggs",
+        "Lisa Browning",
+        "Bryan F. Warren",
+        "Simon Travis"
+      ],
+      "citation_count": 46,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1971278913",
+      "doi": "10.2214/ajr.06.1309",
+      "title": "Pneumatosis Intestinalis in the Adult: Benign to Life-Threatening Causes",
+      "pub_year": 2007,
+      "authors": [
+        "Lisa M. Ho",
+        "Erik K. Paulson",
+        "William M. Thompson"
+      ],
+      "citation_count": 389,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1980930938",
+      "doi": "10.1080/00223980.1966.10544813",
+      "title": "Development and Application of an Observational Method: Continuing Reliability Testing",
+      "pub_year": 1966,
+      "authors": [
+        "Ruth A. Bobbitt",
+        "Betty N. Gordon",
+        "Gordon D. Jensen"
+      ],
+      "citation_count": 16,
+      "ref_complete": false,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1992431640",
+      "doi": "10.1136/gut.2004.046615",
+      "title": "PSC-IBD: a unique form of inflammatory bowel disease associated with primary sclerosing cholangitis",
+      "pub_year": 2004,
+      "authors": [
+        "Edward V. Loftus",
+        "G C Harewood",
+        "C G Loftus",
+        "W J Tremaine",
+        "W S Harmsen",
+        "A R Zinsmeister",
+        "D A Jewell",
+        "W J Sandborn"
+      ],
+      "citation_count": 782,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1998439888",
+      "doi": "10.1097/mib.0b013e318281325e",
+      "title": "Risk Factors for Lymphoma in Patients with Inflammatory Bowel Disease",
+      "pub_year": 2013,
+      "authors": [
+        "Waqqas Afif",
+        "William J. Sandborn",
+        "William A. Faubion",
+        "Meher Rahman",
+        "Scott Harmsen",
+        "Alan R. Zinsmeister",
+        "Edward V. Loftus"
+      ],
+      "citation_count": 40,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2000570402",
+      "doi": "10.1111/j.1463-1318.2006.01148.x",
+      "title": "Risk of dysplasia and adenocarcinoma following restorative proctocolectomy for ulcerative colitis",
+      "pub_year": 2006,
+      "authors": [
+        "P. Das",
+        "Matt Johnson",
+        "Paris Tekkis",
+        "R J Nicholls"
+      ],
+      "citation_count": 95,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2004608617",
+      "doi": "10.1053/j.gastro.2011.10.001",
+      "title": "Increasing Incidence and Prevalence of the Inflammatory Bowel Diseases With Time, Based on Systematic Review",
+      "pub_year": 2011,
+      "authors": [
+        "Natalie A. Molodecky",
+        "Ing Shian Soon",
+        "Doreen M. Rabi",
+        "William A. Ghali",
+        "Mollie Ferris",
+        "Greg Chernoff",
+        "Eric I. Benchimol",
+        "Remo Panaccione",
+        "Subrata Ghosh",
+        "Herman W. Barkema",
+        "Gilaad G. Kaplan"
+      ],
+      "citation_count": 4815,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2008687669",
+      "doi": "10.1016/j.cgh.2014.05.015",
+      "title": "Risk of Lymphoma in Patients With Inflammatory Bowel Disease Treated With Azathioprine and 6-Mercaptopurine: A Meta-analysis",
+      "pub_year": 2014,
+      "authors": [
+        "David Kotlyar",
+        "James D. Lewis",
+        "Laurent Beaugerie",
+        "Ann Tierney",
+        "Colleen Brensinger",
+        "Javier P. Gisbert",
+        "Edward V. Loftus",
+        "Laurent Peyrin‐Biroulet",
+        "Wojciech Błoński",
+        "Manuel Van Domselaar",
+        "María Chaparro",
+        "Sandipani Sandilya",
+        "Meenakshi Bewtra",
+        "Florian Beigel",
+        "Livia Biancone",
+        "Gary R. Lichtenstein"
+      ],
+      "citation_count": 404,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2010343667",
+      "doi": "10.1007/s10350-005-0160-3",
+      "title": "Ileitis in Ulcerative Colitis: Is It a Backwash?",
+      "pub_year": 2005,
+      "authors": [
+        "Ayman S. Abdelrazeq",
+        "Timothy R. Wilson",
+        "Derek L. Leitch",
+        "Jonathan N. Lund",
+        "Stephen H. Leveson"
+      ],
+      "citation_count": 74,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2011140966",
+      "doi": "10.1016/j.crohns.2010.12.005",
+      "title": "Prevalence and risk factors for colonic perforation during colonoscopy in hospitalized inflammatory bowel disease patients",
+      "pub_year": 2011,
+      "authors": [
+        "Udayakumar Navaneethan",
+        "Sravanthi Parasa",
+        "Preethi G.K. Venkatesh",
+        "Guru Trikudanathan",
+        "Bo Shen"
+      ],
+      "citation_count": 115,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2018462275",
+      "doi": "10.1002/ibd.21219",
+      "title": "Hepatopancreatobiliary manifestations and complications associated with inflammatory bowel disease",
+      "pub_year": 2010,
+      "authors": [
+        "Udayakumar Navaneethan",
+        "Bo Shen"
+      ],
+      "citation_count": 201,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2024525373",
+      "doi": "10.1053/j.gastro.2010.05.085",
+      "title": "Preoperative Colorectal Neoplasia Increases Risk for Pouch Neoplasia in Patients With Restorative Proctocolectomy",
+      "pub_year": 2010,
+      "authors": [
+        "Revital Kariv",
+        "Feza H. Remzi",
+        "Lei Lian",
+        "Ana E. Bennett",
+        "Ravi P. Kiran",
+        "Yehuda Kariv",
+        "Victor W. Fazio",
+        "Ian C. Lavery",
+        "Bo Shen"
+      ],
+      "citation_count": 202,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2027120214",
+      "doi": "10.1259/bjr/36231529",
+      "title": "Patient experiences of MR colonography and colonoscopy: a qualitative study",
+      "pub_year": 2012,
+      "authors": [
+        "R Hafeez",
+        "Christian von Wagner",
+        "Samuel G. Smith",
+        "P B Boulos",
+        "Steve Halligan",
+        "Stuart Bloom",
+        "Stuart A. Taylor"
+      ],
+      "citation_count": 21,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2028675262",
+      "doi": "10.1038/modpathol.2011.120",
+      "title": "Clinical and pathological analysis of colonic Crohn's disease, including a subgroup with ulcerative colitis-like features",
+      "pub_year": 2011,
+      "authors": [
+        "Geneviève Soucy",
+        "Helen Wang",
+        "Francis A. Farraye",
+        "Jason Schmidt",
+        "Alton B. Farris",
+        "Gregory Y. Lauwers",
+        "Sandra Cerda",
+        "Kleanthis Dendrinos",
+        "Robert D. Odze"
+      ],
+      "citation_count": 79,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1660654440",
+      "doi": "10.1016/0016-5085(91)90202-v",
+      "title": "The epidemiology of inflammatory bowel disease: A large, population-based study in Sweden",
+      "pub_year": 1991,
+      "authors": [
+        "Anders Ekbom",
+        "Charles G. Helmick",
+        "Matthew M. Zack",
+        "Hans‐Olov Adami"
+      ],
+      "citation_count": 453,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1798837785",
+      "doi": "10.1016/0016-5085(91)90594-b",
+      "title": "Geographic variation of inflammatory bowel disease within the United States",
+      "pub_year": 1991,
+      "authors": [
+        "Amnon Sonnenberg",
+        "Daniel J. McCarty",
+        "Steven J. Jacobsen"
+      ],
+      "citation_count": 291,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1990160328",
+      "doi": "10.1097/01.mnm.0000169205.21377.6a",
+      "title": "Inflammatory bowel diseases: clinical update of practical guidelines",
+      "pub_year": 2005,
+      "authors": [
+        "Angelo Viscido",
+        "Annalisa Aratari",
+        "Francesca Maccioni",
+        "Alberto Signore",
+        "R. Caprilli"
+      ],
+      "citation_count": 27,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2005785646",
+      "doi": "10.1016/s0889-8553(05)70062-5",
+      "title": "IMAGING MODALITIES IN INFLAMMATORY BOWEL DISEASE",
+      "pub_year": 1999,
+      "authors": [
+        "Ilias Scotiniotis",
+        "Stephen E. Rubesin",
+        "Gregory G. Ginsberg"
+      ],
+      "citation_count": 70,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2007649396",
+      "doi": "10.1016/s0889-8553(01)00007-3",
+      "title": "Radiographic imaging of inflammatory bowel disease",
+      "pub_year": 2002,
+      "authors": [
+        "Laura R. Carucci",
+        "Marc S. Levine"
+      ],
+      "citation_count": 76,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2053395478",
+      "doi": "10.1136/gut.46.3.336",
+      "title": "Ulcerative colitis in Olmsted County, Minnesota, 1940–1993: incidence, prevalence, and survival",
+      "pub_year": 2000,
+      "authors": [
+        "Edward V. Loftus",
+        "M D Silverstein",
+        "W J Sandborn",
+        "W J Tremaine",
+        "W S Harmsen",
+        "A R Zinsmeister"
+      ],
+      "citation_count": 500,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2094464340",
+      "doi": "10.1053/j.gastro.2004.01.063",
+      "title": "Clinical epidemiology of inflammatory bowel disease: incidence, prevalence, and environmental influences",
+      "pub_year": 2004,
+      "authors": [
+        "Edward V. Loftus"
+      ],
+      "citation_count": 3114,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2109881709",
+      "doi": "10.2214/ajr.167.1.8659415",
+      "title": "CT features of ulcerative colitis and Crohn's disease.",
+      "pub_year": 1996,
+      "authors": [
+        "R M Gore",
+        "E J Balthazar",
+        "Gary G. Ghahremani",
+        "Frank H. Miller"
+      ],
+      "citation_count": 377,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2119864240",
+      "doi": "10.1111/j.1572-0241.2004.40036.x",
+      "title": "Ulcerative Colitis Practice Guidelines in Adults (Update): American College of Gastroenterology, Practice Parameters Committee",
+      "pub_year": 2004,
+      "authors": [
+        "Asher Kornbluth",
+        "David B. Sachar"
+      ],
+      "citation_count": 1763,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2126865807",
+      "doi": "10.1016/s0889-8553(01)00008-5",
+      "title": "Endoscopy in inflammatory bowel disease",
+      "pub_year": 2002,
+      "authors": [
+        "Scott D. Lee",
+        "Russell D. Cohen"
+      ],
+      "citation_count": 37,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2167945760",
+      "doi": "10.1001/archsurg.140.3.300",
+      "title": "Medical and Surgical Management of Chronic Ulcerative Colitis",
+      "pub_year": 2005,
+      "authors": [
+        "Robert R. Cima"
+      ],
+      "citation_count": 92,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2337711722",
+      "doi": "10.1056/nejm199101103240203",
+      "title": "Familial Occurrence of Inflammatory Bowel Disease",
+      "pub_year": 1991,
+      "authors": [
+        "Marianne Orholm",
+        "Pia Munkholm",
+        "Ebbe Langholz",
+        "Ole Haagen Nielsen",
+        "Thorkild I. A. Sørensen",
+        "Vibeke Binder"
+      ],
+      "citation_count": 690,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W4231770731",
+      "doi": "10.1016/s0140-6736(97)10475-5",
+      "title": "Toxic megacolon",
+      "pub_year": 1998,
+      "authors": [
+        "Sunil G Sheth",
+        "J. Thomas LaMont"
+      ],
+      "citation_count": 150,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W4251422078",
+      "doi": "10.1136/jcp.2003.015214",
+      "title": "Indeterminate colitis",
+      "pub_year": 2004,
+      "authors": [
+        "Maha Guindi",
+        "Robert H. Riddell"
+      ],
+      "citation_count": 202,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W4294127249",
+      "doi": "10.1016/s0033-8389(22)02211-4",
+      "title": "Radiologic-Pathologic Correlation of Inflammatory Bowel Disease",
+      "pub_year": 1987,
+      "authors": [
+        "Joel E. Lichtenstein"
+      ],
+      "citation_count": 26,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1745025171",
+      "doi": "10.1016/s0016-5085(75)80291-5",
+      "title": "Colonic Pseudopolyps in Association with Amebic Colitis",
+      "pub_year": 1975,
+      "authors": [
+        "Daniel Berkowitz",
+        "Leslie H. Bernstein"
+      ],
+      "citation_count": 25,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1889878163",
+      "doi": "10.1016/0016-5085(78)90090-2",
+      "title": "Giant pseudopolyposis in colitis with colonic intussusception",
+      "pub_year": 1978,
+      "authors": [
+        "Kenneth A. Forde",
+        "Richard Palmer Gold",
+        "Susan Holck",
+        "Myron D. Goldberg",
+        "Patricia S. Kaim"
+      ],
+      "citation_count": 32,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1945850540",
+      "doi": "10.1148/105.2.251",
+      "title": "Radiology of Ulcerating Colitis",
+      "pub_year": 1972,
+      "authors": [
+        "Alexander R. Margulis"
+      ],
+      "citation_count": 18,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964090016",
+      "doi": "10.1007/s00535-003-1173-0",
+      "title": "Localized giant inflammatory polyposis (filiform polyposis) with diverticula in ulcerative colitis",
+      "pub_year": 2003,
+      "authors": [
+        "Takuma Tajiri",
+        "Genshu Tate",
+        "Toshiyuki Mitsuya",
+        "Yutaka Endo",
+        "Kazuaki Inoue",
+        "M Yoshiba",
+        "Toshiaki Kunimura",
+        "Toshio Morohoshi"
+      ],
+      "citation_count": 12,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1970240830",
+      "doi": "10.1007/bf02587098",
+      "title": "Localized giant pseudopolyposis of the colon in ulcerative colitis",
+      "pub_year": 1980,
+      "authors": [
+        "Paul J. Kovalcik",
+        "Thaddeus Szydlowski"
+      ],
+      "citation_count": 14,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1973699970",
+      "doi": "10.1007/bf00210236",
+      "title": "Filiform polyposis : A case report describing clinical, morphological, and immunohistochemical findings",
+      "pub_year": 1992,
+      "authors": [
+        "C. Rozenbajgier",
+        "Peter Ruck",
+        "H Jenss",
+        "E. Kaiserling"
+      ],
+      "citation_count": 22,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1977780279",
+      "doi": "10.1097/00000478-198606000-00007",
+      "title": "Giant and Symptomatic Inflammatory Polyps of the Colon in Idiopathic Inflammatory Bowel Disease",
+      "pub_year": 1986,
+      "authors": [
+        "James K. Kelly",
+        "James M. Langevin",
+        "Lorne M. Price",
+        "N.B. Hershfield",
+        "Sarah M. Share",
+        "Philip K. Blustein"
+      ],
+      "citation_count": 64,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1985032112",
+      "doi": "10.1016/s0009-9260(77)80038-x",
+      "title": "Localised giant pseudopolyposis secondary to ulcerative or granulomatous colitis",
+      "pub_year": 1977,
+      "authors": [
+        "Norman Joffe"
+      ],
+      "citation_count": 30,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1986211862",
+      "doi": "10.1007/bf01889046",
+      "title": "Computed tomographic findings of giant intestinal pseudopolyposis",
+      "pub_year": 1988,
+      "authors": [
+        "Gordon R. Archibald",
+        "Francis J. Scholz",
+        "Carl R. Larsen"
+      ],
+      "citation_count": 7,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1987420712",
+      "doi": "10.1007/bf01887109",
+      "title": "Obstructing giant pseudopolyps in granulomatous colitis",
+      "pub_year": 1978,
+      "authors": [
+        "Bronwyn Jones",
+        "Americo A. Abbruzzese"
+      ],
+      "citation_count": 20,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1987784240",
+      "doi": "10.1007/bf01948112",
+      "title": "Filiform polyposis of the small bowel in Crohn's disease",
+      "pub_year": 1983,
+      "authors": [
+        "John F. Bray"
+      ],
+      "citation_count": 11,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1992126348",
+      "doi": "10.1111/j.1699-0463.1996.tb00692.x",
+      "title": "Diffuse filiform polyposis of the colon in Crohn's disease",
+      "pub_year": 1996,
+      "authors": [
+        "Janina Orłowska",
+        "Dorota Jarosz",
+        "Krzysztof Bielecki",
+        "Jarosław Wejman"
+      ],
+      "citation_count": 9,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1992846630",
+      "doi": "10.2350/10-05-0117.1",
+      "title": "Giant Inflammatory Polyposis Coli as a Manifestation of Crohn's Disease in Patients with Coexistent Cystic Fibrosis",
+      "pub_year": 2006,
+      "authors": [
+        "Niamh Banville",
+        "Annemarie Broderick",
+        "Ray Fitzgerald",
+        "Brendan Drumm",
+        "Michael McDermott"
+      ],
+      "citation_count": 5,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1997755138",
+      "doi": "10.1007/s00535-004-1580-x",
+      "title": "Colonic obstruction due to giant inflammatory polyposis in a patient with ulcerative colitis",
+      "pub_year": 2005,
+      "authors": [
+        "Shinichiro Yada",
+        "Takayuki Matsumoto",
+        "Tetsuji Kudo",
+        "Minako Hirahashi",
+        "Takashi Yao",
+        "Ryuichi Mibu",
+        "Mitsuo Iida"
+      ],
+      "citation_count": 23,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1999923293",
+      "doi": "10.1007/bf01002305",
+      "title": "Filiform polyposis in a child with Crohn's disease",
+      "pub_year": 1984,
+      "authors": [
+        "Suppiah Balachandran",
+        "C. Keith Hayden",
+        "Leonard E. Swischuk"
+      ],
+      "citation_count": 10,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W133530135",
+      "doi": "10.1177/000313480306900414",
+      "title": "Pneumatosis Cystoides Intestinalis with Free Intraperitoneal Air: A Case Report",
+      "pub_year": 2003,
+      "authors": [
+        "Joanna Hwang",
+        "V Sreenath Reddy",
+        "Kenneth W. Sharp"
+      ],
+      "citation_count": 23,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1545203666",
+      "doi": "10.1023/a:1026682131847",
+      "title": "Case Report: Pneumatosis Intestinalis with Clostridium difficile Colitis as a Cause of Acute Abdomen After Lung Transplantation",
+      "pub_year": 1998,
+      "authors": [
+        "Peter Schenk",
+        "Christian Madl",
+        "Ludwig Kramer",
+        "Klaus Ratheiser",
+        "Alexander Kranz",
+        "Christian Zauner",
+        "Christoph Stain",
+        "Tudor Birsan",
+        "Walter Klepetko"
+      ],
+      "citation_count": 34,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1825428369",
+      "doi": "10.2214/ajr.177.6.1771319",
+      "title": "Pneumatosis Intestinalis and Portomesenteric Venous Gas in Intestinal Ischemia",
+      "pub_year": 2001,
+      "authors": [
+        "W. Wiesner",
+        "Koenraad J. Mortelé",
+        "Jonathan N. Glickman",
+        "Hoon Ji",
+        "Pablo R. Ros"
+      ],
+      "citation_count": 325,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964250747",
+      "doi": "10.1007/bf02554132",
+      "title": "Pneumatosis cystoides intestinalis",
+      "pub_year": 1986,
+      "authors": [
+        "Susan Galandiuk",
+        "Victor W. Fazio"
+      ],
+      "citation_count": 257,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1970025534",
+      "doi": "10.2214/ajr.165.6.7484571",
+      "title": "Pneumatosis intestinalis in adults with AIDS: clinical significance and imaging findings.",
+      "pub_year": 1995,
+      "authors": [
+        "Bradford J. Wood",
+        "Priyatham Kumar",
+        "Cyrus Cooper",
+        "P M Silverman",
+        "R K Zeman"
+      ],
+      "citation_count": 45,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1978969318",
+      "doi": "10.1016/s1091-255x(01)00088-9",
+      "title": "Impact of Journal Articles and Grand Rounds on Practice",
+      "pub_year": 2002,
+      "authors": [
+        "Leigh Neumayer",
+        "Elizabeth Wako",
+        "Jennifer Fergestaad",
+        "Merril T. Dayton"
+      ],
+      "citation_count": 21,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1979145233",
+      "doi": "10.1097/00000658-199008000-00008",
+      "title": "Pneumatosis Intestinalis",
+      "pub_year": 1990,
+      "authors": [
+        "Stuart J. Knechtle",
+        "Andrew M. Davidoff",
+        "Reed P. Rice"
+      ],
+      "citation_count": 235,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1982089521",
+      "doi": "10.1016/j.gassur.2005.05.002",
+      "title": "Pneumatosis Intestinalis and Gas in the Portal Venous System",
+      "pub_year": 2006,
+      "authors": [
+        "Jennifer M. Griffith",
+        "Michael J. Apostolakos",
+        "Rabih M. Salloum"
+      ],
+      "citation_count": 5,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1985858417",
+      "doi": "10.1016/0736-4679(89)90013-9",
+      "title": "Pneumatosis cystoides intestinalis and intramural intestinal gas",
+      "pub_year": 1989,
+      "authors": [
+        "John G. Keene"
+      ],
+      "citation_count": 34,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1989238653",
+      "doi": "10.1007/bf02554635",
+      "title": "Innocuous pneumatosis intestinalis of the right colon in renal transplant recipients",
+      "pub_year": 1987,
+      "authors": [
+        "Brian J. Murphy",
+        "Albert Weinfeld"
+      ],
+      "citation_count": 23,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1990531505",
+      "doi": "10.1097/00004836-198704000-00024",
+      "title": "The Role of Computed Tomography in the Evaluation of Pneumatosis Intestinalis",
+      "pub_year": 1987,
+      "authors": [
+        "John L. Caudill",
+        "Barry Rose"
+      ],
+      "citation_count": 47,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1994178077",
+      "doi": "10.1016/j.ajem.2004.02.017",
+      "title": "Hepatic portal venous gas: clinical significance of computed tomography findings",
+      "pub_year": 2004,
+      "authors": [
+        "Sen‐Kuang Hou",
+        "Chii-Hwa Chern",
+        "Chorng–Kuang How",
+        "Jen-Dar Chen",
+        "Lee-Min Wang",
+        "Chen-Hsen Lee"
+      ],
+      "citation_count": 112,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1995572415",
+      "doi": "10.1016/s0929-8266(00)00088-4",
+      "title": "Sonographic detection of intestinal pneumatosis",
+      "pub_year": 2000,
+      "authors": [
+        "Étienne Danse",
+        "Bernard E. Van Beers",
+        "André Gilles",
+        "Luc Jacquet"
+      ],
+      "citation_count": 19,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2005654050",
+      "doi": "10.1016/s0889-8553(05)70021-2",
+      "title": "GASTROINTESTINAL MANIFESTATIONS OF SCLERODERMA",
+      "pub_year": 1998,
+      "authors": [
+        "Suzanne Rose",
+        "Michele A. Young",
+        "James C. Reynolds"
+      ],
+      "citation_count": 152,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2007666132",
+      "doi": "10.1080/02699050500110843",
+      "title": "Pneumatosis intestinalis (PI) following severe traumatic brain injury",
+      "pub_year": 2005,
+      "authors": [
+        "C. T. Kim",
+        "H. Kim",
+        "B Wechsler",
+        "S. W. Kim"
+      ],
+      "citation_count": 4,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1991089715",
+      "doi": "10.1163/156853963x00202",
+      "title": "Quantitative Measurement of Sexual Receptivity in Female Rats 1)",
+      "pub_year": 1963,
+      "authors": [
+        "Robert E. Kuehn",
+        "Frank A. Beach"
+      ],
+      "citation_count": 96,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2004813488",
+      "doi": "10.1080/00221325.1964.10533063",
+      "title": "Development and Application of an Observational Method: A Pilot Study of the Mother-Infant Relationship in Pigtail Monkeys",
+      "pub_year": 1964,
+      "authors": [
+        "Ruth A. Bobbitt",
+        "Gordon D. Jensen",
+        "Robert E. Kuehn"
+      ],
+      "citation_count": 22,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2073083135",
+      "doi": "10.1007/bf01791645",
+      "title": "Behavioral elements (taxonomy) for observing mother-infant-peer interaction inMacaca nemestrina",
+      "pub_year": 1964,
+      "authors": [
+        "Ruth A. Bobbitt",
+        "Gordon D. Jensen",
+        "Betty N. Gordon"
+      ],
+      "citation_count": 29,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W53993344",
+      "doi": "10.1056/nejm198404053101407",
+      "title": "Primary Sclerosing Cholangitis",
+      "pub_year": 1984,
+      "authors": [
+        "Nicholas F. LaRusso",
+        "Russell H. Wiesner",
+        "Jürgen Ludwig",
+        "Robert L. MacCarty"
+      ],
+      "citation_count": 360,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W105484314",
+      "doi": null,
+      "title": "Risk factors of colorectal cancer in inflammatory bowel disease.",
+      "pub_year": 1996,
+      "authors": [
+        "Pradeep Bansal",
+        "Amnon Sonnenberg"
+      ],
+      "citation_count": 169,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1663583211",
+      "doi": "10.1016/0016-5085(92)90308-l",
+      "title": "Primary sclerosing cholangitis in ulcerative colitis—A risk factor for the development of dysplasia and DNA aneuploidy?",
+      "pub_year": 1992,
+      "authors": [
+        "Ulrika Broomé",
+        "Greger Lindberg",
+        "Robert Löfberg"
+      ],
+      "citation_count": 194,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1874022447",
+      "doi": "10.1016/0016-5085(80)90131-6",
+      "title": "Clinicopathologic features of the syndrome of primary sclerosing cholangitis",
+      "pub_year": 1980,
+      "authors": [
+        "Russell H. Wiesner",
+        "Nicholas F. LaRusso"
+      ],
+      "citation_count": 557,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1973291763",
+      "doi": "10.1007/bf02049156",
+      "title": "Subclinical time span of inflammatory bowel disease in patients with primary sclerosing cholangitis",
+      "pub_year": 1995,
+      "authors": [
+        "Ulrika Broomé",
+        "Robert Löfberg",
+        "Karin Lundqvist",
+        "B Veress"
+      ],
+      "citation_count": 107,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1973441719",
+      "doi": "10.1007/bf02234825",
+      "title": "Proximal colorectal dysplasia or cancer in ulcerative colitis. The impact of primary sclerosing cholangitis and sulfasalazine",
+      "pub_year": 2001,
+      "authors": [
+        "Bo U. Lindberg",
+        "Ulrika Broomé",
+        "Bo Persson"
+      ],
+      "citation_count": 121,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1973889287",
+      "doi": "10.1007/bf02258391",
+      "title": "Differences in colonic disease activity in patients with ulcerative colitis with and without primary sclerosing cholangitis",
+      "pub_year": 1997,
+      "authors": [
+        "Karin Lundqvist",
+        "Ulrika Broomé"
+      ],
+      "citation_count": 162,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1979300931",
+      "doi": "10.1007/978-1-4612-4380-9_25",
+      "title": "Nonparametric Estimation from Incomplete Observations",
+      "pub_year": 1992,
+      "authors": [
+        "Edward L. Kaplan",
+        "Paul Meier"
+      ],
+      "citation_count": 45545,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1989177546",
+      "doi": "10.1002/(sici)1097-0142(19980301)82:5<822::aid-cncr4>3.0.co;2-l",
+      "title": "Primary sclerosing cholangitis and colorectal carcinoma in patients with chronic ulcerative colitis",
+      "pub_year": 1998,
+      "authors": [
+        "Kofi W. Nuako",
+        "David A. Ahlquist",
+        "William J. Sandborn",
+        "Douglas W. Mahoney",
+        "Diane M. Siems",
+        "Alan R. Zinsmeister"
+      ],
+      "citation_count": 90,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2001720082",
+      "doi": "10.1053/gast.1996.v110.pm8566577",
+      "title": "Risk and natural history of colonic neoplasia in patients with primary sclerosing cholangitis and ulcerative colitis",
+      "pub_year": 1996,
+      "authors": [
+        "TA Brentnall",
+        "R C Haggitt",
+        "PS Rabinovitch",
+        "MB Kimmey",
+        "MP Bronner",
+        "DS Levine",
+        "KV Kowdley",
+        "A. Christopher Stevens",
+        "DA Crispin",
+        "Mary J. Emond",
+        "CE Rubin"
+      ],
+      "citation_count": 344,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2006412887",
+      "doi": "10.1016/s0168-8278(01)00288-4",
+      "title": "Hepatic and extrahepatic malignancies in primary sclerosing cholangitis",
+      "pub_year": 2002,
+      "authors": [
+        "Annika Bergquist",
+        "Anders Ekbom",
+        "Rolf Olsson",
+        "Dan Kornfeldt",
+        "Lars Lööf",
+        "Åke Danielsson",
+        "Rolf Hultcrantz",
+        "Stefan Lindgren",
+        "Hanne Prytz",
+        "Hanna Sandberg–Gertzén",
+        "Sven Almér",
+        "Fredrik Granath",
+        "Ulrika Broomé"
+      ],
+      "citation_count": 713,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2009818256",
+      "doi": "10.1016/s0046-8177(85)80158-1",
+      "title": "Hepatobiliary carcinoma associated with primary sclerosing cholangitis and chronic ulcerative colitis",
+      "pub_year": 1985,
+      "authors": [
+        "Aileen Wee",
+        "Jürgen Ludwig",
+        "Robert J. Coffey",
+        "Nicholas F. LaRusso",
+        "Russell H. Wiesner"
+      ],
+      "citation_count": 195,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2019185937",
+      "doi": "10.3109/00365528709011139",
+      "title": "Primary Sclerosing Cholangitis: A Long-Term Follow-up Study",
+      "pub_year": 1987,
+      "authors": [
+        "E. Aadland",
+        "E. Schrumpf",
+        "O. Fausa",
+        "K. Elgjo",
+        "Arne Heilo",
+        "T Aakhus",
+        "E Gjone"
+      ],
+      "citation_count": 282,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2028875662",
+      "doi": "10.1136/gut.38.2.234",
+      "title": "Pouchitis after ileal pouch-anal anastomosis for ulcerative colitis occurs with increased frequency in patients with associated primary sclerosing cholangitis.",
+      "pub_year": 1996,
+      "authors": [
+        "C. Penna",
+        "Roger R. Dozois",
+        "William J. Tremaine",
+        "William J. Sandborn",
+        "Nicholas A. LaRusso",
+        "Cathy D. Schleck",
+        "D M Ilstrup"
+      ],
+      "citation_count": 572,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W27886363",
+      "doi": null,
+      "title": "Probiotic therapy of intestinal inflammation and infections.",
+      "pub_year": 2005,
+      "authors": [
+        "R. Balfour Sartor"
+      ],
+      "citation_count": 203,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1503584616",
+      "doi": null,
+      "title": "Clinical spectrum of lymphoproliferative disorders in renal transplant recipients and evidence for the role of Epstein-Barr virus.",
+      "pub_year": 1981,
+      "authors": [
+        "Douglas W. Hanto",
+        "Glauco Frizzera",
+        "David T. Purtilo",
+        "Kiyoshi Sakamoto",
+        "John L. Sullivan",
+        "Ari K. Saemundsen",
+        "George Klein",
+        "Richard L. Simmons",
+        "John S. Najarian"
+      ],
+      "citation_count": 446,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1977445011",
+      "doi": "10.1002/art.21675",
+      "title": "Association of chronic inflammation, not its treatment, with increased lymphoma risk in rheumatoid arthritis",
+      "pub_year": 2006,
+      "authors": [
+        "Eva Baecklund",
+        "Anastasia Iliadou",
+        "Johan Askling",
+        "Anders Ekbom",
+        "Carin Backlin",
+        "Fredrik Granath",
+        "Anca I. Catrina",
+        "Richard Rosenquist",
+        "Nils Feltelius",
+        "Christer Sundström",
+        "Lars Klareskog"
+      ],
+      "citation_count": 887,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996476032",
+      "doi": "10.1002/ibd.20211",
+      "title": "Lymphoma risk in inflammatory bowel disease: Is it the disease or its treatment?",
+      "pub_year": 2007,
+      "authors": [
+        "Jennifer Jones",
+        "Edward V. Loftus"
+      ],
+      "citation_count": 119,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2001943596",
+      "doi": "10.1034/j.1399-3046.2002.02043.x",
+      "title": "Epstein–Barr virus and post‐transplant lymphoproliferative disease",
+      "pub_year": 2002,
+      "authors": [
+        "Richard D. Holmes",
+        "Ronald J. Sokol"
+      ],
+      "citation_count": 160,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2018456421",
+      "doi": "10.1136/bmj.317.7152.180",
+      "title": "Disease activity and risk of lymphoma in patients with rheumatoid arthritis: nested case-control study",
+      "pub_year": 1998,
+      "authors": [
+        "Eva Baecklund",
+        "Anders Ekbom",
+        "Pär Sparén",
+        "Nils Feltelius",
+        "Lars Klareskog"
+      ],
+      "citation_count": 394,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2019886362",
+      "doi": "10.1038/ajg.2011.283",
+      "title": "Role of Thiopurine and Anti-TNF Therapy in Lymphoma in Inflammatory Bowel Disease",
+      "pub_year": 2011,
+      "authors": [
+        "Lisa J. Herrinton",
+        "Liyan Liu",
+        "Xiaoping Weng",
+        "James D. Lewis",
+        "Susan Hutfless",
+        "James E. Allison"
+      ],
+      "citation_count": 226,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2024293518",
+      "doi": "10.7326/0003-4819-123-2-199507150-00009",
+      "title": "Azathioprine and 6-Mercaptopurine in Crohn Disease",
+      "pub_year": 1995,
+      "authors": [
+        "David C. Pearson",
+        "Gary R. May",
+        "Gordon H. Fick",
+        "Lloyd R. Sutherland"
+      ],
+      "citation_count": 959,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2045677912",
+      "doi": "10.1002/path.1442",
+      "title": "Epstein–Barr virus infection in colorectal neoplasms associated with inflammatory bowel disease: detection of the virus in lymphomas but not in adenocarcinomas",
+      "pub_year": 2003,
+      "authors": [
+        "NACS Wong",
+        "Hermann Herbst",
+        "Klaus Herrmann",
+        "T. Kirchner",
+        "AS Krajewski",
+        "M Moorghen",
+        "F Niedobitek",
+        "Nicola J. Rooney",
+        "NA Shepherd",
+        "Gerald Niedobitek"
+      ],
+      "citation_count": 65,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2048717004",
+      "doi": "10.1038/ajg.2009.745",
+      "title": "Risk of Cancer in Inflammatory Bowel Disease Treated With Azathioprine: A UK Population-Based Case–Control Study",
+      "pub_year": 2010,
+      "authors": [
+        "Richard G Armstrong",
+        "Joe West",
+        "Tim Card"
+      ],
+      "citation_count": 156,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2049852973",
+      "doi": "10.1053/gast.2001.28703",
+      "title": "Inflammatory bowel disease is not associated with an increased risk of lymphoma",
+      "pub_year": 2001,
+      "authors": [
+        "James D. Lewis",
+        "Warren B. Bilker",
+        "Colleen Brensinger",
+        "Julius J. Deren",
+        "David J. Vaughn",
+        "Brian L. Strom"
+      ],
+      "citation_count": 297,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2051562627",
+      "doi": "10.1097/00000478-200001000-00008",
+      "title": "Epstein-Barr Virus–Positive Primary Gastrointestinal Hodgkin's Disease",
+      "pub_year": 2000,
+      "authors": [
+        "S Kumar",
+        "Falko Fend",
+        "Leticia Quintanilla-Martı́nez",
+        "Douglas W. Kingma",
+        "Lynn Sorbara",
+        "Mark Raffeld",
+        "Peter M. Banks",
+        "Elaine S. Jaffe"
+      ],
+      "citation_count": 130,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2051828495",
+      "doi": "10.1056/nejm199409293311321",
+      "title": "Reversible Lymphoma in the Setting of Azathioprine Therapy for Crohn's Disease",
+      "pub_year": 1994,
+      "authors": [
+        "L Larvol",
+        "Jean–Claude Soulé",
+        "A. Le Tourneau"
+      ],
+      "citation_count": 104,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2054710465",
+      "doi": "10.1136/gut.2003.018515",
+      "title": "Infliximab in inflammatory bowel disease: clinical outcome in a population based cohort from Stockholm County",
+      "pub_year": 2004,
+      "authors": [
+        "T Ljung",
+        "P Karlén",
+        "D Schmidt",
+        "P M Hellström",
+        "A Lapidus",
+        "I Janczewska",
+        "U Sjöqvist",
+        "R Löfberg"
+      ],
+      "citation_count": 316,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2067923219",
+      "doi": "10.1097/00054725-200403000-00004",
+      "title": "Epstein-Barr Virus Viral Load in Crohn’s Disease",
+      "pub_year": 2004,
+      "authors": [
+        "Didier Reijasse",
+        "Catherine Le Pendeven",
+        "Jacques Cosnes",
+        "Axelle Dehée",
+        "Jean–Pierre Gendre",
+        "Jean‐Claude Nicolas",
+        "Laurent Beaugerie"
+      ],
+      "citation_count": 73,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W70937671",
+      "doi": null,
+      "title": "Pouchitis and extraintestinal manifestations of inflammatory bowel disease after ileal pouch-anal anastomosis.",
+      "pub_year": 1990,
+      "authors": [
+        "Joseph Lohmuller",
+        "John H. Pembérton",
+        "Roger R. Dozois",
+        "D M Ilstrup",
+        "Jon van Heerden"
+      ],
+      "citation_count": 388,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W91792756",
+      "doi": "10.1097/00000658-198409000-00001",
+      "title": "Presidential Address",
+      "pub_year": 1984,
+      "authors": [
+        "Mark M. Ravitch"
+      ],
+      "citation_count": 60,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W138475980",
+      "doi": null,
+      "title": "Image analysis in multisample biopsy after ileal pouch-anal anastomosis.",
+      "pub_year": 1996,
+      "authors": [
+        "Enrico Giarnieri",
+        "Maria Rosaria Giovagnoli",
+        "C Montesani",
+        "Cheran Nagar",
+        "Annamaria Pronio",
+        "M Alderisio",
+        "G Ribotta",
+        "Andrea Vecchione"
+      ],
+      "citation_count": 6,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W195548511",
+      "doi": "10.1007/s10350-004-7293-7",
+      "title": "Adenocarcinoma in the anal transitional zone after ileal pouch for ulcerative colitis: report of a case.",
+      "pub_year": 2003,
+      "authors": [
+        "Stephen Bell",
+        "Bryan R. Parry",
+        "M. Neill"
+      ],
+      "citation_count": 38,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1521144418",
+      "doi": "10.1007/s00384-002-0452-1",
+      "title": "Adenocarcinoma of the ileoanal pouch anastomosis: an emerging complication?",
+      "pub_year": 2003,
+      "authors": [
+        "Cesare Hassan",
+        "Angelo Zullo",
+        "Giuseppe Speziale",
+        "Francesca Stella",
+        "Roberto Lorenzetti",
+        "S. Morini"
+      ],
+      "citation_count": 52,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1533325322",
+      "doi": "10.1007/s00384-001-0364-5",
+      "title": "Cancer risk assessment in long-standing pouchitis",
+      "pub_year": 2001,
+      "authors": [
+        "Kjell Gullberg",
+        "Ulrik Lindforss",
+        "Henrik Zetterquist",
+        "Dagny Stålberg",
+        "Finn P. Reinholt",
+        "B Veress",
+        "Berhard Tribukait",
+        "Hans Olivecrona",
+        "Robert Löfberg"
+      ],
+      "citation_count": 40,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1555027006",
+      "doi": "10.1046/j.1365-2168.1998.00875.x",
+      "title": "A new look at the anal transitional zone with reference to restorative proctocolectomy and the columnar cuff",
+      "pub_year": 1998,
+      "authors": [
+        "Mark Thompson‐Fawcett",
+        "Bryan F. Warren",
+        "N J McC Mortensen"
+      ],
+      "citation_count": 93,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1570526968",
+      "doi": "10.1016/0016-5085(94)90169-4",
+      "title": "Prospective evaluation of early morphological changes in pelvic ileal pouches",
+      "pub_year": 1994,
+      "authors": [
+        "Robyn L. Apel",
+        "Zane Cohen",
+        "Charles W. Andrews",
+        "Robin McLeod",
+        "H Steinhart",
+        "Robert D. Odze"
+      ],
+      "citation_count": 121,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1612925887",
+      "doi": "10.1016/s0016-5085(82)80339-9",
+      "title": "Utilization of Nutrients by Isolated Epithelial Cells of the Rat Colon",
+      "pub_year": 1982,
+      "authors": [
+        "W. E. W. Roediger"
+      ],
+      "citation_count": 1203,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1965499257",
+      "doi": "10.1007/bf02234646",
+      "title": "Adenocarcinoma at the site of ileoanal anastomosis in Crohn's disease",
+      "pub_year": 2001,
+      "authors": [
+        "Hitoshi Kotanagi",
+        "Hiroshi Kon",
+        "Masatake Iida",
+        "Masanao Ito",
+        "Kenji Koyama"
+      ],
+      "citation_count": 12,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1966072699",
+      "doi": "10.1007/bf00290313",
+      "title": "Ileo-anal pouch histology",
+      "pub_year": 1993,
+      "authors": [
+        "Paul Goldberg",
+        "I C Talbot",
+        "R J Nicholls"
+      ],
+      "citation_count": 7,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1969067961",
+      "doi": "10.1136/gut.47.5.732",
+      "title": "Columnar cuff cancer after restorative proctocolectomy for familial adenomatous polyposis",
+      "pub_year": 2000,
+      "authors": [
+        "Henri Vuilleumier",
+        "Nermin Halkic",
+        "Riadh Ksontini",
+        "M Gillet"
+      ],
+      "citation_count": 38,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1969954064",
+      "doi": "10.1007/s10151-004-0083-3",
+      "title": "High-magnification chromoscopic pouchoscopy: a novel in vivo technique for surveillance of the anal transition zone and columnar cuff following ileal pouch-anal anastomosis",
+      "pub_year": 2004,
+      "authors": [
+        "David P. Hurlstone",
+        "A. J. Shorthouse",
+        "Simon S. Cross",
+        "Steven R. Brown",
+        "David S. Sanders",
+        "Alan Lobo"
+      ],
+      "citation_count": 22,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1973165951",
+      "doi": "10.1007/bf02234397",
+      "title": "Rectal cancer after mucosectomy for ileoanal pouch in familial adenomatous polyposis",
+      "pub_year": 2001,
+      "authors": [
+        "Steven R. Brown",
+        "Davide María Donati",
+        "Francis Seow‐Choen"
+      ],
+      "citation_count": 32,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1973691341",
+      "doi": "10.1007/bf01648445",
+      "title": "An assessment of inflammation in the reservoir after restorative proctocolectomy with ileoanal ileal reservoir",
+      "pub_year": 1986,
+      "authors": [
+        "Robert L. Moskowitz",
+        "Neil A. Shepherd",
+        "R J Nicholls"
+      ],
+      "citation_count": 385,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W4831360",
+      "doi": null,
+      "title": "[Epidemiology of inflammatory bowel diseases in Veszprém county of Western Hungary between 1977 and 2001].",
+      "pub_year": 2003,
+      "authors": [
+        "László Lakatos",
+        "Gábor Mester",
+        "Zsuzsanna Erdélyi",
+        "Mihály Balogh",
+        "István Szipócs",
+        "György Kamarás",
+        "Péter L. Lakatos"
+      ],
+      "citation_count": 20,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W6772637",
+      "doi": null,
+      "title": "[Incidence of inflammatory bowel disease in Aragon: outcome of a prospective population-based study].",
+      "pub_year": 2002,
+      "authors": [
+        "C. López Miguel",
+        "Beatriz Sicilia",
+        "E Sierra",
+        "J Lopez Zaborras",
+        "F Arribas",
+        "Fernando Gomollón"
+      ],
+      "citation_count": 28,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W24323488",
+      "doi": null,
+      "title": "Incidence of inflammatory bowel disease in the area of Liège: a 3 years prospective study (1993-1996).",
+      "pub_year": 1999,
+      "authors": [
+        "P Latour",
+        "E Louis",
+        "J Bélaïche"
+      ],
+      "citation_count": 45,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W45231447",
+      "doi": null,
+      "title": "Incidence of Crohn's disease in Cardiff over 60 years: 1986-1990 an update.",
+      "pub_year": 1995,
+      "authors": [
+        "Gareth Thomas",
+        "D Millar-Jones",
+        "J. Rhodes",
+        "Gwyneth Roberts",
+        "Geraint T. Williams",
+        "J F Mayberry"
+      ],
+      "citation_count": 77,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W48748639",
+      "doi": null,
+      "title": "Incidence and prevalence of ulcerative colitis in the Jewish population of Jerusalem.",
+      "pub_year": 1987,
+      "authors": [
+        "W Z Jacobsohn",
+        "Yael Levine"
+      ],
+      "citation_count": 16,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W53487432",
+      "doi": "10.1016/0016-5085(90)91297-j",
+      "title": "An epidemiologic study of inflammatory bowel disease in Rochester, New York",
+      "pub_year": 1990,
+      "authors": [
+        "Stephen P. Stowe",
+        "Stephen R. Redmond",
+        "James M. Stormont",
+        "Ashok N. Shah",
+        "Lawrence N. Chessin",
+        "Harry L. Segal",
+        "William Y. Chey"
+      ],
+      "citation_count": 146,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W80680796",
+      "doi": null,
+      "title": "Epidemiology of Crohn's disease in the Jewish population of central Israel, 1970-1980.",
+      "pub_year": 1989,
+      "authors": [
+        "Zvi Fireman",
+        "Aaron Grossman",
+        "P. Lilos",
+        "Y Eshchar",
+        "E Theodor",
+        "Tuvia Gilat"
+      ],
+      "citation_count": 73,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W82501712",
+      "doi": null,
+      "title": "Crohn's disease in Northern Ireland--a retrospective study of 440 cases.",
+      "pub_year": 1990,
+      "authors": [
+        "W. Griffith Humphreys",
+        "J S Brown",
+        "T G Parks"
+      ],
+      "citation_count": 7,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W83103461",
+      "doi": "10.1007/bf02779483",
+      "title": "Prevalence and mortality of ulcerative colitis and Crohn’s disease in Japan",
+      "pub_year": 1988,
+      "authors": [
+        "Akane Higashi",
+        "Yoshiyuki Watanabe",
+        "Kotaro Ozasa",
+        "Kyohei Hayashi",
+        "Akira Aoike",
+        "Keiichi Kawai"
+      ],
+      "citation_count": 39,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W114039752",
+      "doi": null,
+      "title": "[Incidence and prevalence of inflammatory bowel disease in Gijon, Asturias, Spain].",
+      "pub_year": 2000,
+      "authors": [
+        "C. Saro Gismera",
+        "Marta Fernández",
+        "G Argüelles Fernández",
+        "J. Antón Magarzo",
+        "R. García López",
+        "C.A. Navascues",
+        "A Suárez González",
+        "Gilberto Alvarez",
+        "A González Bernal",
+        "A.Palacios Galán",
+        "Antonio Arregui",
+        "Francisco J. Vizoso"
+      ],
+      "citation_count": 27,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W115214298",
+      "doi": "10.1016/j.crohns.2010.03.003",
+      "title": "Ulcerative colitis in the county of Uppsala 1945–2007",
+      "pub_year": 2010,
+      "authors": [
+        "Anders Rönnblom",
+        "Sven‐Märten Samuelsson",
+        "Anders Ekbom"
+      ],
+      "citation_count": 42,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W120076783",
+      "doi": null,
+      "title": "[Prospective study of the incidence and prevalence of ulcerative colitis in a large urban population in Germany (western Ruhr area)].",
+      "pub_year": 1994,
+      "authors": [
+        "E Dirks",
+        "SUSAN E. FORSTER",
+        "McG Thom",
+        "Erhard Quebe‐Fehling",
+        "H. Goebell"
+      ],
+      "citation_count": 18,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W160081874",
+      "doi": null,
+      "title": "The epidemiology and clinical characteristics of Crohn's disease in the Hong Kong Chinese population: experiences from a regional hospital.",
+      "pub_year": 2007,
+      "authors": [
+        "Ka‐Ho Lok",
+        "H G Hung",
+        "C H Ng",
+        "K K Li",
+        "K F Li",
+        "M L Szeto"
+      ],
+      "citation_count": 27,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W173507409",
+      "doi": null,
+      "title": "Incidence of inflammatory bowel disease in the province of Liège (Belgium). La Société de Gastroentérologie Liègeoise.",
+      "pub_year": 1996,
+      "authors": [
+        "P Latour",
+        "J Bélaïche",
+        "Ed Louis",
+        "F Fontaine",
+        "J Deflandre",
+        "Jean‐Philippe Loly",
+        "A Oger",
+        "P Defrance",
+        "Amparo Valentín",
+        "M Delforge",
+        "Guy Daenen",
+        "Maud Lebas",
+        "Erich Mohr",
+        "E Wain",
+        "C Gillard",
+        "Chantal Thys"
+      ],
+      "citation_count": 14,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W184672142",
+      "doi": null,
+      "title": "Epidemiology of Crohn's disease in southern Israel.",
+      "pub_year": 1994,
+      "authors": [
+        "H.S. Odes",
+        "Chaim Locker",
+        "Luitgard M. Neumann",
+        "H. Zirkin",
+        "Zvi Weizman",
+        "Ami D. Sperber",
+        "Gerald Fraser",
+        "Pavel Krugliak",
+        "Nava Gaspar",
+        "Leslie Eidelman"
+      ],
+      "citation_count": 71,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W248910915",
+      "doi": "10.1016/s0016-5085(11)63193-4",
+      "title": "Systematic Review: Comparison of Chromosomal Abnormalities in Patients With Hepatosplenic T-Cell Lymphoma – IBD-Related Versus Non-IBD Related Cases",
+      "pub_year": 2011,
+      "authors": [
+        "David Kotlyar",
+        "Robert Hirten",
+        "Sarah McCue Horwitz",
+        "Wojciech Błoński",
+        "Gary R. Lichtenstein"
+      ],
+      "citation_count": 2,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1492157159",
+      "doi": "10.1007/978-3-642-85851-2",
+      "title": "Cancer Incidence in Five Continents",
+      "pub_year": 1970,
+      "authors": [
+        "Richard Doll",
+        "C. S. Muir",
+        "John A. H. Waterhouse"
+      ],
+      "citation_count": 8537,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1925602349",
+      "doi": "10.1046/j.1600-6143.2003.00325.x",
+      "title": "Lymphomas After Solid Organ Transplantation: A Collaborative Transplant Study Report",
+      "pub_year": 2004,
+      "authors": [
+        "Gerhard Opelz",
+        "Bernd Döhler"
+      ],
+      "citation_count": 1074,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1955108199",
+      "doi": "10.1155/2002/193285",
+      "title": "Tabulation of Myeloid, Lymphoid and Intestinal Malignancies in Crohn’s Disease",
+      "pub_year": 2002,
+      "authors": [
+        "Hugh James Freeman"
+      ],
+      "citation_count": 22,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1957194282",
+      "doi": "10.1002/pds.3621",
+      "title": "Risk of malignancies in patients with inflammatory bowel disease treated with thiopurines or anti‐TNF alpha antibodies",
+      "pub_year": 2014,
+      "authors": [
+        "Florian Beigel",
+        "A Steinborn",
+        "Fabian Schnitzler",
+        "Cornelia Tillack",
+        "Simone Breiteneicher",
+        "Jestinah Mahachie John",
+        "Kristel Van Steen",
+        "Rüdiger P. Laubender",
+        "Burkhard Göke",
+        "Julia Seiderer",
+        "Stephan Brand",
+        "Thomas Ochsenkühn"
+      ],
+      "citation_count": 73,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1970234962",
+      "doi": "10.1097/pas.0b013e3182190999",
+      "title": "EBV-Positive Extranodal Marginal Zone Lymphoma of Mucosa-associated Lymphoid Tissue in the Posttransplant Setting",
+      "pub_year": 2011,
+      "authors": [
+        "Sarah E. Gibson",
+        "Steven H. Swerdlow",
+        "Fiona E. Craig",
+        "Urvashi Surti",
+        "James R. Cook",
+        "Michael A. Nalesnik",
+        "Christopher R. Lowe",
+        "Katrina Wood",
+        "Chris M. Bacon"
+      ],
+      "citation_count": 78,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1974943298",
+      "doi": "10.1016/j.crohns.2011.11.005",
+      "title": "Fistulizing pattern in Crohn's disease and pancolitis in ulcerative colitis are independent risk factors for cancer: A single-center cohort study",
+      "pub_year": 2011,
+      "authors": [
+        "Livia Biancone",
+        "Sara Zuzzi",
+        "M. Ranieri",
+        "C. Petruzziello",
+        "Emma Calabrese",
+        "Sara Onali",
+        "M. Ascolani",
+        "Francesca Zorzi",
+        "G. Condino",
+        "Simona Iacobelli",
+        "Francesco Pallone"
+      ],
+      "citation_count": 36,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1980442626",
+      "doi": "10.1136/ard.47.12.988",
+      "title": "Lymphoproliferative cancer and other malignancy in patients with rheumatoid arthritis treated with azathioprine: a 20 year follow up study.",
+      "pub_year": 1988,
+      "authors": [
+        "Alan J. Silman",
+        "James J. B. Petrie",
+        "B. L. Hazleman",
+        "Stephen Evans"
+      ],
+      "citation_count": 276,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1995372822",
+      "doi": "10.1111/j.1572-0241.1999.01530.x",
+      "title": "Malignant Neoplasms Subsequent to Treatment of Inflammatory Bowel Disease With 6-Mercaptopurine",
+      "pub_year": 1999,
+      "authors": [
+        "Burton I. Korelitz",
+        "Felice Mirsky",
+        "Mark R. Fleisher",
+        "Jonathan I. Warman",
+        "Nathaniel Wisch",
+        "Gilbert W. Gleim"
+      ],
+      "citation_count": 136,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996715439",
+      "doi": "10.1093/jnci/85.4.307",
+      "title": "Incidence of Cancer Among Patients With Rheumatoid Arthritis",
+      "pub_year": 1993,
+      "authors": [
+        "Gloria Gridley",
+        "J. K. McLaughlin",
+        "Anders Ekbom",
+        "Lars Klareskog",
+        "Hans‐Olov Adami",
+        "David Hacker",
+        "Robert N. Hoover",
+        "J F Fraumeni"
+      ],
+      "citation_count": 586,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2003063732",
+      "doi": "10.1002/ibd.21844",
+      "title": "Lymphoma risk in children and young adults with inflammatory bowel disease: Analysis of a large single-center cohort",
+      "pub_year": 2011,
+      "authors": [
+        "Lori A. Ashworth",
+        "Amy L. Billett",
+        "Paul D. Mitchell",
+        "Federica Nuti",
+        "Corey A. Siegel",
+        "Athos Bousvaros"
+      ],
+      "citation_count": 55,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2005097349",
+      "doi": "10.1016/0002-9343(85)90245-1",
+      "title": "Incidence of cancer in rheumatoid arthritis and other disorders after immunosuppressive treatment",
+      "pub_year": 1985,
+      "authors": [
+        "Leo Kinlen"
+      ],
+      "citation_count": 379,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2016321388",
+      "doi": "10.1046/j.1365-2036.2002.01297.x",
+      "title": "Long‐term risk of malignancy after treatment of inflammatory bowel disease with azathioprine",
+      "pub_year": 2002,
+      "authors": [
+        "Alan G. Fraser",
+        "Timothy R. Orchard",
+        "Elizabeth M. Robinson",
+        "D P Jewell"
+      ],
+      "citation_count": 199,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2016704705",
+      "doi": "10.1016/0002-9343(85)90240-2",
+      "title": "Cancer and rheumatoid arthritis: Epidemiologic considerations",
+      "pub_year": 1985,
+      "authors": [
+        "Patricia Prior"
+      ],
+      "citation_count": 93,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W126718257",
+      "doi": "10.1016/s0016-5085(99)70194-0",
+      "title": "American Gastroenterological Association medical position statement on anorectal testing techniques",
+      "pub_year": 1999,
+      "authors": [
+        "Jeffrey L. Barnett",
+        "William L. Hasler",
+        "Michael Camilleri"
+      ],
+      "citation_count": 245,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1529007328",
+      "doi": null,
+      "title": "Effect of colonic perfusion with sulfated and nonsulfated bile acids on mucosal structure and function in the rat.",
+      "pub_year": 1983,
+      "authors": [
+        "N. Breuer",
+        "David S. Rampton",
+        "A. R. TAMMAR",
+        "Gerard M. Murphy",
+        "R. H. Dowling"
+      ],
+      "citation_count": 55,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1720097311",
+      "doi": "10.1016/0016-5085(89)91557-6",
+      "title": "Ileocolonoscopy in Seronegative Spondylarthropathy",
+      "pub_year": 1989,
+      "authors": [
+        "Martine De Vos",
+        "Claude Cuvelier",
+        "Herman Mielants",
+        "Eric Veys",
+        "F. Barbier",
+        "A Elewaut"
+      ],
+      "citation_count": 154,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1982286504",
+      "doi": "10.1016/0002-9343(79)91146-x",
+      "title": "Multiple adenocarcinomas and premalignant changes in “backwash” ileitis",
+      "pub_year": 1979,
+      "authors": [
+        "W. Schlippert",
+        "Frank A. Mitros",
+        "Katja Schulze"
+      ],
+      "citation_count": 34,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1993500055",
+      "doi": "10.1007/s00268-003-6639-y",
+      "title": "Is Colonoscopy Alone Sufficient to Screen for Ulcerative Colitis‐associated Colorectal Carcinoma?",
+      "pub_year": 2003,
+      "authors": [
+        "Matthias Bruewer",
+        "Christian F. Krieglstein",
+        "Markus Utech",
+        "Marc Bode",
+        "Emile Rijcken",
+        "Christoph Anthoni",
+        "Mike G. Laukoetter",
+        "Guido Schuermann",
+        "N. Senninger"
+      ],
+      "citation_count": 34,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996322967",
+      "doi": "10.1136/gut.39.2.226",
+      "title": "Intestinal permeability in the ileal pouch.",
+      "pub_year": 1996,
+      "authors": [
+        "M N Merrett",
+        "Nathaniel J. Soper",
+        "N. J. Mortensen",
+        "D P Jewell"
+      ],
+      "citation_count": 63,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996467603",
+      "doi": "10.1007/s003840000276",
+      "title": "Adenocarcinoma in the ileal pouch: late risk of cancer after restorative proctocolectomy",
+      "pub_year": 2001,
+      "authors": [
+        "U. Heuschen",
+        "G. Heuschen",
+        "Frank Autschbach",
+        "E. H. Allemeyer",
+        "Christian Herfarth"
+      ],
+      "citation_count": 108,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996855065",
+      "doi": "10.1053/j.scrs.2006.02.002",
+      "title": "Pouchitis Following Ileal Pouch Anal Anastomosis",
+      "pub_year": 2006,
+      "authors": [
+        "Gary J. Russell"
+      ],
+      "citation_count": 6,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1999901368",
+      "doi": "10.1001/archsurg.1989.01410040107025",
+      "title": "Adenocarcinoma Arising in an Ileostomy",
+      "pub_year": 1989,
+      "authors": [
+        "Patricia L. Roberts"
+      ],
+      "citation_count": 44,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2000437875",
+      "doi": "10.1002/bjs.18004418509",
+      "title": "Lesions of the ileum associated with ulcerative colitis",
+      "pub_year": 1956,
+      "authors": [
+        "Brian Counsell"
+      ],
+      "citation_count": 44,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2005047672",
+      "doi": "10.1136/gut.32.12.1470",
+      "title": "Increased intestinal permeability in ankylosing spondylitis--primary lesion or drug effect?",
+      "pub_year": 1991,
+      "authors": [
+        "A. Morris",
+        "CW Howden",
+        "Clare M. Robertson",
+        "A. Duncan",
+        "Helen Torley",
+        "R D Sturrock",
+        "R I Russell"
+      ],
+      "citation_count": 40,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2009179984",
+      "doi": "10.1007/bf02556916",
+      "title": "Relationship of backwash ileitis to ileal pouchitis after ileal pouch-anal anastomosis",
+      "pub_year": 1987,
+      "authors": [
+        "Sven Gustavsson",
+        "Louis H. Weiland",
+        "Keith A. Kelly"
+      ],
+      "citation_count": 95,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2013519320",
+      "doi": "10.1097/00000658-199805000-00006",
+      "title": "Preoperative Terminal Ileal and Colonic Resection Histopathology Predicts Risk of Pouchitis in Patients After Ileoanal Pull-Through Procedure",
+      "pub_year": 1998,
+      "authors": [
+        "C. Max Schmidt",
+        "Audrey J. Lazenby",
+        "Richard J. Hendrickson",
+        "James V. Sitzmann"
+      ],
+      "citation_count": 164,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W79472281",
+      "doi": null,
+      "title": "Age as a risk factor in colonoscopy: fact versus fiction.",
+      "pub_year": 1988,
+      "authors": [
+        "Ralph E. DiPrima",
+        "Jamie S. Barkin",
+        "Mario Blinder",
+        "Robert I. Goldberg",
+        "Richard Phillips"
+      ],
+      "citation_count": 50,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W203882282",
+      "doi": null,
+      "title": "Colonoscopy during an attack of severe ulcerative colitis is a safe procedure and of great value in clinical decision making.",
+      "pub_year": 1991,
+      "authors": [
+        "Gezahegn Solomon Alemayehu",
+        "G Järnerot"
+      ],
+      "citation_count": 82,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1573208638",
+      "doi": "10.1111/j.1463-1318.2009.02146.x",
+      "title": "Endoscopist experience as a risk factor for colonoscopic complications",
+      "pub_year": 2009,
+      "authors": [
+        "Vicente Lorenzo‐Zúñiga",
+        "Vicente Moreno de Vega",
+        "Eugeni Domènech",
+        "Míriam Mañosa",
+        "Ramón Planas",
+        "J. Boix"
+      ],
+      "citation_count": 56,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1736289269",
+      "doi": "10.1111/j.1365-2036.2007.03532.x",
+      "title": "Systematic review: endoscopic dilatation in Crohn’s disease",
+      "pub_year": 2007,
+      "authors": [
+        "Cesare Hassan",
+        "Angelo Zullo",
+        "Vincenzo De Francesco",
+        "Enzo Ierardi",
+        "Marco Giustini",
+        "Alessio Pitidis",
+        "F. Taggi",
+        "S. Winn",
+        "S. Morini"
+      ],
+      "citation_count": 291,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964354570",
+      "doi": "10.1016/j.gie.2007.11.023",
+      "title": "Jumbo forceps are superior to standard large-capacity forceps in obtaining diagnostically adequate inflammatory bowel disease surveillance biopsy specimens",
+      "pub_year": 2008,
+      "authors": [
+        "B. Joseph Elmunzer",
+        "Peter Higgins",
+        "Yong M. Kwon",
+        "Christopher Golembeski",
+        "Joel K. Greenson",
+        "Sheryl Korsnes",
+        "Grace H. Elta"
+      ],
+      "citation_count": 42,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964693624",
+      "doi": "10.1055/s-2008-1077445",
+      "title": "Safety, feasibility, and tolerability of ileocolonoscopy in inflammatory bowel disease",
+      "pub_year": 2008,
+      "authors": [
+        "Grischa Terheggen",
+        "B Lányi",
+        "Stefan Schanz",
+        "Ramona Hoffmann",
+        "Stephan Böhm",
+        "Ludger Leifeld",
+        "C. Pohl",
+        "Wolfgang Kruis"
+      ],
+      "citation_count": 62,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1970573437",
+      "doi": "10.1111/j.1572-0241.2000.03356.x",
+      "title": "Endoscopic Perforation of The Colon: Lessons From A 10-Year Study",
+      "pub_year": 2000,
+      "authors": [
+        "Monte L. Anderson",
+        "Tousif M. Pasha",
+        "Jonathan A. Leighton"
+      ],
+      "citation_count": 406,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1972851114",
+      "doi": "10.7326/0003-4819-145-12-200612190-00004",
+      "title": "Complications of Colonoscopy in an Integrated Health Care Delivery System",
+      "pub_year": 2006,
+      "authors": [
+        "Theodore R. Levin",
+        "Wei Zhao",
+        "Carol Conell",
+        "Laura C. Seeff",
+        "Diane L. Manninen",
+        "Jean A. Shapiro",
+        "Jane Schulman"
+      ],
+      "citation_count": 549,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1990084711",
+      "doi": "10.1056/nejmcp063038",
+      "title": "Adenomatous Polyps of the Colon",
+      "pub_year": 2006,
+      "authors": [
+        "Joel S. Levine",
+        "Dennis J. Ahnen"
+      ],
+      "citation_count": 193,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996835391",
+      "doi": "10.1007/s10350-008-9364-7",
+      "title": "Infliximab in Ulcerative Colitis is Associated with an Increased Risk of Postoperative Complications After Restorative Proctocolectomy",
+      "pub_year": 2008,
+      "authors": [
+        "Isabella Mor",
+        "J. Vogel",
+        "André da Luz Moreira",
+        "Bo Shen",
+        "Jeffrey Hammel",
+        "Feza H. Remzi"
+      ],
+      "citation_count": 298,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2005675882",
+      "doi": "10.1007/s00464-007-9251-7",
+      "title": "Colonoscopic perforations: a review of 30,366 patients",
+      "pub_year": 2007,
+      "authors": [
+        "T. H. Lüning",
+        "M. E. Keemers-Gels",
+        "W.B. Barendregt",
+        "Aik Choon Tan",
+        "Camiel Rosman"
+      ],
+      "citation_count": 314,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2013244077",
+      "doi": "10.1016/s0016-5107(06)80113-6",
+      "title": "Why is colonoscopy more difficult in women?",
+      "pub_year": 1996,
+      "authors": [
+        "Brian P. Saunders",
+        "Manabu Fukumoto",
+        "Steve Halligan",
+        "C. Jobling",
+        "Mohammed E. Moussa",
+        "Clive I. Bartram",
+        "Christopher B. Williams"
+      ],
+      "citation_count": 278,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2021780980",
+      "doi": "10.1067/s0016-5107(03)01890-x",
+      "title": "Perforation During Colonoscopy in Endoscopic Ambulatory Surgical Centers",
+      "pub_year": 2003,
+      "authors": [
+        "Louis Y. Korman",
+        "Bergein F. Overholt",
+        "Terry Box",
+        "Cynthia Kelsey Winker"
+      ],
+      "citation_count": 178,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2033141014",
+      "doi": "10.1159/000213852",
+      "title": "A Preliminary Investigation of the Effects of Aging on the Nerve Cell Number in the Myenteric Ganglia of the Human Colon",
+      "pub_year": 2009,
+      "authors": [
+        "Odair Alfredo Gomes",
+        "R.R. de Souza",
+        "Édson Aparecido Liberti"
+      ],
+      "citation_count": 192,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2049833279",
+      "doi": "10.1016/j.gassur.2005.06.023",
+      "title": "Colonoscopic Perforations: A Retrospective Review",
+      "pub_year": 2005,
+      "authors": [
+        "Corey W. Iqbal",
+        "Yun Shin Chun",
+        "David R. Farley"
+      ],
+      "citation_count": 164,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W11883821",
+      "doi": null,
+      "title": "A review of immune modifier therapy for inflammatory bowel disease: azathioprine, 6-mercaptopurine, cyclosporine, and methotrexate.",
+      "pub_year": 1996,
+      "authors": [
+        "W. Sandborn"
+      ],
+      "citation_count": 278,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W74558801",
+      "doi": null,
+      "title": "Sulphasalazine-induced DRESS.",
+      "pub_year": 2006,
+      "authors": [
+        "L Teo",
+        "E Tan"
+      ],
+      "citation_count": 38,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W80599457",
+      "doi": null,
+      "title": "Primary biliary cirrhosis associated with ulcerative colitis.",
+      "pub_year": 1993,
+      "authors": [
+        "Eric L. Lever",
+        "K Balasubramanian",
+        "Sally Condon",
+        "B Y Wat"
+      ],
+      "citation_count": 26,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W92620206",
+      "doi": null,
+      "title": "A case series of transplant recipients who despite immunosuppression developed inflammatory bowel disease.",
+      "pub_year": 1997,
+      "authors": [
+        "Thomas Riley",
+        "Robert E. Schoen",
+        "R G Lee",
+        "J. Rakela"
+      ],
+      "citation_count": 125,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W100906910",
+      "doi": null,
+      "title": "Liver abscess in Crohn's disease.",
+      "pub_year": 1994,
+      "authors": [
+        "Nimish Vakil",
+        "G Hayne",
+        "Avdhesh Kr. Sharma",
+        "David Hardy",
+        "Arthur S. Slutsky"
+      ],
+      "citation_count": 39,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W118352842",
+      "doi": "10.1016/s0889-857x(21)00061-2",
+      "title": "METHOTREXATE: ADVERSE REACTIONS AND MAJOR TOXICITIES",
+      "pub_year": 1994,
+      "authors": [
+        "Thomas A. Goodman",
+        "Richard P. Polisson"
+      ],
+      "citation_count": 90,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W125686439",
+      "doi": "10.1016/0002-9610(65)90018-8",
+      "title": "Sclerosing cholangitis",
+      "pub_year": 1965,
+      "authors": [
+        "Meredith P. Smith",
+        "Ralph H. Loe"
+      ],
+      "citation_count": 119,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W142591619",
+      "doi": "10.5754/hge11427",
+      "title": "Hepatogastroenterology",
+      "pub_year": 2011,
+      "authors": [
+        "Bin Zhu",
+        "Song Shi",
+        "You-Gang Ma",
+        "Fei Fan",
+        "Zhenzhen Yao"
+      ],
+      "citation_count": 960,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W184537007",
+      "doi": "10.1097/00007611-197809000-00031",
+      "title": "Granulomatous Hepatitis Associated With Salicylazosulfapyridine Therapy",
+      "pub_year": 1978,
+      "authors": [
+        "Jeffrey P. Callen",
+        "Robert M. Soderstrom"
+      ],
+      "citation_count": 40,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W188833110",
+      "doi": null,
+      "title": "Bile duct bacterial isolates in primary sclerosing cholangitis and certain other forms of cholestasis--a study of bile cultures from ERCP.",
+      "pub_year": 2001,
+      "authors": [
+        "Einar S. Björnsson",
+        "Anders Kilander",
+        "Rolf Olsson"
+      ],
+      "citation_count": 52,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1485623611",
+      "doi": "10.4049/jimmunol.155.6.3262",
+      "title": "Perinuclear anti-neutrophil cytoplasmic antibodies are spontaneously produced by mucosal B cells of ulcerative colitis patients",
+      "pub_year": 1995,
+      "authors": [
+        "Ş. Targan",
+        "C J Landers",
+        "L Cobb",
+        "Richard P. MacDermott",
+        "Alda Vidrich"
+      ],
+      "citation_count": 114,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1499288756",
+      "doi": "10.1111/j.1440-1746.2006.04559.x",
+      "title": "Hepatitis B and C virus infections and anti‐tumor necrosis factor‐α therapy: Guidelines for clinical approach",
+      "pub_year": 2006,
+      "authors": [
+        "Debbie M. Nathan",
+        "Peter Angus",
+        "Peter R Gibson"
+      ],
+      "citation_count": 135,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1520286921",
+      "doi": "10.1023/a:1026697613173",
+      "title": "Ulcerative Colitis Associated with Primary Biliary Cirrhosis",
+      "pub_year": 1999,
+      "authors": [
+        "M. Koulentaki",
+        "I. E. Koutroubakis",
+        "E. Petinaki",
+        "M. Tzardi",
+        "H. Oekonomaki",
+        "I. Mouzas",
+        "E. A. Kouroumalis"
+      ],
+      "citation_count": 39,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1521003313",
+      "doi": "10.1097/00004836-199312000-00004",
+      "title": "Acute Pancreatitis in Crohnʼs Disease",
+      "pub_year": 1993,
+      "authors": [
+        "Paul M. Weber",
+        "Frank Seibold",
+        "H Jenss"
+      ],
+      "citation_count": 92,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1529428049",
+      "doi": "10.1016/s0016-5085(88)80028-3",
+      "title": "Inhibition of Taurocholate and Ouabain Transport in Isolated Rat Hepatocytes by Cyclosporin A",
+      "pub_year": 1988,
+      "authors": [
+        "Neill H. Stacey",
+        "Barbara Kotecka"
+      ],
+      "citation_count": 64,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1963762401",
+      "doi": "10.1111/j.1572-0241.2005.40778.x",
+      "title": "Comprehensive Evaluation of Inflammatory and Noninflammatory Sequelae of Ileal Pouch-Anal Anastomoses",
+      "pub_year": 2005,
+      "authors": [
+        "Bo Shen",
+        "Victor W. Fazio",
+        "Feza H. Remzi",
+        "Conor P. Delaney",
+        "Ana E. Bennett",
+        "Jean-Paul Achkar",
+        "Aaron Brzezinski",
+        "Farah Khandwala",
+        "Wendy Liu",
+        "Marlene L. Bambrick",
+        "Jane Bast",
+        "Bret A. Lashner"
+      ],
+      "citation_count": 246,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964220988",
+      "doi": "10.3748/wjg.14.378",
+      "title": "Cancer in inflammatory bowel disease",
+      "pub_year": 2008,
+      "authors": [
+        "Jianlin Xie",
+        "Steven H. Itzkowitz"
+      ],
+      "citation_count": 330,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1970822454",
+      "doi": "10.1007/s10350-006-0517-2",
+      "title": "Adenocarcinoma in an Ileoanal Pouch Formed for Ulcerative Colitis in a Patient With Primary Sclerosing Cholangitis and a Liver Transplant: Report of a Case and Review of the Literature",
+      "pub_year": 2006,
+      "authors": [
+        "Mike Walker",
+        "Simon Radley"
+      ],
+      "citation_count": 49,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1974601812",
+      "doi": "10.1007/s10350-008-9238-z",
+      "title": "Adenocarcinoma Arising from the Rectal Stump Eleven Years after Excision of an Ileal J-Pouch in a Patient with Ulcerative Colitis: Report of a Case",
+      "pub_year": 2008,
+      "authors": [
+        "Mark Ellebæk Pedersen",
+        "Hans B. Rahr",
+        "Claus Fenger",
+        "Niels Qvist"
+      ],
+      "citation_count": 23,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1984645042",
+      "doi": "10.1007/bf02048042",
+      "title": "Adenocarcinoma in an Heal pouch for ulcerative colitis",
+      "pub_year": 1995,
+      "authors": [
+        "Juan Carlos Rodríguez-Sanjuán",
+        "Manuel García de Polavieja",
+        "Ángel Naranjo",
+        "Julio Castillo"
+      ],
+      "citation_count": 90,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1986214501",
+      "doi": "10.1007/s10350-004-6652-8",
+      "title": "Modified Pouchitis Disease Activity Index",
+      "pub_year": 2003,
+      "authors": [
+        "Bo Shen",
+        "Jean-Paul Achkar",
+        "Jason T. Connor",
+        "Adrian Ormsby",
+        "Feza H. Remzi",
+        "Charles Bevins",
+        "Aaron Brzezinski",
+        "Marlene L. Bambrick",
+        "Victor W. Fazio",
+        "Bret A. Lashner"
+      ],
+      "citation_count": 287,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1987870072",
+      "doi": "10.1007/s10350-007-0217-6",
+      "title": "Mucosal Dysplasia in Ileal Pelvic Pouches After Restorative Proctocolectomy",
+      "pub_year": 2007,
+      "authors": [
+        "Naris Nilubol",
+        "Ellen Scherl",
+        "David S. Bub",
+        "Stephen R. Gorfine",
+        "James F. Marion",
+        "Michael T. Harris",
+        "Asher Kornbluth",
+        "Simon Lichtiger",
+        "Peter Rubin",
+        "James George",
+        "Mark L. Chapman",
+        "Noam Harpaz",
+        "Daniel H. Present",
+        "Joel J. Bauer"
+      ],
+      "citation_count": 47,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996257748",
+      "doi": "10.1007/s003840050100",
+      "title": "Case reports Cancer in the anal canal (transitional zone) after restorative proctocolectomy with stapled ileal pouch-anal anastomosis",
+      "pub_year": 1997,
+      "authors": [
+        "R Sequens"
+      ],
+      "citation_count": 124,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1999601011",
+      "doi": "10.1159/000068855",
+      "title": "Carcinoma of Pelvic Pouch following Restorative Proctocolectomy: Report of a Case and Review of the Literature",
+      "pub_year": 2003,
+      "authors": [
+        "Sanjay Singh Negi",
+        "Adarsh Chaudhary",
+        "Ranjana Gondal"
+      ],
+      "citation_count": 39,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2010101981",
+      "doi": "10.1136/gut.31.4.473",
+      "title": "Cancer in an ileoanal reservoir: a new late complication?",
+      "pub_year": 1990,
+      "authors": [
+        "H. Štern",
+        "Shlomo Walfisch",
+        "Brian C Mullen",
+        "Robin S. McLeod",
+        "Z. Cohen"
+      ],
+      "citation_count": 202,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2013644344",
+      "doi": "10.1007/s10350-004-7293-7",
+      "title": "Adenocarcinoma in the Anal Transitional Zone After Ileal Pouch for Ulcerative Colitis",
+      "pub_year": 2003,
+      "authors": [
+        "Stephen Bell",
+        "Bryan R. Parry",
+        "M. Neill"
+      ],
+      "citation_count": 41,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1983990324",
+      "doi": "10.1002/ibd.20140",
+      "title": "MR colonography without bowel purgation for the assessment of inflammatory bowel diseases: Diagnostic accuracy and patient acceptance",
+      "pub_year": 2007,
+      "authors": [
+        "Jost Langhorst",
+        "C Kühle",
+        "Waleed Ajaj",
+        "Michael Nüfer",
+        "Jörg Barkhausen",
+        "Andreas Michalsen",
+        "Gustav Dobos",
+        "Thomas C. Lauenstein"
+      ],
+      "citation_count": 58,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2009267154",
+      "doi": "10.1007/s00261-006-9143-7",
+      "title": "Implementation of MR colonography",
+      "pub_year": 2006,
+      "authors": [
+        "Michael Patrick Achiam",
+        "Elizaveta Chabanova",
+        "Vibeke Løgager",
+        "Henrik S. Thomsen",
+        "Jacob Rosenberg"
+      ],
+      "citation_count": 12,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2011871774",
+      "doi": "10.1259/bjr/61732956",
+      "title": "Patient experiences of colonoscopy, barium enema and CT colonography: a qualitative study",
+      "pub_year": 2008,
+      "authors": [
+        "Christian von Wagner",
+        "Katrina Knight",
+        "Steve Halligan",
+        "Wendy Atkin",
+        "Richard Lilford",
+        "Dion Morton",
+        "J WARDLE"
+      ],
+      "citation_count": 60,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2023285670",
+      "doi": "10.1007/bf01833519",
+      "title": "Patients' preferences for learning the results of mammographic examinations",
+      "pub_year": 1992,
+      "authors": [
+        "Stuart E. Lind",
+        "Daniel B. Kopans",
+        "Mary‐Jo DelVecchio Good"
+      ],
+      "citation_count": 40,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2032794605",
+      "doi": "10.1111/j.1369-7625.2008.00520.x",
+      "title": "Choosing between CT colonography and colonoscopy in the diagnostic context: a qualitative study of influences on patient preferences",
+      "pub_year": 2009,
+      "authors": [
+        "Christian von Wagner",
+        "Steve Halligan",
+        "Wendy Atkin",
+        "Richard Lilford",
+        "Dion Morton",
+        "Jane Wardle"
+      ],
+      "citation_count": 47,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2043737067",
+      "doi": "10.1046/j.1369-7625.2003.00227.x",
+      "title": "Consumer information materials for diagnostic breast tests: women's views on information and their understanding of test results",
+      "pub_year": 2003,
+      "authors": [
+        "Heather M. Davey",
+        "Jacqueline Lim",
+        "Phyllis Butow",
+        "Alexandra Barratt",
+        "Nehmat Houssami",
+        "Roberta Higginson"
+      ],
+      "citation_count": 23,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2047789599",
+      "doi": "10.1055/s-2006-955043",
+      "title": "Patientenakzeptanz der MR-Kolonographie: Eine prospektive Erhebung im Vergleich zur konventionellen Koloskopie",
+      "pub_year": 2006,
+      "authors": [
+        "D Hartmann",
+        "Boris Bassler",
+        "B Pfeifer",
+        "A Eickhoff",
+        "U Weickert",
+        "J. F. Riemann",
+        "G Layer"
+      ],
+      "citation_count": 7,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2088287360",
+      "doi": "10.1007/s00330-007-0643-9",
+      "title": "MR colonography vs. optical colonoscopy: comparison of patients’ acceptance in a screening population",
+      "pub_year": 2007,
+      "authors": [
+        "Sonja Kinner",
+        "Christiane A. Kuehle",
+        "Jost Langhorst",
+        "Susanne C. Ladd",
+        "Michael Nuefer",
+        "Thomas Zoepf",
+        "Jörg Barkhausen",
+        "Guido Gerken",
+        "Thomas C. Lauenstein"
+      ],
+      "citation_count": 30,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2117763794",
+      "doi": "10.1007/s00261-004-0290-4",
+      "title": "Dark lumen MR colonography based on fecal tagging for detection of colorectal masses: accuracy and patient acceptance",
+      "pub_year": 2005,
+      "authors": [
+        "Susanne C. Goehde",
+        "Elke Sigrid Descher",
+        "Ann Boekstegers",
+        "T. Lauenstein",
+        "C Kühle",
+        "S Ruehm",
+        "Waleed Ajaj"
+      ],
+      "citation_count": 45,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2128155932",
+      "doi": "10.1136/gut.2003.037085",
+      "title": "Magnetic resonance colonography for the detection of inflammatory diseases of the large bowel: quantifying the inflammatory activity",
+      "pub_year": 2005,
+      "authors": [
+        "Waleed Ajaj",
+        "T C Lauenstein",
+        "G Pelster",
+        "G Gerken",
+        "S G Ruehm",
+        "J F Debatin",
+        "S C Goehde"
+      ],
+      "citation_count": 149,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2161928061",
+      "doi": "10.1148/radiol.2451061244",
+      "title": "MR Colonography with Limited Bowel Preparation: Patient Acceptance Compared with That of Full-Preparation Colonoscopy",
+      "pub_year": 2007,
+      "authors": [
+        "Jasper Florie",
+        "Erwin Birnie",
+        "Rogier E. van Gelder",
+        "Sebastiaan Jensch",
+        "Brigitte C.M. Haberkorn",
+        "J. F. W. M. Bartelsman",
+        "A van der Sluys Veer",
+        "P. Snel",
+        "Victor P. M. van der Hulst",
+        "Gouke J. Bonsel",
+        "Patrick M. Bossuyt",
+        "Jaap Stoker"
+      ],
+      "citation_count": 38,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W184321065",
+      "doi": null,
+      "title": "Progression and prognosis of Crohn's colitis.",
+      "pub_year": 1997,
+      "authors": [
+        "Frank Makowiec",
+        "Claudia Schmidtke",
+        "D Paczulla",
+        "R. Lamberts",
+        "H Becker",
+        "M Starlinger"
+      ],
+      "citation_count": 11,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1942412715",
+      "doi": "10.1016/s0016-5085(82)80336-3",
+      "title": "Granulomas Do Not Affect Postoperative Recurrence Rates in Crohn's Disease",
+      "pub_year": 1982,
+      "authors": [
+        "David M. Wolfson",
+        "David B. Sachar",
+        "Adam Cohen",
+        "Judith D. Goldberg",
+        "Roger Styczynski",
+        "Adrian J. Greenstein",
+        "Irwin M. Gelernt",
+        "Henry D. Janowitz"
+      ],
+      "citation_count": 92,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1963841461",
+      "doi": "10.1007/bf02234693",
+      "title": "Long-term results of ileal pouch-anal anastomosis for colorectal Crohn's disease",
+      "pub_year": 2001,
+      "authors": [
+        "J.-M. Régimbeau",
+        "Yves Panís",
+        "Marc Pocard",
+        "Yoram Bouhnik",
+        "Anne Lavergne‐Slove",
+        "Pierre Rufat",
+        "Claude Matuchansky",
+        "P Valleur"
+      ],
+      "citation_count": 173,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1975993759",
+      "doi": "10.1136/gut.1.2.87",
+      "title": "Crohn's Disease (Regional Enteritis) of the Large Intestine and its Distinction from Ulcerative Colitis",
+      "pub_year": 1960,
+      "authors": [
+        "H E Lockhart-Mummery",
+        "B C Morson"
+      ],
+      "citation_count": 566,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1985268987",
+      "doi": "10.1002/ibd.20517",
+      "title": "Clinical and molecular characteristics of isolated colonic Crohnʼs disease",
+      "pub_year": 2008,
+      "authors": [
+        "Laura Hancock",
+        "John Beckly",
+        "Alessandra Geremia",
+        "Rachel Cooney",
+        "Fraser Cummings",
+        "Saad Pathan",
+        "Changun Guo",
+        "Bryan F. Warren",
+        "N J McC Mortensen",
+        "Tariq Ahmad",
+        "Derek P. Jewell"
+      ],
+      "citation_count": 44,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1995311249",
+      "doi": "10.1016/s0140-6736(96)91344-6",
+      "title": "Ileal pouch/anal anastomosis for Crohn's disease",
+      "pub_year": 1996,
+      "authors": [
+        "Yves Panís",
+        "B Poupard",
+        "Pierre. Hautefeuille",
+        "P Valleur",
+        "János Németh",
+        "A Lavergne"
+      ],
+      "citation_count": 231,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1999582074",
+      "doi": "10.1016/s0039-6109(05)70278-4",
+      "title": "Crohn's Disease of the Colon",
+      "pub_year": 2001,
+      "authors": [
+        "T. Sloane Guy",
+        "Noel N. Williams",
+        "Ernest F. Rosato"
+      ],
+      "citation_count": 29,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2000533756",
+      "doi": "10.1007/s10350-004-0644-6",
+      "title": "Analysis of the Outcome of Ileal Pouch-Anal Anastomosis in Patients With Crohn's Disease",
+      "pub_year": 2004,
+      "authors": [
+        "John E. Hartley",
+        "V. W. Fazio",
+        "Feza H. Remzi",
+        "Ian C. Lavery",
+        "James M. Church",
+        "Scott A. Strong",
+        "Tracy L. Hull",
+        "Anthony J. Senagore",
+        "Conor P. Delaney"
+      ],
+      "citation_count": 125,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2000847137",
+      "doi": "10.1097/00000478-200010000-00011",
+      "title": "Diffuse Duodenitis Associated With Ulcerative Colitis",
+      "pub_year": 2000,
+      "authors": [
+        "Riccardo Valdez",
+        "Henry D. Appelman",
+        "Mary P. Bronner",
+        "Joel K. Greenson"
+      ],
+      "citation_count": 167,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2007792344",
+      "doi": "10.1007/s10350-004-6685-z",
+      "title": "Characterization and Clinical Behavior of Crohn's Disease Initially Presenting Predominantly as Colitis",
+      "pub_year": 2003,
+      "authors": [
+        "Emilio Morpurgo",
+        "Robert E. Petras",
+        "Jennifer Kimberling",
+        "Craig Ziegler",
+        "Susan Galandiuk"
+      ],
+      "citation_count": 39,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2019240389",
+      "doi": "10.1007/s10350-005-0059-z",
+      "title": "Crohn's Disease and Indeterminate Colitis and the Ileal Pouch-Anal Anastomosis: Outcomes and Patterns of Failure",
+      "pub_year": 2005,
+      "authors": [
+        "Carl J. Brown",
+        "Anthony R. MacLean",
+        "Zane Cohen",
+        "Helen MacRae",
+        "Brenda I. O’Connor",
+        "Robin S. McLeod"
+      ],
+      "citation_count": 154,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2019685737",
+      "doi": "10.1097/00054725-200409000-00005",
+      "title": "Disease Location, Anti-Saccharomyces cerevisiae Antibody, and NOD2/CARD15 Genotype Influence the Progression of Disease Behavior in Crohn’s Disease",
+      "pub_year": 2004,
+      "authors": [
+        "B Smith",
+        "Ian Arnott",
+        "Hazel E. Drummond",
+        "Elaine R. Nimmo",
+        "Jack Satsangi"
+      ],
+      "citation_count": 94,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2021493816",
+      "doi": "10.1002/bjs.4613",
+      "title": "Perianal Crohn's disease",
+      "pub_year": 2004,
+      "authors": [
+        "Baljit Singh",
+        "N J McC Mortensen",
+        "D P Jewell",
+        "Bruce George"
+      ],
+      "citation_count": 164,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2025519606",
+      "doi": "10.1097/01.mp.0000064746.82024.d1",
+      "title": "Diagnostic Problems and Advances in Inflammatory Bowel Disease",
+      "pub_year": 2003,
+      "authors": [
+        "Robert D. Odze"
+      ],
+      "citation_count": 208,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2027544012",
+      "doi": "10.1002/bjs.1800761123",
+      "title": "Prognosis after surgery for colonic Crohn's disease",
+      "pub_year": 1989,
+      "authors": [
+        "H A Andrews",
+        "P Lewis",
+        "Robert Allan"
+      ],
+      "citation_count": 69,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    }
+  ],
+  "edges": [
+    [
+      "W4390047599",
+      "W18247019"
+    ],
+    [
+      "W4390047599",
+      "W1970875868"
+    ],
+    [
+      "W4390047599",
+      "W1971278913"
+    ],
+    [
+      "W4390047599",
+      "W1980930938"
+    ],
+    [
+      "W4390047599",
+      "W1992431640"
+    ],
+    [
+      "W4390047599",
+      "W1998439888"
+    ],
+    [
+      "W4390047599",
+      "W2000570402"
+    ],
+    [
+      "W4390047599",
+      "W2004608617"
+    ],
+    [
+      "W4390047599",
+      "W2008687669"
+    ],
+    [
+      "W4390047599",
+      "W2010343667"
+    ],
+    [
+      "W4390047599",
+      "W2011140966"
+    ],
+    [
+      "W4390047599",
+      "W2018462275"
+    ],
+    [
+      "W4390047599",
+      "W2024525373"
+    ],
+    [
+      "W4390047599",
+      "W2027120214"
+    ],
+    [
+      "W4390047599",
+      "W2028675262"
+    ],
+    [
+      "W18247019",
+      "W1660654440"
+    ],
+    [
+      "W18247019",
+      "W1798837785"
+    ],
+    [
+      "W18247019",
+      "W1990160328"
+    ],
+    [
+      "W18247019",
+      "W2005785646"
+    ],
+    [
+      "W18247019",
+      "W2007649396"
+    ],
+    [
+      "W18247019",
+      "W2053395478"
+    ],
+    [
+      "W18247019",
+      "W2094464340"
+    ],
+    [
+      "W18247019",
+      "W2109881709"
+    ],
+    [
+      "W18247019",
+      "W2119864240"
+    ],
+    [
+      "W18247019",
+      "W2126865807"
+    ],
+    [
+      "W18247019",
+      "W2167945760"
+    ],
+    [
+      "W18247019",
+      "W2337711722"
+    ],
+    [
+      "W18247019",
+      "W4231770731"
+    ],
+    [
+      "W18247019",
+      "W4251422078"
+    ],
+    [
+      "W18247019",
+      "W4294127249"
+    ],
+    [
+      "W1970875868",
+      "W1745025171"
+    ],
+    [
+      "W1970875868",
+      "W1889878163"
+    ],
+    [
+      "W1970875868",
+      "W1945850540"
+    ],
+    [
+      "W1970875868",
+      "W1964090016"
+    ],
+    [
+      "W1970875868",
+      "W1970240830"
+    ],
+    [
+      "W1970875868",
+      "W1973699970"
+    ],
+    [
+      "W1970875868",
+      "W1977780279"
+    ],
+    [
+      "W1970875868",
+      "W1985032112"
+    ],
+    [
+      "W1970875868",
+      "W1986211862"
+    ],
+    [
+      "W1970875868",
+      "W1987420712"
+    ],
+    [
+      "W1970875868",
+      "W1987784240"
+    ],
+    [
+      "W1970875868",
+      "W1992126348"
+    ],
+    [
+      "W1970875868",
+      "W1992846630"
+    ],
+    [
+      "W1970875868",
+      "W1997755138"
+    ],
+    [
+      "W1970875868",
+      "W1999923293"
+    ],
+    [
+      "W1971278913",
+      "W133530135"
+    ],
+    [
+      "W1971278913",
+      "W1545203666"
+    ],
+    [
+      "W1971278913",
+      "W1825428369"
+    ],
+    [
+      "W1971278913",
+      "W1964250747"
+    ],
+    [
+      "W1971278913",
+      "W1970025534"
+    ],
+    [
+      "W1971278913",
+      "W1978969318"
+    ],
+    [
+      "W1971278913",
+      "W1979145233"
+    ],
+    [
+      "W1971278913",
+      "W1982089521"
+    ],
+    [
+      "W1971278913",
+      "W1985858417"
+    ],
+    [
+      "W1971278913",
+      "W1989238653"
+    ],
+    [
+      "W1971278913",
+      "W1990531505"
+    ],
+    [
+      "W1971278913",
+      "W1994178077"
+    ],
+    [
+      "W1971278913",
+      "W1995572415"
+    ],
+    [
+      "W1971278913",
+      "W2005654050"
+    ],
+    [
+      "W1971278913",
+      "W2007666132"
+    ],
+    [
+      "W1980930938",
+      "W1991089715"
+    ],
+    [
+      "W1980930938",
+      "W2004813488"
+    ],
+    [
+      "W1980930938",
+      "W2073083135"
+    ],
+    [
+      "W1992431640",
+      "W53993344"
+    ],
+    [
+      "W1992431640",
+      "W105484314"
+    ],
+    [
+      "W1992431640",
+      "W1663583211"
+    ],
+    [
+      "W1992431640",
+      "W1874022447"
+    ],
+    [
+      "W1992431640",
+      "W1973291763"
+    ],
+    [
+      "W1992431640",
+      "W1973441719"
+    ],
+    [
+      "W1992431640",
+      "W1973889287"
+    ],
+    [
+      "W1992431640",
+      "W1979300931"
+    ],
+    [
+      "W1992431640",
+      "W1989177546"
+    ],
+    [
+      "W1992431640",
+      "W1992431640"
+    ],
+    [
+      "W1992431640",
+      "W2001720082"
+    ],
+    [
+      "W1992431640",
+      "W2006412887"
+    ],
+    [
+      "W1992431640",
+      "W2009818256"
+    ],
+    [
+      "W1992431640",
+      "W2019185937"
+    ],
+    [
+      "W1992431640",
+      "W2028875662"
+    ],
+    [
+      "W1998439888",
+      "W27886363"
+    ],
+    [
+      "W1998439888",
+      "W1503584616"
+    ],
+    [
+      "W1998439888",
+      "W1977445011"
+    ],
+    [
+      "W1998439888",
+      "W1996476032"
+    ],
+    [
+      "W1998439888",
+      "W2001943596"
+    ],
+    [
+      "W1998439888",
+      "W2018456421"
+    ],
+    [
+      "W1998439888",
+      "W2019886362"
+    ],
+    [
+      "W1998439888",
+      "W2024293518"
+    ],
+    [
+      "W1998439888",
+      "W2045677912"
+    ],
+    [
+      "W1998439888",
+      "W2048717004"
+    ],
+    [
+      "W1998439888",
+      "W2049852973"
+    ],
+    [
+      "W1998439888",
+      "W2051562627"
+    ],
+    [
+      "W1998439888",
+      "W2051828495"
+    ],
+    [
+      "W1998439888",
+      "W2054710465"
+    ],
+    [
+      "W1998439888",
+      "W2067923219"
+    ],
+    [
+      "W2000570402",
+      "W70937671"
+    ],
+    [
+      "W2000570402",
+      "W91792756"
+    ],
+    [
+      "W2000570402",
+      "W138475980"
+    ],
+    [
+      "W2000570402",
+      "W195548511"
+    ],
+    [
+      "W2000570402",
+      "W1521144418"
+    ],
+    [
+      "W2000570402",
+      "W1533325322"
+    ],
+    [
+      "W2000570402",
+      "W1555027006"
+    ],
+    [
+      "W2000570402",
+      "W1570526968"
+    ],
+    [
+      "W2000570402",
+      "W1612925887"
+    ],
+    [
+      "W2000570402",
+      "W1965499257"
+    ],
+    [
+      "W2000570402",
+      "W1966072699"
+    ],
+    [
+      "W2000570402",
+      "W1969067961"
+    ],
+    [
+      "W2000570402",
+      "W1969954064"
+    ],
+    [
+      "W2000570402",
+      "W1973165951"
+    ],
+    [
+      "W2000570402",
+      "W1973691341"
+    ],
+    [
+      "W2004608617",
+      "W4831360"
+    ],
+    [
+      "W2004608617",
+      "W6772637"
+    ],
+    [
+      "W2004608617",
+      "W24323488"
+    ],
+    [
+      "W2004608617",
+      "W45231447"
+    ],
+    [
+      "W2004608617",
+      "W48748639"
+    ],
+    [
+      "W2004608617",
+      "W53487432"
+    ],
+    [
+      "W2004608617",
+      "W80680796"
+    ],
+    [
+      "W2004608617",
+      "W82501712"
+    ],
+    [
+      "W2004608617",
+      "W83103461"
+    ],
+    [
+      "W2004608617",
+      "W114039752"
+    ],
+    [
+      "W2004608617",
+      "W115214298"
+    ],
+    [
+      "W2004608617",
+      "W120076783"
+    ],
+    [
+      "W2004608617",
+      "W160081874"
+    ],
+    [
+      "W2004608617",
+      "W173507409"
+    ],
+    [
+      "W2004608617",
+      "W184672142"
+    ],
+    [
+      "W2008687669",
+      "W248910915"
+    ],
+    [
+      "W2008687669",
+      "W1492157159"
+    ],
+    [
+      "W2008687669",
+      "W1925602349"
+    ],
+    [
+      "W2008687669",
+      "W1955108199"
+    ],
+    [
+      "W2008687669",
+      "W1957194282"
+    ],
+    [
+      "W2008687669",
+      "W1970234962"
+    ],
+    [
+      "W2008687669",
+      "W1974943298"
+    ],
+    [
+      "W2008687669",
+      "W1977445011"
+    ],
+    [
+      "W2008687669",
+      "W1980442626"
+    ],
+    [
+      "W2008687669",
+      "W1995372822"
+    ],
+    [
+      "W2008687669",
+      "W1996715439"
+    ],
+    [
+      "W2008687669",
+      "W2003063732"
+    ],
+    [
+      "W2008687669",
+      "W2005097349"
+    ],
+    [
+      "W2008687669",
+      "W2016321388"
+    ],
+    [
+      "W2008687669",
+      "W2016704705"
+    ],
+    [
+      "W2010343667",
+      "W126718257"
+    ],
+    [
+      "W2010343667",
+      "W1529007328"
+    ],
+    [
+      "W2010343667",
+      "W1720097311"
+    ],
+    [
+      "W2010343667",
+      "W1973691341"
+    ],
+    [
+      "W2010343667",
+      "W1982286504"
+    ],
+    [
+      "W2010343667",
+      "W1992431640"
+    ],
+    [
+      "W2010343667",
+      "W1993500055"
+    ],
+    [
+      "W2010343667",
+      "W1996322967"
+    ],
+    [
+      "W2010343667",
+      "W1996467603"
+    ],
+    [
+      "W2010343667",
+      "W1996855065"
+    ],
+    [
+      "W2010343667",
+      "W1999901368"
+    ],
+    [
+      "W2010343667",
+      "W2000437875"
+    ],
+    [
+      "W2010343667",
+      "W2005047672"
+    ],
+    [
+      "W2010343667",
+      "W2009179984"
+    ],
+    [
+      "W2010343667",
+      "W2013519320"
+    ],
+    [
+      "W2011140966",
+      "W79472281"
+    ],
+    [
+      "W2011140966",
+      "W203882282"
+    ],
+    [
+      "W2011140966",
+      "W1573208638"
+    ],
+    [
+      "W2011140966",
+      "W1736289269"
+    ],
+    [
+      "W2011140966",
+      "W1964354570"
+    ],
+    [
+      "W2011140966",
+      "W1964693624"
+    ],
+    [
+      "W2011140966",
+      "W1970573437"
+    ],
+    [
+      "W2011140966",
+      "W1972851114"
+    ],
+    [
+      "W2011140966",
+      "W1990084711"
+    ],
+    [
+      "W2011140966",
+      "W1996835391"
+    ],
+    [
+      "W2011140966",
+      "W2005675882"
+    ],
+    [
+      "W2011140966",
+      "W2013244077"
+    ],
+    [
+      "W2011140966",
+      "W2021780980"
+    ],
+    [
+      "W2011140966",
+      "W2033141014"
+    ],
+    [
+      "W2011140966",
+      "W2049833279"
+    ],
+    [
+      "W2018462275",
+      "W11883821"
+    ],
+    [
+      "W2018462275",
+      "W74558801"
+    ],
+    [
+      "W2018462275",
+      "W80599457"
+    ],
+    [
+      "W2018462275",
+      "W92620206"
+    ],
+    [
+      "W2018462275",
+      "W100906910"
+    ],
+    [
+      "W2018462275",
+      "W118352842"
+    ],
+    [
+      "W2018462275",
+      "W125686439"
+    ],
+    [
+      "W2018462275",
+      "W142591619"
+    ],
+    [
+      "W2018462275",
+      "W184537007"
+    ],
+    [
+      "W2018462275",
+      "W188833110"
+    ],
+    [
+      "W2018462275",
+      "W1485623611"
+    ],
+    [
+      "W2018462275",
+      "W1499288756"
+    ],
+    [
+      "W2018462275",
+      "W1520286921"
+    ],
+    [
+      "W2018462275",
+      "W1521003313"
+    ],
+    [
+      "W2018462275",
+      "W1529428049"
+    ],
+    [
+      "W2024525373",
+      "W195548511"
+    ],
+    [
+      "W2024525373",
+      "W1521144418"
+    ],
+    [
+      "W2024525373",
+      "W1963762401"
+    ],
+    [
+      "W2024525373",
+      "W1964220988"
+    ],
+    [
+      "W2024525373",
+      "W1965499257"
+    ],
+    [
+      "W2024525373",
+      "W1970822454"
+    ],
+    [
+      "W2024525373",
+      "W1974601812"
+    ],
+    [
+      "W2024525373",
+      "W1984645042"
+    ],
+    [
+      "W2024525373",
+      "W1986214501"
+    ],
+    [
+      "W2024525373",
+      "W1987870072"
+    ],
+    [
+      "W2024525373",
+      "W1996257748"
+    ],
+    [
+      "W2024525373",
+      "W1996467603"
+    ],
+    [
+      "W2024525373",
+      "W1999601011"
+    ],
+    [
+      "W2024525373",
+      "W2010101981"
+    ],
+    [
+      "W2024525373",
+      "W2013644344"
+    ],
+    [
+      "W2027120214",
+      "W1983990324"
+    ],
+    [
+      "W2027120214",
+      "W2009267154"
+    ],
+    [
+      "W2027120214",
+      "W2011871774"
+    ],
+    [
+      "W2027120214",
+      "W2023285670"
+    ],
+    [
+      "W2027120214",
+      "W2032794605"
+    ],
+    [
+      "W2027120214",
+      "W2043737067"
+    ],
+    [
+      "W2027120214",
+      "W2047789599"
+    ],
+    [
+      "W2027120214",
+      "W2088287360"
+    ],
+    [
+      "W2027120214",
+      "W2117763794"
+    ],
+    [
+      "W2027120214",
+      "W2128155932"
+    ],
+    [
+      "W2027120214",
+      "W2161928061"
+    ],
+    [
+      "W2028675262",
+      "W184321065"
+    ],
+    [
+      "W2028675262",
+      "W1942412715"
+    ],
+    [
+      "W2028675262",
+      "W1963841461"
+    ],
+    [
+      "W2028675262",
+      "W1975993759"
+    ],
+    [
+      "W2028675262",
+      "W1985268987"
+    ],
+    [
+      "W2028675262",
+      "W1995311249"
+    ],
+    [
+      "W2028675262",
+      "W1999582074"
+    ],
+    [
+      "W2028675262",
+      "W2000533756"
+    ],
+    [
+      "W2028675262",
+      "W2000847137"
+    ],
+    [
+      "W2028675262",
+      "W2007792344"
+    ],
+    [
+      "W2028675262",
+      "W2019240389"
+    ],
+    [
+      "W2028675262",
+      "W2019685737"
+    ],
+    [
+      "W2028675262",
+      "W2021493816"
+    ],
+    [
+      "W2028675262",
+      "W2025519606"
+    ],
+    [
+      "W2028675262",
+      "W2027544012"
+    ]
+  ],
+  "meta": {
+    "node_count": 217,
+    "edge_count": 224,
+    "sparse_ids": [
+      "W1980930938",
+      "W1945850540",
+      "W1964090016",
+      "W1977780279",
+      "W1987784240",
+      "W1999923293",
+      "W1982089521",
+      "W1990531505",
+      "W105484314",
+      "W2001720082",
+      "W1503584616",
+      "W2024293518",
+      "W138475980",
+      "W195548511",
+      "W1533325322",
+      "W1966072699",
+      "W4831360",
+      "W6772637",
+      "W24323488",
+      "W45231447",
+      "W48748639",
+      "W80680796",
+      "W114039752",
+      "W120076783",
+      "W173507409",
+      "W184672142",
+      "W248910915",
+      "W1492157159",
+      "W1970234962",
+      "W1996715439",
+      "W126718257",
+      "W79472281",
+      "W203882282",
+      "W1964693624",
+      "W2033141014",
+      "W11883821",
+      "W74558801",
+      "W80599457",
+      "W92620206",
+      "W100906910",
+      "W142591619",
+      "W184537007",
+      "W188833110",
+      "W1485623611",
+      "W1521003313",
+      "W2047789599",
+      "W184321065"
+    ],
+    "unresolved_ids": [],
+    "unresolved_count": 0,
+    "failed_ids": [],
+    "failed_count": 0
+  }
+}
