@@ -375,8 +375,17 @@ take an injectable fetch callable (`fetch(ref) -> dict`, ref is a DOI or a
 implementation reads lineage/fixtures/openalex_sample.json. resolve and
 traverse never touch the network themselves.
 
-Live entry point: `python -m lineage.traverse <seed_doi> [depth]` resolves,
-traverses, and persists via store.write_run.
+Live entry point: `python -m lineage.traverse <seed_doi> [depth] [top_k]`
+resolves, traverses, and persists via store.write_run.
+
+Fan-out cap (top_k): a per-node cap on how many referenced_works are
+followed, applied as a cheap first-N slice (NOT quality selection, that is
+stage 3). Bounds the walk to roughly top_k + top_k^2 fetches at depth 2,
+before dedup. DEFAULT_TOP_K=15 (~240 worst case) is the safe default so a
+run reliably completes; the raw depth-2 fan-out is hundreds of sequential
+OpenAlex requests, which triggers connection drops and is wasted work
+since stage 3 prunes anyway. Pass a larger top_k explicitly for a deeper
+walk: light by default, deep on request. Recorded in the run dict.
 
 Node schema (normalized; persisted on every node):
   - openalex_id   short id, URL prefix stripped (W123)
@@ -397,19 +406,36 @@ edges, then stripped before write_run (edges carry the same information).
 
 Run dict (one JSON object per run file):
   schema_version (1), run_id, created_at (ISO), seed {doi, openalex_id,
-  title}, depth, nodes [...], edges [[citing_id, referenced_id], ...],
+  title}, depth, top_k, nodes [...], edges [[citing_id, referenced_id], ...],
   meta {node_count, edge_count, sparse_ids, unresolved_ids,
-  unresolved_count}.
+  unresolved_count, failed_ids, failed_count}.
 
-unresolved_ids/unresolved_count: references that 404 during the walk.
-A single reference OpenAlex lacks (HTTP 404) must not kill the run:
-http_fetch re-raises a 404 as WorkNotFound, traverse skips it (no node,
-no edge) and logs a WARNING carrying the work id and its citing parent,
-so a real 404 can be looked up by hand. Every other HTTP/network error
-(rate limit, auth, 5xx, connection) propagates and aborts the run.
-unresolved_count is also the coverage-gap signal feeding the deferred
-backfill. Consistency note for later (do NOT do now): sparse_ids should
-gain a sparse_count sibling so meta's *_ids/*_count shape is uniform.
+Two skip buckets, distinct on purpose because they mean different things
+to future-you reading a run:
+  - unresolved_ids/unresolved_count: references that returned HTTP 404.
+    PERMANENT coverage gap, OpenAlex does not have the work; a re-run will
+    not recover them.
+  - failed_ids/failed_count: references that exhausted bounded retries on a
+    TRANSIENT error (connection drop, timeout, 5xx, rate limit that did not
+    clear). NOT permanent; a re-run might recover them.
+Both are skipped the same way (no node, no edge, walk continues) and each
+skip logs a WARNING carrying the work id AND its citing parent, so a real
+failure traces back to which paper referenced it. unresolved_count is the
+coverage-gap signal feeding the deferred backfill.
+
+Failure classification lives at the openalex.http_fetch boundary:
+  - HTTP 404 -> WorkNotFound (permanent skip).
+  - HTTP 429 / 5xx / URLError / connection drop / timeout -> retried
+    MAX_RETRIES=3 times with exponential backoff (1, 2, 4 s, cap 8 s; 429
+    honors Retry-After), then raised as FetchFailed (transient skip).
+  - HTTP 401 / 403 / other 4xx -> propagate and abort the run (config or
+    auth problem, not transient).
+POLITE_DELAY=0.2 s spaces out requests (OpenAlex polite pool allows ~10/s)
+to stop triggering the drops in the first place. These are constants in
+openalex.py, not CLI args.
+
+Consistency note for later (do NOT do now): sparse_ids should gain a
+sparse_count sibling so meta's *_ids/*_count shape is uniform.
 
 run_id format: `{slug}-{YYYYMMDD}` where slug is the seed DOI with
 non-alphanumerics collapsed to hyphens. No uuid suffix: a same-day rerun of

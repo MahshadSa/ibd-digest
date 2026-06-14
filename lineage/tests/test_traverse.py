@@ -1,6 +1,6 @@
 import unittest
 
-from lineage.resolve import resolve
+from lineage.resolve import FetchFailed, resolve
 from lineage.tests.fixture import SEED_DOI, load_fixture, make_fetch
 from lineage.traverse import build_run, traverse
 
@@ -98,6 +98,60 @@ class TestUnresolvedReference(unittest.TestCase):
 
     def test_bad_id_fetched_once(self):
         self.assertEqual(self.calls[self.BAD_ID], 1)
+
+
+class TestTopKCap(unittest.TestCase):
+    def setUp(self):
+        # Seed with five references; each child has none. top_k=2 must follow
+        # only the first two and never fetch the rest.
+        self.data = {
+            "10.1000/cap": {
+                "id": "https://openalex.org/W1",
+                "doi": "https://doi.org/10.1000/cap",
+                "referenced_works": [f"https://openalex.org/W{i}" for i in range(2, 7)],
+            },
+        }
+        for i in range(2, 7):
+            self.data[f"W{i}"] = {"id": f"https://openalex.org/W{i}", "referenced_works": []}
+        self.fetch, self.calls = make_fetch(self.data)
+
+    def test_only_first_k_followed(self):
+        run = build_run("10.1000/cap", self.fetch, depth=1, top_k=2)
+        ids = {n["openalex_id"] for n in run["nodes"]}
+        self.assertEqual(ids, {"W1", "W2", "W3"})
+        self.assertNotIn("W4", self.calls)
+        self.assertNotIn("W6", self.calls)
+        self.assertEqual(run["top_k"], 2)
+
+
+class TestTransientFailure(unittest.TestCase):
+    BAD_ID = "W8888888888"
+
+    def setUp(self):
+        data = load_fixture()
+        data["W3000000002"]["referenced_works"] = [f"https://openalex.org/{self.BAD_ID}"]
+        base, self.calls = make_fetch(data)
+
+        def fetch(ref):
+            if ref == self.BAD_ID:
+                self.calls[ref] += 1
+                raise FetchFailed(ref)
+            return base(ref)
+
+        self.run = build_run(SEED_DOI, fetch, depth=2)
+        self.ids = {n["openalex_id"] for n in self.run["nodes"]}
+
+    def test_walk_completes_with_all_good_nodes(self):
+        self.assertEqual(len(self.run["nodes"]), 9)
+        self.assertNotIn(self.BAD_ID, self.ids)
+
+    def test_no_edge_references_bad_id(self):
+        self.assertFalse(any(self.BAD_ID in edge for edge in self.run["edges"]))
+
+    def test_meta_records_failed_not_unresolved(self):
+        self.assertEqual(self.run["meta"]["failed_ids"], [self.BAD_ID])
+        self.assertEqual(self.run["meta"]["failed_count"], 1)
+        self.assertEqual(self.run["meta"]["unresolved_count"], 0)
 
 
 if __name__ == "__main__":

@@ -10,43 +10,59 @@ import logging
 from datetime import date, datetime
 
 from lineage import store
-from lineage.resolve import Fetch, WorkNotFound, resolve, to_node
+from lineage.resolve import Fetch, FetchFailed, WorkNotFound, resolve, to_node
 
 logger = logging.getLogger(__name__)
 
+# Per-node cap on references followed (the deferred top_k). Bounds the walk to
+# roughly top_k + top_k^2 fetches at depth 2, before dedup. Cheap first-N slice,
+# not quality selection: stage 3 prunes. Light by default, deeper on request.
+DEFAULT_TOP_K = 15
 
-def traverse(seed_node: dict, fetch: Fetch, depth: int = 2) -> dict:
+
+def traverse(seed_node: dict, fetch: Fetch, depth: int = 2, top_k: int = DEFAULT_TOP_K) -> dict:
     """Walk references breadth-first to the given depth.
 
-    Returns {nodes, edges, unresolved_ids}. nodes are in-memory (still carry
-    referenced_works); edges are [citing_id, referenced_id] pairs for every
-    depth-0 and depth-1 parent. A reference that 404s (WorkNotFound) is skipped
-    and recorded in unresolved_ids: no node, no edge, so the graph stays
-    consistent. Other fetch errors propagate and abort the walk.
+    Returns {nodes, edges, unresolved_ids, failed_ids}. nodes are in-memory
+    (still carry referenced_works); edges are [citing_id, referenced_id] pairs
+    for every depth-0 and depth-1 parent. Only the first top_k referenced_works
+    of each parent are followed. A reference that 404s (WorkNotFound) goes to
+    unresolved_ids; one exhausting retries (FetchFailed) goes to failed_ids.
+    Both are skipped (no node, no edge) so the graph stays consistent; any other
+    fetch error propagates and aborts the walk.
     """
     nodes: dict[str, dict] = {seed_node["openalex_id"]: seed_node}
     edges: list[list[str]] = []
     unresolved: dict[str, None] = {}
+    failed: dict[str, None] = {}
     frontier = [seed_node]
 
     for d in range(1, depth + 1):
         next_frontier: list[dict] = []
         for parent in frontier:
-            for ref_id in parent["referenced_works"]:
+            for ref_id in parent["referenced_works"][:top_k]:
                 if ref_id in nodes:
                     edges.append([parent["openalex_id"], ref_id])
                     continue
-                if ref_id in unresolved:
+                if ref_id in unresolved or ref_id in failed:
                     continue
                 try:
                     work = fetch(ref_id)
                 except WorkNotFound:
                     logger.warning(
-                        "Skipping unresolved reference %s (cited by %s)",
+                        "Skipping unresolved reference %s (404, cited by %s)",
                         ref_id,
                         parent["openalex_id"],
                     )
                     unresolved[ref_id] = None
+                    continue
+                except FetchFailed:
+                    logger.warning(
+                        "Skipping failed reference %s (transient, cited by %s)",
+                        ref_id,
+                        parent["openalex_id"],
+                    )
+                    failed[ref_id] = None
                     continue
                 child = to_node(work, depth=d)
                 nodes[ref_id] = child
@@ -55,7 +71,12 @@ def traverse(seed_node: dict, fetch: Fetch, depth: int = 2) -> dict:
         logger.info("Depth %d: %d new nodes", d, len(next_frontier))
         frontier = next_frontier
 
-    return {"nodes": list(nodes.values()), "edges": edges, "unresolved_ids": list(unresolved)}
+    return {
+        "nodes": list(nodes.values()),
+        "edges": edges,
+        "unresolved_ids": list(unresolved),
+        "failed_ids": list(failed),
+    }
 
 
 def _strip(node: dict) -> dict:
@@ -63,10 +84,10 @@ def _strip(node: dict) -> dict:
     return {k: v for k, v in node.items() if k != "referenced_works"}
 
 
-def build_run(seed_doi: str, fetch: Fetch, depth: int = 2) -> dict:
+def build_run(seed_doi: str, fetch: Fetch, depth: int = 2, top_k: int = DEFAULT_TOP_K) -> dict:
     """Resolve, traverse, and assemble the run dict. Does not write."""
     seed = resolve(seed_doi, fetch)
-    graph = traverse(seed, fetch, depth=depth)
+    graph = traverse(seed, fetch, depth=depth, top_k=top_k)
     nodes = [_strip(n) for n in graph["nodes"]]
     sparse_ids = [n["openalex_id"] for n in nodes if not n["ref_complete"]]
     return {
@@ -79,6 +100,7 @@ def build_run(seed_doi: str, fetch: Fetch, depth: int = 2) -> dict:
             "title": seed["title"],
         },
         "depth": depth,
+        "top_k": top_k,
         "nodes": nodes,
         "edges": graph["edges"],
         "meta": {
@@ -87,6 +109,8 @@ def build_run(seed_doi: str, fetch: Fetch, depth: int = 2) -> dict:
             "sparse_ids": sparse_ids,
             "unresolved_ids": graph["unresolved_ids"],
             "unresolved_count": len(graph["unresolved_ids"]),
+            "failed_ids": graph["failed_ids"],
+            "failed_count": len(graph["failed_ids"]),
         },
     }
 
@@ -103,13 +127,15 @@ if __name__ == "__main__":
     )
     _seed_doi = sys.argv[1]
     _depth = int(sys.argv[2]) if len(sys.argv) > 2 else 2
-    _run = build_run(_seed_doi, openalex.http_fetch, depth=_depth)
+    _top_k = int(sys.argv[3]) if len(sys.argv) > 3 else DEFAULT_TOP_K
+    _run = build_run(_seed_doi, openalex.http_fetch, depth=_depth, top_k=_top_k)
     _path = store.write_run(_run)
     logger.info(
-        "Wrote %s: %d nodes, %d edges, %d sparse, %d unresolved",
+        "Wrote %s: %d nodes, %d edges, %d sparse, %d unresolved, %d failed",
         _path,
         _run["meta"]["node_count"],
         _run["meta"]["edge_count"],
         len(_run["meta"]["sparse_ids"]),
         _run["meta"]["unresolved_count"],
+        _run["meta"]["failed_count"],
     )

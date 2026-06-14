@@ -20,8 +20,17 @@ Fetch = Callable[[str], dict]
 class WorkNotFound(Exception):
     """A fetch ref (DOI or work id) does not exist upstream (HTTP 404).
 
-    Part of the fetch contract: a fetch may raise this for a single missing
-    work. traverse skips and counts these; other errors propagate and abort.
+    Permanent: a re-run will not recover it. traverse skips and counts these
+    in unresolved_ids; other errors propagate and abort.
+    """
+
+
+class FetchFailed(Exception):
+    """A fetch ref could not be retrieved after bounded retries (transient).
+
+    Connection drop, timeout, 5xx, or rate limit that did not clear. Unlike
+    WorkNotFound this is not permanent: a re-run might recover it. traverse
+    skips and counts these in failed_ids.
     """
 
 
