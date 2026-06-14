@@ -1,0 +1,127 @@
+{
+  "10.1000/seed": {
+    "id": "https://openalex.org/W2000000001",
+    "doi": "https://doi.org/10.1000/SEED",
+    "display_name": "Seed paper on intestinal ultrasound in Crohn disease",
+    "publication_year": 2022,
+    "cited_by_count": 140,
+    "authorships": [
+      {"author": {"display_name": "Alice Adams"}},
+      {"author": {"display_name": "Bob Brown"}}
+    ],
+    "referenced_works": [
+      "https://openalex.org/W3000000001",
+      "https://openalex.org/W3000000002",
+      "https://openalex.org/W3000000003",
+      "https://openalex.org/W3000000004",
+      "https://openalex.org/W3000000005"
+    ]
+  },
+  "W2000000001": {
+    "id": "https://openalex.org/W2000000001",
+    "doi": "https://doi.org/10.1000/SEED",
+    "display_name": "Seed paper on intestinal ultrasound in Crohn disease",
+    "publication_year": 2022,
+    "cited_by_count": 140,
+    "authorships": [
+      {"author": {"display_name": "Alice Adams"}},
+      {"author": {"display_name": "Bob Brown"}}
+    ],
+    "referenced_works": [
+      "https://openalex.org/W3000000001",
+      "https://openalex.org/W3000000002",
+      "https://openalex.org/W3000000003",
+      "https://openalex.org/W3000000004",
+      "https://openalex.org/W3000000005"
+    ]
+  },
+  "W3000000001": {
+    "id": "https://openalex.org/W3000000001",
+    "doi": "https://doi.org/10.1000/d1a",
+    "display_name": "Depth-1 paper A",
+    "publication_year": 2018,
+    "cited_by_count": 60,
+    "authorships": [{"author": {"display_name": "Carol Clark"}}],
+    "referenced_works": [
+      "https://openalex.org/W4000000006",
+      "https://openalex.org/W4000000007"
+    ]
+  },
+  "W3000000002": {
+    "id": "https://openalex.org/W3000000002",
+    "doi": "https://doi.org/10.1000/d1b",
+    "display_name": "Depth-1 paper B with no references",
+    "publication_year": 2017,
+    "cited_by_count": 30,
+    "authorships": [{"author": {"display_name": "Dan Davis"}}],
+    "referenced_works": []
+  },
+  "W3000000003": {
+    "id": "https://openalex.org/W3000000003",
+    "doi": "https://doi.org/10.1000/d1c",
+    "display_name": "Depth-1 paper C",
+    "publication_year": 2019,
+    "cited_by_count": 45,
+    "authorships": [{"author": {"display_name": "Eve Evans"}}],
+    "referenced_works": [
+      "https://openalex.org/W4000000007",
+      "https://openalex.org/W4000000008"
+    ]
+  },
+  "W3000000004": {
+    "id": "https://openalex.org/W3000000004",
+    "doi": "https://doi.org/10.1000/d1d",
+    "display_name": "Depth-1 paper D",
+    "publication_year": 2016,
+    "cited_by_count": 20,
+    "authorships": [{"author": {"display_name": "Frank Foster"}}],
+    "referenced_works": [
+      "https://openalex.org/W4000000006"
+    ]
+  },
+  "W3000000005": {
+    "id": "https://openalex.org/W3000000005",
+    "doi": null,
+    "display_name": "Depth-1 paper E with no DOI and no references",
+    "publication_year": 2015,
+    "cited_by_count": 10,
+    "authorships": [{"author": {"display_name": "Grace Green"}}],
+    "referenced_works": []
+  },
+  "W4000000006": {
+    "id": "https://openalex.org/W4000000006",
+    "doi": "https://doi.org/10.1000/d2a",
+    "display_name": "Depth-2 paper with full reference coverage",
+    "publication_year": 2010,
+    "cited_by_count": 200,
+    "authorships": [{"author": {"display_name": "Henry Hill"}}],
+    "referenced_works": [
+      "https://openalex.org/W5000000100",
+      "https://openalex.org/W5000000101",
+      "https://openalex.org/W5000000102",
+      "https://openalex.org/W5000000103",
+      "https://openalex.org/W5000000104",
+      "https://openalex.org/W5000000105"
+    ]
+  },
+  "W4000000007": {
+    "id": "https://openalex.org/W4000000007",
+    "doi": "https://doi.org/10.1000/d2b",
+    "display_name": "Depth-2 paper shared by two depth-1 parents",
+    "publication_year": 2011,
+    "cited_by_count": 75,
+    "authorships": [{"author": {"display_name": "Ivy Irving"}}],
+    "referenced_works": [
+      "https://openalex.org/W5000000200"
+    ]
+  },
+  "W4000000008": {
+    "id": "https://openalex.org/W4000000008",
+    "doi": "https://doi.org/10.1000/d2c",
+    "display_name": "Depth-2 paper with no references",
+    "publication_year": 2012,
+    "cited_by_count": 5,
+    "authorships": [{"author": {"display_name": "Jack Jones"}}],
+    "referenced_works": []
+  }
+}

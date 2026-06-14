@@ -314,3 +314,100 @@ Off-cycle threshold re-check: this expansion increases total papers scored
 against the same corpus, which shifts the tier distribution. After one week
 of digests at the new volume, check whether the must-read/skim/archive splits
 (0.958/0.924) still produce useful groupings, and adjust if needed.
+
+
+## Lineage module (separate from the digest)
+
+The lineage module reconstructs the citation trajectory of a single
+paper: given a seed DOI, it walks backward through references, prunes
+to the relevant subgraph, clusters into phases, and renders a visual
+Mermaid chart plus a bulleted trajectory into the Obsidian vault.
+
+It is fully independent of the digest. It does not import digest code,
+does not open data/papers.db, and does not write to Inbox/Papers/.
+The digest could be deleted and this module would still run. Keep it
+that way.
+
+Status: building the deterministic pipeline first. The agentic backfill
+loop is deferred until the deterministic version has run on real papers
+and actual coverage gaps are visible. Do not build the agent yet.
+
+Storage: per-run JSON files in runs/{run_id}.json, append-only, written
+once per run. No database, no binary, no shared mutable state. This is
+deliberate, to avoid the binary-merge push/pull problems papers.db has.
+All run IO goes through store.py. See the store.py contract.
+
+Output: rendered notes to Inbox/Lineages/{slug}-{date}.md, containing a
+Mermaid flowchart grouped by phase followed by the bulleted trajectory.
+Parallel to the digest's Inbox/Papers/, never overlapping it.
+
+Pipeline stages (deterministic):
+  1 resolve.py   DOI to OpenAlex work id
+  2 traverse.py  backward reference walk, depth 2, flag sparse nodes
+  3 prune.py     top-k per depth, hub weighting by in-degree, non-destructive
+  4 cluster.py   SPECTER2 embeddings, cluster into phases, date-order
+  5 render.py    Mermaid chart plus trajectory Markdown
+  6 render.py    LLM narrative pass, structured input only, writes prose
+
+Conventions (same as digest): plain Python, stdlib first, type hints,
+no em dashes, no emojis, no decorative comments, no new dependencies
+without discussion, no over-abstraction. SPECTER2 helper is copied into
+embed.py, not imported from the digest, to keep zero coupling.
+
+Network note: OpenAlex, Crossref, and PubMed are not reachable from the
+Claude Code container. The module runs on the laptop during deep-dive
+sessions. Build and unit-test logic in the container against fixtures;
+run end-to-end on the laptop.
+
+Open verification items (do before relying on them):
+  - confirm two-machine round trip: two runs writing different filenames
+    must merge with no git conflict. Test with throwaway files first.
+  - confirm OpenAlex reference coverage on a few known papers before
+    trusting depth-2 traversal completeness.
+
+### Built so far: stages 1, 2, and storage
+
+resolve.py, traverse.py, store.py, plus openalex.py (live HTTP) and a
+fixture-backed test suite (lineage/tests, stdlib unittest, run with
+`python -m unittest discover -s lineage/tests -t .`). resolve and traverse
+take an injectable fetch callable (`fetch(ref) -> dict`, ref is a DOI or a
+`Wxxxx` work id); the live implementation is `openalex.http_fetch`, the test
+implementation reads lineage/fixtures/openalex_sample.json. resolve and
+traverse never touch the network themselves.
+
+Live entry point: `python -m lineage.traverse <seed_doi> [depth]` resolves,
+traverses, and persists via store.write_run.
+
+Node schema (normalized; persisted on every node):
+  - openalex_id   short id, URL prefix stripped (W123)
+  - doi           lowercased, https://doi.org/ stripped, or null
+  - title         from display_name
+  - pub_year      publication_year
+  - authors       list of author display names
+  - citation_count  from cited_by_count
+  - ref_complete  bool; false flags a sparse node (fewer than
+                  SPARSE_THRESHOLD=5 referenced_works), candidate for the
+                  deferred agentic backfill
+  - depth         min depth at which the node was reached (seed=0)
+  - in_degree     reserved, 0 this session, filled by stage 3
+  - phase         reserved, null this session, filled by stage 4
+
+referenced_works is kept on the in-memory node during traversal to build
+edges, then stripped before write_run (edges carry the same information).
+
+Run dict (one JSON object per run file):
+  schema_version (1), run_id, created_at (ISO), seed {doi, openalex_id,
+  title}, depth, nodes [...], edges [[citing_id, referenced_id], ...],
+  meta {node_count, edge_count, sparse_ids}.
+
+run_id format: `{slug}-{YYYYMMDD}` where slug is the seed DOI with
+non-alphanumerics collapsed to hyphens. No uuid suffix: a same-day rerun of
+the same paper targets the same filename so it overwrites-by-intent, but
+write_run refuses to overwrite an existing file, so regenerating is an
+explicit delete-then-rerun. If same-day collisions ever bite, add HHMMSS,
+not a uuid.
+
+Traversal edges run citing -> referenced for every depth-0 and depth-1
+parent. Depth-2 nodes are fetched for metadata but not expanded. Nodes are
+deduplicated by openalex_id (first/lowest depth kept); a work referenced by
+multiple parents yields one node and multiple edges.
