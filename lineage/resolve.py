@@ -17,6 +17,14 @@ SPARSE_THRESHOLD = 5
 Fetch = Callable[[str], dict]
 
 
+class WorkNotFound(Exception):
+    """A fetch ref (DOI or work id) does not exist upstream (HTTP 404).
+
+    Part of the fetch contract: a fetch may raise this for a single missing
+    work. traverse skips and counts these; other errors propagate and abort.
+    """
+
+
 def _short_id(openalex_id: str) -> str:
     """Strip the OpenAlex URL prefix: 'https://openalex.org/W123' -> 'W123'."""
     return openalex_id.rsplit("/", 1)[-1]

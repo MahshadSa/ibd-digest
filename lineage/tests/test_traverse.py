@@ -1,7 +1,7 @@
 import unittest
 
 from lineage.resolve import resolve
-from lineage.tests.fixture import SEED_DOI, make_fetch
+from lineage.tests.fixture import SEED_DOI, load_fixture, make_fetch
 from lineage.traverse import build_run, traverse
 
 
@@ -70,6 +70,34 @@ class TestTraverse(unittest.TestCase):
         self.assertEqual(run["meta"]["node_count"], 9)
         self.assertEqual(run["meta"]["edge_count"], 10)
         self.assertEqual(len(run["meta"]["sparse_ids"]), 7)
+
+
+class TestUnresolvedReference(unittest.TestCase):
+    BAD_ID = "W9999999404"
+
+    def setUp(self):
+        # Point a depth-1 node at a reference absent from the fixture; the fetch
+        # raises WorkNotFound for it, modeling a real 404 during the walk.
+        data = load_fixture()
+        data["W3000000002"]["referenced_works"] = [f"https://openalex.org/{self.BAD_ID}"]
+        self.fetch, self.calls = make_fetch(data)
+        self.run = build_run(SEED_DOI, self.fetch, depth=2)
+        self.ids = {n["openalex_id"] for n in self.run["nodes"]}
+
+    def test_walk_completes_with_all_good_nodes(self):
+        # Same 9 good nodes as the clean walk; the bad id is not among them.
+        self.assertEqual(len(self.run["nodes"]), 9)
+        self.assertNotIn(self.BAD_ID, self.ids)
+
+    def test_no_edge_references_bad_id(self):
+        self.assertFalse(any(self.BAD_ID in edge for edge in self.run["edges"]))
+
+    def test_meta_records_unresolved(self):
+        self.assertEqual(self.run["meta"]["unresolved_ids"], [self.BAD_ID])
+        self.assertEqual(self.run["meta"]["unresolved_count"], 1)
+
+    def test_bad_id_fetched_once(self):
+        self.assertEqual(self.calls[self.BAD_ID], 1)
 
 
 if __name__ == "__main__":

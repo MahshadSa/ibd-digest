@@ -10,35 +10,52 @@ import logging
 from datetime import date, datetime
 
 from lineage import store
-from lineage.resolve import Fetch, resolve, to_node
+from lineage.resolve import Fetch, WorkNotFound, resolve, to_node
 
 logger = logging.getLogger(__name__)
 
 
 def traverse(seed_node: dict, fetch: Fetch, depth: int = 2) -> dict:
-    """Walk references breadth-first to the given depth. Returns {nodes, edges}.
+    """Walk references breadth-first to the given depth.
 
-    nodes are in-memory (still carry referenced_works); edges are
-    [citing_id, referenced_id] pairs for every depth-0 and depth-1 parent.
+    Returns {nodes, edges, unresolved_ids}. nodes are in-memory (still carry
+    referenced_works); edges are [citing_id, referenced_id] pairs for every
+    depth-0 and depth-1 parent. A reference that 404s (WorkNotFound) is skipped
+    and recorded in unresolved_ids: no node, no edge, so the graph stays
+    consistent. Other fetch errors propagate and abort the walk.
     """
     nodes: dict[str, dict] = {seed_node["openalex_id"]: seed_node}
     edges: list[list[str]] = []
+    unresolved: dict[str, None] = {}
     frontier = [seed_node]
 
     for d in range(1, depth + 1):
         next_frontier: list[dict] = []
         for parent in frontier:
             for ref_id in parent["referenced_works"]:
-                edges.append([parent["openalex_id"], ref_id])
                 if ref_id in nodes:
+                    edges.append([parent["openalex_id"], ref_id])
                     continue
-                child = to_node(fetch(ref_id), depth=d)
+                if ref_id in unresolved:
+                    continue
+                try:
+                    work = fetch(ref_id)
+                except WorkNotFound:
+                    logger.warning(
+                        "Skipping unresolved reference %s (cited by %s)",
+                        ref_id,
+                        parent["openalex_id"],
+                    )
+                    unresolved[ref_id] = None
+                    continue
+                child = to_node(work, depth=d)
                 nodes[ref_id] = child
+                edges.append([parent["openalex_id"], ref_id])
                 next_frontier.append(child)
         logger.info("Depth %d: %d new nodes", d, len(next_frontier))
         frontier = next_frontier
 
-    return {"nodes": list(nodes.values()), "edges": edges}
+    return {"nodes": list(nodes.values()), "edges": edges, "unresolved_ids": list(unresolved)}
 
 
 def _strip(node: dict) -> dict:
@@ -68,6 +85,8 @@ def build_run(seed_doi: str, fetch: Fetch, depth: int = 2) -> dict:
             "node_count": len(nodes),
             "edge_count": len(graph["edges"]),
             "sparse_ids": sparse_ids,
+            "unresolved_ids": graph["unresolved_ids"],
+            "unresolved_count": len(graph["unresolved_ids"]),
         },
     }
 
@@ -87,9 +106,10 @@ if __name__ == "__main__":
     _run = build_run(_seed_doi, openalex.http_fetch, depth=_depth)
     _path = store.write_run(_run)
     logger.info(
-        "Wrote %s: %d nodes, %d edges, %d sparse",
+        "Wrote %s: %d nodes, %d edges, %d sparse, %d unresolved",
         _path,
         _run["meta"]["node_count"],
         _run["meta"]["edge_count"],
         len(_run["meta"]["sparse_ids"]),
+        _run["meta"]["unresolved_count"],
     )

@@ -398,7 +398,18 @@ edges, then stripped before write_run (edges carry the same information).
 Run dict (one JSON object per run file):
   schema_version (1), run_id, created_at (ISO), seed {doi, openalex_id,
   title}, depth, nodes [...], edges [[citing_id, referenced_id], ...],
-  meta {node_count, edge_count, sparse_ids}.
+  meta {node_count, edge_count, sparse_ids, unresolved_ids,
+  unresolved_count}.
+
+unresolved_ids/unresolved_count: references that 404 during the walk.
+A single reference OpenAlex lacks (HTTP 404) must not kill the run:
+http_fetch re-raises a 404 as WorkNotFound, traverse skips it (no node,
+no edge) and logs a WARNING carrying the work id and its citing parent,
+so a real 404 can be looked up by hand. Every other HTTP/network error
+(rate limit, auth, 5xx, connection) propagates and aborts the run.
+unresolved_count is also the coverage-gap signal feeding the deferred
+backfill. Consistency note for later (do NOT do now): sparse_ids should
+gain a sparse_count sibling so meta's *_ids/*_count shape is uniform.
 
 run_id format: `{slug}-{YYYYMMDD}` where slug is the seed DOI with
 non-alphanumerics collapsed to hyphens. No uuid suffix: a same-day rerun of
