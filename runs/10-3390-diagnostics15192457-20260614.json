@@ -1,0 +1,4459 @@
+{
+  "schema_version": 1,
+  "run_id": "10-3390-diagnostics15192457-20260614",
+  "created_at": "2026-06-14T23:15:44",
+  "seed": {
+    "doi": "10.3390/diagnostics15192457",
+    "openalex_id": "W4414530930",
+    "title": "The Role of Imaging in Inflammatory Bowel Diseases: From Diagnosis to Individualized Therapy"
+  },
+  "depth": 2,
+  "top_k": 15,
+  "nodes": [
+    {
+      "openalex_id": "W4414530930",
+      "doi": "10.3390/diagnostics15192457",
+      "title": "The Role of Imaging in Inflammatory Bowel Diseases: From Diagnosis to Individualized Therapy",
+      "pub_year": 2025,
+      "authors": [
+        "Salvatore Lavalle",
+        "Alessandro Vitello",
+        "Edoardo Masiello",
+        "Giuseppe Dell’Anna",
+        "Placido Romeo",
+        "Angelo Montana",
+        "Giambattista Privitera",
+        "Michele Cosenza",
+        "Domenico Santangelo",
+        "Tommaso Russo",
+        "Federico Bonomo",
+        "Emanuele Sinagra",
+        "Partha Pal",
+        "Antonio Facciorusso",
+        "Fabio Salvatore Macaluso",
+        "Ambrogio Orlando",
+        "Marcello Maida"
+      ],
+      "citation_count": 3,
+      "ref_complete": true,
+      "depth": 0,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W61016998",
+      "doi": "10.1097/mpg.0b013e31805563f3",
+      "title": "Differentiating Ulcerative Colitis from Crohn Disease in Children and Young Adults: Report of a Working Group of the North American Society for Pediatric Gastroenterology, Hepatology, and Nutrition and the Crohn's and Colitis Foundation of America",
+      "pub_year": 2007,
+      "authors": [
+        "Athos Bousvaros",
+        "Donald A Antonioli",
+        "Athos Bousvaros",
+        "Donald A. Antonioli",
+        "Richard B. Colletti",
+        "Marla C. Dubinsky",
+        "Jonathan N. Glickman",
+        "Benjamin D. Gold",
+        "Anne M. Griffiths",
+        "Gareth Jevon",
+        "Leslie M. Higuchi",
+        "Jeffrey S. Hyams",
+        "Barbara S. Kirschner",
+        "Subra Kugathasan"
+      ],
+      "citation_count": 535,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W136648691",
+      "doi": null,
+      "title": "Contrast-enhanced ultrasonography with SonoVue after infliximab therapy in Crohn's disease.",
+      "pub_year": 2006,
+      "authors": [
+        "Luisa Guidi",
+        "Antonio De Franco",
+        "I. De Vitis",
+        "Alessandro Armuzzi",
+        "S Semeraro",
+        "I. Roberto",
+        "Alfredo Papa",
+        "E Bock",
+        "G. Gasbarrini",
+        "G Fedeli"
+      ],
+      "citation_count": 39,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1752248076",
+      "doi": "10.1016/0016-5085(90)90613-6",
+      "title": "Predictability of the postoperative course of Crohn's disease",
+      "pub_year": 1990,
+      "authors": [
+        "P. Rutgeerts",
+        "Karel Geboes",
+        "G. Vantrappen",
+        "Jan Beyls",
+        "Raymond Kerremans",
+        "Martin Hiele"
+      ],
+      "citation_count": 1818,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1915598702",
+      "doi": "10.1001/jamapediatrics.2015.1982",
+      "title": "Inflammatory Bowel Disease in Children and Adolescents",
+      "pub_year": 2015,
+      "authors": [
+        "Michael J. Rosen",
+        "Ashish Dhawan",
+        "Shehzad A. Saeed"
+      ],
+      "citation_count": 768,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1930383820",
+      "doi": "10.1002/jmri.24981",
+      "title": "How to perform and interpret cine MR enterography",
+      "pub_year": 2015,
+      "authors": [
+        "Amelia M. Wnorowski",
+        "Flavius F. Guglielmo",
+        "Donald G. Mitchell"
+      ],
+      "citation_count": 45,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1974483485",
+      "doi": "10.1016/j.ejrad.2010.11.010",
+      "title": "Crohn's disease: CT enterography manifestations before and after treatment",
+      "pub_year": 2010,
+      "authors": [
+        "Yingwei Wu",
+        "Yonghua Tang",
+        "Hao Nan-xin",
+        "Cheuk Y. Tang",
+        "Fei Miao"
+      ],
+      "citation_count": 48,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1986749273",
+      "doi": "10.1148/rg.307105052",
+      "title": "CT Enterography: Principles, Trends, and Interpretation of Findings",
+      "pub_year": 2010,
+      "authors": [
+        "Khaled M. Elsayes",
+        "Mahmoud M. Al-Hawary",
+        "J. Jagdish",
+        "Halemane Ganesh",
+        "Joel F. Platt"
+      ],
+      "citation_count": 154,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1993494426",
+      "doi": null,
+      "title": "Development and validation of a pediatric Crohn's disease activity index.",
+      "pub_year": 1991,
+      "authors": [
+        "Hyams Js",
+        "Ferry Gd",
+        "Mandel Fs",
+        "Gryboski Jd",
+        "Kibort Pm",
+        "Barbara S. Kirschner",
+        "AM Griffiths",
+        "Katz Aj",
+        "Grand Rj",
+        "JT Boyle"
+      ],
+      "citation_count": 945,
+      "ref_complete": false,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1994064078",
+      "doi": "10.1007/s00261-001-0119-3",
+      "title": "MRI evaluation of Crohn's disease of the small and large bowel with the use of negative superparamagnetic oral contrast agents",
+      "pub_year": 2002,
+      "authors": [
+        "Francesca Maccioni",
+        "Angelo Viscido",
+        "Mario Marini",
+        "R. Caprilli"
+      ],
+      "citation_count": 63,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1998318117",
+      "doi": "10.1007/s13244-011-0124-1",
+      "title": "Contrast-enhanced ultrasound (CEUS) in Crohn’s disease: technique, image interpretation and clinical applications",
+      "pub_year": 2011,
+      "authors": [
+        "Tomás Ripollés",
+        "María Jesús Martínez-Pérez",
+        "Esther Blanc",
+        "Fructuoso Delgado",
+        "José María Jiménez Vizuete",
+        "José María Rubio Paredes",
+        "José Vilar"
+      ],
+      "citation_count": 74,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2003441037",
+      "doi": "10.1016/j.crad.2006.11.007",
+      "title": "Small bowel faeces sign in patients without small bowel obstruction",
+      "pub_year": 2007,
+      "authors": [
+        "Stacy L. Jacobs",
+        "Alla M. Rozenblit",
+        "Zina J. Ricci",
+        "J. Roberts",
+        "David L. Milikow",
+        "Victoria Chernyak",
+        "E. Wolf"
+      ],
+      "citation_count": 44,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2004327707",
+      "doi": "10.1007/s11894-010-0112-5",
+      "title": "Ileitis: When It is Not Crohn’s Disease",
+      "pub_year": 2010,
+      "authors": [
+        "Steven DiLauro",
+        "Nancy F. Crum‐Cianflone"
+      ],
+      "citation_count": 174,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2009834367",
+      "doi": "10.1007/s00330-014-3111-3",
+      "title": "Training readers to improve their accuracy in grading Crohn’s disease activity on MRI",
+      "pub_year": 2014,
+      "authors": [
+        "Jeroen A. W. Tielbeek",
+        "Shandra Bipat",
+        "Thierry N. Boellaard",
+        "C. Yung Nio",
+        "Jaap Stoker"
+      ],
+      "citation_count": 31,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2022352395",
+      "doi": "10.1002/ibd.21414",
+      "title": "Which magnetic resonance imaging findings accurately evaluate inflammation in small bowel Crohnʼs disease? A retrospective comparison with surgical pathologic analysis",
+      "pub_year": 2010,
+      "authors": [
+        "Magaly Zappa",
+        "Carmen Stefănescu",
+        "Dominique Cazals‐Hatem",
+        "F. Brétagnol",
+        "Lydia Deschamps",
+        "Alain Attar",
+        "Béatrice Larroque",
+        "Xavier Tréton",
+        "Yves Panís",
+        "Valérie Vilgrain",
+        "Yoram Bouhnik"
+      ],
+      "citation_count": 242,
+      "ref_complete": true,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2022661087",
+      "doi": "10.1016/s0140-6736(80)92767-1",
+      "title": "A SIMPLE INDEX OF CROHN'S-DISEASE ACTIVITY",
+      "pub_year": 1980,
+      "authors": [
+        "Richard F. Harvey",
+        "J.M. Bradshaw"
+      ],
+      "citation_count": 2952,
+      "ref_complete": false,
+      "depth": 1,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W6479312",
+      "doi": null,
+      "title": "Atypical rectosigmoid histology in children with newly diagnosed ulcerative colitis.",
+      "pub_year": 1993,
+      "authors": [
+        "J. Markowitz",
+        "E Kahn",
+        "K Grancher",
+        "Jeffrey S. Hyams",
+        "William R. Treem",
+        "F Daum"
+      ],
+      "citation_count": 121,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W17778536",
+      "doi": "10.1007/s003840050144",
+      "title": "Patterns of distribution of endoscopic and histological changes in the ileal reservoir after restorative proctocolectomy for ulcerative colitis",
+      "pub_year": 1998,
+      "authors": [
+        "P. G. Setti Carraro",
+        "I C Talbot",
+        "John R. Nicholls"
+      ],
+      "citation_count": 56,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W29117227",
+      "doi": null,
+      "title": "Appendiceal involvement in ulcerative colitis.",
+      "pub_year": 1992,
+      "authors": [
+        "John R. Goldblum",
+        "H. D. Appelman"
+      ],
+      "citation_count": 45,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W53487432",
+      "doi": "10.1016/0016-5085(90)91297-j",
+      "title": "An epidemiologic study of inflammatory bowel disease in Rochester, New York",
+      "pub_year": 1990,
+      "authors": [
+        "Stephen P. Stowe",
+        "Stephen R. Redmond",
+        "James M. Stormont",
+        "Ashok N. Shah",
+        "Lawrence N. Chessin",
+        "Harry L. Segal",
+        "William Y. Chey"
+      ],
+      "citation_count": 146,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W53678705",
+      "doi": null,
+      "title": "Microscopic focal cryptitis associated with sodium phosphate bowel preparation.",
+      "pub_year": 2000,
+      "authors": [
+        "Newton A C S Wong",
+        "Penman Id",
+        "S. Campbell",
+        "Lessells Am"
+      ],
+      "citation_count": 34,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W70937671",
+      "doi": null,
+      "title": "Pouchitis and extraintestinal manifestations of inflammatory bowel disease after ileal pouch-anal anastomosis.",
+      "pub_year": 1990,
+      "authors": [
+        "Joseph Lohmuller",
+        "John H. Pembérton",
+        "Roger R. Dozois",
+        "D M Ilstrup",
+        "Jon van Heerden"
+      ],
+      "citation_count": 388,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W162402327",
+      "doi": null,
+      "title": "The appendix in inflammatory bowel disease in children.",
+      "pub_year": 1992,
+      "authors": [
+        "Ellen Kahn",
+        "J. Markowitz",
+        "F Daum"
+      ],
+      "citation_count": 26,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W163876282",
+      "doi": null,
+      "title": "Appendiceal involvement as a skip lesion in ulcerative colitis.",
+      "pub_year": 1994,
+      "authors": [
+        "Steven H. Kroft",
+        "Steven J. Stryker",
+        "Rao Ms"
+      ],
+      "citation_count": 78,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W178407814",
+      "doi": null,
+      "title": "Gastroenteric inflammation in children with ulcerative colitis.",
+      "pub_year": 1997,
+      "authors": [
+        "Stuart S. Kaufman",
+        "J A Vanderhoof",
+        "Rosanna Young",
+        "Deborah Perry",
+        "Stephen C. Raynor",
+        "David R. Mack"
+      ],
+      "citation_count": 67,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1501114354",
+      "doi": "10.1016/0016-5085(87)90124-7",
+      "title": "Histopathology differentiates acute self-limited colitis from ulcerative colitis",
+      "pub_year": 1987,
+      "authors": [
+        "Timothy T. Nostrant",
+        "Neelam B. Kumar",
+        "Henry D. Appelman"
+      ],
+      "citation_count": 281,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1570526968",
+      "doi": "10.1016/0016-5085(94)90169-4",
+      "title": "Prospective evaluation of early morphological changes in pelvic ileal pouches",
+      "pub_year": 1994,
+      "authors": [
+        "Robyn L. Apel",
+        "Zane Cohen",
+        "Charles W. Andrews",
+        "Robin McLeod",
+        "H Steinhart",
+        "Robert D. Odze"
+      ],
+      "citation_count": 121,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1579194303",
+      "doi": "10.1159/000061919",
+      "title": "Colitis in Infants and Children",
+      "pub_year": 1997,
+      "authors": [
+        "Donald A. Antonioli"
+      ],
+      "citation_count": 11,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1725062471",
+      "doi": "10.1542/peds.83.5.777",
+      "title": "High Incidence of Upper Gastrointestinal Tract Involvement in Children With Crohn Disease",
+      "pub_year": 1989,
+      "authors": [
+        "C Lenaerts",
+        "Claude Roy",
+        "Myriam Vaillancourt",
+        "Alexander Mark Weber",
+        "C L Morin",
+        "Ernest G. Seidman"
+      ],
+      "citation_count": 222,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1945503688",
+      "doi": "10.1016/s0016-5085(81)80021-2",
+      "title": "Incidence Rates of Ulcerative Colitis and Crohn's Disease in Fifteen Areas of the United States",
+      "pub_year": 1981,
+      "authors": [
+        "Cedric F. Garland",
+        "Abraham M. Lilienfeld",
+        "Albert I. Mendeloff",
+        "Jan A. Markowitz",
+        "Katherine B. Terrell",
+        "Frank C. Garland"
+      ],
+      "citation_count": 215,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1953831249",
+      "doi": "10.1016/0016-5085(94)90832-x",
+      "title": "Pouchitis following heal pouch-anal anastomosis: Definition, pathogenesis, and treatment",
+      "pub_year": 1994,
+      "authors": [
+        "William J. Sandborn"
+      ],
+      "citation_count": 427,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1991924453",
+      "doi": "10.1007/pl00014071",
+      "title": "SonoVue, a new ultrasound contrast agent",
+      "pub_year": 1999,
+      "authors": [
+        "Michel Schneider"
+      ],
+      "citation_count": 182,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1994960045",
+      "doi": "10.2214/ajr.173.2.10430141",
+      "title": "Doppler sonography of hemodynamic changes of the inferior mesenteric artery in inflammatory bowel disease: preliminary data.",
+      "pub_year": 1999,
+      "authors": [
+        "Paoletta Mirk",
+        "Giovanni Palazzoni",
+        "P Gimondo"
+      ],
+      "citation_count": 52,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2048729604",
+      "doi": "10.1016/s0016-5085(99)70005-3",
+      "title": "Endoscopic and histological healing with infliximab anti–tumor necrosis factor antibodies in Crohn's disease: A European multicenter trial",
+      "pub_year": 1999,
+      "authors": [
+        "Geert D’Haens",
+        "Sander van Deventer",
+        "Ruud van Hogezand",
+        "Douglas M. Chalmers",
+        "C Kothe",
+        "Filip Baert",
+        "Tanja Braakman",
+        "T Schaible",
+        "Karel Geboes",
+        "Paul Rutgeerts"
+      ],
+      "citation_count": 754,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2057344238",
+      "doi": "10.1159/000078737",
+      "title": "Evaluation of Criteria for the Activity of Crohn’s Disease by Power Doppler Sonography",
+      "pub_year": 2004,
+      "authors": [
+        "Holger Neye",
+        "Winfried A. Voderholzer",
+        "Steffen Rickes",
+        "Jutta Weber",
+        "Wolfram Wermke",
+        "Herbert Lochs"
+      ],
+      "citation_count": 99,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2068302660",
+      "doi": "10.1080/00365520510015818",
+      "title": "Contrast-enhanced wideband harmonic imaging ultrasound (SonoVue®): A new technique for quantifying bowel wall vascularity in Crohn's disease",
+      "pub_year": 2005,
+      "authors": [
+        "Wolfgang Kratzer",
+        "Stefan Schmidt",
+        "Christoph Mittrach",
+        "Mark Martin Haenle",
+        "Richard A. Mason",
+        "Christian von Tirpitz",
+        "Sandra Pauls"
+      ],
+      "citation_count": 60,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2081518366",
+      "doi": "10.1007/s00261-003-0157-0",
+      "title": "Activity of Crohn disease: value of Color-Power-Doppler and contrast-enhanced ultrasonography",
+      "pub_year": 2004,
+      "authors": [
+        "Daniela Robotti",
+        "T Cammarota",
+        "Paola Debani",
+        "A Sarno",
+        "Marco Astegiano"
+      ],
+      "citation_count": 93,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2086225776",
+      "doi": "10.1080/00365520310008223",
+      "title": "Contrast‐enhanced power Doppler of the intestinal wall in the evaluation of patients with Crohn disease",
+      "pub_year": 2004,
+      "authors": [
+        "G.L. Rapaccini",
+        "Maurizio Pompili",
+        "R. Orefice",
+        "Marcello Covino",
+        "Laura Riccardi",
+        "A Cedrone",
+        "G Gasbarrini"
+      ],
+      "citation_count": 54,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2097491333",
+      "doi": null,
+      "title": "Clinical correlations of small bowel CT and contrast radiology findings in Crohn's disease.",
+      "pub_year": 2005,
+      "authors": [
+        "Luisa Guidi",
+        "Laura Maria Minordi",
+        "S Semeraro",
+        "I De Vitis",
+        "I Roberto",
+        "S. Ennas",
+        "Simona Guglielmo",
+        "L Di Candia",
+        "A Papa",
+        "R. Urgesi",
+        "A. Grillo",
+        "Maria Gabriella Brizi",
+        "A Vecchioli",
+        "G Fedeli"
+      ],
+      "citation_count": 15,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2133936908",
+      "doi": "10.1097/00054725-200002000-00002",
+      "title": "A Simple Classification of Crohnʼs Disease: Report of the Working Party for the World Congresses of Gastroenterology, Vienna 1998",
+      "pub_year": 2000,
+      "authors": [
+        "Christoph Gasché",
+        "Jürgen Schölmerich",
+        "Jørn Brynskov",
+        "Geert D’Haens",
+        "Stephen B. Hanauer",
+        "Jan E. Irvine",
+        "Derek P. Jewell",
+        "Daniel Rachmilewitz",
+        "David B. Sachar",
+        "William J. Sandborn",
+        "Lloyd R. Sutherland"
+      ],
+      "citation_count": 1139,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2138551246",
+      "doi": "10.1053/crad.2002.0985",
+      "title": "Use of Doppler Ultrasound of the SMA for Crohn's Disease Activity Evaluation in Clinical Practice",
+      "pub_year": 2002,
+      "authors": [
+        "Michael F. Byrne",
+        "Frank E. Murray",
+        "Michael J. Lee"
+      ],
+      "citation_count": 3,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2149022385",
+      "doi": "10.1186/ar1182",
+      "title": "Deactivation of endothelium and reduction in angiogenesis in psoriatic skin and synovium by low dose infliximab therapy in combination with stable methotrexate therapy: a prospective single-centre study",
+      "pub_year": 2004,
+      "authors": [
+        "Amber Y. Goedkoop",
+        "Maarten C. Kraan",
+        "Daisy I. Picavet",
+        "Menno A. de Rie",
+        "Marcel B. M. Teunissen",
+        "Jan D. Bos",
+        "Paul P. Tak"
+      ],
+      "citation_count": 126,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2160269081",
+      "doi": "10.1097/00054725-200407000-00022",
+      "title": "Modern Imaging of Crohnʼs Disease Using Bowel Ultrasound",
+      "pub_year": 2004,
+      "authors": [
+        "Fabrizio Parente",
+        "Salvatore Greco",
+        "M. Molteni",
+        "Andrea Anderloni",
+        "Giovanni Maconi",
+        "Gabriele Bianchi Porro"
+      ],
+      "citation_count": 72,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W161570764",
+      "doi": null,
+      "title": "The role of resection margin frozen section in the surgical management of Crohn's disease.",
+      "pub_year": 1985,
+      "authors": [
+        "S. R. Hamilton",
+        "John Davies Reese",
+        "Larry R. Pennington",
+        "J. K. Boitnott",
+        "T. M. Bayless",
+        "J. L. Cameron"
+      ],
+      "citation_count": 55,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W189242551",
+      "doi": "10.1016/s0016-5085(24)05165-5",
+      "title": "Risk Factors for Postoperative Recurrence of Crohn’s Disease",
+      "pub_year": 1984,
+      "authors": [
+        "David B. Sachar"
+      ],
+      "citation_count": 132,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1889001761",
+      "doi": "10.1016/0016-5085(85)90042-3",
+      "title": "Reply to selected summary: To cut is not to cure (Gastroenterology 1985;88:1280–1281)",
+      "pub_year": 1985,
+      "authors": [
+        "Paul Rutgeerts",
+        "Gaston Vantrappen"
+      ],
+      "citation_count": 2,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1907613854",
+      "doi": "10.1093/oxfordjournals.qjmed.a067628",
+      "title": "Crohn's Disease: Course, Treatment and Long Term Prognosis",
+      "pub_year": 1980,
+      "authors": [
+        "W. T. Cooke",
+        "Elias Mallas",
+        "P Prior",
+        "R N Allan"
+      ],
+      "citation_count": 117,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1942412715",
+      "doi": "10.1016/s0016-5085(82)80336-3",
+      "title": "Granulomas Do Not Affect Postoperative Recurrence Rates in Crohn's Disease",
+      "pub_year": 1982,
+      "authors": [
+        "David M. Wolfson",
+        "David B. Sachar",
+        "Adam Cohen",
+        "Judith D. Goldberg",
+        "Roger Styczynski",
+        "Adrian J. Greenstein",
+        "Irwin M. Gelernt",
+        "Henry D. Janowitz"
+      ],
+      "citation_count": 92,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1981575166",
+      "doi": "10.1097/00000658-198009000-00006",
+      "title": "Surgical Management of Crohnʼs Disease",
+      "pub_year": 1980,
+      "authors": [
+        "Larry R. Pennington",
+        "Stanley R. Hamilton",
+        "Theodore M. Bayless",
+        "John L. Cameron"
+      ],
+      "citation_count": 171,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1986239161",
+      "doi": "10.1136/gut.8.4.332",
+      "title": "Prognosis after resection of chronic regional ileitis.",
+      "pub_year": 1967,
+      "authors": [
+        "J E Lennard-Jones",
+        "G. Stalder"
+      ],
+      "citation_count": 170,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2007800264",
+      "doi": "10.1056/nejm198106253042607",
+      "title": "Recurrence and Reoperation for Crohn's Disease",
+      "pub_year": 1981,
+      "authors": [
+        "M R Lock",
+        "Richard G. Farmer",
+        "Victor W. Fazio",
+        "David G. Jagelman",
+        "Ian C. Lavery",
+        "Frank L. Weakley"
+      ],
+      "citation_count": 172,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2025577544",
+      "doi": "10.1001/jama.1961.03040110050011",
+      "title": "The Results of Surgical Treatment of Chronic Regional Enteritis",
+      "pub_year": 1961,
+      "authors": [
+        "LeRoy H. Stahlgren"
+      ],
+      "citation_count": 56,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2032322712",
+      "doi": "10.1136/gut.17.3.192",
+      "title": "Course and prognosis of Crohn's disease.",
+      "pub_year": 1976,
+      "authors": [
+        "S. C. Truelove",
+        "A. S. Peña"
+      ],
+      "citation_count": 176,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2038850927",
+      "doi": "10.3109/00365527709181336",
+      "title": "Crohn's Disease",
+      "pub_year": 1977,
+      "authors": [
+        "K. Nygaard",
+        "O. Fausa"
+      ],
+      "citation_count": 67,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2055644324",
+      "doi": "10.1056/nejm197510022931403",
+      "title": "Reoperation and Recurrence in Crohn's Colitis and Ileocolitis",
+      "pub_year": 1975,
+      "authors": [
+        "Adrian J. Greenstein",
+        "David B. Sachar",
+        "Bernard S. Pasternack",
+        "Henry D. Janowitz"
+      ],
+      "citation_count": 316,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2058725468",
+      "doi": "10.1007/bf01645314",
+      "title": "Changes in small intestinal epithelial expression of MHC Class II antigen after terminal ileal resection for Crohn's disease",
+      "pub_year": 1988,
+      "authors": [
+        "Karen Geboes",
+        "P. Rutgeerts",
+        "Freddy Penninckx",
+        "V. Desmet",
+        "G. Vantrappen"
+      ],
+      "citation_count": 12,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2069539798",
+      "doi": "10.1001/archsurg.1987.01400210128027",
+      "title": "Inflammatory Bowel Diseases 1986",
+      "pub_year": 1987,
+      "authors": [
+        "John S. Goff"
+      ],
+      "citation_count": 30,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2106777715",
+      "doi": "10.1002/bjs.1800700904",
+      "title": "The influence of disease at the margin of resection on the outcome of Crohn's disease",
+      "pub_year": 1983,
+      "authors": [
+        "R Heuman",
+        "B Boeryd",
+        "T. D. Bolin",
+        "Rune Sjödahl"
+      ],
+      "citation_count": 120,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1825587443",
+      "doi": "10.1002/14651858.cd008870.pub2",
+      "title": "Aminosalicylates for induction of remission or response in Crohn's disease",
+      "pub_year": 2016,
+      "authors": [
+        "Wee Chian Lim",
+        "Yongjun Wang",
+        "John K MacDonald",
+        "Stephen B. Hanauer"
+      ],
+      "citation_count": 240,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1930299866",
+      "doi": "10.1002/14651858.cd000543.pub4",
+      "title": "Oral 5-aminosalicylic acid for induction of remission in ulcerative colitis",
+      "pub_year": 2016,
+      "authors": [
+        "Yongjun Wang",
+        "Claire E Parker",
+        "Tania Bhanji",
+        "Brian G. Feagan",
+        "John K MacDonald"
+      ],
+      "citation_count": 495,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964704603",
+      "doi": "10.1097/01.mib.0000235835.32176.85",
+      "title": "A population-based study of the frequency of corticosteroid resistance and dependence in pediatric patients with Crohnʼs disease and ulcerative colitis",
+      "pub_year": 2006,
+      "authors": [
+        "Jeanne Tung",
+        "Edward V. Loftus",
+        "Deborah K. Freese",
+        "Mounif El‐Youssef",
+        "Alan R. Zinsmeister",
+        "Joseph L. Melton",
+        "Scott Harmsen",
+        "William J. Sandborn",
+        "William A. Faubion"
+      ],
+      "citation_count": 131,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1967200174",
+      "doi": "10.1111/j.1572-0241.1999.01438.x",
+      "title": "The Effects of Migration on Ulcerative Colitis: A Three-Year Prospective Study Among Europeans and First- and Second-Generation South Asians in Leicester (1991–1994)",
+      "pub_year": 1999,
+      "authors": [
+        "Irene Carr",
+        "J F Mayberry"
+      ],
+      "citation_count": 178,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1975391202",
+      "doi": "10.1053/j.gastro.2012.08.003",
+      "title": "Once-Daily Budesonide MMX® Extended-Release Tablets Induce Remission in Patients With Mild to Moderate Ulcerative Colitis: Results From the CORE I Study",
+      "pub_year": 2012,
+      "authors": [
+        "William J. Sandborn",
+        "Simon Travis",
+        "Luigi Moro",
+        "Richard Jones",
+        "Theres Gautille",
+        "Robert Bagin",
+        "Michael Huang",
+        "Phil Yeung",
+        "E. David Ballard"
+      ],
+      "citation_count": 244,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1978086188",
+      "doi": "10.1002/ibd.21349",
+      "title": "Epidemiology of pediatric inflammatory bowel disease: A systematic review of international trends",
+      "pub_year": 2010,
+      "authors": [
+        "Eric I. Benchimol",
+        "Kyle J. Fortinsky",
+        "Peter Gozdyra",
+        "Meta van den Heuvel",
+        "Johan Van Limbergen",
+        "Anne M. Griffiths"
+      ],
+      "citation_count": 964,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1981017999",
+      "doi": "10.1016/j.cgh.2011.11.026",
+      "title": "Induction and Maintenance Therapy With Infliximab for Children With Moderate to Severe Ulcerative Colitis",
+      "pub_year": 2011,
+      "authors": [
+        "Jeffrey S. Hyams",
+        "Lakshmi Damaraju",
+        "Marion Blank",
+        "Jewel Johanns",
+        "Cynthia Guzzo",
+        "Harland S. Winter",
+        "Subra Kugathasan",
+        "Stanley A. Cohen",
+        "James Markowitz",
+        "Johanna C. Escher",
+        "G. Veereman‐Wauters",
+        "Wallace Crandall",
+        "Robert N. Baldassano",
+        "Anne M. Griffiths"
+      ],
+      "citation_count": 278,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1981839111",
+      "doi": "10.1097/mpg.0b013e31819bcac4",
+      "title": "Safety, Efficacy, and Pharmacokinetics of Balsalazide in Pediatric Patients With Mild‐to‐Moderate Active Ulcerative Colitis: Results of a Randomized, Double‐blind Study",
+      "pub_year": 2009,
+      "authors": [
+        "J. Antonio Quiros",
+        "Melvin B. Heyman",
+        "John F. Pohl",
+        "Thomas M. Attard",
+        "Henry J. Pieniaszek",
+        "Enoch Bortey",
+        "Kelli Walker",
+        "William P. Forbes"
+      ],
+      "citation_count": 21,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1983879219",
+      "doi": "10.1038/ajg.2013.131",
+      "title": "The Diagnostic Accuracy of Fecal Calprotectin During the Investigation of Suspected Pediatric Inflammatory Bowel Disease: A Systematic Review and Meta-Analysis",
+      "pub_year": 2013,
+      "authors": [
+        "Paul Henderson",
+        "Niall Anderson",
+        "David C Wilson"
+      ],
+      "citation_count": 244,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1988139027",
+      "doi": "10.1111/j.1572-0241.2004.40369.x",
+      "title": "Serologic Testing with ANCA, ASCA, and Anti-OmpC in Children and Young Adults with Crohn's Disease and Ulcerative Colitis: Diagnostic Value and Correlation with Disease Phenotype",
+      "pub_year": 2004,
+      "authors": [
+        "Anna Zholudev",
+        "David Zurakowski",
+        "Wes Young",
+        "Alan M. Leichtner",
+        "Athos Bousvaros"
+      ],
+      "citation_count": 260,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1990722360",
+      "doi": "10.1542/peds.2006-1865",
+      "title": "Laboratory Values for Children With Newly Diagnosed Inflammatory Bowel Disease",
+      "pub_year": 2007,
+      "authors": [
+        "David R. Mack",
+        "Christine R. Langton",
+        "James Markowitz",
+        "Neal S. LeLeiko",
+        "Anne M. Griffiths",
+        "Athos Bousvaros",
+        "Jonathan Evans",
+        "Subra Kugathasan",
+        "Anthony Otley",
+        "Mariann Pfefferkorn",
+        "Joel R. Rosh",
+        "Adam Mezoff",
+        "Susan Moyer",
+        "Maria Oliva‐Hemker",
+        "Robert Rothbaum",
+        "Robert Wyllie",
+        "Jerico del-Rosario",
+        "David J. Keljo",
+        "Trudy Lerer",
+        "Jeffrey S. Hyams"
+      ],
+      "citation_count": 181,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996063338",
+      "doi": "10.1016/j.cgh.2014.01.021",
+      "title": "Risks of Serious Infection or Lymphoma With Anti–Tumor Necrosis Factor Therapy for Pediatric Inflammatory Bowel Disease: A Systematic Review",
+      "pub_year": 2014,
+      "authors": [
+        "Parambir S. Dulai",
+        "Kimberly D. Thompson",
+        "Heather B. Blunt",
+        "Marla C. Dubinsky",
+        "Corey A. Siegel"
+      ],
+      "citation_count": 156,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1997919668",
+      "doi": "10.1111/j.1572-0241.2007.01474.x",
+      "title": "Methotrexate Following Unsuccessful Thiopurine Therapy in Pediatric Crohn's Disease",
+      "pub_year": 2007,
+      "authors": [
+        "Dan Turner",
+        "Andrew B. Grossman",
+        "Joel R. Rosh",
+        "Subra Kugathasan",
+        "Ashley Gilman",
+        "Robert N. Baldassano",
+        "Anne M. Griffiths"
+      ],
+      "citation_count": 119,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2003737781",
+      "doi": "10.1097/mib.0000000000000049",
+      "title": "Utility of Neutrophil Fcγ Receptor I (CD64) Index as a Biomarker for Mucosal Inflammation in Pediatric Crohnʼs Disease",
+      "pub_year": 2014,
+      "authors": [
+        "Phillip Minar",
+        "Yael Haberman",
+        "Ingrid Jurickova",
+        "Ting Wen",
+        "Marc E. Rothenberg",
+        "Mi‐Ok Kim",
+        "Shehzad A. Saeed",
+        "Robert N. Baldassano",
+        "Michael C. Stephens",
+        "James Markowitz",
+        "Joel R. Rosh",
+        "Wallace Crandall",
+        "Melvin B. Heyman",
+        "David Mack",
+        "Anne M. Griffiths",
+        "Susan S. Baker",
+        "Jeffrey S. Hyams",
+        "Subra Kugathasan",
+        "Lee A. Denson"
+      ],
+      "citation_count": 29,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W26752767",
+      "doi": "10.1016/j.mric.2013.05.002",
+      "title": "Magnetic Resonance Enterography",
+      "pub_year": 2013,
+      "authors": [
+        "Sudha A. Anupindi",
+        "Owen Terreblanche",
+        "Jesse Courtier"
+      ],
+      "citation_count": 26,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1527935981",
+      "doi": "10.1148/rg.296095507",
+      "title": "MR Imaging of the Small Bowel",
+      "pub_year": 2009,
+      "authors": [
+        "Jeff L. Fidler",
+        "Luís Guimarães",
+        "David M. Einstein"
+      ],
+      "citation_count": 214,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1841735456",
+      "doi": "10.1002/jmri.24099",
+      "title": "Software‐assisted small bowel motility analysis using free‐breathing MRI: Feasibility study",
+      "pub_year": 2013,
+      "authors": [
+        "Sebastian Bickelhaupt",
+        "Johannes M. Froehlich",
+        "R Cattin",
+        "Stephan Raible",
+        "Hanspeter Bouquet",
+        "Urs Bill",
+        "Michael A. Patak"
+      ],
+      "citation_count": 37,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1975066688",
+      "doi": "10.1016/j.acra.2007.08.010",
+      "title": "MRI Scoring System Including Dynamic Motility Evaluation in Assessing the Activity of Crohn’s Disease of the Terminal Ileum",
+      "pub_year": 2008,
+      "authors": [
+        "Rossano Girometti",
+        "Chiara Zuiani",
+        "Francesco Toso",
+        "Giovanni Brondani",
+        "Dario Sorrentino",
+        "Claudio Avellini",
+        "Massimo Bazzocchi"
+      ],
+      "citation_count": 86,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1976477654",
+      "doi": "10.1111/nmo.12088",
+      "title": "Crohn's disease: small bowel motility impairment correlates with inflammatory‐related markers C‐reactive protein and calprotectin",
+      "pub_year": 2013,
+      "authors": [
+        "Sebastian Bickelhaupt",
+        "Shila Pazahr",
+        "Natalie Chuck",
+        "Iris Blume",
+        "Johannes M. Froehlich",
+        "R Cattin",
+        "S. Raible",
+        "Hanspeter Bouquet",
+        "Urs Bill",
+        "Gerhard Rogler",
+        "Pascal Frei",
+        "Andreas Boss",
+        "Michael A. Patak"
+      ],
+      "citation_count": 76,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1980794099",
+      "doi": "10.1007/s00330-010-1759-x",
+      "title": "MR motility imaging in Crohn’s disease improves lesion detection compared with standard MR imaging",
+      "pub_year": 2010,
+      "authors": [
+        "Johannes M. Froehlich",
+        "Christian Waldherr",
+        "Christoforos Stoupis",
+        "Şükrü Mehmet Ertürk",
+        "Michael A. Patak"
+      ],
+      "citation_count": 129,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1983046204",
+      "doi": "10.1016/j.crohns.2013.02.020",
+      "title": "Imaging techniques for assessment of inflammatory bowel disease: Joint ECCO and ESGAR evidence-based consensus guidelines",
+      "pub_year": 2013,
+      "authors": [
+        "Julián Panés",
+        "Yoram Bouhnik",
+        "Walter Reinisch",
+        "Jaap Stoker",
+        "Stuart A. Taylor",
+        "Daniel C. Baumgart",
+        "Silvio Danese",
+        "Steve Halligan",
+        "Borut Marinček",
+        "Celso Matos",
+        "Laurent Peyrin‐Biroulet",
+        "Jordi Rimola",
+        "Gerhard Rogler",
+        "Gert Van Assche",
+        "Sandro Ardizzone",
+        "Ahmed Ba‐Ssalamah",
+        "Maria Antonietta Bali",
+        "Davide Bellini",
+        "Livia Biancone",
+        "Fabiana Castiglione",
+        "Robert Ehehalt",
+        "Roberto Grassi",
+        "Torsten Kucharzik",
+        "Francesca Maccioni",
+        "Giovanni Maconi",
+        "Fernando Magro",
+        "J. Martín-Comín",
+        "Giovanni Morana",
+        "Douglas Pendsé",
+        "Shaji Sebastian",
+        "Alberto Signore",
+        "Damian Tolan",
+        "Jeroen A. W. Tielbeek",
+        "Dominik Weishaupt",
+        "Bart M. Wiarda",
+        "Andrea Laghi"
+      ],
+      "citation_count": 661,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1990003162",
+      "doi": "10.1097/mpg.0b013e3182a33d3d",
+      "title": "Shooting a Moving Target",
+      "pub_year": 2013,
+      "authors": [
+        "Jesse Courtier",
+        "Michael A. Ohliger",
+        "Sue Rhee",
+        "Owen Terreblanche",
+        "Melvin B. Heyman",
+        "John D. MacKenzie"
+      ],
+      "citation_count": 21,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996417137",
+      "doi": "10.1007/s00330-008-1293-2",
+      "title": "Aperistaltic effect of hyoscine N-butylbromide versus glucagon on the small bowel assessed by magnetic resonance imaging",
+      "pub_year": 2009,
+      "authors": [
+        "Johannes M. Froehlich",
+        "Muriel Daenzer",
+        "Constantin von Weymarn",
+        "Şükrü Mehmet Ertürk",
+        "Christoph L. Zollikofer",
+        "Michael A. Patak"
+      ],
+      "citation_count": 91,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1999102990",
+      "doi": "10.1002/jmri.22804",
+      "title": "Diffusion‐weighted MRI: Role in detecting abdominopelvic internal fistulas and sinus tracts",
+      "pub_year": 2011,
+      "authors": [
+        "Christine Schmid‐Tannwald",
+        "Garima Agrawal",
+        "Farid Dahi",
+        "Ila Sethi",
+        "Aytekin Oto"
+      ],
+      "citation_count": 49,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1999607765",
+      "doi": "10.1007/s00261-015-0361-8",
+      "title": "MR enterography in Crohn’s disease: current consensus on optimal imaging technique and future advances from the SAR Crohn’s disease-focused panel",
+      "pub_year": 2015,
+      "authors": [
+        "David Grand",
+        "Flavius F. Guglielmo",
+        "Mahmoud M. Al-Hawary"
+      ],
+      "citation_count": 92,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2005888577",
+      "doi": "10.1016/j.crad.2009.05.007",
+      "title": "MR enterography in the evaluation of small bowel dilation",
+      "pub_year": 2009,
+      "authors": [
+        "Carmel G. Cronin",
+        "Derek G. Lohan",
+        "Ann Michelle Browne",
+        "A.N. Alhajeri",
+        "Clare Roche",
+        "Joseph M. Murphy"
+      ],
+      "citation_count": 41,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2014989765",
+      "doi": "10.1097/rct.0b013e31804b1a26",
+      "title": "Cine Magnetic Resonance Imaging Evaluation of Peristalsis of Small Bowel With Longitudinal Ulcer in Crohn Disease",
+      "pub_year": 2007,
+      "authors": [
+        "Yoshio Kitazume",
+        "Shiro Satoh",
+        "Hiroko Hosoi",
+        "Osamu Noguchi",
+        "Hitoshi Shibuya"
+      ],
+      "citation_count": 28,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2022178173",
+      "doi": "10.1007/s00464-008-9763-9",
+      "title": "Cine-MRI detection of intraabdominal adhesions: correlation with intraoperative findings in 89 consecutive cases",
+      "pub_year": 2008,
+      "authors": [
+        "Reinhold A. Lang",
+        "Sonja Buhmann",
+        "Alexander Hopman",
+        "Heinrich-Otto Steitz",
+        "Andreas Lienemann",
+        "Maximilian F. Reiser",
+        "Karl‐Walter Jauch",
+        "Thomas P. Hüttl"
+      ],
+      "citation_count": 57,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2023306689",
+      "doi": "10.1002/mrm.23298",
+      "title": "Quantitative assessment of small bowel motility by nonrigid registration of dynamic MR images",
+      "pub_year": 2012,
+      "authors": [
+        "Freddy Odille",
+        "Alex Menys",
+        "Asia Ahmed",
+        "Shonit Punwani",
+        "Stuart A. Taylor",
+        "David Atkinson"
+      ],
+      "citation_count": 122,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1613868394",
+      "doi": "10.1016/0016-5085(92)90029-x",
+      "title": "Survival and causes of death in patients with inflammatory bowel disease: A population-based study",
+      "pub_year": 1992,
+      "authors": [
+        "Anders Ekbom",
+        "Charles G. Helmick",
+        "Matthew M. Zack",
+        "Lars Holmberg",
+        "Hans‐Olov Adami"
+      ],
+      "citation_count": 272,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1965200384",
+      "doi": "10.1148/radiol.2382041159",
+      "title": "Crohn Disease: Mural Attenuation and Thickness at Contrast-enhanced CT Enterography—Correlation with Endoscopic and Histologic Findings of Inflammation",
+      "pub_year": 2006,
+      "authors": [
+        "Kale D. Bodily",
+        "Joel G. Fletcher",
+        "Craig A. Solem",
+        "C. Daniel Johnson",
+        "Jeff L. Fidler",
+        "John M. Barlow",
+        "Michael R. Bruesewitz",
+        "Cynthia H. McCollough",
+        "William J. Sandborn",
+        "Edward V. Loftus",
+        "William S. Harmsen",
+        "Brian S. Crownhart"
+      ],
+      "citation_count": 369,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1970502636",
+      "doi": "10.1053/crad.2002.1068",
+      "title": "Bowel Wall Thickening in Patients with Crohn's Disease: CT Patterns and Correlation with Inflammatory Activity",
+      "pub_year": 2003,
+      "authors": [
+        "Dongil Choi",
+        "Soon Jin Lee",
+        "Young Ah Cho",
+        "Hyo Keun Lim",
+        "Seung Hoon Kim",
+        "Won Jae Lee",
+        "Jae Hoon Lim",
+        "Haewon Park",
+        "Young Rae Lee"
+      ],
+      "citation_count": 134,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1975574070",
+      "doi": "10.1002/ibd.21025",
+      "title": "Assessment of appropriateness of indications for CT enterography in younger patients",
+      "pub_year": 2009,
+      "authors": [
+        "Luís Guimarães",
+        "Jeff L. Fidler",
+        "Joel G. Fletcher",
+        "David H. Bruining",
+        "James E. Huprich",
+        "Hassan Siddiki",
+        "William J. Sandborn",
+        "Edward V. Loftus",
+        "Darrell S. Pardi",
+        "Cynthia H. McCollough"
+      ],
+      "citation_count": 45,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2012369302",
+      "doi": "10.1148/radiol.2291020877",
+      "title": "Assessment of Small Bowel Crohn Disease: Noninvasive Peroral CT Enterography Compared with Other Imaging Methods and Endoscopy—Feasibility Study",
+      "pub_year": 2003,
+      "authors": [
+        "Peter B. Wold",
+        "Joel G. Fletcher",
+        "C. Daniel Johnson",
+        "William J. Sandborn"
+      ],
+      "citation_count": 315,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2014168664",
+      "doi": "10.1007/s11894-009-0074-7",
+      "title": "Diagnostic advances in inflammatory bowel disease (imaging and laboratory)",
+      "pub_year": 2009,
+      "authors": [
+        "Maria Moscandrew",
+        "Edward V. Loftus"
+      ],
+      "citation_count": 23,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2021956742",
+      "doi": "10.1148/radiol.2413051444",
+      "title": "Active Crohn Disease: CT Findings and Interobserver Agreement for Enteric Phase CT Enterography",
+      "pub_year": 2006,
+      "authors": [
+        "Fargol Booya",
+        "Joel G. Fletcher",
+        "James E. Huprich",
+        "John M. Barlow",
+        "C. Daniel Johnson",
+        "Jeff L. Fidler",
+        "Craig A. Solem",
+        "William J. Sandborn",
+        "Edward V. Loftus",
+        "William S. Harmsen"
+      ],
+      "citation_count": 198,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2027447002",
+      "doi": "10.2214/ajr.08.1267",
+      "title": "Mural Attenuation in Normal Small Bowel and Active Inflammatory Crohn's Disease on CT Enterography: Location, Absolute Attenuation, Relative Attenuation, and the Effect of Wall Thickness",
+      "pub_year": 2009,
+      "authors": [
+        "Mark E. Baker",
+        "James J. Walter",
+        "Nancy A. Obuchowski",
+        "Jean-Paul Achkar",
+        "David M. Einstein",
+        "Joseph C. Veniero",
+        "Jon D. Vogel",
+        "Luca Stocchi"
+      ],
+      "citation_count": 71,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2033069215",
+      "doi": "10.1016/j.gie.2008.02.037",
+      "title": "Retention of the capsule endoscope: a single-center experience of 1000 capsule endoscopy procedures",
+      "pub_year": 2008,
+      "authors": [
+        "Feng Li",
+        "Suryakanth Gurudu",
+        "Giovanni De Petris",
+        "Virender K. Sharma",
+        "Arthur D. Shiff",
+        "Russell I. Heigh",
+        "David E. Fleischer",
+        "J Post",
+        "Paula Erickson",
+        "Jonathan A. Leighton"
+      ],
+      "citation_count": 244,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2036652308",
+      "doi": "10.1111/j.1572-0241.2005.00239.x",
+      "title": "A Prospective Comparison Study of MRI versus Small Bowel Follow-Through in Recurrent Crohn's Disease",
+      "pub_year": 2005,
+      "authors": [
+        "Çharles N. Bernstein",
+        "Howard Greenberg",
+        "Ian F. Boult",
+        "Shirley Chubey",
+        "Corrine Leblanc",
+        "Lawrence Ryner"
+      ],
+      "citation_count": 99,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2041932935",
+      "doi": "10.1002/ibd.20529",
+      "title": "Prevalence of penetrating disease and extraintestinal manifestations of Crohnʼs disease detected with CT enterography",
+      "pub_year": 2008,
+      "authors": [
+        "David H. Bruining",
+        "Hassan Siddiki",
+        "Joel G. Fletcher",
+        "William J. Tremaine",
+        "William J. Sandborn",
+        "Edward V. Loftus"
+      ],
+      "citation_count": 138,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2044111577",
+      "doi": "10.1136/gut.2005.079350",
+      "title": "Survival and cause specific mortality in patients with inflammatory bowel disease: a long term outcome study in Olmsted County, Minnesota, 1940–2004",
+      "pub_year": 2006,
+      "authors": [
+        "Tine Jess",
+        "E V Loftus",
+        "W S Harmsen",
+        "A R Zinsmeister",
+        "W J Tremaine",
+        "L J Melton",
+        "P Munkholm",
+        "W J Sandborn"
+      ],
+      "citation_count": 233,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2050777161",
+      "doi": "10.1007/s00261-008-9411-9",
+      "title": "CT enterography technique: theme and variations",
+      "pub_year": 2008,
+      "authors": [
+        "Joel G. Fletcher"
+      ],
+      "citation_count": 47,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2057390212",
+      "doi": "10.1055/s-2005-870264",
+      "title": "ICCE Consensus for Capsule Retention",
+      "pub_year": 2005,
+      "authors": [
+        "David R. Cave",
+        "Peter Legnani",
+        "Roberto de Franchis",
+        "B. S. Lewis"
+      ],
+      "citation_count": 380,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2060427212",
+      "doi": "10.1007/s00261-009-9557-0",
+      "title": "MR enterography with polyethylene glycol as oral contrast medium in the follow-up of patients with Crohn disease: comparison with CT enterography",
+      "pub_year": 2009,
+      "authors": [
+        "Davide Ippolito",
+        "Francesca Invernizzi",
+        "Stefania Galimberti",
+        "Maria Rita Panelli",
+        "Sandro Sironi"
+      ],
+      "citation_count": 65,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W178836027",
+      "doi": "10.1007/s00330-002-1455-6",
+      "title": "Enteroclysis in adult celiac disease: diagnostic value of specific radiographic features",
+      "pub_year": 2003,
+      "authors": [
+        "F. Lomoschitz",
+        "Wolfgang Schima",
+        "Edith Schober",
+        "Karl Turetschek",
+        "Alexandra Kaider",
+        "Harald Vogelsang"
+      ],
+      "citation_count": 26,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1589907244",
+      "doi": "10.1007/s11547-007-0202-0",
+      "title": "Multidetector CT in small-bowel neoplasms",
+      "pub_year": 2007,
+      "authors": [
+        "Laura Maria Minordi",
+        "A Vecchioli",
+        "Paoletta Mirk",
+        "E. Filigrana",
+        "Giuliana Poloni",
+        "L. Bonomo"
+      ],
+      "citation_count": 21,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1893440025",
+      "doi": "10.1177/000313480006600110",
+      "title": "Malignant Tumors of the Small Intestine: A Review of 144 Cases",
+      "pub_year": 2000,
+      "authors": [
+        "James H. North",
+        "M. Pack"
+      ],
+      "citation_count": 183,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1982780044",
+      "doi": "10.1007/s00261-008-9412-8",
+      "title": "Multi-phase CT enterography in obscure GI bleeding",
+      "pub_year": 2008,
+      "authors": [
+        "James E. Huprich"
+      ],
+      "citation_count": 27,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1985085366",
+      "doi": "10.2214/ajr.08.1494",
+      "title": "Preliminary Estimate of Triphasic CT Enterography Performance in Hemodynamically Stable Patients With Suspected Gastrointestinal Bleeding",
+      "pub_year": 2009,
+      "authors": [
+        "Amy K. Hara",
+        "F. Blake Walker",
+        "Alvin C. Silva",
+        "Jonathan A. Leighton"
+      ],
+      "citation_count": 64,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1985820644",
+      "doi": "10.1007/s003300050016",
+      "title": "Computed tomography of the small bowel in adult celiac disease: the jejunoileal fold pattern reversal",
+      "pub_year": 2000,
+      "authors": [
+        "Ernesto Tomei",
+        "Mario Marini",
+        "Daniela Messineo",
+        "F. Di Giovambattista",
+        "Mónica Greco",
+        "Roberto Passariello",
+        "Antonio Picarelli"
+      ],
+      "citation_count": 50,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1994315094",
+      "doi": "10.2214/ajr.07.2427",
+      "title": "Radiation Doses from Small-Bowel Follow-Through and Abdominopelvic MDCT in Crohn's Disease",
+      "pub_year": 2007,
+      "authors": [
+        "Tracy A. Jaffe",
+        "A Gaca",
+        "Susan Delaney",
+        "Terry T. Yoshizumi",
+        "Greta Toncheva",
+        "Giao Nguyen",
+        "Donald P. Frush"
+      ],
+      "citation_count": 188,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1998400223",
+      "doi": "10.1007/bf00203365",
+      "title": "Spiral CT demonstration of hypervascularity in Crohn disease: “vascular jejunization of the ileum” or the “comb sign”",
+      "pub_year": 1995,
+      "authors": [
+        "M. A. Meyers",
+        "Patrick McGuire"
+      ],
+      "citation_count": 181,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1998851912",
+      "doi": "10.1111/j.1572-0241.2006.00761.x",
+      "title": "The Risk of Retention of the Capsule Endoscope in Patients with Known or Suspected Crohn's Disease",
+      "pub_year": 2006,
+      "authors": [
+        "Adam S. Cheifetz",
+        "Asher Kornbluth",
+        "Peter Legnani",
+        "Ira Schmelkin",
+        "Alphonso Brown",
+        "Simon Lichtiger",
+        "Blair S. Lewis"
+      ],
+      "citation_count": 366,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2012806442",
+      "doi": "10.1148/radiographics.18.2.9536485",
+      "title": "CT evaluation of small bowel neoplasms: spectrum of disease.",
+      "pub_year": 1998,
+      "authors": [
+        "J A Buckley",
+        "E K Fishman"
+      ],
+      "citation_count": 213,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2012911759",
+      "doi": "10.1097/00004728-198609000-00009",
+      "title": "Submucosal Accumulation of Fat in Inflammatory Bowel Disease",
+      "pub_year": 1986,
+      "authors": [
+        "Bronwyn Jones",
+        "Elliot K. Fishman",
+        "Stanley R. Hamilton",
+        "Stephen E. Rubesin",
+        "Theodore M. Bayless",
+        "John C. Cameron",
+        "Stanley S. Siegelman"
+      ],
+      "citation_count": 106,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2017599289",
+      "doi": "10.1148/radiographics.9.6.2685933",
+      "title": "Adult celiac disease and its complications.",
+      "pub_year": 1989,
+      "authors": [
+        "Stephen E. Rubesin",
+        "H Herlinger",
+        "Scott H. Saul",
+        "K Grumbach",
+        "Igor Laufer",
+        "Marc S. Levine"
+      ],
+      "citation_count": 67,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2046346948",
+      "doi": "10.1016/j.rcl.2008.10.007",
+      "title": "CT Enterography: Concept, Technique, and Interpretation",
+      "pub_year": 2009,
+      "authors": [
+        "Sandra Tochetto",
+        "Vahid Yaghmai"
+      ],
+      "citation_count": 42,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964733054",
+      "doi": "10.1097/00004424-200012000-00003",
+      "title": "MR Imaging of the Small Bowel with a True-FISP Sequence After Enteroclysis with Water Solution",
+      "pub_year": 2000,
+      "authors": [
+        "Nicholas Gourtsoyiannis",
+        "Nickolas Papanikolaou",
+        "John Grammatikakis",
+        "Thomas G. Maris",
+        "Panagiotis Prassopoulos"
+      ],
+      "citation_count": 89,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1972180264",
+      "doi": "10.1097/00004836-199407000-00009",
+      "title": "Comparison of Magnetic Resonance Imaging and Endoscopy in Distinguishing the Type and Severity of Inflammatory Bowel Disease",
+      "pub_year": 1994,
+      "authors": [
+        "J. Patrick Shoenut",
+        "Richard C. Semelka",
+        "Cynthia M. Magro",
+        "Richard Silverman",
+        "Clifford S. Yaffe",
+        "Allan B. Micflikier"
+      ],
+      "citation_count": 174,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1978105625",
+      "doi": "10.1007/bf01312461",
+      "title": "Laboratory assessment of inflammatory bowel disease",
+      "pub_year": 1987,
+      "authors": [
+        "I. T. Beck"
+      ],
+      "citation_count": 42,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1988925350",
+      "doi": "10.1148/radiology.202.3.9051003",
+      "title": "Crohn disease: state of the art.",
+      "pub_year": 1997,
+      "authors": [
+        "John S. Wills",
+        "Ira F. Lobis",
+        "Frederick Denstman"
+      ],
+      "citation_count": 122,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2006038370",
+      "doi": "10.1002/jmri.1880010603",
+      "title": "Bowel disease: Prospective comparison of CT and 1.5‐T pre‐ and postcontrast MR imaging with T1‐weighted fat‐suppressed and breath‐hold FLASH sequences",
+      "pub_year": 1991,
+      "authors": [
+        "Richard C. Semelka",
+        "J. Patrick Shoenut",
+        "Richard Silverman",
+        "Mervyn A. Kroeker",
+        "Clifford S. Yaffe",
+        "Allan B. Micflikier"
+      ],
+      "citation_count": 79,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2008518629",
+      "doi": "10.2214/ajr.170.1.9423615",
+      "title": "Breath-hold fast spin-echo MR imaging of Crohn's disease.",
+      "pub_year": 1998,
+      "authors": [
+        "Olivier Ernst",
+        "Tarik Asselah",
+        "X Cablan",
+        "Géraldine Sergent"
+      ],
+      "citation_count": 54,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2026215839",
+      "doi": "10.1007/s003300000354",
+      "title": "MRI in the diagnosis of small bowel disease: use of positive and negative oral contrast media in combination with enteroclysis",
+      "pub_year": 2000,
+      "authors": [
+        "A. Rieber",
+        "A. J. Aschoff",
+        "K Nüssle",
+        "D. Wruk",
+        "R Tomczak",
+        "Max Reinshagen",
+        "G. Adler",
+        "Hans‐Juergen Brambs"
+      ],
+      "citation_count": 168,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2036163867",
+      "doi": "10.1016/s0730-725x(99)00141-1",
+      "title": "Evaluation of Crohn’s disease using half-fourier RARE and gadolinium-enhanced SGE sequences: Initial results",
+      "pub_year": 2000,
+      "authors": [
+        "Hani B. Marcos",
+        "Richard C. Semelka"
+      ],
+      "citation_count": 62,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2055106561",
+      "doi": "10.1148/radiology.215.3.r00jn12717",
+      "title": "Small-Bowel Disease: Comparison of MR Enteroclysis Images with Conventional Enteroclysis and Surgical Findings",
+      "pub_year": 2000,
+      "authors": [
+        "Heinz Werner Umschaden",
+        "Dieter Szolar",
+        "Johann Gasser",
+        "Manfred Umschaden",
+        "H Haselbach"
+      ],
+      "citation_count": 275,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2061475647",
+      "doi": "10.1002/(sici)1522-2586(200002)11:2<127::aid-jmri8>3.0.co;2-g",
+      "title": "Crohn's disease evaluation: Comparison of contrast-enhanced MR imaging and single-phase helical CT scanning",
+      "pub_year": 2000,
+      "authors": [
+        "Russell N. Low",
+        "Isaac R. Francis",
+        "Douglas Politoske",
+        "Michael J. Bennett"
+      ],
+      "citation_count": 175,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2073109332",
+      "doi": "10.1148/radiology.184.2.1620862",
+      "title": "Crohn disease of the small intestine: accuracy and relevance of enteroclysis.",
+      "pub_year": 1992,
+      "authors": [
+        "Dean D. T. Maglinte",
+        "Stanley M. Chernish",
+        "Frederick M. Kelvin",
+        "Kevin W. O’Connor",
+        "J P Hage"
+      ],
+      "citation_count": 133,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2077691933",
+      "doi": "10.1007/s001170050320",
+      "title": "Breathhold MRI of the small bowel in Crohn's disease after enteroklysis with oral magnetic particles",
+      "pub_year": 1998,
+      "authors": [
+        "N. Holzknecht",
+        "Thomas Helmberger",
+        "C. Von Ritter",
+        "J. Gauger",
+        "Svea Faber",
+        "Maximilian F. Reiser"
+      ],
+      "citation_count": 61,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2079037272",
+      "doi": "10.2214/ajr.170.6.9609153",
+      "title": "MR imaging of the small bowel using the HASTE sequence.",
+      "pub_year": 1998,
+      "authors": [
+        "J K Lee",
+        "Hani B. Marcos",
+        "Richard C. Semelka"
+      ],
+      "citation_count": 103,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2088718533",
+      "doi": "10.1148/radiographics.16.3.8897619",
+      "title": "Manifestations of Crohn disease at US.",
+      "pub_year": 1996,
+      "authors": [
+        "Julien Sarrazin",
+        "Stephanie R. Wilson"
+      ],
+      "citation_count": 125,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1834872163",
+      "doi": "10.7863/jum.2002.21.4.375",
+      "title": "Ultrasonographic Findings Correspond to Clinical, Endoscopic, and Histologic Findings in Inflammatory Bowel Disease and Other Enterocolitides",
+      "pub_year": 2002,
+      "authors": [
+        "H. P. Haber",
+        "Andreas Büsch",
+        "Rita Ziebach",
+        "S. Dette",
+        "Peter Ruck",
+        "Martin Stern"
+      ],
+      "citation_count": 94,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1879898010",
+      "doi": "10.1111/j.1365-2036.2011.04710.x",
+      "title": "Systematic review: the use of ultrasonography, computed tomography and magnetic resonance imaging for the diagnosis, assessment of activity and abdominal complications of Crohn’s disease",
+      "pub_year": 2011,
+      "authors": [
+        "Julián Panés",
+        "Rosa Bouzas",
+        "María Chaparro",
+        "V. García‐Sánchez",
+        "Javier P. Gisbert",
+        "B. Martínez de Guereñu",
+        "J.L. Mendoza",
+        "José María Rubio Paredes",
+        "S. Quiroga",
+        "Tomás Ripollés",
+        "Jordi Rimola"
+      ],
+      "citation_count": 653,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1972299229",
+      "doi": "10.1007/s00330-006-0330-2",
+      "title": "Evaluating bowel wall vascularity in Crohn’s disease: a comparison of dynamic MRI and wideband harmonic imaging contrast-enhanced low MI ultrasound",
+      "pub_year": 2006,
+      "authors": [
+        "Sandra Pauls",
+        "Andreas Gabelmann",
+        "Stefan Schmidt",
+        "A. Rieber",
+        "Christoph Mittrach",
+        "Mark Martin Haenle",
+        "Hans‐Jürgen Brambs",
+        "Wolfgang Kratzer"
+      ],
+      "citation_count": 66,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1973355514",
+      "doi": "10.1016/j.ejrad.2008.10.029",
+      "title": "The diagnostic value of small bowel wall vascularity after sulfur hexafluoride-filled microbubble injection in patients with Crohn's disease. Correlation with the therapeutic effectiveness of specific anti-inflammatory treatment",
+      "pub_year": 2008,
+      "authors": [
+        "Emilio Quaia",
+        "Vincenzo Migaleddu",
+        "Elisa Baratella",
+        "Riccardo Pizzolato",
+        "Alexia Rossi",
+        "M Grotto",
+        "Maria Assunta Cova"
+      ],
+      "citation_count": 84,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1990723509",
+      "doi": "10.1007/s00261-005-0400-y",
+      "title": "Internal fistulas in Crohn disease: magnetic resonance enteroclysis",
+      "pub_year": 2006,
+      "authors": [
+        "Karin A. Herrmann",
+        "Henrik J. Michaely",
+        "Christoph J. Zech",
+        "Julia Seiderer",
+        "Maximilian F. Reiser",
+        "Stefan O. Schoenberg"
+      ],
+      "citation_count": 56,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1992192817",
+      "doi": "10.1007/s10620-009-0759-7",
+      "title": "Abdominal Sonographic Changes After Antibody to Tumor Necrosis Factor (Anti-TNF) Alpha Therapy in Crohn’s Disease",
+      "pub_year": 2009,
+      "authors": [
+        "José María Rubio Paredes",
+        "Tomás Ripollés",
+        "Xavier Cortés",
+        "María Jesús Martínez",
+        "María Barrachina",
+        "Fernando Gómez",
+        "Eduardo Moreno‐Osset"
+      ],
+      "citation_count": 73,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1992453604",
+      "doi": "10.1148/radiology.217.3.r00dc19787",
+      "title": "Doppler US in Patients with Crohn Disease: Vessel Density in the Diseased Bowel Reflects Disease Activity",
+      "pub_year": 2000,
+      "authors": [
+        "Johannes Spalinger",
+        "H Patriquin",
+        "Marie‐Claude Miron",
+        "George Marx",
+        "Denise Herzog",
+        "Josée Dubois",
+        "Marla Dubinsky",
+        "Ernest G. Seidman"
+      ],
+      "citation_count": 255,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1993856565",
+      "doi": "10.1016/j.ejrad.2006.11.027",
+      "title": "Ultrasound assessment of vascularization of the thickened terminal ileum wall in Crohn's disease patients using a low-mechanical index real-time scanning technique with a second generation ultrasound contrast agent",
+      "pub_year": 2007,
+      "authors": [
+        "Carla Serra",
+        "Guido Menozzi",
+        "Antonio Maria Morselli Labate",
+        "F. Giangregorio",
+        "Paolo Gionchetti",
+        "Marina Beltrami",
+        "Daniela Robotti",
+        "Fabio Fornari",
+        "T Cammarota"
+      ],
+      "citation_count": 148,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1996821722",
+      "doi": "10.1007/s00384-002-0408-5",
+      "title": "Crohn's disease: in defense of a microvascular aetiology",
+      "pub_year": 2002,
+      "authors": [
+        "Michelle Thornton",
+        "Michael J. Solomon"
+      ],
+      "citation_count": 82,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2009331971",
+      "doi": "10.1148/radiol.2471070611",
+      "title": "Inflammatory Bowel Disease Diagnosed with US, MR, Scintigraphy, and CT: Meta-analysis of Prospective Studies",
+      "pub_year": 2008,
+      "authors": [
+        "Karin Horsthuis",
+        "Shandra Bipat",
+        "Roelof J. Bennink",
+        "Jaap Stoker"
+      ],
+      "citation_count": 626,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2015184473",
+      "doi": "10.1007/s002610000004",
+      "title": "Evaluation of Crohn disease activity with magnetic resonance imaging",
+      "pub_year": 2000,
+      "authors": [
+        "Francesca Maccioni",
+        "Angelo Viscido",
+        "Laura Broglia",
+        "M. Marrollo",
+        "Raffaele Masciangelo",
+        "R. Caprilli",
+        "Plinio Rossi"
+      ],
+      "citation_count": 282,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2023184373",
+      "doi": "10.1002/jcu.20423",
+      "title": "Crohn's disease and color Doppler sonography: Response to treatment and its relationship with long‐term prognosis",
+      "pub_year": 2007,
+      "authors": [
+        "Tomás Ripollés",
+        "María Jesús Martínez",
+        "María Barrachina"
+      ],
+      "citation_count": 43,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2045445071",
+      "doi": "10.1148/radiol.2531082269",
+      "title": "Crohn Disease: Correlation of Findings at Contrast-enhanced US with Severity at Endoscopy",
+      "pub_year": 2009,
+      "authors": [
+        "Tomás Ripollés",
+        "María Jesús Martínez",
+        "José María Rubio Paredes",
+        "Esther Blanc",
+        "Lucía Flors",
+        "Fructuoso Delgado"
+      ],
+      "citation_count": 169,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W164652160",
+      "doi": "10.1007/s001170050231",
+      "title": "Das Fäzeszeichen: ein CT-Befund bei Dünndarmobstruktion",
+      "pub_year": 1997,
+      "authors": [
+        "Orlando Catalano"
+      ],
+      "citation_count": 36,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2017823766",
+      "doi": "10.1016/s0221-0363(05)81370-8",
+      "title": "Le feces sign : valeur d’un signe TDM dans l’occlusion du grêle sur bride ou adhérences péritonéales",
+      "pub_year": 2005,
+      "authors": [
+        "Éric Delabrousse",
+        "R. Baulard",
+        "P. Sarliève",
+        "D. Michalakis",
+        "E. Rodière",
+        "B. Kastler"
+      ],
+      "citation_count": 20,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2054612492",
+      "doi": "10.1148/radiographics.21.2.g01mr05341",
+      "title": "Helical CT in the Diagnosis of Small Bowel Obstruction",
+      "pub_year": 2001,
+      "authors": [
+        "Akira Furukawa",
+        "Michio Yamasaki",
+        "Kenji Furuichi",
+        "Kenji Yokoyama",
+        "Tamotsu Nagata",
+        "Masashi Takahashi",
+        "Kiyoshi Murata",
+        "Tsutomu Sakamoto"
+      ],
+      "citation_count": 197,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2076663221",
+      "doi": "10.1016/s0009-9260(05)83216-7",
+      "title": "The CT small bowel faeces sign: Description and clinical significance",
+      "pub_year": 1995,
+      "authors": [
+        "William W. Mayo-Smith",
+        "J Wittenberg",
+        "Genevieve L. Bennett",
+        "Debra A. Gervais",
+        "G. Scott Gazelle",
+        "Peter R. Müeller"
+      ],
+      "citation_count": 111,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2146808408",
+      "doi": "10.2214/ajr.183.5.1831361",
+      "title": "Frequency and Relevance of the “Small-Bowel Feces” Sign on CT in Patients with Small-Bowel Obstruction",
+      "pub_year": 2004,
+      "authors": [
+        "Dawn E. Lazarus",
+        "Chrystia Slywotsky",
+        "Genevieve L. Bennett",
+        "Alec J. Megibow",
+        "Michael Macari"
+      ],
+      "citation_count": 114,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2306287116",
+      "doi": null,
+      "title": "[Mechanical small bowel obstruction due to bezoars: correlation between CT and surgical findings].",
+      "pub_year": 2002,
+      "authors": [
+        "Y Billaud",
+        "F. Pilleul",
+        "P J Valette"
+      ],
+      "citation_count": 44,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W118871860",
+      "doi": "10.1007/bf02048278",
+      "title": "Abdominal actinomycosis",
+      "pub_year": 1996,
+      "authors": [
+        "José Cintron",
+        "Alejandro Pino",
+        "Bernardo Duarte",
+        "Donald Wood"
+      ],
+      "citation_count": 174,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W153106497",
+      "doi": null,
+      "title": "Ileal carcinoid tumors stimulating Crohn's disease: incidence among 176 consecutive cases of ileal carcinoid.",
+      "pub_year": 1997,
+      "authors": [
+        "E Y Hsu",
+        "Jerome M. Feldman",
+        "GR Lichtenstein"
+      ],
+      "citation_count": 28,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W171134657",
+      "doi": "10.3748/wjg.v10.i24.3647",
+      "title": "Diagnosis of abdominal tuberculosis: Experience from 11 cases and review of the literature",
+      "pub_year": 2004,
+      "authors": [
+        "Ali Uzunköy"
+      ],
+      "citation_count": 249,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W194283919",
+      "doi": null,
+      "title": "Endometriosis of the terminal ileum simulating the clinical, roentgenographic, and surgical findings in Crohn's disease.",
+      "pub_year": 1991,
+      "authors": [
+        "Mitchell S. Cappell",
+        "Daniel Friedman",
+        "Nasser Mikhail"
+      ],
+      "citation_count": 29,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W201552836",
+      "doi": "10.1177/000313480907501211",
+      "title": "Clostridium difficile Enteritis after Colectomy",
+      "pub_year": 2009,
+      "authors": [
+        "Marlin Wayne Causey",
+        "Michael P. Spencer",
+        "Scott R. Steele"
+      ],
+      "citation_count": 29,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1482797108",
+      "doi": "10.3748/wjg.14.3430",
+      "title": "Acute small bowel obstruction caused by endometriosis: A case report and review of the literature",
+      "pub_year": 2008,
+      "authors": [
+        "Antonella De Ceglie",
+        "C. Bilardi",
+        "Sabrina Blanchi",
+        "Massimo Picasso",
+        "M Di Muzio",
+        "Alberto Trimarchi",
+        "Mássimo Conio"
+      ],
+      "citation_count": 114,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1608249412",
+      "doi": null,
+      "title": "The evolution of spondyloarthropathies in relation to gut histology. I. Clinical aspects.",
+      "pub_year": 1995,
+      "authors": [
+        "Herman Mielants",
+        "Eric Veys",
+        "Martine De Vos",
+        "C Cuvelier",
+        "Stefan Goemaere",
+        "L De Clercq",
+        "L Schatteman",
+        "Dirk Elewaut"
+      ],
+      "citation_count": 261,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1610649337",
+      "doi": "10.1016/s0016-5085(83)80089-4",
+      "title": "Disseminated Mycobacterium aviumintracellulare Infection in Acquired Immunodeficiency Syndrome Mimicking Whipple's Disease",
+      "pub_year": 1983,
+      "authors": [
+        "J. Scott Gillin",
+        "Carlos Urmacher",
+        "Reardon West",
+        "Moshe Shike"
+      ],
+      "citation_count": 123,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1839827929",
+      "doi": "10.1016/0016-5085(83)90454-7",
+      "title": "Treatment of Candida esophagitis",
+      "pub_year": 1983,
+      "authors": [
+        "J. Scott Gillin",
+        "Robert C. Kurtz"
+      ],
+      "citation_count": 20,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1853332726",
+      "doi": "10.1200/jco.2001.19.3.756",
+      "title": "Neutropenic Enterocolitis in Patients With Acute Leukemia: Prognostic Significance of Bowel Wall Thickening Detected by Ultrasonography",
+      "pub_year": 2001,
+      "authors": [
+        "Claudio Cartoni",
+        "Francesco Dragoni",
+        "Alessandra Micozzi",
+        "Edoardo Pescarmona",
+        "Sergio Mecarocci",
+        "Piero Chirletti",
+        "Maria Concetta Petti",
+        "Giovanna Meloni",
+        "F Mandelli"
+      ],
+      "citation_count": 189,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1932639046",
+      "doi": "10.1111/j.1469-0691.2009.03004.x",
+      "title": "Fatal Clostridium difficile enteritis caused by the BI/NAP1/027 strain: a case series of ileal C. difficile infections",
+      "pub_year": 2009,
+      "authors": [
+        "Christian Lavallée",
+        "Brian Laufer",
+        "Jean‐Louis Pépin",
+        "Andrew Mitchell",
+        "S. S. Dube",
+        "Annie‐Claude Labbé"
+      ],
+      "citation_count": 36,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1974513748",
+      "doi": "10.1097/00004836-198604000-00017",
+      "title": "Gold-Induced Ileitis",
+      "pub_year": 1986,
+      "authors": [
+        "David Geltner",
+        "M. Sternfeld",
+        "Stuart A. Becker",
+        "Moris Kori"
+      ],
+      "citation_count": 9,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1974607752",
+      "doi": "10.1111/j.1572-0241.2007.01669.x",
+      "title": "Gastrointestinal Manifestations of Amyloidosis",
+      "pub_year": 2008,
+      "authors": [
+        "Ellen C. Ebert",
+        "Michael Nagar"
+      ],
+      "citation_count": 363,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1988710615",
+      "doi": "10.1016/j.bpg.2007.12.001",
+      "title": "Role of gastrointestinal eosinophils in inflammatory bowel disease and intestinal tumours",
+      "pub_year": 2008,
+      "authors": [
+        "Jochen Wedemeyer",
+        "Katja Voßkuhl"
+      ],
+      "citation_count": 72,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1992062202",
+      "doi": "10.1007/s11894-008-0079-7",
+      "title": "Salmonellosis and the gastrointestinal tract: More than just peanut butter",
+      "pub_year": 2008,
+      "authors": [
+        "Nancy F. Crum‐Cianflone"
+      ],
+      "citation_count": 156,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964019813",
+      "doi": "10.1097/mcg.0b013e31825d5034",
+      "title": "Is Magnetic Resonance Imaging a Reliable Diagnostic Tool in the Evaluation of Active Crohn’s Disease in the Small Bowel?",
+      "pub_year": 2013,
+      "authors": [
+        "Lian-Ming Wu",
+        "Jian-Rong Xu",
+        "Hai-Yan Gu",
+        "Jia Hua",
+        "Jiani Hu"
+      ],
+      "citation_count": 13,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964695119",
+      "doi": "10.1097/mib.0b013e3182905536",
+      "title": "Serial Magnetic Resonance Imaging for Monitoring Medical Therapy Effects in Crohn’s Disease",
+      "pub_year": 2013,
+      "authors": [
+        "Jeroen A. W. Tielbeek",
+        "Mark Löwenberg",
+        "Shandra Bipat",
+        "Karin Horsthuis",
+        "Cyriel Y. Ponsioen",
+        "Geert D’Haens",
+        "Jaap Stoker"
+      ],
+      "citation_count": 49,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1965015685",
+      "doi": "10.1007/s00330-007-0648-4",
+      "title": "A prospective randomized comparison between two MRI studies of the small bowel in Crohn’s disease, the oral contrast method and MR enteroclysis",
+      "pub_year": 2007,
+      "authors": [
+        "Anne Negaard",
+        "Vemund Paulsen",
+        "Leiv Sandvik",
+        "A. Berstad",
+        "Arne Borthne",
+        "Kirsti Try",
+        "I. Lygren",
+        "T. Storaas",
+        "Nils‐Einar Kløw"
+      ],
+      "citation_count": 228,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1969462369",
+      "doi": "10.2214/ajr.12.10341",
+      "title": "Grading Crohn Disease Activity With MRI: Interobserver Variability of MRI Features, MRI Scoring of Severity, and Correlation With Crohn Disease Endoscopic Index of Severity",
+      "pub_year": 2013,
+      "authors": [
+        "Jeroen A. W. Tielbeek",
+        "Jesica Makanyanga",
+        "Shandra Bipat",
+        "Douglas Pendsé",
+        "C. Yung Nio",
+        "Frans M. Vos",
+        "Stuart A. Taylor",
+        "Jaap Stoker"
+      ],
+      "citation_count": 134,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1980788205",
+      "doi": "10.1080/02841850802409539",
+      "title": "Crohn's disease evaluated with magnetic resonance enteroclysis: diagnostic performance of experienced and inexperienced readers before and after training",
+      "pub_year": 2008,
+      "authors": [
+        "Anne Negaard",
+        "Arna Mulahasanovic",
+        "Lars A. R. Reisæter",
+        "K. Aasekjaer",
+        "Lorentz Sandvik",
+        "Nils‐Einar Kløw"
+      ],
+      "citation_count": 8,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2008551220",
+      "doi": "10.1016/j.ejrad.2011.07.013",
+      "title": "Non-perforating small bowel Crohn's disease assessed by MRI enterography: Derivation and histopathological validation of an MR-based activity index",
+      "pub_year": 2011,
+      "authors": [
+        "Michael Steward",
+        "Shonit Punwani",
+        "Ian Proctor",
+        "Yvette Adjei-Gyamfi",
+        "Fiona Chatterjee",
+        "Stuart Bloom",
+        "Marco Novelli",
+        "Steve Halligan",
+        "Manuel Rodriguez‐Justo",
+        "Stuart A. Taylor"
+      ],
+      "citation_count": 284,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2012339719",
+      "doi": "10.1007/s00330-009-1328-3",
+      "title": "CT colonography polyp matching: differences between experienced readers",
+      "pub_year": 2009,
+      "authors": [
+        "Marjolein H. Liedenbaum",
+        "Ayso H. de Vries",
+        "Steve Halligan",
+        "Patrick M. Bossuyt",
+        "Abraham H. Dachman",
+        "Evelien Dekker",
+        "Jasper Florie",
+        "Stefaan Gryspeerdt",
+        "Sebastiaan Jensch",
+        "C. Daniel Johnson",
+        "Andrea Laghi",
+        "Stuart A. Taylor",
+        "Jaap Stoker"
+      ],
+      "citation_count": 12,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2029746055",
+      "doi": "10.1002/ibd.21551",
+      "title": "Magnetic resonance imaging for evaluation of Crohnʼs disease",
+      "pub_year": 2010,
+      "authors": [
+        "Jordi Rimola",
+        "Íngrid Ordás",
+        "Sónia Rodríguez",
+        "Orlando García‐Bosch",
+        "Montserrat Aceituno",
+        "Josep Llach",
+        "Carmen Ayuso",
+        "Elena Ricart",
+        "Julián Panés"
+      ],
+      "citation_count": 501,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2046972433",
+      "doi": "10.1007/s00330-008-1034-6",
+      "title": "Anastomotic recurrence of Crohn’s disease after ileocolic resection: comparison of MR enteroclysis with endoscopy",
+      "pub_year": 2008,
+      "authors": [
+        "Johannes Sailer",
+        "Philipp Peloschek",
+        "Walter Reinisch",
+        "Harald Vogelsang",
+        "Karl Turetschek",
+        "Wolfgang Schima"
+      ],
+      "citation_count": 122,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2083942411",
+      "doi": "10.1016/j.ejrad.2011.05.033",
+      "title": "Grading luminal Crohn's disease: Which MRI features are considered as important?",
+      "pub_year": 2011,
+      "authors": [
+        "Manon L. W. Ziech",
+        "Patrick M. Bossuyt",
+        "Andrea Laghi",
+        "T. Lauenstein",
+        "Stuart A. Taylor",
+        "Jaap Stoker"
+      ],
+      "citation_count": 34,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2088287113",
+      "doi": "10.1007/s00330-008-1287-0",
+      "title": "Magnetic resonance imaging for evaluation of disease activity in Crohn’s disease: a systematic review",
+      "pub_year": 2009,
+      "authors": [
+        "Karin Horsthuis",
+        "Shandra Bipat",
+        "Pieter Stokkers",
+        "Jaap Stoker"
+      ],
+      "citation_count": 151,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2093682332",
+      "doi": "10.1007/s10620-013-2781-z",
+      "title": "Comparison Between 1.5 and 3.0 Tesla Magnetic Resonance Enterography for the Assessment of Disease Activity and Complications in Ileo-Colonic Crohn’s Disease",
+      "pub_year": 2013,
+      "authors": [
+        "Gionata Fiorino",
+        "Cristiana Bonifacio",
+        "Mauro Padrenostro",
+        "Federica Mrakic Sposta",
+        "Antonino Spinelli",
+        "Alberto Malesci",
+        "Luca Balzarini",
+        "Laurent Peyrin‐Biroulet",
+        "Silvio Danese"
+      ],
+      "citation_count": 35,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2095346775",
+      "doi": "10.1148/radiol.10100252",
+      "title": "Consensus Interpretation in Imaging Research: Is There a Better Way?",
+      "pub_year": 2010,
+      "authors": [
+        "Alexander A. Bankier",
+        "Deborah Levine",
+        "Elkan F. Halpern",
+        "Herbert Y. Kressel"
+      ],
+      "citation_count": 175,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1964785646",
+      "doi": "10.1053/j.gastro.2005.06.064",
+      "title": "A Randomized, Placebo-Controlled Trial of Certolizumab Pegol (CDP870) for Treatment of Crohn’s Disease",
+      "pub_year": 2005,
+      "authors": [
+        "Stefan Schreiber",
+        "Paul Rutgeerts",
+        "Richard N. Fedorak",
+        "Munaa Khaliq–Kareemi",
+        "Michael A. Kamm",
+        "Michel Boivin",
+        "Çharles N. Bernstein",
+        "Michael Staun",
+        "Ole Østergaard Thomsen",
+        "Alison Innes"
+      ],
+      "citation_count": 578,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W1971847879",
+      "doi": "10.1007/s00261-005-0395-4",
+      "title": "Crohn disease of the small bowel: MR enteroclysis versus conventional enteroclysis",
+      "pub_year": 2006,
+      "authors": [
+        "Gabriele Masselli",
+        "A Vecchioli",
+        "Gianfranco Gualdi"
+      ],
+      "citation_count": 34,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2005667163",
+      "doi": "10.1002/ibd.21168",
+      "title": "Magnetic resonance follow-through imaging for evaluation of disease activity in ileal Crohn's disease",
+      "pub_year": 2009,
+      "authors": [
+        "Constantinos A. Parisinos",
+        "Victoria McIntyre",
+        "Tim Heron",
+        "Deepak Subedi",
+        "Ian Arnott",
+        "Craig Mowat",
+        "David C. Wilson",
+        "Simon McGurk",
+        "Stephen Glancy",
+        "Ian Zealley",
+        "Jack Satsangi",
+        "Charlie W. Lees"
+      ],
+      "citation_count": 20,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2023143600",
+      "doi": "10.1007/s004280000226",
+      "title": "Significant association of strictures and internal fistula formation in Crohn's disease",
+      "pub_year": 2000,
+      "authors": [
+        "Georg Oberhuber",
+        "Petra C. Stangl",
+        "Harald Vogelsang",
+        "Ewald Schober",
+        "Friedrich Herbst",
+        "Christoph Gasché"
+      ],
+      "citation_count": 131,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2049596761",
+      "doi": "10.1002/(sici)1096-9896(200002)190:2<196::aid-path513>3.0.co;2-5",
+      "title": "The relationship between inflammatory and serosal connective tissue changes in ileal Crohn's disease: evidence for a possible causative link",
+      "pub_year": 2000,
+      "authors": [
+        "Neil Borley",
+        "N J McC Mortensen",
+        "Derek P. Jewell",
+        "Bryan F. Warren"
+      ],
+      "citation_count": 155,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2052496052",
+      "doi": "10.1053/gast.2002.31072",
+      "title": "A review of activity indices and efficacy endpoints for clinical trials of medical therapy in adults with Crohn's disease",
+      "pub_year": 2002,
+      "authors": [
+        "William J. Sandborn",
+        "Brian G. Feagan",
+        "Stephen B. Hanauer",
+        "Herbert Lochs",
+        "Robert Löfberg",
+        "R Modigliani",
+        "Daniel H. Present",
+        "Paul Rutgeerts",
+        "Jürgen Schölmerich",
+        "Eduard F. Stange",
+        "Lloyd R. Sutherland"
+      ],
+      "citation_count": 683,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2059264372",
+      "doi": "10.1111/j.1572-0241.2007.01537.x",
+      "title": "Correlation of CT Enteroclysis With Surgical Pathology in Crohn's Disease",
+      "pub_year": 2007,
+      "authors": [
+        "Michael Chiorean",
+        "Kumaresan Sandrasegaran",
+        "Romil Saxena",
+        "Dean D. Maglinte",
+        "Attila Nakeeb",
+        "Cynthia S. Johnson"
+      ],
+      "citation_count": 230,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2081931036",
+      "doi": "10.1002/bjs.1800790934",
+      "title": "Fat-wrapping in Crohn's disease: Pathological basis and relevance to surgical practice",
+      "pub_year": 1992,
+      "authors": [
+        "A L Sheehan",
+        "Bryan F. Warren",
+        "M W L Gear",
+        "N A Shepherd"
+      ],
+      "citation_count": 273,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2110179252",
+      "doi": "10.1148/rg.243035120",
+      "title": "Cross-sectional Imaging in Crohn Disease",
+      "pub_year": 2004,
+      "authors": [
+        "Akira Furukawa",
+        "Takao Saotome",
+        "Michio Yamasaki",
+        "Kiyosumi Maeda",
+        "Norihisa Nitta",
+        "Masashi Takahashi",
+        "Tomoyuki Tsujikawa",
+        "Yoshihide Fujiyama",
+        "Kiyoshi Murata",
+        "Tsutomu Sakamoto"
+      ],
+      "citation_count": 242,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2119577494",
+      "doi": "10.1016/s1542-3565(05)00853-0",
+      "title": "Magnetic Resonance Imaging Compared With Ileocolonoscopy in Evaluating Disease Severity in Crohn’s Disease",
+      "pub_year": 2005,
+      "authors": [
+        "Jasper Florie",
+        "Karin Horsthuis",
+        "Daniël W. Hommes",
+        "C. Yung Nio",
+        "Johannes B. Reitsma",
+        "S J van Deventer",
+        "Jaap Stoker"
+      ],
+      "citation_count": 80,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2124225390",
+      "doi": "10.1016/s0016-5085(08)60102-x",
+      "title": "120 Crohn's Disease: Factors Associated with Exposure to High Levels of Diagnostic Radiation",
+      "pub_year": 2008,
+      "authors": [
+        "Alan Desmond",
+        "Kevin N. O’Regan",
+        "Carmel Curran",
+        "Sebastian McWilliams",
+        "Michael M. Maher",
+        "Fergus Shanahan"
+      ],
+      "citation_count": 307,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2126261425",
+      "doi": "10.2214/ajr.08.2027",
+      "title": "Prospective Comparison of State-of-the-Art MR Enterography and CT Enterography in Small-Bowel Crohn's Disease",
+      "pub_year": 2009,
+      "authors": [
+        "Hassan Siddiki",
+        "Jeff L. Fidler",
+        "Joel G. Fletcher",
+        "Sharon S. Burton",
+        "James E. Huprich",
+        "David M. Hough",
+        "C. Daniel Johnson",
+        "David H. Bruining",
+        "Edward V. Loftus",
+        "William J. Sandborn",
+        "Darrell S. Pardi",
+        "Jayawant N. Mandrekar"
+      ],
+      "citation_count": 389,
+      "ref_complete": true,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W2340680662",
+      "doi": null,
+      "title": "Development of a Crohn's disease activity index. National Cooperative Crohn's Disease Study.",
+      "pub_year": 1976,
+      "authors": [
+        "William R. Best",
+        "Jack M. Becktel",
+        "John W. Singleton",
+        "Fred Kern"
+      ],
+      "citation_count": 3177,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    },
+    {
+      "openalex_id": "W3149527659",
+      "doi": "10.1016/s0016-5085(76)80163-1",
+      "title": "Development of a Crohn's Disease Activity Index",
+      "pub_year": 1976,
+      "authors": [
+        "William R. Best",
+        "Jack M. Becktel",
+        "John W. Singleton",
+        "Fred Kern"
+      ],
+      "citation_count": 3160,
+      "ref_complete": false,
+      "depth": 2,
+      "in_degree": 0,
+      "phase": null
+    }
+  ],
+  "edges": [
+    [
+      "W4414530930",
+      "W61016998"
+    ],
+    [
+      "W4414530930",
+      "W136648691"
+    ],
+    [
+      "W4414530930",
+      "W1752248076"
+    ],
+    [
+      "W4414530930",
+      "W1915598702"
+    ],
+    [
+      "W4414530930",
+      "W1930383820"
+    ],
+    [
+      "W4414530930",
+      "W1974483485"
+    ],
+    [
+      "W4414530930",
+      "W1986749273"
+    ],
+    [
+      "W4414530930",
+      "W1993494426"
+    ],
+    [
+      "W4414530930",
+      "W1994064078"
+    ],
+    [
+      "W4414530930",
+      "W1998318117"
+    ],
+    [
+      "W4414530930",
+      "W2003441037"
+    ],
+    [
+      "W4414530930",
+      "W2004327707"
+    ],
+    [
+      "W4414530930",
+      "W2009834367"
+    ],
+    [
+      "W4414530930",
+      "W2022352395"
+    ],
+    [
+      "W4414530930",
+      "W2022661087"
+    ],
+    [
+      "W61016998",
+      "W6479312"
+    ],
+    [
+      "W61016998",
+      "W17778536"
+    ],
+    [
+      "W61016998",
+      "W29117227"
+    ],
+    [
+      "W61016998",
+      "W53487432"
+    ],
+    [
+      "W61016998",
+      "W53678705"
+    ],
+    [
+      "W61016998",
+      "W70937671"
+    ],
+    [
+      "W61016998",
+      "W162402327"
+    ],
+    [
+      "W61016998",
+      "W163876282"
+    ],
+    [
+      "W61016998",
+      "W178407814"
+    ],
+    [
+      "W61016998",
+      "W1501114354"
+    ],
+    [
+      "W61016998",
+      "W1570526968"
+    ],
+    [
+      "W61016998",
+      "W1579194303"
+    ],
+    [
+      "W61016998",
+      "W1725062471"
+    ],
+    [
+      "W61016998",
+      "W1945503688"
+    ],
+    [
+      "W61016998",
+      "W1953831249"
+    ],
+    [
+      "W136648691",
+      "W1991924453"
+    ],
+    [
+      "W136648691",
+      "W1994960045"
+    ],
+    [
+      "W136648691",
+      "W2048729604"
+    ],
+    [
+      "W136648691",
+      "W2057344238"
+    ],
+    [
+      "W136648691",
+      "W2068302660"
+    ],
+    [
+      "W136648691",
+      "W2081518366"
+    ],
+    [
+      "W136648691",
+      "W2086225776"
+    ],
+    [
+      "W136648691",
+      "W2097491333"
+    ],
+    [
+      "W136648691",
+      "W2133936908"
+    ],
+    [
+      "W136648691",
+      "W2138551246"
+    ],
+    [
+      "W136648691",
+      "W2149022385"
+    ],
+    [
+      "W136648691",
+      "W2160269081"
+    ],
+    [
+      "W1752248076",
+      "W161570764"
+    ],
+    [
+      "W1752248076",
+      "W189242551"
+    ],
+    [
+      "W1752248076",
+      "W1889001761"
+    ],
+    [
+      "W1752248076",
+      "W1907613854"
+    ],
+    [
+      "W1752248076",
+      "W1942412715"
+    ],
+    [
+      "W1752248076",
+      "W1981575166"
+    ],
+    [
+      "W1752248076",
+      "W1986239161"
+    ],
+    [
+      "W1752248076",
+      "W2007800264"
+    ],
+    [
+      "W1752248076",
+      "W2025577544"
+    ],
+    [
+      "W1752248076",
+      "W2032322712"
+    ],
+    [
+      "W1752248076",
+      "W2038850927"
+    ],
+    [
+      "W1752248076",
+      "W2055644324"
+    ],
+    [
+      "W1752248076",
+      "W2058725468"
+    ],
+    [
+      "W1752248076",
+      "W2069539798"
+    ],
+    [
+      "W1752248076",
+      "W2106777715"
+    ],
+    [
+      "W1915598702",
+      "W61016998"
+    ],
+    [
+      "W1915598702",
+      "W1825587443"
+    ],
+    [
+      "W1915598702",
+      "W1930299866"
+    ],
+    [
+      "W1915598702",
+      "W1964704603"
+    ],
+    [
+      "W1915598702",
+      "W1967200174"
+    ],
+    [
+      "W1915598702",
+      "W1975391202"
+    ],
+    [
+      "W1915598702",
+      "W1978086188"
+    ],
+    [
+      "W1915598702",
+      "W1981017999"
+    ],
+    [
+      "W1915598702",
+      "W1981839111"
+    ],
+    [
+      "W1915598702",
+      "W1983879219"
+    ],
+    [
+      "W1915598702",
+      "W1988139027"
+    ],
+    [
+      "W1915598702",
+      "W1990722360"
+    ],
+    [
+      "W1915598702",
+      "W1996063338"
+    ],
+    [
+      "W1915598702",
+      "W1997919668"
+    ],
+    [
+      "W1915598702",
+      "W2003737781"
+    ],
+    [
+      "W1930383820",
+      "W26752767"
+    ],
+    [
+      "W1930383820",
+      "W1527935981"
+    ],
+    [
+      "W1930383820",
+      "W1841735456"
+    ],
+    [
+      "W1930383820",
+      "W1975066688"
+    ],
+    [
+      "W1930383820",
+      "W1976477654"
+    ],
+    [
+      "W1930383820",
+      "W1980794099"
+    ],
+    [
+      "W1930383820",
+      "W1983046204"
+    ],
+    [
+      "W1930383820",
+      "W1990003162"
+    ],
+    [
+      "W1930383820",
+      "W1996417137"
+    ],
+    [
+      "W1930383820",
+      "W1999102990"
+    ],
+    [
+      "W1930383820",
+      "W1999607765"
+    ],
+    [
+      "W1930383820",
+      "W2005888577"
+    ],
+    [
+      "W1930383820",
+      "W2014989765"
+    ],
+    [
+      "W1930383820",
+      "W2022178173"
+    ],
+    [
+      "W1930383820",
+      "W2023306689"
+    ],
+    [
+      "W1974483485",
+      "W1613868394"
+    ],
+    [
+      "W1974483485",
+      "W1965200384"
+    ],
+    [
+      "W1974483485",
+      "W1970502636"
+    ],
+    [
+      "W1974483485",
+      "W1975574070"
+    ],
+    [
+      "W1974483485",
+      "W2012369302"
+    ],
+    [
+      "W1974483485",
+      "W2014168664"
+    ],
+    [
+      "W1974483485",
+      "W2021956742"
+    ],
+    [
+      "W1974483485",
+      "W2027447002"
+    ],
+    [
+      "W1974483485",
+      "W2033069215"
+    ],
+    [
+      "W1974483485",
+      "W2036652308"
+    ],
+    [
+      "W1974483485",
+      "W2041932935"
+    ],
+    [
+      "W1974483485",
+      "W2044111577"
+    ],
+    [
+      "W1974483485",
+      "W2050777161"
+    ],
+    [
+      "W1974483485",
+      "W2057390212"
+    ],
+    [
+      "W1974483485",
+      "W2060427212"
+    ],
+    [
+      "W1986749273",
+      "W178836027"
+    ],
+    [
+      "W1986749273",
+      "W1589907244"
+    ],
+    [
+      "W1986749273",
+      "W1893440025"
+    ],
+    [
+      "W1986749273",
+      "W1982780044"
+    ],
+    [
+      "W1986749273",
+      "W1985085366"
+    ],
+    [
+      "W1986749273",
+      "W1985820644"
+    ],
+    [
+      "W1986749273",
+      "W1994315094"
+    ],
+    [
+      "W1986749273",
+      "W1998400223"
+    ],
+    [
+      "W1986749273",
+      "W1998851912"
+    ],
+    [
+      "W1986749273",
+      "W2012806442"
+    ],
+    [
+      "W1986749273",
+      "W2012911759"
+    ],
+    [
+      "W1986749273",
+      "W2017599289"
+    ],
+    [
+      "W1986749273",
+      "W2021956742"
+    ],
+    [
+      "W1986749273",
+      "W2041932935"
+    ],
+    [
+      "W1986749273",
+      "W2046346948"
+    ],
+    [
+      "W1994064078",
+      "W1964733054"
+    ],
+    [
+      "W1994064078",
+      "W1972180264"
+    ],
+    [
+      "W1994064078",
+      "W1978105625"
+    ],
+    [
+      "W1994064078",
+      "W1988925350"
+    ],
+    [
+      "W1994064078",
+      "W1998400223"
+    ],
+    [
+      "W1994064078",
+      "W2006038370"
+    ],
+    [
+      "W1994064078",
+      "W2008518629"
+    ],
+    [
+      "W1994064078",
+      "W2026215839"
+    ],
+    [
+      "W1994064078",
+      "W2036163867"
+    ],
+    [
+      "W1994064078",
+      "W2055106561"
+    ],
+    [
+      "W1994064078",
+      "W2061475647"
+    ],
+    [
+      "W1994064078",
+      "W2073109332"
+    ],
+    [
+      "W1994064078",
+      "W2077691933"
+    ],
+    [
+      "W1994064078",
+      "W2079037272"
+    ],
+    [
+      "W1994064078",
+      "W2088718533"
+    ],
+    [
+      "W1998318117",
+      "W1834872163"
+    ],
+    [
+      "W1998318117",
+      "W1879898010"
+    ],
+    [
+      "W1998318117",
+      "W1965200384"
+    ],
+    [
+      "W1998318117",
+      "W1972299229"
+    ],
+    [
+      "W1998318117",
+      "W1973355514"
+    ],
+    [
+      "W1998318117",
+      "W1990723509"
+    ],
+    [
+      "W1998318117",
+      "W1992192817"
+    ],
+    [
+      "W1998318117",
+      "W1992453604"
+    ],
+    [
+      "W1998318117",
+      "W1993856565"
+    ],
+    [
+      "W1998318117",
+      "W1996821722"
+    ],
+    [
+      "W1998318117",
+      "W2009331971"
+    ],
+    [
+      "W1998318117",
+      "W2015184473"
+    ],
+    [
+      "W1998318117",
+      "W2022352395"
+    ],
+    [
+      "W1998318117",
+      "W2023184373"
+    ],
+    [
+      "W1998318117",
+      "W2045445071"
+    ],
+    [
+      "W2003441037",
+      "W164652160"
+    ],
+    [
+      "W2003441037",
+      "W2017823766"
+    ],
+    [
+      "W2003441037",
+      "W2054612492"
+    ],
+    [
+      "W2003441037",
+      "W2076663221"
+    ],
+    [
+      "W2003441037",
+      "W2146808408"
+    ],
+    [
+      "W2003441037",
+      "W2306287116"
+    ],
+    [
+      "W2004327707",
+      "W118871860"
+    ],
+    [
+      "W2004327707",
+      "W153106497"
+    ],
+    [
+      "W2004327707",
+      "W171134657"
+    ],
+    [
+      "W2004327707",
+      "W194283919"
+    ],
+    [
+      "W2004327707",
+      "W201552836"
+    ],
+    [
+      "W2004327707",
+      "W1482797108"
+    ],
+    [
+      "W2004327707",
+      "W1608249412"
+    ],
+    [
+      "W2004327707",
+      "W1610649337"
+    ],
+    [
+      "W2004327707",
+      "W1839827929"
+    ],
+    [
+      "W2004327707",
+      "W1853332726"
+    ],
+    [
+      "W2004327707",
+      "W1932639046"
+    ],
+    [
+      "W2004327707",
+      "W1974513748"
+    ],
+    [
+      "W2004327707",
+      "W1974607752"
+    ],
+    [
+      "W2004327707",
+      "W1988710615"
+    ],
+    [
+      "W2004327707",
+      "W1992062202"
+    ],
+    [
+      "W2009834367",
+      "W1964019813"
+    ],
+    [
+      "W2009834367",
+      "W1964695119"
+    ],
+    [
+      "W2009834367",
+      "W1965015685"
+    ],
+    [
+      "W2009834367",
+      "W1969462369"
+    ],
+    [
+      "W2009834367",
+      "W1975066688"
+    ],
+    [
+      "W2009834367",
+      "W1980788205"
+    ],
+    [
+      "W2009834367",
+      "W2008551220"
+    ],
+    [
+      "W2009834367",
+      "W2012339719"
+    ],
+    [
+      "W2009834367",
+      "W2022352395"
+    ],
+    [
+      "W2009834367",
+      "W2029746055"
+    ],
+    [
+      "W2009834367",
+      "W2046972433"
+    ],
+    [
+      "W2009834367",
+      "W2083942411"
+    ],
+    [
+      "W2009834367",
+      "W2088287113"
+    ],
+    [
+      "W2009834367",
+      "W2093682332"
+    ],
+    [
+      "W2009834367",
+      "W2095346775"
+    ],
+    [
+      "W2022352395",
+      "W1964785646"
+    ],
+    [
+      "W2022352395",
+      "W1965015685"
+    ],
+    [
+      "W2022352395",
+      "W1971847879"
+    ],
+    [
+      "W2022352395",
+      "W2005667163"
+    ],
+    [
+      "W2022352395",
+      "W2015184473"
+    ],
+    [
+      "W2022352395",
+      "W2022661087"
+    ],
+    [
+      "W2022352395",
+      "W2023143600"
+    ],
+    [
+      "W2022352395",
+      "W2049596761"
+    ],
+    [
+      "W2022352395",
+      "W2052496052"
+    ],
+    [
+      "W2022352395",
+      "W2059264372"
+    ],
+    [
+      "W2022352395",
+      "W2081931036"
+    ],
+    [
+      "W2022352395",
+      "W2110179252"
+    ],
+    [
+      "W2022352395",
+      "W2119577494"
+    ],
+    [
+      "W2022352395",
+      "W2124225390"
+    ],
+    [
+      "W2022352395",
+      "W2126261425"
+    ],
+    [
+      "W2022661087",
+      "W2340680662"
+    ],
+    [
+      "W2022661087",
+      "W3149527659"
+    ]
+  ],
+  "meta": {
+    "node_count": 190,
+    "edge_count": 200,
+    "sparse_ids": [
+      "W1993494426",
+      "W2022661087",
+      "W6479312",
+      "W29117227",
+      "W53678705",
+      "W162402327",
+      "W163876282",
+      "W178407814",
+      "W1725062471",
+      "W1991924453",
+      "W1994960045",
+      "W2138551246",
+      "W161570764",
+      "W1889001761",
+      "W1907613854",
+      "W2069539798",
+      "W2057390212",
+      "W2012806442",
+      "W2012911759",
+      "W2017599289",
+      "W1972180264",
+      "W1988925350",
+      "W2026215839",
+      "W2073109332",
+      "W2077691933",
+      "W2088718533",
+      "W164652160",
+      "W2306287116",
+      "W153106497",
+      "W194283919",
+      "W1608249412",
+      "W1839827929",
+      "W1974513748",
+      "W2340680662",
+      "W3149527659"
+    ],
+    "unresolved_ids": [
+      "W6697973760"
+    ],
+    "unresolved_count": 1,
+    "failed_ids": [],
+    "failed_count": 0
+  }
+}
