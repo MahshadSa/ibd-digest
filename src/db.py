@@ -1,6 +1,7 @@
 import json
 import sqlite3
 from datetime import date
+from pathlib import Path
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS papers (
@@ -32,6 +33,7 @@ CREATE TABLE IF NOT EXISTS corpus (
 
 def migrate(db_path: str) -> None:
     """Create tables if they do not exist."""
+    Path(db_path).parent.mkdir(parents=True, exist_ok=True)
     with sqlite3.connect(db_path) as conn:
         conn.executescript(SCHEMA)
 

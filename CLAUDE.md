@@ -263,9 +263,10 @@ The `--force` flag is required in the scheduled run because the writer guard
 Local manual runs should omit `--force` to preserve any notes added to today's
 file.
 
-State persistence: `data/papers.db` and `Inbox/Papers/*.md` committed back to
-`main` by `github-actions[bot]` with `[skip ci]` in the commit message.
-Commit step is a no-op if nothing changed.
+State persistence: `Inbox/Papers/*.md` and `Inbox/To Read.md` committed back
+to `main` by `github-actions[bot]` with `[skip ci]` in the commit message.
+Commit step is a no-op if nothing changed. `data/papers.db` is intentionally
+not committed to `main` -- see DB persistence (2026-06-15).
 
 Caches:
 - pip cache via `actions/setup-python` keyed on `pyproject.toml`
@@ -280,6 +281,38 @@ Local sync: workflow does not auto-update the local vault. `git pull` from
 vault root before opening Obsidian to read the day's digest.
 
 Dry run: passed on 2026-05-21.
+
+## DB persistence (2026-06-15)
+
+`data/papers.db` was untracked from `main` (git rm --cached, removed from
+history). This broke the scheduled run: `migrate()` called
+`sqlite3.connect("data/papers.db")` on a fresh checkout where `data/` does
+not exist, and sqlite3 does not create missing parent directories. Fixed by
+adding `Path(db_path).parent.mkdir(parents=True, exist_ok=True)` to
+`migrate()` in src/db.py.
+
+The workflow's commit step no longer does `git add data/papers.db` (it would
+have re-tracked the DB on the next run, undoing the untrack). It now commits
+only `Inbox/Papers/` and `Inbox/To Read.md`.
+
+Persistence decision: a bot-owned `data` branch, separate from `main`,
+holding `data/papers.db`. NOT `actions/cache`. Reason: cache eviction
+(~7 days unused, or storage pressure) is silent -- the pipeline would just
+run as if the DB were empty, with no failure signal, degrading to the open
+items below without anyone noticing. A bot-owned branch gives a push step
+that can fail loudly and a history that's inspectable. NOT BUILT this
+session; the workflow currently starts every run with an empty DB.
+
+Open items, both currently masked (not fixed) by the mkdir fix and only
+truly resolved once branch persistence lands:
+- Corpus-empty: with an empty DB, the `corpus` table starts empty.
+  `score_and_tier()` (src/ranking/score.py) logs a warning and scores
+  nothing, so every paper's `tier` stays NULL and lands in the collapsed
+  Archive section with no similarity score. Ranking is silently disabled.
+- Empty-DB dedup: `get_existing_dois()` (src/fetch.py) returns an empty set
+  every run, so every paper inside PubMed's rolling 30-day window and each
+  journal's 50-paper Crossref pull is treated as new and re-surfaces in the
+  digest every day, not just the day it first appeared.
 
 ## Next steps (updated 2026-06-04)
 
