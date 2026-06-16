@@ -11,7 +11,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from src.db import get_connection, migrate_embedding_columns
+from src.db import get_connection, migrate, migrate_embedding_columns
 from src.ranking.embed import embed, load_model
 
 logger = logging.getLogger(__name__)
@@ -119,6 +119,83 @@ def _write_note(doi: str, title: str, abstract: str, corpus_dir: str) -> None:
     )
 
 
+_NOTE_DOI_RE = re.compile(r"DOI: \[([^\]]+)\]")
+
+
+def _parse_note(path: Path) -> tuple[str, str, str] | None:
+    """Parse a corpus note into (doi, title, abstract). None if unparseable."""
+    text = path.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    if not lines or not lines[0].startswith("# "):
+        return None
+    title = lines[0][2:].strip()
+    m = _NOTE_DOI_RE.search(text)
+    if not m:
+        return None
+    doi = m.group(1).strip().lower()
+    abstract = text.split("## Abstract", 1)[1].strip() if "## Abstract" in text else ""
+    if abstract == "No abstract available.":
+        abstract = ""
+    return doi, title, abstract
+
+
+def rebuild_corpus_from_notes(
+    db_path: str, corpus_dir: str, model_name: str
+) -> int:
+    """Embed committed corpus notes into the corpus table. No network. Return count embedded.
+
+    The corpus seed metadata lives in committed Markdown notes; only the SPECTER2
+    embeddings (binary) were lost when papers.db was untracked. This regenerates them
+    from text so production runs score against a populated corpus without persisting
+    the binary DB.
+    """
+    migrate(db_path)
+
+    parsed: list[tuple[str, str, str]] = []
+    for note in sorted(Path(corpus_dir).glob("*.md")):
+        rec = _parse_note(note)
+        if rec is None:
+            logger.warning("Skipping unparseable corpus note: %s", note.name)
+            continue
+        parsed.append(rec)
+    logger.info("Parsed %d corpus notes from %s", len(parsed), corpus_dir)
+
+    conn = get_connection(db_path)
+    done_dois = {
+        row["doi"]
+        for row in conn.execute(
+            "SELECT doi FROM corpus WHERE embedding IS NOT NULL"
+        ).fetchall()
+    }
+    pending = [r for r in parsed if r[0] not in done_dois]
+    if not pending:
+        logger.info("Corpus already populated; nothing to rebuild")
+        conn.close()
+        return 0
+
+    tokenizer, model = load_model(model_name)
+    texts = [
+        title + tokenizer.sep_token + abstract for _, title, abstract in pending
+    ]
+    embeddings = embed(texts, tokenizer, model)
+    today = date.today().isoformat()
+
+    with conn:
+        for (doi, title, abstract), emb in zip(pending, embeddings):
+            conn.execute(
+                """
+                INSERT OR REPLACE INTO corpus
+                    (doi, title, abstract, embedding, added_date)
+                VALUES (?, ?, ?, ?, ?)
+                """,
+                (doi, title, abstract, emb.tobytes(), today),
+            )
+
+    conn.close()
+    logger.info("Corpus rebuilt from notes: %d embedded", len(pending))
+    return len(pending)
+
+
 def build_corpus(
     db_path: str,
     seed_file: str,
@@ -206,11 +283,19 @@ if __name__ == "__main__":
         datefmt="%Y-%m-%dT%H:%M:%S",
     )
     load_dotenv()
-    build_corpus(
-        db_path="data/papers.db",
-        seed_file="Corpus/seed_dois.txt",
-        corpus_dir="Corpus",
-        model_name="allenai/specter2_base",
-        api_key=os.environ["NCBI_API_KEY"].strip(),
-        email=os.environ["NCBI_EMAIL"].strip(),
-    )
+    mode = sys.argv[1] if len(sys.argv) > 1 else "build"
+    if mode == "from-notes":
+        rebuild_corpus_from_notes(
+            db_path="data/papers.db",
+            corpus_dir="Corpus",
+            model_name="allenai/specter2_base",
+        )
+    else:
+        build_corpus(
+            db_path="data/papers.db",
+            seed_file="Corpus/seed_dois.txt",
+            corpus_dir="Corpus",
+            model_name="allenai/specter2_base",
+            api_key=os.environ["NCBI_API_KEY"].strip(),
+            email=os.environ["NCBI_EMAIL"].strip(),
+        )

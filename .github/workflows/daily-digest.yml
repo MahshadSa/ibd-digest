@@ -45,6 +45,9 @@ jobs:
           NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
         run: python -m src.fetch
 
+      - name: Rebuild corpus from committed notes
+        run: python -m src.corpus from-notes
+
       - name: Embed and score
         run: python -m src.rank
 
@@ -58,7 +61,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Inbox/Papers/ "Inbox/To Read.md"
+          git add Inbox/Papers/ "Inbox/To Read.md" data/seen_dois.txt
           if git diff --staged --quiet; then
             echo "Nothing to commit, skipping."
             exit 0

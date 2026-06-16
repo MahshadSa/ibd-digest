@@ -303,16 +303,35 @@ items below without anyone noticing. A bot-owned branch gives a push step
 that can fail loudly and a history that's inspectable. NOT BUILT this
 session; the workflow currently starts every run with an empty DB.
 
-Open items, both currently masked (not fixed) by the mkdir fix and only
-truly resolved once branch persistence lands:
-- Corpus-empty: with an empty DB, the `corpus` table starts empty.
-  `score_and_tier()` (src/ranking/score.py) logs a warning and scores
-  nothing, so every paper's `tier` stays NULL and lands in the collapsed
-  Archive section with no similarity score. Ranking is silently disabled.
-- Empty-DB dedup: `get_existing_dois()` (src/fetch.py) returns an empty set
-  every run, so every paper inside PubMed's rolling 30-day window and each
-  journal's 50-paper Crossref pull is treated as new and re-surfaces in the
-  digest every day, not just the day it first appeared.
+Open items from the untrack, status updated:
+- Corpus-empty: FIXED (2026-06-15). The corpus seed metadata (DOI, title,
+  abstract) lives as committed text in `Corpus/seed_dois.txt` and the 42
+  `Corpus/*.md` notes; only the SPECTER2 embedding BLOBs were lost with the
+  DB. `rebuild_corpus_from_notes()` (src/corpus.py) parses those notes and
+  re-embeds them into the fresh DB's `corpus` table with no network, run as
+  the workflow step `python -m src.corpus from-notes` before `src.rank`.
+  Rebuilding at runtime (rather than committing pre-baked vectors) also keeps
+  the corpus and candidate papers embedded by the same runtime model, so
+  cosine scores stay consistent. Re-embeds 42 papers per run, seconds with
+  the cached model. Ranking is restored without persisting the binary DB.
+  Note: the corpus is rebuilt from the notes, which are the
+  successfully-built subset; `seed_dois.txt` is the DOI list, the notes are
+  the source of truth for corpus content.
+- Empty-DB dedup: FIXED (2026-06-15) with a committed seen-DOI list, the
+  lighter alternative to the bot-owned `data` branch. `data/seen_dois.txt`
+  (tracked; only `data/*.db` is gitignored) is the durable record of every
+  DOI ever surfaced. `src/seen.py` loads/saves it (lowercased, sorted,
+  one per line for small line-merge-friendly diffs). `src.fetch` now dedups
+  against `load_seen_dois() | get_existing_dois()` (file for CI where the DB
+  is ephemeral, DB union for laptop where it persists), then writes the
+  updated set back; the workflow commits it alongside `Inbox/`. Because the
+  writer selects `WHERE seen_date = today` (src/digest/writer.py), only the
+  genuinely-new papers inserted this run reach the digest. Seeded once from
+  the 1103 DOIs already present in committed `Inbox/Papers/*.md`, so the
+  first post-fix run does not replay the back catalogue.
+  Failure consistency: a run that dies before the commit step persists
+  nothing (Actions stops on step failure, so seen file and digests commit
+  together or not at all), so the seen set never gets ahead of the digests.
 
 ## Next steps (updated 2026-06-04)
 

@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from src.db import get_connection, get_existing_dois, insert_paper, migrate
 from src.fetchers.journals import fetch_all_journals
 from src.fetchers.pubmed import fetch_pubmed
+from src.seen import load_seen_dois, save_seen_dois
 
 logging.basicConfig(
     level=logging.INFO,
@@ -16,15 +17,25 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 DB_PATH = "data/papers.db"
+SEEN_PATH = "data/seen_dois.txt"
 
 
-def run(db_path: str, api_key: str, email: str, days_back: int = 1) -> None:
-    """Run all fetchers, dedup by DOI against existing DB rows, write new papers."""
+def run(
+    db_path: str, seen_path: str, api_key: str, email: str, days_back: int = 1
+) -> None:
+    """Run all fetchers, dedup by DOI against the persistent seen set, write new papers."""
     migrate(db_path)
     conn = get_connection(db_path)
 
-    existing_dois = get_existing_dois(conn)
-    logger.info("Existing papers in DB: %d", len(existing_dois))
+    db_dois = get_existing_dois(conn)
+    file_dois = load_seen_dois(seen_path)
+    existing_dois = db_dois | file_dois
+    logger.info(
+        "Existing DOIs: %d in DB, %d in seen file, %d combined",
+        len(db_dois),
+        len(file_dois),
+        len(existing_dois),
+    )
 
     all_papers: list[dict] = []
     all_papers.extend(fetch_pubmed(api_key, email, days_back))
@@ -53,7 +64,13 @@ def run(db_path: str, api_key: str, email: str, days_back: int = 1) -> None:
             insert_paper(conn, paper)
 
     conn.close()
-    logger.info("Done. %d papers written to DB.", len(new_papers))
+
+    save_seen_dois(seen_path, existing_dois | {p["doi"] for p in new_papers})
+    logger.info(
+        "Done. %d papers written to DB; seen file now holds %d DOIs.",
+        len(new_papers),
+        len(existing_dois) + len(new_papers),
+    )
 
 
 if __name__ == "__main__":
@@ -61,4 +78,4 @@ if __name__ == "__main__":
     _api_key = os.environ["NCBI_API_KEY"].strip()
     _email = os.environ["NCBI_EMAIL"].strip()
     _days_back = int(sys.argv[1]) if len(sys.argv) > 1 else 1
-    run(DB_PATH, _api_key, _email, _days_back)
+    run(DB_PATH, SEEN_PATH, _api_key, _email, _days_back)
