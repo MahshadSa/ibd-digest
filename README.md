@@ -16,14 +16,17 @@ from reading behavior over time.
 1. **Fetch.** Each day, the pipeline queries PubMed via E-utilities (a
    topic-filtered, journal-agnostic search) and Crossref (a journal-filtered,
    topic-agnostic pull of recent papers from a curated journal list),
-   deduplicates by DOI, and stores new papers in SQLite. See Source selection
-   below for why both paths exist.
+   deduplicates by DOI against a persistent seen-DOI list
+   (`data/seen_dois.txt`), and stores new papers in SQLite. See Source
+   selection below for why both paths exist.
 2. **Embed.** Each paper is embedded with SPECTER2 (`allenai/specter2_base`),
    a scientific document embedding model, using the title and abstract.
 3. **Rank.** Each paper is scored by maximum cosine similarity against a corpus
    of seed DOIs representing the research interests of the maintainer. Papers
    are sorted into three tiers (must-read, skim, archive) using
-   percentile-anchored thresholds calibrated to the corpus.
+   percentile-anchored thresholds calibrated to the corpus. The corpus
+   embeddings are rebuilt from committed Markdown notes at the start of each
+   run, so ranking works even though the database itself is not persisted.
 4. **Deliver.** A Markdown digest is written to the Obsidian vault at
    `Inbox/Papers/YYYY-MM-DD.md`, with each tier in its own callout block. Must-read
    and skim papers each carry two independent checkboxes: `Relevant` feeds the
@@ -33,7 +36,9 @@ from reading behavior over time.
    and a backlink to a persistent rolling note at `Inbox/To Read.md`. Re-running
    is idempotent: deduplication is by DOI.
 6. **Schedule.** A GitHub Actions workflow runs the pipeline daily and commits
-   state back to the repository.
+   the digests, the Read later queue, and the dedup list back to the repository.
+   The SQLite database is not committed; it is rebuilt from committed text each
+   run (see State and persistence).
 
 A feedback loop that adds `Relevant`-checked papers to the corpus, refining the
 ranker over time, is planned as the next phase.
@@ -60,21 +65,45 @@ Crossref REST API, GitHub Actions, Obsidian.
 \`\`\`
 ibd-digest-vault/
 ├── src/
-│   ├── fetch.py              entry point: fetch new papers
+│   ├── fetch.py              entry point: fetch new papers, dedup vs seen list
 │   ├── rank.py               entry point: embed pending + score and tier
-│   ├── corpus.py             entry point: rebuild corpus from seed DOIs
+│   ├── corpus.py             entry point: build corpus from seed DOIs (network)
+│   │                         or rebuild from committed notes (offline)
+│   ├── seen.py               persistent seen-DOI dedup list IO + recovery
 │   ├── db.py                 SQLite schema and migrations
 │   ├── fetchers/             pubmed.py, journals.py
 │   ├── ranking/              embed.py, score.py
 │   └── digest/
 │       ├── writer.py         Markdown digest generator
 │       └── to_read.py        Read later queue scanner
-├── data/papers.db            SQLite, committed
+├── data/papers.db            SQLite, gitignored, rebuilt empty each run
+├── data/seen_dois.txt        durable dedup list (every DOI surfaced), committed
 ├── Corpus/seed_dois.txt      curated DOIs defining "relevant"
+├── Corpus/*.md               corpus seed notes; corpus embeddings rebuilt from these
 ├── Inbox/Papers/             daily digests, YYYY-MM-DD.md
 ├── Inbox/To Read.md          rolling Read later queue
 └── .github/workflows/daily-digest.yml
 \`\`\`
+
+### State and persistence
+
+The SQLite database is deliberately not committed (a tracked binary caused
+push/pull merge failures). It is gitignored via `data/*.db` and rebuilt empty on
+every scheduled run. Two committed text artifacts carry the state that must
+survive across runs, both line-based and merge-friendly:
+
+- **Corpus.** The seed papers live as committed Markdown notes in `Corpus/`.
+  `python -m src.corpus from-notes` re-embeds them into the fresh database's
+  corpus table at the start of each run, with no network. Rebuilding at runtime
+  (rather than committing pre-baked vectors) keeps the corpus and the candidate
+  papers embedded by the same model, so cosine scores stay consistent.
+- **Dedup.** `data/seen_dois.txt` is the durable record of every DOI ever
+  surfaced. `src.fetch` deduplicates against it (unioned with the database on a
+  persistent local checkout), then writes the updated set back; the workflow
+  commits it alongside the digests. Because the writer selects papers by
+  `seen_date = today`, only the genuinely new papers inserted this run reach the
+  digest. `python -m src.seen rebuild-from-notes` resyncs the list from the DOIs
+  in `Inbox/Papers/*.md` after editing or regenerating digests by hand.
 
 ### Source selection
 
@@ -112,10 +141,15 @@ reading is wider than the column's scope.
 
 \`\`\`
 .venv\Scripts\python.exe -m src.fetch
+.venv\Scripts\python.exe -m src.corpus from-notes
 .venv\Scripts\python.exe -m src.rank
 .venv\Scripts\python.exe -m src.digest.writer .
 .venv\Scripts\python.exe -m src.digest.to_read .
 \`\`\`
+
+`src.corpus from-notes` rebuilds the corpus table from the committed `Corpus/`
+notes; it is required on a fresh database (such as a clean clone or any CI run)
+and a fast no-op once the corpus is already embedded locally.
 
 The writer refuses to overwrite an existing daily digest by default. Pass
 `--force` to overwrite (used by the scheduled workflow).
