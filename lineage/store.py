@@ -1,13 +1,17 @@
 """Run-file storage contract.
 
 All run IO goes through this module. Each run writes exactly one JSON file at
-runs/{run_id}.json, append-only: write_run refuses to overwrite an existing
-file. Regenerating a run is an explicit delete-then-rerun. run_id is
-{slug}-{YYYYMMDD}, so a same-day rerun targets the same filename and the guard
-forces the deliberate delete.
+runs/{run_id}.json. write_run is append-only: it refuses to overwrite an
+existing file, so regenerating a run is an explicit delete-then-rerun.
+update_run is overwrite-permitted, for stages that re-annotate an existing run
+(the pruner upgrading v1 to v2); it writes atomically so an interrupted write
+cannot corrupt the run. run_id is {slug}-{YYYYMMDD}, so a same-day rerun
+targets the same filename.
 """
 import json
+import os
 import re
+import tempfile
 from datetime import date
 from pathlib import Path
 
@@ -35,6 +39,31 @@ def write_run(run: dict, runs_dir: Path = Path("runs")) -> Path:
     if path.exists():
         raise FileExistsError(f"run file already exists: {path}; delete to regenerate")
     path.write_text(json.dumps(run, indent=2, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def update_run(run: dict, runs_dir: Path = Path("runs")) -> Path:
+    """Write a run dict to runs/{run_id}.json, overwriting if present.
+
+    Unlike write_run (append-only), update_run permits overwrite, for stages
+    that re-annotate an existing run such as the pruner upgrading v1 to v2.
+    Atomic: writes a temp file in the same directory and renames over the
+    target, so an interrupted write leaves the existing run intact.
+    """
+    missing = REQUIRED_KEYS - run.keys()
+    if missing:
+        raise ValueError(f"run missing required keys: {sorted(missing)}")
+    runs_dir = Path(runs_dir)
+    runs_dir.mkdir(parents=True, exist_ok=True)
+    path = runs_dir / f"{run['run_id']}.json"
+    fd, tmp = tempfile.mkstemp(dir=runs_dir, suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(run, f, indent=2, ensure_ascii=False)
+        os.replace(tmp, path)
+    except BaseException:
+        Path(tmp).unlink(missing_ok=True)
+        raise
     return path
 
 

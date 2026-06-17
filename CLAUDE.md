@@ -408,9 +408,11 @@ Parallel to the digest's Inbox/Papers/, never overlapping it.
 Pipeline stages (deterministic):
   1 resolve.py   DOI to OpenAlex work id
   2 traverse.py  backward reference walk, depth 2, flag sparse nodes
-  3 prune.py     top-k per depth on relevance, non-destructive (hub weighting
-                  deferred, see Stage 3 status)
-  4 cluster.py   SPECTER2 embeddings, cluster into phases, date-order
+  3 prune.py     annotation pass: kept on every node, kept-subgraph in_degree,
+                  era phase; non-destructive, v1 keeps everything (no cut, no
+                  similarity, no centrality), see Stage 3 status
+  4 prune.py     era phases from pub_year decade (folded into stage 3; replaces
+                  the planned SPECTER2 clustering, axis settled wrong)
   5 render.py    Mermaid chart plus trajectory Markdown
   6 render.py    LLM narrative pass, structured input only, writes prose
 
@@ -698,12 +700,64 @@ entire structural build is saved. If it is confusing, we then invest in reframe
 #1 with a concrete artifact telling us it is needed. analyze_floor.py stays
 uncommitted in the repo root for re-running if a later deep walk is attempted.
 
-Stage 3 schema (when the pruner is finally built, not yet applied):
-  - add kept (bool) to every node; pruner sets it, never deletes.
-  - fill in_degree (kept-subgraph value, two-pass).
-  - bump schema_version to 2.
-  - add kept_count / pruned_count to meta (mirrors the *_count convention).
-  - leave the deferred sparse_count item alone.
+### Stage 3 (pruner): coarse prune BUILT (2026-06-17)
+
+prune.py is an annotation pass, not a reducer. It sets kept on every node,
+recomputes in_degree over the kept subgraph, assigns era phases from pub_year,
+records kept_count/pruned_count, and bumps schema_version to 2. `prune(run)` is
+a pure in-place function; `python -m lineage.prune <run_file>...` prunes files
+in place via store.update_run. Idempotent. Tested fixture-based for the logic
+(keep-all, kept-subgraph in_degree including the pruned-node-exclusion seam,
+decade phase mapping, schema bump, counts, idempotency, update_run overwrite +
+atomic temp cleanup) and against the real -0617 run files for the foundational
+keepers (CDAI 1976, "Lesions of the ileum" 1956 survive) and the presence of
+in_degree>=2 shared ancestors. The real-run tests skipUnless the files exist
+(they are not committed), so the suite stays green elsewhere.
+
+WHY THERE IS NO DEPTH-2 CAP (a decision, not a missing feature). Do not add one
+without new evidence; a future session that sees "the pruner does not prune" and
+adds a cap walks straight back into the trap this records. No honest per-node
+ordering exists for the cut. All three candidates failed validation:
+  - in_degree: degenerate on depth-2/top_k=15 graphs (~everything is 1), no
+    continuous signal to rank on.
+  - seed-anchored cosine: wrong axis, settled by the abstract re-run (off-thread
+    IBD papers are genuinely about IBD and score high; off-thread
+    differential-diagnosis papers outscore a real on-thread imaging paper).
+  - citation_count: actively harmful. It keeps famous off-thread classics
+    (rg run #1 most-cited depth-2 reference is Kaplan-Meier, "Nonparametric
+    Estimation from Incomplete Observations," cc=45545; then "Cancer Incidence
+    in Five Continents," cc=8537) and DROPS low-cited on-thread imaging papers
+    (diagnostics: "Crohn's disease evaluated with MR enteroclysis" cc=8,
+    "Doppler US of the SMA for Crohn's activity" cc=3). The cut direction is
+    the fatal one: a kept off-thread node can be flagged by the narrative, an
+    absent on-thread node cannot.
+Depth-2 is already bounded once, honestly, at traversal by top_k=15 (first-N per
+parent). A second stage-3 cap would re-order an already-bounded set with an
+ordering shown to fail every way. So v1 keeps the full top_k set: seed, all
+depth-1, all depth-2. pruned_count=0 is a real result. Keeping everything and
+letting era-grouping plus the narrative carry it is the purest version of the
+experiment this reframe exists to run.
+
+EXIT CONDITION (when to add a real cut). This reframe is a test; its pass/fail
+is the rendered note, not the pruner. Add a cut only if the rendered note is too
+busy to read. The cut to try then is charting only in_degree>=2 shared ancestors
+(keep all depth-1, chart depth-2 only where in_degree>=2, list the rest in the
+trajectory text). That is the point where reframe #1's graph-enrichment cost
+(bibliographic coupling, deeper/wider walk, depth-2 reference fetching) becomes
+justified. Recording the trigger now makes the later call "did the note hit the
+trigger," not a fresh argument. With prune settled as annotation-only, the real
+uncertainty has moved to render and narrative: whether the narrative can carry
+the off-thread flagging convincingly is the next hard question, not the graph.
+
+Schema v2 (applied):
+  - kept (bool) on every node; pruner sets it, never deletes.
+  - in_degree filled (kept-subgraph value; single post-hoc pass, not used in any
+    keep decision, stored for a future reframe #1 without pretending to carry
+    signal now).
+  - schema_version bumped to 2.
+  - phase (int decade start, e.g. 1970, or null if pub_year missing).
+  - meta gains kept_count / pruned_count (mirrors the *_count convention).
+  - sparse_count still deferred, left alone.
   - v1-to-v2 migration: a schema_version 1 run is simply an unpruned run;
     prune upgrades it in place to v2 when it writes. No separate migration. A
     mixed-version runs/ directory just means some runs are pruned and some are
