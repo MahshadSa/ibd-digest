@@ -45,6 +45,23 @@ def _norm_doi(doi: str | None) -> str | None:
     return doi.lower().replace("https://doi.org/", "").strip()
 
 
+def decode_abstract(inverted_index: dict[str, list[int]] | None) -> str | None:
+    """Reconstruct abstract text from OpenAlex's abstract_inverted_index.
+
+    The index maps each word to the positions it occupies, so a word appears
+    once per position. Expand every position into its own pair before sorting
+    so repeated words emit at all their positions, not once. Missing or empty
+    index returns None (OpenAlex omits abstracts for some works).
+    """
+    if not inverted_index:
+        return None
+    positions = [
+        (pos, word) for word, idxs in inverted_index.items() for pos in idxs
+    ]
+    positions.sort()
+    return " ".join(word for _, word in positions)
+
+
 def to_node(work: dict, depth: int) -> dict:
     """Normalize an OpenAlex work into a lineage node.
 
@@ -62,6 +79,7 @@ def to_node(work: dict, depth: int) -> dict:
         "openalex_id": _short_id(work["id"]),
         "doi": _norm_doi(work.get("doi")),
         "title": work.get("display_name") or work.get("title") or "",
+        "abstract": decode_abstract(work.get("abstract_inverted_index")),
         "pub_year": work.get("publication_year"),
         "authors": authors,
         "citation_count": work.get("cited_by_count", 0),

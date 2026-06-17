@@ -9,6 +9,15 @@
       {"author": {"display_name": "Alice Adams"}},
       {"author": {"display_name": "Bob Brown"}}
     ],
+    "abstract_inverted_index": {
+      "Intestinal": [0],
+      "ultrasound": [1],
+      "monitors": [2],
+      "Crohn": [3, 6],
+      "disease": [4],
+      "and": [5],
+      "activity": [7]
+    },
     "referenced_works": [
       "https://openalex.org/W3000000001",
       "https://openalex.org/W3000000002",
@@ -27,6 +36,15 @@
       {"author": {"display_name": "Alice Adams"}},
       {"author": {"display_name": "Bob Brown"}}
     ],
+    "abstract_inverted_index": {
+      "Intestinal": [0],
+      "ultrasound": [1],
+      "monitors": [2],
+      "Crohn": [3, 6],
+      "disease": [4],
+      "and": [5],
+      "activity": [7]
+    },
     "referenced_works": [
       "https://openalex.org/W3000000001",
       "https://openalex.org/W3000000002",
