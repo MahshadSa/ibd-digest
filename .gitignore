@@ -42,3 +42,6 @@ data/*.db
 data/*.db-wal
 data/*.db-shm
 data/*.db-journal
+
+analyze_floor.py
+runs/*.json
