@@ -847,7 +847,7 @@ the seed actually cites. Caveat: depth-1 came back as exactly 60 = top_k, so the
 seed has >= 60 references and the full list is still capped, but a 4x widening
 moving the ceiling only to 2019 is strongly one-directional evidence.
 
-### Stage 6 (LLM selection + narrative): SCOPED, deliberately NOT built
+### Stage 6 (LLM selection + narrative): SCOPED (now BUILT, see below)
 
 Recording the intended reframe so it is not lost. The stage-5 legibility finding
 (190-node hairball, trajectory text is the readable artifact) reframes stage 6:
@@ -868,3 +868,91 @@ Target output: a structured, visual-ready record, timeline-friendly (per paper:
 label, year, one-line role, DOI), so the note can convert to an infographic.
 This is scope only; do not build until the stage-5 note is read in the vault and
 shows whether the curated layer is actually needed (the reframe-2 experiment).
+
+### Stage 6 (LLM selection + timeline): BUILT (2026-06-18)
+
+Built as two halves around a MANUAL paste, not a network call. This module still
+makes zero API calls and adds no network client; the transport is the human
+copying a prompt into a Claude session and pasting the reply back. Two new files,
+lineage/select.py and lineage/timeline.py, plus sidecar IO in store.py. render.py
+(stage 5) is untouched: the chart-everything note stays the raw record, this is
+the curated layer alongside it. 95 tests passing.
+
+Half 1, lineage/select.py (the human-in-the-loop boundary):
+  - `build_payload(run)` renders a pasteable prompt block: an instruction
+    preamble (select ~15-20 groundwork papers, pick ids from the list only, do
+    not invent) and the exact required response format, then one entry per kept
+    node (openalex_id, pub_year, depth, title, abstract truncated to 500 chars).
+    Ordered groundwork-likely first: `(pub_year asc, depth desc, title)`, undated
+    nodes last (an unknown year cannot be judged groundwork). Depth is a sort
+    TIEBREAKER only, never a cut. Full kept set, no pre-filter. SPECTER2,
+    in_degree, citation_count are NOT used in the ordering, per the stage-3
+    findings.
+  - `parse_selection(text)` extracts the response JSON. Accepts a fenced ```json
+    block or a bare object; raises ValueError on prose or non-object (the
+    "id list, not prose" guard).
+  - `validate_selection(parsed, run)` is the anti-hallucination validator: keeps
+    only selections whose openalex_id is in the run, drops unknown and duplicate
+    ids with a logged WARNING, raises if there is no selections list or none
+    survive. narrative (str) and coverage_gaps (list[str]) are free prose passed
+    through untouched.
+  - CLI: `python -m lineage.select <run_file>` prints the payload;
+    `python -m lineage.select ingest <run_file> [response_file]` (stdin if no
+    file) validates and writes the sidecar.
+
+Handoff format: a single fenced ```json object
+`{narrative, coverage_gaps, selections:[{openalex_id, rationale}]}` so the arc
+and gaps travel with the picks in one paste.
+
+Caching, SIDECAR not in-place (decided against mutating the run file): the
+validated block is written to `runs/{run_id}.selection.json` via
+store.write_selection (atomic temp-rename, overwrite-permitted). The crawl run
+file is NEVER mutated. Reasons: the crawl files are the immutable validation
+fixtures the skipUnless tests read against; the selection is a model judgment
+re-run as picks improve, a different artifact kind than the deterministic crawl;
+and it removes any in-place prune-and-write-back coupling. Re-render is free
+(re-read the sidecar); re-select is an explicit re-ingest (overwrites the
+sidecar). Sidecar carries run_id to bind it to its crawl.
+
+Half 2, lineage/timeline.py (the curated render):
+  - Reads the immutable crawl run plus the sidecar and joins by openalex_id. No
+    Mermaid: the graph is a near-tree with no meaningful branching, so a
+    decade-grouped timeline is the honest artifact and converts cleanly to a
+    visual post. Reuses render.group_by_phase as the single ordering source, so
+    the timeline cannot drift from stage-5 grouping (it prunes the v1 crawl in
+    memory first to populate phase, like render does; the on-disk crawl stays
+    v1).
+  - Every citation fact (title, authors, year, DOI) comes from the run node by
+    id; the sidecar contributes only ids, rationale sentences, narrative, gaps.
+  - DROP-UNKNOWN-ID GUARD AT RENDER TIME TOO, not only at ingest: a sidecar can
+    outlive a re-crawl of its seed, so an id valid at ingest can be absent at
+    render. `selected_nodes` drops any sidecar id not in the live run with a
+    logged WARNING; render raises if none survive. This keeps every fact sourced
+    from the live crawl.
+  - Output `Inbox/Lineages/{slug}-{date}-selected.md`: header + narrative arc,
+    `## Timeline` with decade headings (SEED prefixed, full title, authors, year,
+    one-line role from the rationale, DOI), `## Coverage gaps` (topics/eras
+    only), and a footer recording the in_degree>=2 count as the UNUSED exit lever
+    (10 on diagnostics) for if the timeline ever reads busy. write_note refuses
+    to overwrite without --force, mirroring the stage-5 guard.
+  - CLI: `python -m lineage.timeline <run_file> [vault_root] [--force]`.
+
+Tested (stdlib unittest, fixture/synthetic plus real-run skipUnless on the -0617
+files): payload lists every kept node, format spec present, abstract truncation,
+groundwork-first ordering, depth-tiebreaker; parse (fenced, bare, prose raises,
+non-object raises); validate (unknown dropped+warned, dedupe, no-list raises,
+none-survive raises, narrative/gaps passthrough); ingest writes sidecar only and
+does not touch the run; timeline (no Mermaid, only-selected, phase-order reuse,
+facts-from-run/role-from-sidecar, seed marked, narrative+gaps rendered, exit
+footer count, empty-after-drop raises, path + overwrite guard).
+
+VALIDATION OWED: the human read on the diagnostics seed in the vault, not a unit
+test. Run `python -m lineage.select runs/10-3390-diagnostics15192457-20260617.json`,
+paste into a Claude session, ingest the reply, `python -m lineage.timeline ...`,
+read the -selected.md note. Whether the curated timeline reads better than the
+stage-5 hairball is the open reframe-2 question this build exists to answer.
+
+WHAT IS NOT TESTED HERE: selection QUALITY. The module guarantees the renderer
+cannot hallucinate citations and cannot drift from the crawl; it does not and
+cannot judge whether the model picked the right ~15 papers. That is the human
+read.

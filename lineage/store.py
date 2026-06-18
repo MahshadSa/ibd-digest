@@ -69,3 +69,36 @@ def update_run(run: dict, runs_dir: Path = Path("runs")) -> Path:
 
 def read_run(path: Path | str) -> dict:
     return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def selection_path(run_id: str, runs_dir: Path = Path("runs")) -> Path:
+    """Sidecar path for a run's selection block: runs/{run_id}.selection.json.
+
+    The selection is a model judgment kept separate from the deterministic crawl
+    run file, which stays immutable; re-selecting overwrites only the sidecar.
+    """
+    return Path(runs_dir) / f"{run_id}.selection.json"
+
+
+def write_selection(block: dict, run_id: str, runs_dir: Path = Path("runs")) -> Path:
+    """Write a validated selection block to the sidecar, overwriting if present.
+
+    Atomic (temp-file-plus-rename), like update_run: an interrupted re-select
+    cannot corrupt an existing sidecar. The crawl run file is never touched.
+    """
+    runs_dir = Path(runs_dir)
+    runs_dir.mkdir(parents=True, exist_ok=True)
+    path = selection_path(run_id, runs_dir)
+    fd, tmp = tempfile.mkstemp(dir=runs_dir, suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(block, f, indent=2, ensure_ascii=False)
+        os.replace(tmp, path)
+    except BaseException:
+        Path(tmp).unlink(missing_ok=True)
+        raise
+    return path
+
+
+def read_selection(run_id: str, runs_dir: Path = Path("runs")) -> dict:
+    return json.loads(selection_path(run_id, runs_dir).read_text(encoding="utf-8"))
