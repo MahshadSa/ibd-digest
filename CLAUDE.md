@@ -765,3 +765,63 @@ Schema v2 (applied):
   - write path: store.update_run(), overwrite-permitted (unlike write_run,
     which is append-only), atomic via temp-file-plus-rename so an interrupted
     write cannot corrupt an existing run. Keeps all run IO in store.py.
+
+### Stage 5 (render): deterministic note BUILT (2026-06-18)
+
+render.py reads a pruned v2 run and writes `Inbox/Lineages/{slug}-{date}.md`: a
+Mermaid flowchart of decade subgraphs (oldest to newest, seed styled) followed
+by a bulleted trajectory. Deterministic, no network, no SPECTER2, no LLM (the
+narrative pass is stage 6, deferred). stdlib plus lineage.store only; zero
+coupling to the digest. Entry point: `python -m lineage.render <run_file>
+[vault_root] [--force]`.
+
+Single grouping source. `group_by_phase(run)` returns the ordered structure
+(decades oldest to newest, Undated trailing, nodes sorted by (pub_year, title))
+and BOTH `mermaid()` and `trajectory()` consume it, so the chart and the text
+can never disagree on grouping or order. Decided deliberately: do not let the
+two renderers each group independently.
+
+Decisions, made against the real -0617 runs (190 and 217 nodes), not defaults:
+  - Labels: first-author surname + year (`Bousvaros 2007`). Full titles are
+    unusable as node labels (median ~80, max ~250 chars); truncated titles are
+    worse (40-char boxes x 190 = denser hairball, ambiguous). The full title and
+    author list live in the trajectory bullets. Node id = openalex_id. No
+    authors -> fall back to the id. Labels are double-quoted and sanitized
+    (strip `"`, collapse newlines).
+  - Phase grouping: one subgraph per decade from the `phase` field, oldest to
+    newest, titled `1960s` etc.
+  - Null phase (no pub_year): a trailing `Undated` subgraph after the newest
+    decade (cannot be temporally ordered). BOTH real runs have zero null-phase
+    nodes (every node carries a pub_year), so this bucket is empty on them; it is
+    built and unit-tested against a synthetic run because the schema permits
+    phase=null.
+  - Seed distinction: Mermaid `classDef seed` (fill + bold border) on the seed
+    node (identified by run["seed"]["openalex_id"]) plus a `SEED:` label prefix,
+    in both the chart and the trajectory. Seed sits in its own decade subgraph.
+  - Edges: all citation edges among kept nodes, rendered faithfully. The main
+    hairball source; rendered anyway (reframe 2 keeps everything).
+
+v1 input: render auto-prunes in memory (calls prune(run)) if schema_version < 2,
+then renders; it does NOT write the pruned run back (that is `python -m
+lineage.prune`'s job). The runs/ files on disk are still v1; render upgrades a
+copy in memory. Overwrite: write_note refuses to overwrite an existing note
+unless --force, mirroring the digest writer guard, because a note may carry hand
+annotations. Tested fixture/synthetic-based (group order, Undated trailing,
+within-group sort, kept-only, label format, all nodes charted, seed styled, all
+edges rendered, et-al rule, doi present/absent, path + overwrite guard) plus a
+render of the pruned fixture run.
+
+LEGIBILITY FINDING (the thing this reframe exists to surface). At reframe-2
+scale the single Mermaid chart is NOT legible, and short labels do not fix it.
+Rendering the diagnostics -0617 run produces a 408-line Mermaid block: 190 nodes
+and 200 edges, with a single 2000s decade subgraph of 93 nodes (rg: 95) and a
+mostly-tree edge set that crosses eras into a hairball. Short labels make
+individual nodes readable, not the chart. The trajectory text is the genuinely
+readable artifact. This is recorded as evidence, not fixed: per the exit
+condition, the cut to try IF the rendered note reads too busy is charting only
+in_degree>=2 shared ancestors. The trigger numbers are now measured: in_degree>=2
+is 10 nodes on diagnostics, 7 on rg, so that cut would reduce the chart from
+~190-217 charted nodes to ~25 (seed + 15 depth-1 + the 7-10 shared ancestors).
+Not built now; the decision is whether the rendered note in the vault reads
+acceptably with everything in it. Per-decade sizes (diagnostics):
+1960s 2, 1970s 5, 1980s 20, 1990s 35, 2000s 93, 2010s 34, 2020s 1.
