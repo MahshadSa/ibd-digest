@@ -825,3 +825,46 @@ is 10 nodes on diagnostics, 7 on rg, so that cut would reduce the chart from
 Not built now; the decision is whether the rendered note in the vault reads
 acceptably with everything in it. Per-decade sizes (diagnostics):
 1960s 2, 1970s 5, 1980s 20, 1990s 35, 2000s 93, 2010s 34, 2020s 1.
+
+STATUS (2026-06-18): stage 5 built, tested, committed. 69 tests passing
+(`python -m unittest discover -s lineage/tests -t .`). render.py and
+test_render.py are the only stage-5 files.
+
+### Empty 2020s decade: TRUE ABSENCE, not a top_k artifact (2026-06-18)
+
+The diagnostics seed (a 2025 review) renders with exactly one node in the 2020s
+decade: itself. Investigated whether that is a real property of backward
+traversal or an artifact of the top_k=15 first-N slice truncating recent
+references. Confirmed TRUE ABSENCE by a one-off top_k=60 re-run on the laptop
+(`python -m lineage.traverse 10.3390/diagnostics15192457 2 60`, scratch run
+deleted after). Following the seed's references at 4x the window: all 60 depth-1
+nodes resolved (0 missing a year), newest reference is 2019, ZERO depth-1 nodes
+>= 2020. Widening 15 -> 60 added 2015-2019 papers (20 nodes >= 2015) but no
+2020s papers; the ceiling moved only 2015 -> 2019. A 2025 review citing
+established literature with a ~6-year lag is expected (recent papers have not yet
+entered the cited canon). NO traversal fix needed; the empty 2020s reflects what
+the seed actually cites. Caveat: depth-1 came back as exactly 60 = top_k, so the
+seed has >= 60 references and the full list is still capped, but a 4x widening
+moving the ceiling only to 2019 is strongly one-directional evidence.
+
+### Stage 6 (LLM selection + narrative): SCOPED, deliberately NOT built
+
+Recording the intended reframe so it is not lost. The stage-5 legibility finding
+(190-node hairball, trajectory text is the readable artifact) reframes stage 6:
+it should SELECT the small set of groundwork papers (~15) from the crawl pool and
+narrate ONLY those, NOT narrate all 190. The chart-everything render stays as the
+raw record; stage 6 is the curated layer on top.
+
+Anti-hallucination contract (strict, the core of the design):
+  - The LLM receives the run-file nodes (id, title, year, abstract) and returns
+    ONLY openalex_ids drawn from the run file, plus one rationale line per
+    selected id. It never emits its own titles, DOIs, or years.
+  - The renderer looks up every citation fact (title, year, authors, DOI) from
+    the run file by id, never from the LLM output.
+  - Coverage gaps are described as topics ("no node here covers X"), never as
+    fabricated citations. An id not in the run file is rejected, not rendered.
+
+Target output: a structured, visual-ready record, timeline-friendly (per paper:
+label, year, one-line role, DOI), so the note can convert to an infographic.
+This is scope only; do not build until the stage-5 note is read in the vault and
+shows whether the curated layer is actually needed (the reframe-2 experiment).
