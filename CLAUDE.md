@@ -946,13 +946,64 @@ does not touch the run; timeline (no Mermaid, only-selected, phase-order reuse,
 facts-from-run/role-from-sidecar, seed marked, narrative+gaps rendered, exit
 footer count, empty-after-drop raises, path + overwrite guard).
 
-VALIDATION OWED: the human read on the diagnostics seed in the vault, not a unit
-test. Run `python -m lineage.select runs/10-3390-diagnostics15192457-20260617.json`,
-paste into a Claude session, ingest the reply, `python -m lineage.timeline ...`,
-read the -selected.md note. Whether the curated timeline reads better than the
-stage-5 hairball is the open reframe-2 question this build exists to answer.
+VALIDATION DONE (2026-06-23): the human read was run on the diagnostics seed in
+the vault (select payload -> Claude session -> ingest -> timeline ->
+read the -selected.md note). The picks were judged relevant and the curated
+timeline reads better than the stage-5 hairball: reframe-2 is answered, the
+curated layer is worth keeping.
 
 WHAT IS NOT TESTED HERE: selection QUALITY. The module guarantees the renderer
 cannot hallucinate citations and cannot drift from the crawl; it does not and
 cannot judge whether the model picked the right ~15 papers. That is the human
 read.
+
+### Stage 6 closeout (2026-06-23)
+
+Stage 6 is finalized. What shipped, for the record (the section above is the
+design; this is the as-built summary plus the two closing fixes):
+
+  - select.py: `build_payload` (pasteable prompt, kept nodes groundwork-first by
+    pub_year then depth tiebreaker, abstracts truncated to 500 chars),
+    `parse_selection` (fenced or bare JSON, fails loud on prose),
+    `validate_selection` (anti-hallucination: keeps only ids in the run, drops
+    unknown/duplicate with a WARNING, fails loud on no-list/none-survive),
+    `ingest` and the `ingest` CLI subcommand. The print-payload CLI path
+    reconfigures stdout to UTF-8 (see Fix below).
+  - store.py sidecar IO: `selection_path`, `write_selection` (atomic temp-rename,
+    overwrite-permitted), `read_selection`. The crawl run file is NEVER mutated;
+    the selection lives at runs/{run_id}.selection.json.
+  - timeline.py: joins the immutable crawl run plus the sidecar by openalex_id,
+    renders a decade-grouped timeline (no Mermaid; the graph is a near-tree with
+    no meaningful branching). Every citation fact comes from the run node by id;
+    the sidecar contributes only ids, rationales, narrative, gaps. The
+    drop-unknown-id guard runs at render time too (a sidecar can outlive a
+    re-crawl). in_degree>=2 count recorded in a footer as the UNUSED exit lever.
+  - render.py (stage 5) untouched: the chart-everything note stays the raw
+    record, the timeline is the curated layer alongside it.
+
+Manual-paste transport is a deliberate choice, not a stopgap: the module makes
+zero API calls and adds no network client or dependency. The human copies the
+payload into a Claude session and pastes the reply back. This keeps the module
+stdlib-only and decoupled, and the anti-hallucination validation runs on ingest
+regardless of where the reply came from.
+
+Fix 1 (UTF-8 output): the print-payload CLI path now forces stdout to UTF-8
+(`_force_utf8`, guarded for streams without `reconfigure`) before writing.
+Without it, a payload carrying a non-cp1252 abstract character crashed the
+Windows console with UnicodeEncodeError mid-write, truncating the payload.
+Payload output is now platform-independent; PYTHONUTF8 no longer needs setting
+by hand. The pure functions are untouched; only the CLI entry path reconfigures.
+
+Fix 2 (preamble conciseness): the build_payload instruction preamble now tells
+the model to keep each rationale to one short sentence, return only the fenced
+JSON object with nothing outside it, and treat 15 to 20 as a ceiling not a
+target (select fewer if fewer are genuinely foundational, do not pad toward 20).
+The response-format spec and the no-inventing rule are unchanged;
+parse_selection and validate_selection are unchanged.
+
+OPEN, not a defect: selection recall across seeds is uncalibrated. The
+diagnostics read was good, but whether the model reliably surfaces the same
+groundwork set across different seeds (and across re-runs of one seed) is
+unmeasured. Re-selecting is cheap (re-ingest overwrites the sidecar; the crawl
+is untouched), so this is a calibration question to revisit when more seeds have
+been run, not a blocker.

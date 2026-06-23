@@ -31,9 +31,15 @@ _INSTRUCTIONS = """You are selecting the foundational papers in a citation linea
 Seed paper: {seed_title}
 Seed DOI: {seed_doi}
 
-From the candidate papers below, select the roughly 15 to 20 that form the
-groundwork this seed's field built on. Pick only from the listed papers and use
-only their openalex_id values. Do not invent papers, titles, DOIs, or years.
+From the candidate papers below, select the papers that form the groundwork this
+seed's field built on. Pick only from the listed papers and use only their
+openalex_id values. Do not invent papers, titles, DOIs, or years.
+
+Select 15 to 20 papers at most. That range is a ceiling, not a target: if fewer
+papers are genuinely foundational, select fewer. Do not pad the list toward 20.
+
+Keep each rationale to one short sentence. Return only the fenced JSON object
+below and nothing outside it.
 
 Reply with one fenced JSON object in exactly this form, nothing outside it:
 
@@ -151,6 +157,17 @@ def ingest(run: dict, response_text: str, runs_dir: Path) -> Path:
     return path
 
 
+def _force_utf8(stream) -> None:
+    """Force a text stream to UTF-8 so payloads survive non-cp1252 abstracts.
+
+    The Windows console defaults to cp1252; writing a payload with characters
+    outside it raises UnicodeEncodeError mid-write and truncates the output.
+    Guarded for streams that predate io.TextIOWrapper.reconfigure.
+    """
+    if hasattr(stream, "reconfigure"):
+        stream.reconfigure(encoding="utf-8")
+
+
 if __name__ == "__main__":
     import sys
 
@@ -168,6 +185,7 @@ if __name__ == "__main__":
         ingest(run, text, Path(args[1]).parent)
     elif args:
         run = store.read_run(args[0])
+        _force_utf8(sys.stdout)
         sys.stdout.write(build_payload(run))
     else:
         sys.exit(

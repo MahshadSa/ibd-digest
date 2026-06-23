@@ -199,3 +199,57 @@ papers are scored against the same corpus.
   significant off-topic volume until the planned keyword prefilter lands.
 - Preprint servers (bioRxiv, medRxiv) not yet integrated.
 - The system is single-user. No multi-user or sharing primitives.
+
+---
+
+## Lineage module
+
+A separate tool from the digest, fully decoupled from it (no shared code, no
+shared database, no overlapping output). Given a seed DOI, it reconstructs the
+paper's citation lineage: it walks backward through references via OpenAlex,
+annotates and groups the graph by decade, and renders two artifacts into the
+Obsidian vault under `Inbox/Lineages/`:
+
+- a deterministic chart-everything note (Mermaid flowchart plus bulleted
+  trajectory), the raw record; and
+- a curated, decade-grouped timeline of the ~15 to 20 groundwork papers, selected
+  by a Claude session and narrated, the readable layer on top.
+
+Selection uses a deliberate manual-paste transport: the module makes no API call
+and adds no network dependency. It emits a pasteable prompt, you paste it into a
+Claude session, and you paste the reply back for validation. An anti-hallucination
+validator keeps only paper ids that exist in the crawl; every citation fact in
+the rendered note comes from the crawl by id, never from the pasted text.
+
+### End-to-end run for one seed
+
+OpenAlex is reached only by the crawl, which runs on the laptop (not in CI). The
+remaining steps are offline. The example uses a scratch reply file `reply.json`;
+delete it after ingesting.
+
+\`\`\`
+# 1. Crawl: resolve the seed, walk references, write runs/{run_id}.json
+.venv\Scripts\python.exe -m lineage.traverse <seed_doi>
+
+# 2. Select: print the pasteable payload to a file (UTF-8 is automatic)
+.venv\Scripts\python.exe -m lineage.select runs/<run_id>.json > payload.txt
+
+# 3. Paste payload.txt into a Claude session; save the fenced JSON reply
+#    to reply.json (the {narrative, coverage_gaps, selections} object).
+
+# 4. Ingest: validate the reply and write runs/<run_id>.selection.json
+.venv\Scripts\python.exe -m lineage.select ingest runs/<run_id>.json reply.json
+
+# 5. Render the curated timeline to Inbox/Lineages/{slug}-{date}-selected.md
+.venv\Scripts\python.exe -m lineage.timeline runs/<run_id>.json .
+
+# 6. Read the note in Inbox/Lineages, then delete the scratch reply
+rm reply.json payload.txt
+\`\`\`
+
+`run_id` is the seed DOI slugified plus the date (printed by step 1). The crawl
+run file is immutable: selection is cached to a separate `.selection.json`
+sidecar, so re-selecting (re-running steps 2 to 4) overwrites only the sidecar
+and never touches the crawl. Both the timeline and the deterministic
+chart-everything note (`python -m lineage.render runs/<run_id>.json .`) refuse to
+overwrite an existing note without `--force`.

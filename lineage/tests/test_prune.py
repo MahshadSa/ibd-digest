@@ -10,7 +10,11 @@ from lineage.traverse import build_run
 # The real enriched runs carry the 190/217-node fan-out and the off-topic old
 # ancestors the fixture cannot reproduce. Tests that need them skip when absent
 # (they are not committed); the fixture-based tests below cover the logic.
-REAL_RUNS = sorted(Path("runs").glob("*-2026*.json"))
+# Selection sidecars (runs/{run_id}.selection.json) share the date suffix but
+# are not crawl runs, so they are excluded.
+REAL_RUNS = sorted(
+    p for p in Path("runs").glob("*-2026*.json") if not p.name.endswith(".selection.json")
+)
 
 
 class TestPrune(unittest.TestCase):

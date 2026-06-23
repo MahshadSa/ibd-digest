@@ -43,6 +43,15 @@ class TestBuildPayload(unittest.TestCase):
         self.assertIn('"selections"', self.payload)
         self.assertIn('"openalex_id"', self.payload)
 
+    def test_no_inventing_rule_present(self):
+        self.assertIn("Do not invent papers, titles, DOIs, or years.", self.payload)
+
+    def test_conciseness_and_format_instructions_present(self):
+        self.assertIn("one short sentence", self.payload)
+        self.assertIn("nothing outside it", self.payload)
+        self.assertIn("ceiling, not a target", self.payload)
+        self.assertIn("Do not pad", self.payload)
+
     def test_abstract_truncated(self):
         line = next(l for l in self.payload.splitlines() if l.startswith("Abstract:") and "x x" in l)
         self.assertLessEqual(len(line), len("Abstract: ") + select.ABSTRACT_CHARS + 3)
@@ -130,6 +139,24 @@ class TestIngest(unittest.TestCase):
             self.assertEqual(block["selections"][0]["openalex_id"], "A1")
             # No run file was written next to the sidecar.
             self.assertFalse((Path(tmp) / f"{run['run_id']}.json").exists())
+
+
+class TestForceUtf8(unittest.TestCase):
+    def test_reconfigures_when_supported(self):
+        calls = {}
+
+        class Stream:
+            def reconfigure(self, **kwargs):
+                calls.update(kwargs)
+
+        select._force_utf8(Stream())
+        self.assertEqual(calls, {"encoding": "utf-8"})
+
+    def test_noop_without_reconfigure(self):
+        class Stream:
+            pass
+
+        select._force_utf8(Stream())  # must not raise
 
 
 _REAL = Path("runs/10-3390-diagnostics15192457-20260617.json")
