@@ -45,3 +45,7 @@ data/*.db-journal
 
 analyze_floor.py
 runs/*.json
+
+reply.json
+payload.txt
+Inbox/Lineages/
