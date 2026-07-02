@@ -2,6 +2,7 @@ import argparse
 import json
 import logging
 import pathlib
+import random
 import sqlite3
 import sys
 from datetime import date, datetime, timezone
@@ -10,14 +11,22 @@ logger = logging.getLogger(__name__)
 
 DB_PATH = "data/papers.db"
 
+# Filter-bubble mitigation: a few randomly sampled archive papers are promoted
+# to a full-rendered Wildcard section with checkboxes, giving the corpus a path
+# to papers the ranker scores low. Sampling is seeded by the digest date so a
+# re-render of the same day picks the same papers.
+WILDCARD_COUNT = 2
+
 _TIER_CALLOUT = {
     "must-read": "> [!important]",
     "skim": "> [!note]",
+    "wildcard": "> [!question]",
     "archive": "> [!abstract]-",
 }
 _TIER_LABEL = {
     "must-read": "Must-read",
     "skim": "Skim",
+    "wildcard": "Wildcard",
     "archive": "Archive",
 }
 
@@ -57,8 +66,8 @@ def tier_papers(
     return must_read, skim, archive
 
 
-def render_paper_full(paper: sqlite3.Row) -> str:
-    """Render a must-read or skim paper: task checkbox, metadata, collapsed abstract callout."""
+def render_paper_full(paper: sqlite3.Row, nearest: str | None = None) -> str:
+    """Render a full paper block: title, Relevant and Read later checkboxes, metadata, collapsed abstract callout."""
     doi_url = f"https://doi.org/{paper['doi']}"
     authors_str = format_authors(paper["authors"], paper["corresponding_author"])
     score = paper["similarity_score"]
@@ -67,11 +76,14 @@ def render_paper_full(paper: sqlite3.Row) -> str:
 
     lines = [
         f"- [ ] **{paper['title']}**",
-        f"- [ ] Read later",
+        "- [ ] Relevant",
+        "- [ ] Read later",
         f"  {authors_str}",
         f"  {paper['journal']} | {paper['pub_date']}",
         f"  [{paper['doi']}]({doi_url}) | Score: {score_str}",
     ]
+    if nearest:
+        lines.append(f"  Nearest seed: {nearest}")
     if abstract:
         lines.append("")
         lines.append("  > [!abstract]-")
@@ -93,8 +105,10 @@ def render_paper_archive(paper: sqlite3.Row) -> str:
     ])
 
 
-def render_tier(papers: list[sqlite3.Row], tier: str) -> str:
-    """Render one tier section. Must-read/skim: callout banner + papers outside. Archive: papers inside callout so it collapses."""
+def render_tier(
+    papers: list[sqlite3.Row], tier: str, nearest_by_doi: dict[str, str] | None = None
+) -> str:
+    """Render one tier section. Full tiers: callout banner + papers outside. Archive: papers inside callout so it collapses."""
     n = len(papers)
     header = f"{_TIER_CALLOUT[tier]} {_TIER_LABEL[tier]} ({n})"
 
@@ -102,14 +116,36 @@ def render_tier(papers: list[sqlite3.Row], tier: str) -> str:
         body = "\n>\n".join(render_paper_archive(p) for p in papers)
         return f"{header}\n>\n{body}"
 
-    paper_blocks = "\n\n".join(render_paper_full(p) for p in papers)
+    nearest = nearest_by_doi or {}
+    paper_blocks = "\n\n".join(
+        render_paper_full(p, nearest.get(p["doi"])) for p in papers
+    )
     return f"{header}\n\n{paper_blocks}"
 
 
-def render_digest(papers: list[sqlite3.Row], target_date: date) -> str:
+def pick_wildcards(
+    archive: list[sqlite3.Row], target_date: date
+) -> tuple[list[sqlite3.Row], list[sqlite3.Row]]:
+    """Sample WILDCARD_COUNT archive papers, seeded by date. Returns (wildcards, remaining)."""
+    if not archive:
+        return [], []
+    rng = random.Random(target_date.isoformat())
+    count = min(WILDCARD_COUNT, len(archive))
+    picked = set(rng.sample(range(len(archive)), count))
+    wildcards = [p for i, p in enumerate(archive) if i in picked]
+    remaining = [p for i, p in enumerate(archive) if i not in picked]
+    return wildcards, remaining
+
+
+def render_digest(
+    papers: list[sqlite3.Row],
+    target_date: date,
+    nearest_by_doi: dict[str, str] | None = None,
+) -> str:
     """Render the complete digest: header with tier counts, tiered sections, source footer."""
     date_str = target_date.isoformat()
     must_read, skim, archive = tier_papers(papers)
+    wildcards, archive_rest = pick_wildcards(archive, target_date)
 
     header_counts = (
         f"**Date:** {date_str}\n"
@@ -124,9 +160,14 @@ def render_digest(papers: list[sqlite3.Row], target_date: date) -> str:
         return header + "No new papers today, pipeline ran successfully.\n"
 
     tier_sections = []
-    for tier_name, tier_list in [("must-read", must_read), ("skim", skim), ("archive", archive)]:
+    for tier_name, tier_list in [
+        ("must-read", must_read),
+        ("skim", skim),
+        ("wildcard", wildcards),
+        ("archive", archive_rest),
+    ]:
         if tier_list:
-            tier_sections.append(render_tier(tier_list, tier_name))
+            tier_sections.append(render_tier(tier_list, tier_name, nearest_by_doi))
 
     body = "\n\n---\n\n".join(tier_sections)
 
@@ -160,7 +201,14 @@ def run(db_path: str, vault_root: str, target_date: date | None = None, force: b
     try:
         papers = fetch_papers(conn, target_date)
         logger.info("Found %d papers for %s", len(papers), target_date.isoformat())
-        content = render_digest(papers, target_date)
+        nearest_rows = conn.execute(
+            "SELECT p.doi AS doi, c.title AS title FROM papers p"
+            " JOIN corpus c ON p.matching_corpus_doi = c.doi"
+            " WHERE p.seen_date = ?",
+            (target_date.isoformat(),),
+        ).fetchall()
+        nearest_by_doi = {r["doi"]: r["title"] for r in nearest_rows}
+        content = render_digest(papers, target_date, nearest_by_doi)
         out_path = write_digest(vault_root, content, target_date, force=force)
         logger.info("Digest written to %s", out_path)
     finally:

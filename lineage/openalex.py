@@ -40,20 +40,15 @@ def _backoff(attempt: int) -> float:
     return min(BACKOFF_BASE * (2 ** attempt), BACKOFF_CAP)
 
 
-def http_fetch(ref: str) -> dict:
-    """Fetch an OpenAlex work by work id ('Wxxxx') or DOI ('10.x/y').
+# Per-sort page size for the forward walk. Two sorted pages per target (most
+# cited plus most recent) bound the frontier per groundwork paper while
+# catching both the influential citers and the brand-new ones.
+FORWARD_PER_PAGE = 25
 
-    Adds the polite-pool mailto from NCBI_EMAIL when set.
-    """
-    path = ref if ref.startswith("W") else f"doi:{ref}"
-    url = f"{OPENALEX_WORKS}/{path}"
-    email = os.environ.get("NCBI_EMAIL")
-    if email:
-        url = f"{url}?{urllib.parse.urlencode({'mailto': email.strip()})}"
 
+def _get_json(url: str, ref: str) -> dict:
+    """GET with the shared failure contract: 404 -> WorkNotFound, transient retried."""
     time.sleep(POLITE_DELAY)
-    logger.info("Fetching OpenAlex work %s", ref)
-
     for attempt in range(MAX_RETRIES + 1):
         try:
             with urllib.request.urlopen(url, timeout=REQUEST_TIMEOUT) as resp:
@@ -79,6 +74,47 @@ def http_fetch(ref: str) -> dict:
             logger.warning("Giving up on %s after %d attempts: %s", ref, MAX_RETRIES + 1, reason)
 
     raise FetchFailed(ref)
+
+
+def _mailto_param() -> dict[str, str]:
+    email = os.environ.get("NCBI_EMAIL")
+    return {"mailto": email.strip()} if email else {}
+
+
+def http_fetch(ref: str) -> dict:
+    """Fetch an OpenAlex work by work id ('Wxxxx') or DOI ('10.x/y').
+
+    Adds the polite-pool mailto from NCBI_EMAIL when set.
+    """
+    path = ref if ref.startswith("W") else f"doi:{ref}"
+    url = f"{OPENALEX_WORKS}/{path}"
+    params = _mailto_param()
+    if params:
+        url = f"{url}?{urllib.parse.urlencode(params)}"
+    logger.info("Fetching OpenAlex work %s", ref)
+    return _get_json(url, ref)
+
+
+def http_fetch_citing(work_id: str) -> list[dict]:
+    """Fetch works citing a work: one most-cited page plus one most-recent page.
+
+    Two sorted pages per target catch both the influential citers and the
+    newest ones; the union is deduplicated by work id, most-cited first.
+    """
+    results: dict[str, dict] = {}
+    for sort in ("cited_by_count:desc", "publication_date:desc"):
+        params = {
+            "filter": f"cites:{work_id}",
+            "sort": sort,
+            "per-page": str(FORWARD_PER_PAGE),
+            **_mailto_param(),
+        }
+        url = f"{OPENALEX_WORKS}?{urllib.parse.urlencode(params)}"
+        logger.info("Fetching works citing %s (sort %s)", work_id, sort)
+        page = _get_json(url, work_id)
+        for work in page.get("results", []):
+            results.setdefault(work["id"], work)
+    return list(results.values())
 
 
 def _retry_after(e: urllib.error.HTTPError) -> float | None:

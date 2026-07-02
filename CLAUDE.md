@@ -43,14 +43,21 @@ Crossref journal policy: focused journals fetched unfiltered because hit rate is
 
 ### Ranking
 - Embedding model: SPECTER2 (local, biomedical/scientific)
-- Initial corpus: 20 to 50 papers selected manually from Zotero
-- Score: max cosine similarity between candidate and corpus
-- Tiers (percentile-anchored to the corpus; SPECTER2 cosine sims run high for
-  in-domain biomedical text, so fixed round-number thresholds do not generalize):
-  - Must-read: score >= 0.958
-  - Skim: 0.924 to 0.958
-  - Archive: score < 0.924
-- Re-check monthly as the corpus grows, and off-cycle after any source expansion
+- Initial corpus: 20 to 50 papers selected manually from Zotero, grown by the
+  feedback loop (checked Relevant boxes) since 2026-07-02
+- Score: mean of the top 3 cosine similarities between candidate and corpus
+  (top-3 mean, replaced single max 2026-07-02: with a ~40-paper corpus one
+  atypical seed note could pull an off-topic paper into must-read)
+- Tiers are SELF-CALIBRATING per run (2026-07-02): thresholds come from the
+  corpus leave-one-out distribution, each seed scored against the rest with the
+  same top-3 mean statistic; must-read = 90th percentile, skim = 50th.
+  compute_thresholds in src/ranking/score.py; values recorded in the DB meta
+  table (tier_threshold_must/skim) and data/metrics.txt. Fixed fallbacks
+  (0.958/0.924) apply only when the corpus is under 5 papers. The monthly
+  manual threshold re-check is obsolete; watch data/metrics.txt for drift.
+  Measured on the real 42-note corpus at build time: must >= 0.9750,
+  skim >= 0.9674 (higher than the old fixed pair; the statistic changed with
+  the calibration, so tier composition shifts on the first ranked run).
 
 ### Daily digest format
 One Markdown note per day at `Inbox/Papers/YYYY-MM-DD.md` in the Obsidian vault.
@@ -63,9 +70,18 @@ For each paper in must-read and skim tiers:
 - Authors: first two plus corresponding author
 - Journal and date
 - Similarity score (numeric)
+- Nearest seed line (`Nearest seed: {corpus title}`, from matching_corpus_doi):
+  shows WHY the paper ranked, which makes Relevant judgments faster and better
+  informed
 - Full abstract inside a collapsible Markdown callout
 - Two independent checkboxes: `- [ ] Relevant` (feeds the corpus feedback loop)
   and `- [ ] Read later` (queues the paper into Inbox/To Read.md)
+
+Wildcard tier (2026-07-02, filter-bubble mitigation): up to 2 archive papers,
+sampled seeded by the digest date, promoted to a full-rendered section
+(`> [!question]` banner) with both checkboxes, so the corpus has a path to
+papers the ranker scores low. Promoted papers are excluded from the archive
+listing below.
 
 Archive tier: collapsed section, title + DOI link + authors only, no checkboxes.
 
@@ -73,14 +89,22 @@ Footer: source breakdown (papers per source, duplicates merged).
 
 Empty days: note still generated, says "no new papers today, pipeline ran successfully."
 
-### Feedback loop (NOT BUILT)
-- User ticks `- [x] Relevant` on papers in the digest
-- A job scans recent digest notes for checked Relevant boxes only (must not pick
-  up Read later ticks; see the checkbox parsing contract)
-- Extracts those DOIs, pulls embeddings, adds to corpus table
-- Ranker sharpens over time
-- Filter-bubble risk: corpus growth from own reading narrows scope. Mitigate by
-  manually adding outside papers to the seed set periodically.
+### Feedback loop (BUILT 2026-07-02)
+- User ticks `- [x] Relevant` on papers in the digest and pushes
+- src/digest/feedback.py scans a trailing window of digests (workflow: 7 days)
+  for checked Relevant boxes ONLY (a Read later tick never reaches the corpus;
+  see the checkbox parsing contract) and writes each as a Corpus/{slug}.md note
+  in the exact format src.corpus emits and parses
+- Fully offline: the digest block already carries title and abstract, so no
+  refetch is needed. The next `src.corpus from-notes` step embeds the new notes;
+  ranking sharpens with no further action. The complete human loop is: tick the
+  box in Obsidian, git push.
+- Idempotent: an existing Corpus/{slug}.md is never rewritten
+- Old-format digests (pre 2026-07-02, no literal Relevant line) contribute
+  nothing; the loop starts with new-format digests
+- Filter-bubble mitigation: the Wildcard digest section surfaces low-scoring
+  papers with checkboxes, plus periodically add outside papers to Corpus/ by
+  hand as before
 
 ### Infrastructure
 - Python project in a GitHub repo
@@ -95,8 +119,10 @@ Empty days: note still generated, says "no new papers today, pipeline ran succes
 - [x] Step 3: Embedding layer (SPECTER2, corpus from Zotero selection, scoring and tiering)
 - [x] Step 4: Obsidian integration (file paths, callouts, checkbox convention)
 - [x] Step 5: GitHub Actions scheduling and git sync
-- [ ] Step 6: Feedback loop (job parses checked Relevant boxes, updates corpus) -- NOT BUILT
+- [x] Step 6: Feedback loop (feedback.py parses checked Relevant boxes into Corpus/ notes, windowed + automated) -- BUILT 2026-07-02
 - [x] Read later layer (to_read.py: parses checked Read later boxes into Inbox/To Read.md, windowed + automated)
+- [x] Weekly column packet (column.py: one prep note per completed ISO week at Inbox/Column/YYYY-Www.md) -- 2026-07-02
+- [x] Run telemetry (metrics.py: one committed line per run in data/metrics.txt) -- 2026-07-02
 
 ## PubMed query (v1)
 
@@ -217,7 +243,7 @@ Scope includes adult and pediatric IBD imaging, treatment response and monitorin
 - Author override filters (always surface specific authors regardless of score)
 - Europe PMC, bioRxiv, medRxiv, arXiv sources
 - Telegram or email notification for top-tier hits
-- Crossref keyword prefilter for broad journals (Nature Medicine, npj Digital Medicine, Lancet Digital Health, AP&T, Lancet GI, CGH): defer until 2-4 weeks of data at expanded volume shows which terms anchor relevant papers
+- Crossref keyword prefilter for broad journals (Nature Medicine, npj Digital
 
 ## Step 4: Obsidian integration (done)
 
@@ -227,29 +253,44 @@ Digest writer renders papers grouped by tier with Obsidian callouts.
 - Must-read tier: `> [!important]` banner, papers rendered outside the callout with `- [ ]` at column 0.
 - Skim tier: `> [!note]` banner, same pattern.
 - Archive tier: `> [!abstract]-` container (collapsed), papers rendered inside with `> ` prefix on every line.
+- Wildcard tier (2026-07-02): `> [!question]` banner, papers rendered full like
+  must-read/skim (seeded-random archive promotions, see Daily digest format).
 - Empty tiers are skipped entirely. Header counts still show zeros.
-- Each paper: `- [ ] **Title**` followed by 2-space-indented metadata (authors, journal, date, DOI, score), then a nested `> [!abstract]-` callout for the abstract.
+- Each paper (2026-07-02 layout): `- [ ] **Title**`, then `- [ ] Relevant`, then
+  `- [ ] Read later`, followed by 2-space-indented metadata (authors, journal,
+  date, DOI + score, optional `Nearest seed: {corpus title}` line), then a
+  nested `> [!abstract]-` callout for the abstract. Pre-2026-07-02 digests lack
+  the Relevant and Nearest seed lines; the parser handles both formats.
 - Abstract callout body: every line (including blank separator lines between paragraphs) must carry its own `  > ` prefix. Blank lines use `  >` with no trailing space. The writer splits the abstract on `\n` and prefixes each line individually; structured abstracts (Introduction/Methods/Results) from Crossref have leading whitespace that is stripped per line.
 - DOI format is always `[10.xxxx/yyyy](https://doi.org/10.xxxx/yyyy)`.
 
 ### Checkbox parsing contract (do not break)
 
-Two independent checkboxes per paper, parsed by two separate consumers. They
-must never be confused: a `Read later` tick must never reach the corpus, and a
+Two independent checkboxes per paper, parsed by separate consumers. They must
+never be confused: a `Read later` tick must never reach the corpus, and a
 `Relevant` tick must never be treated as a Read later queue entry.
 
-- `Relevant` (feeds the corpus, consumed by the feedback loop, NOT YET BUILT):
-  match the checked Relevant box specifically, e.g. `^>?\s*- \[[xX]\] Relevant`.
-- `Read later` (feeds Inbox/To Read.md, consumed by `to_read.py`, BUILT):
-  match the checked Read later box specifically, e.g. `^>?\s*- \[[xX]\] Read later`.
-- DOI extraction on the same paper block: `\[([^\]]+)\]\(https://doi\.org/[^\)]+\)`.
-- Score extraction if needed: `Score: (\d+\.\d+)`.
-- Both patterns must handle column-0 (must-read/skim) and `> `-prefixed (archive)
-  rendering.
+Since 2026-07-02 all block parsing lives in ONE shared module,
+src/digest/blocks.py, consumed by to_read.py (Read later), feedback.py
+(Relevant), and column.py (weekly packet), so the contract cannot drift between
+consumers. Parsing is pattern-based, not positional: metadata comes from the
+indented lines, checkboxes are matched by literal label, so old-format digests
+(no Relevant line, no Nearest seed line) and new-format digests parse
+identically.
 
-Any change to the writer must preserve these patterns or update both consumers
-in lockstep. When the feedback loop is built, its parser must match ONLY the
-Relevant box and must not pick up Read later ticks.
+- `Relevant` (feeds Corpus/, consumed by feedback.py, BUILT 2026-07-02):
+  `^>?\s*- \[[xX]\] Relevant$` (RELEVANT_RE in blocks.py).
+- `Read later` (feeds Inbox/To Read.md, consumed by to_read.py, BUILT):
+  `^>?\s*- \[[xX]\] Read later$` (READ_LATER_RE).
+- DOI extraction: `\[([^\]]+)\]\(https://doi\.org/([^\)]+)\)` (DOI_RE), searched
+  on the metadata lines only, so a DOI link inside an abstract cannot match.
+- Score extraction: `Score: (\d+\.\d+)` (SCORE_RE).
+- Both patterns tolerate a `> ` prefix.
+
+Any change to the writer's block layout must keep blocks.py parsing both the
+old and the new format (tests/test_blocks.py and tests/test_to_read.py pin
+this). The feedback parser matches ONLY the Relevant box; tests pin that a Read
+later tick never reaches the corpus.
 
 ## Step 5: GitHub Actions scheduling, complete (2026-05-21)
 
@@ -257,8 +298,15 @@ Workflow: `.github/workflows/daily-digest.yml`
 Schedule: `0 2 * * *` UTC (5:30 AM Tehran)
 Manual trigger: `workflow_dispatch` available in Actions tab
 
-Pipeline order: `src.fetch` -> `src.corpus from-notes` -> `src.rank` ->
-`src.digest.writer . --force`. The `src.corpus from-notes` step rebuilds the
+Pipeline order (since 2026-07-02): `src.fetch 3` -> `src.digest.feedback .
+--window 7` -> `src.corpus from-notes` -> `src.rank` -> `src.digest.writer .
+--force` -> `src.digest.to_read . --window 7` -> `src.digest.column .` ->
+`src.metrics`. Fetch runs with days_back=3 so a failed run self-heals on the
+next one (the seen-DOI list makes the overlap free). The feedback sweep runs
+BEFORE the corpus rebuild so new Relevant notes are embedded the same run. The
+commit step adds `Inbox/Papers/`, `Inbox/To Read.md`, `Inbox/Column/`,
+`Corpus/`, `data/seen_dois.txt`, `data/metrics.txt`.
+The `src.corpus from-notes` step rebuilds the
 corpus embeddings from the committed `Corpus/*.md` notes on every run because
 the DB is ephemeral (see DB persistence); without it the corpus table is empty
 and ranking is silently skipped. The `--force` flag is required in the scheduled
@@ -354,16 +402,18 @@ ranking quality is actually the bottleneck (which the feedback loop would
 address) or whether something else is. Do not build the feedback loop on the
 assumption that better ranking is needed until the writing demonstrates it.
 
-Step 6 (feedback loop) remains the one unbuilt pipeline step. It is next in the
-pipeline's logic but NOT next in priority. Build only if post zero shows ranking
-is the limiting factor. Note: the Relevant checkbox is already
-rendered and the corpus table exists; the loop is the missing consumer that
-reads checked Relevant boxes and appends their embeddings to the corpus.
+Step 6 (feedback loop) was BUILT 2026-07-02 as part of the whole-approach
+overhaul (see the 2026-07-02 section), on explicit instruction, superseding the
+post-zero gating above. The loop is deliberately tiny (a windowed scanner
+mirroring to_read.py) so building it did not compete with the writing. Post
+zero remains the priority; the column packet (also 2026-07-02) exists to serve
+it directly.
 
 Friction log (freeform in Obsidian) continues to be the real spec for what comes
-next. Candidate features, unordered until the writing ranks them: top-k nearest
-corpus DOIs per paper, in-context note capture during reading, Crossref keyword
-prefilter for broad journals, feedback loop.
+next. Candidate features, unordered until the writing ranks them: in-context
+note capture during reading, Crossref keyword prefilter for broad journals
+(now derivable from accumulated tier labels instead of a hand-written term
+list; see Deferred).
 
 Failure monitoring: GitHub notifies on workflow failure via email. If
 notifications stop arriving for several days with no commits to `main`,
@@ -1006,4 +1056,112 @@ diagnostics read was good, but whether the model reliably surfaces the same
 groundwork set across different seeds (and across re-runs of one seed) is
 unmeasured. Re-selecting is cheap (re-ingest overwrites the sidecar; the crawl
 is untouched), so this is a calibration question to revisit when more seeds have
-been run, not a blocker.
+been run, not a blocker. Multi-seed merge (2026-07-02) gives a deterministic
+cross-check for free: seed_count in the payload lets picks be compared against
+the consensus set.
+
+### Forward walk, multi-seed merge, topic dossier: BUILT (2026-07-02)
+
+Reframes the module from "lineage of one paper" to "topic dossier": origins
+(backward walk), pillars (multi-seed consensus), present (forward walk), and
+gaps, in one artifact. Motivated by two findings already on record: the
+backward walk cannot see past the seed (empty-2020s, TRUE ABSENCE), and a
+single capped tree has degenerate in_degree so no honest "main study" signal
+exists within one crawl. Three new modules, all fixture-tested, zero coupling
+to the digest, no new dependencies. 118 lineage tests passing.
+
+forward.py (the frontier): fetches works CITING the seed and each selected
+groundwork paper via openalex.http_fetch_citing (two sorted pages per target,
+most-cited plus most-recent, per-page 25, deduped; one paginated request per
+sort instead of one request per reference, so it is far cheaper than the
+backward walk). Same injectable-fetch pattern as traverse. Targets = seed plus
+selection sidecar ids (seed only if no sidecar). Output is a sidecar
+runs/{run_id}.forward.json (store.forward_path/write_forward/read_forward,
+atomic, overwrite-permitted); the crawl run file is never mutated. Citer nodes
+are normalized with to_node minus the backward-only fields (referenced_works,
+depth, in_degree, phase). CLI: `python -m lineage.forward <run_file>`.
+
+merge.py (the pillars): unions independent crawls of sibling seeds into one v2
+run dict. Nodes union by openalex_id (lowest depth kept) with a new seed_count
+field (how many source trees contain the node); edges union deduped; in_degree
+recomputed across the merged graph; phases assigned. This is the honest
+structural "main studies" signal the stage-3 analysis could not get from one
+tree: independent trees overlapping is real co-citation evidence, obtained
+without the deferred graph-enrichment project. The merged dict conforms to the
+run schema, so select, timeline, forward, and dossier work on it unchanged.
+run_id = {topic-slug}-merged-{YYYYMMDD}, written via store.write_run
+(append-only); source runs never mutated. meta carries seeds, merged_from,
+shared_node_count, summed unresolved/failed counts. select.build_payload shows
+`in N/M seed trees` per node on merged runs, giving the LLM a real signal and
+the human a deterministic cross-check on its picks. CLI: `python -m
+lineage.merge <topic> <run_file>...`.
+
+dossier.py (the artifact): renders Inbox/Lineages/{run_id}-dossier.md from the
+(usually merged) run plus its selection sidecar plus the optional forward
+sidecar. Sections: header with all seeds, narrative, Main studies
+(decade-grouped selected nodes, rationale from the sidecar, seed_count
+annotation), Consensus chart (Mermaid of seeds plus in_degree>=2 nodes only,
+the exit-lever cut made principled by merging; section omitted when no shared
+ancestor exists), Frontier (forward citers not already in the crawl, newest
+first, capped at 20), Coverage gaps (selection gaps plus the mechanical
+unresolved count). Anti-hallucination contract unchanged: every citation fact
+comes from run/forward nodes by id; the drop-unknown-id guard runs at render
+time (reuses timeline.selected_nodes). Overwrite guard mirrors the other
+renderers. CLI: `python -m lineage.dossier <run_file> [vault_root] [--force]`.
+
+End-to-end topic flow (laptop for the crawls, offline after):
+  1. `python -m lineage.traverse <seed_doi>` per sibling seed (2 or 3 reviews)
+  2. `python -m lineage.merge "<topic>" runs/<a>.json runs/<b>.json ...`
+  3. `python -m lineage.select runs/<merged>.json` -> Claude session -> ingest
+  4. `python -m lineage.forward runs/<merged>.json`
+  5. `python -m lineage.dossier runs/<merged>.json .`
+Single-seed runs still work at every step (merge is optional; forward and
+dossier accept any v1/v2 run).
+
+VALIDATION PENDING (laptop, OpenAlex unreachable from the container): crawl 1
+or 2 sibling seeds for the diagnostics topic, merge, and look at the in_degree
+distribution. If real overlap appears, the consensus chart earns its place; if
+the trees barely intersect, that is important negative evidence recorded
+cheaply. Then read a rendered dossier in the vault, same as the stage-6 human
+read. Until that read, the dossier is built and tested but its VALUE is
+unproven, per the run-the-experiment doctrine.
+
+## 2026-07-02 overhaul (digest arm)
+
+Applied as one batch on explicit instruction. All changes TDD-tested (30 tests
+in tests/, new suite; run `python -m unittest discover -s tests -t .`).
+
+- Scoring: top-3 mean replaces max cosine; self-calibrating thresholds from the
+  corpus leave-one-out distribution (see Ranking). Thresholds recorded in the
+  DB meta table (new, src/db.py ensure_meta_table/set_meta/get_meta) and in
+  data/metrics.txt.
+- Writer: explicit `- [ ] Relevant` line (the contract's literal box was never
+  actually rendered before; the title checkbox was the only tick target),
+  `Nearest seed:` line from matching_corpus_doi, Wildcard section (2
+  seeded-random archive promotions with full checkboxes).
+- blocks.py: single shared block parser for all checkbox consumers,
+  pattern-based so old and new digest formats both parse. to_read.py rewritten
+  on top of it in lockstep with the writer change (output format of
+  Inbox/To Read.md unchanged).
+- feedback.py: Step 6 feedback loop, offline, windowed, idempotent (see the
+  Feedback loop section).
+- column.py: weekly column packet at Inbox/Column/{year}-W{week}.md, from the
+  last completed ISO week's digests: must-read section papers plus every
+  ticked paper, deduplicated by DOI, grouped as Must-read this week / Marked
+  relevant / Queued to read, each entry backlinked to its digest. Write-once
+  (never overwritten; may carry hand notes); the daily workflow writes it the
+  first run after a week completes. Self-check generated the real 2026-W26
+  packet (15 papers) at build time.
+- metrics.py: one line per run in committed data/metrics.txt (date, new, per
+  tier counts, thresholds); re-running a date replaces its line. Tier drift and
+  silent degradations become a plottable file.
+- Workflow: fetch overlap days_back=3 (failed runs self-heal), feedback sweep
+  before corpus rebuild, column and metrics steps, expanded commit list.
+
+Self-checks run at build time: both suites green (30 digest, 118 lineage); real
+digest for 2026-06-16 rendered to a temp dir (64 papers, all full blocks
+carrying both checkboxes and nearest-seed lines, wildcard section present);
+calibrated thresholds computed on the real 42-note corpus (0.9750/0.9674).
+Known follow-up: watch the first ranked runs in data/metrics.txt; if the 90/50
+percentile anchors prove too strict at the new statistic, adjust the anchors in
+src/ranking/score.py (MUST_PERCENTILE/SKIM_PERCENTILE), not the thresholds.

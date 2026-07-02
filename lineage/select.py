@@ -87,9 +87,13 @@ def build_payload(run: dict) -> str:
             seed_title=seed.get("title") or seed["doi"], seed_doi=seed["doi"]
         )
     ]
+    tree_total = len(run.get("meta", {}).get("seeds", []))
     for n in sorted(_kept_nodes(run), key=_payload_sort_key):
         year = n.get("pub_year") or "n.d."
-        lines.append(f"--- {n['openalex_id']} | {year} | depth {n.get('depth', '?')}")
+        head = f"--- {n['openalex_id']} | {year} | depth {n.get('depth', '?')}"
+        if tree_total > 1 and n.get("seed_count"):
+            head += f" | in {n['seed_count']}/{tree_total} seed trees"
+        lines.append(head)
         lines.append(f"Title: {n.get('title') or '(untitled)'}")
         lines.append(f"Abstract: {_truncate(n.get('abstract')) or '(none)'}")
         lines.append("")

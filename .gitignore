@@ -44,8 +44,14 @@ data/*.db-shm
 data/*.db-journal
 
 analyze_floor.py
-runs/*.json
 
+# Lineage run files and sidecars (crawls, .selection.json, .forward.json) are
+# per-machine artifacts, regenerated on the laptop; never committed. *.tmp
+# covers an interrupted atomic sidecar write.
+runs/*.json
+runs/*.tmp
+
+# Lineage scratch files from the manual selection paste flow
 reply.json
 payload.txt
 Inbox/Lineages/

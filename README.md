@@ -21,35 +21,45 @@ from reading behavior over time.
    selection below for why both paths exist.
 2. **Embed.** Each paper is embedded with SPECTER2 (`allenai/specter2_base`),
    a scientific document embedding model, using the title and abstract.
-3. **Rank.** Each paper is scored by maximum cosine similarity against a corpus
-   of seed DOIs representing the research interests of the maintainer. Papers
-   are sorted into three tiers (must-read, skim, archive) using
-   percentile-anchored thresholds calibrated to the corpus. The corpus
-   embeddings are rebuilt from committed Markdown notes at the start of each
-   run, so ranking works even though the database itself is not persisted.
+3. **Rank.** Each paper is scored as the mean of its top 3 cosine similarities
+   against a corpus of seed papers representing the research interests of the
+   maintainer. Papers are sorted into three tiers (must-read, skim, archive)
+   using thresholds recalibrated every run from the corpus's own leave-one-out
+   similarity distribution (90th and 50th percentiles), so tiering adapts as
+   the corpus grows with no manual re-check. The corpus embeddings are rebuilt
+   from committed Markdown notes at the start of each run, so ranking works
+   even though the database itself is not persisted.
 4. **Deliver.** A Markdown digest is written to the Obsidian vault at
    `Inbox/Papers/YYYY-MM-DD.md`, with each tier in its own callout block. Must-read
-   and skim papers each carry two independent checkboxes: `Relevant` feeds the
-   corpus feedback loop; `Read later` queues the paper for offline review.
-5. **Collect.** Running `src.digest.to_read` after reviewing a digest scans for
-   checked `Read later` boxes and appends each paper's title, authors, abstract,
-   and a backlink to a persistent rolling note at `Inbox/To Read.md`. Re-running
-   is idempotent: deduplication is by DOI.
-6. **Schedule.** A GitHub Actions workflow runs the pipeline daily and commits
-   the digests, the Read later queue, and the dedup list back to the repository.
-   The SQLite database is not committed; it is rebuilt from committed text each
-   run (see State and persistence).
-
-A feedback loop that adds `Relevant`-checked papers to the corpus, refining the
-ranker over time, is planned as the next phase.
+   and skim papers each carry two independent checkboxes (`Relevant` feeds the
+   corpus feedback loop; `Read later` queues the paper for offline review) plus
+   a `Nearest seed` line naming the corpus paper that drove the score. A
+   Wildcard section promotes two randomly sampled archive papers to full
+   rendering with checkboxes, giving the corpus a path to papers the ranker
+   scores low (filter-bubble mitigation).
+5. **Learn.** The feedback loop scans recent digests for checked `Relevant`
+   boxes and writes each as a corpus seed note, fully offline (the digest block
+   already carries title and abstract). The next run embeds the new notes, so
+   the complete loop is: tick the box in Obsidian, push. `src.digest.to_read`
+   likewise collects checked `Read later` boxes into `Inbox/To Read.md`. Both
+   are idempotent, deduplicated by DOI.
+6. **Assemble.** After each ISO week completes, a column packet is written to
+   `Inbox/Column/YYYY-Www.md`: the week's must-reads plus every ticked paper,
+   deduplicated, as prep material for the weekly column.
+7. **Schedule.** A GitHub Actions workflow runs the pipeline daily and commits
+   the digests, the corpus notes, the queues, the dedup list, and a one-line
+   metrics record per run (`data/metrics.txt`: counts per tier plus the
+   calibrated thresholds, for drift monitoring). The SQLite database is not
+   committed; it is rebuilt from committed text each run (see State and
+   persistence).
 
 ## Status
 
-Operational since May 2026. Scheduling, persistence, the Read later queue, and
-an expanded source list (17 Crossref journals plus a broadened PubMed query) are
-complete. The corpus feedback loop (Relevant checkbox to ranker) is the one
-unbuilt pipeline step; it is deferred in favor of beginning the weekly column,
-which will reveal whether ranking quality is the real bottleneck.
+Operational since May 2026. Scheduling, persistence, the Read later queue, an
+expanded source list (17 Crossref journals plus a broadened PubMed query), the
+corpus feedback loop, self-calibrating tier thresholds, the weekly column
+packet, and run telemetry are complete (feedback loop and calibration added
+2026-07-02).
 
 ## Stack
 
@@ -70,18 +80,26 @@ ibd-digest-vault/
 │   ├── corpus.py             entry point: build corpus from seed DOIs (network)
 │   │                         or rebuild from committed notes (offline)
 │   ├── seen.py               persistent seen-DOI dedup list IO + recovery
-│   ├── db.py                 SQLite schema and migrations
+│   ├── db.py                 SQLite schema, migrations, meta key-value table
+│   ├── metrics.py            per-run telemetry line into data/metrics.txt
 │   ├── fetchers/             pubmed.py, journals.py
-│   ├── ranking/              embed.py, score.py
+│   ├── ranking/              embed.py, score.py (top-3 mean + self-calibration)
 │   └── digest/
-│       ├── writer.py         Markdown digest generator
-│       └── to_read.py        Read later queue scanner
+│       ├── writer.py         Markdown digest generator (checkboxes, wildcard)
+│       ├── blocks.py         shared digest-block parser (single contract)
+│       ├── to_read.py        Read later queue scanner
+│       ├── feedback.py       Relevant ticks -> Corpus/ seed notes
+│       └── column.py         weekly column packet builder
+├── tests/                    digest-side unit tests (unittest)
 ├── data/papers.db            SQLite, gitignored, rebuilt empty each run
 ├── data/seen_dois.txt        durable dedup list (every DOI surfaced), committed
+├── data/metrics.txt          one line per run: counts per tier + thresholds
 ├── Corpus/seed_dois.txt      curated DOIs defining "relevant"
-├── Corpus/*.md               corpus seed notes; corpus embeddings rebuilt from these
+├── Corpus/*.md               corpus seed notes; corpus embeddings rebuilt from
+│                             these; the feedback loop appends here
 ├── Inbox/Papers/             daily digests, YYYY-MM-DD.md
 ├── Inbox/To Read.md          rolling Read later queue
+├── Inbox/Column/             weekly column packets, YYYY-Www.md
 └── .github/workflows/daily-digest.yml
 \`\`\`
 
@@ -141,11 +159,17 @@ reading is wider than the column's scope.
 
 \`\`\`
 .venv\Scripts\python.exe -m src.fetch
+.venv\Scripts\python.exe -m src.digest.feedback .
 .venv\Scripts\python.exe -m src.corpus from-notes
 .venv\Scripts\python.exe -m src.rank
 .venv\Scripts\python.exe -m src.digest.writer .
 .venv\Scripts\python.exe -m src.digest.to_read .
+.venv\Scripts\python.exe -m src.digest.column .
+.venv\Scripts\python.exe -m src.metrics
 \`\`\`
+
+Tests: `python -m unittest discover -s tests -t .` (digest side) and
+`python -m unittest discover -s lineage/tests -t .` (lineage).
 
 `src.corpus from-notes` rebuilds the corpus table from the committed `Corpus/`
 notes; it is required on a fresh database (such as a clean clone or any CI run)
@@ -179,22 +203,18 @@ Required environment variables (local `.env`, or repo secrets for Actions):
 ### Ranking calibration
 
 SPECTER2 produces high cosine similarities for in-domain biomedical text, so
-fixed thresholds do not generalize. Current tiers are anchored to corpus
-percentiles:
-
-- must-read: similarity >= 0.958 (top 10%)
-- skim: 0.924 to 0.958 (next 40%)
-- archive: < 0.924 (bottom 50%)
-
-Thresholds should be re-checked monthly as the corpus grows, and off-cycle after
-any source expansion. Adding journals shifts the tier distribution because more
-papers are scored against the same corpus.
+fixed thresholds do not generalize. Since 2026-07-02 thresholds self-calibrate
+every run: each corpus paper is scored against the rest with the same top-3
+mean statistic used for candidates, and the must-read/skim cuts are the 90th
+and 50th percentiles of that leave-one-out distribution. The values are logged
+per run in `data/metrics.txt`; watch that file for tier drift instead of
+re-checking thresholds by hand. Fixed fallbacks apply only below 5 corpus
+papers.
 
 ### Known limitations
 
-- Corpus is provisional (~40 DOIs). Ranking will improve as it grows.
-- No feedback loop yet. Checking boxes in the digest does not currently affect
-  future rankings.
+- Corpus is provisional (~40 DOIs). Ranking improves as the feedback loop
+  grows it; only new-format digests (2026-07-02 onward) feed the loop.
 - Broad-journal Crossref pulls are unfiltered, so the archive tier carries
   significant off-topic volume until the planned keyword prefilter lands.
 - Preprint servers (bioRxiv, medRxiv) not yet integrated.
@@ -205,15 +225,21 @@ papers are scored against the same corpus.
 ## Lineage module
 
 A separate tool from the digest, fully decoupled from it (no shared code, no
-shared database, no overlapping output). Given a seed DOI, it reconstructs the
-paper's citation lineage: it walks backward through references via OpenAlex,
-annotates and groups the graph by decade, and renders two artifacts into the
-Obsidian vault under `Inbox/Lineages/`:
+shared database, no overlapping output). Given one or more seed DOIs on a
+topic, it reconstructs the topic's citation story: it walks backward through
+references via OpenAlex, optionally merges the trees of sibling seeds, walks
+forward to the works citing the groundwork, and renders into the Obsidian
+vault under `Inbox/Lineages/`:
 
-- a deterministic chart-everything note (Mermaid flowchart plus bulleted
-  trajectory), the raw record; and
-- a curated, decade-grouped timeline of the ~15 to 20 groundwork papers, selected
-  by a Claude session and narrated, the readable layer on top.
+- a deterministic chart-everything note per seed (Mermaid flowchart plus
+  bulleted trajectory), the raw record;
+- a curated, decade-grouped timeline of the ~15 to 20 groundwork papers,
+  selected by a Claude session and narrated; and
+- a topic dossier (2026-07-02): narrative arc, decade-grouped main studies,
+  a consensus chart of ancestors shared across seed trees (in-degree >= 2,
+  the honest structural "main study" signal a single capped tree cannot
+  provide), a frontier section of recent citing works (the backward walk
+  cannot see past the seed), and coverage gaps.
 
 Selection uses a deliberate manual-paste transport: the module makes no API call
 and adds no network dependency. It emits a pasteable prompt, you paste it into a
@@ -253,3 +279,27 @@ sidecar, so re-selecting (re-running steps 2 to 4) overwrites only the sidecar
 and never touches the crawl. Both the timeline and the deterministic
 chart-everything note (`python -m lineage.render runs/<run_id>.json .`) refuse to
 overwrite an existing note without `--force`.
+
+### Topic dossier for multiple seeds
+
+\`\`\`
+# 1. Crawl 2 or 3 sibling seeds (recent reviews on the topic)
+.venv\Scripts\python.exe -m lineage.traverse <seed_doi_a>
+.venv\Scripts\python.exe -m lineage.traverse <seed_doi_b>
+
+# 2. Merge the trees; shared ancestors gain real in-degree and a seed_count
+.venv\Scripts\python.exe -m lineage.merge "<topic>" runs/<a>.json runs/<b>.json
+
+# 3. Select groundwork on the merged run (same paste flow as above)
+.venv\Scripts\python.exe -m lineage.select runs/<merged>.json > payload.txt
+.venv\Scripts\python.exe -m lineage.select ingest runs/<merged>.json reply.json
+
+# 4. Forward walk: works citing the seed and the selected groundwork
+.venv\Scripts\python.exe -m lineage.forward runs/<merged>.json
+
+# 5. Render the dossier to Inbox/Lineages/<merged-run-id>-dossier.md
+.venv\Scripts\python.exe -m lineage.dossier runs/<merged>.json .
+\`\`\`
+
+Every step also works on a single-seed run (merge is optional). The forward
+walk writes a `.forward.json` sidecar; source crawls are never mutated.

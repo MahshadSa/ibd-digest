@@ -81,6 +81,28 @@ def migrate_embedding_columns(db_path: str) -> None:
             conn.execute("ALTER TABLE corpus ADD COLUMN abstract TEXT")
 
 
+def ensure_meta_table(conn: sqlite3.Connection) -> None:
+    """Create the key-value meta table if missing (run-scoped values like tier thresholds)."""
+    conn.execute("CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)")
+
+
+def set_meta(conn: sqlite3.Connection, key: str, value: str) -> None:
+    """Upsert a meta value."""
+    ensure_meta_table(conn)
+    conn.execute(
+        "INSERT INTO meta (key, value) VALUES (?, ?)"
+        " ON CONFLICT(key) DO UPDATE SET value = excluded.value",
+        (key, value),
+    )
+
+
+def get_meta(conn: sqlite3.Connection, key: str) -> str | None:
+    """Return a meta value, or None if the key or table is absent."""
+    ensure_meta_table(conn)
+    row = conn.execute("SELECT value FROM meta WHERE key = ?", (key,)).fetchone()
+    return row[0] if row else None
+
+
 def get_connection(db_path: str) -> sqlite3.Connection:
     """Return a connection with row_factory set to sqlite3.Row."""
     conn = sqlite3.connect(db_path)

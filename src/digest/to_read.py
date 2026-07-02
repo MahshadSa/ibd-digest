@@ -1,32 +1,13 @@
 import argparse
 import logging
 import pathlib
-import re
 from datetime import date, datetime, timezone
+
+from src.digest.blocks import find_recent_digests, parse_block, split_into_blocks
 
 logger = logging.getLogger(__name__)
 
 _TO_READ_PATH = "Inbox/To Read.md"
-
-_TITLE_RE = re.compile(r"^- \[.\] \*\*(.+)\*\*$")
-_READ_LATER_RE = re.compile(r"^- \[[xX]\] Read later$")
-_DOI_RE = re.compile(r"\[([^\]]+)\]\(https://doi\.org/([^\)]+)\)")
-
-
-def _split_into_blocks(lines: list[str]) -> list[list[str]]:
-    blocks: list[list[str]] = []
-    current: list[str] = []
-    for line in lines:
-        if _TITLE_RE.match(line) and current:
-            blocks.append(current)
-            current = [line]
-        elif _TITLE_RE.match(line):
-            current = [line]
-        elif current:
-            current.append(line)
-    if current:
-        blocks.append(current)
-    return blocks
 
 
 def extract_read_later_entries(
@@ -35,48 +16,19 @@ def extract_read_later_entries(
 ) -> list[dict]:
     """Parse a digest file; return one dict per paper with a checked Read later box."""
     text = digest_path.read_text(encoding="utf-8")
-    lines = text.splitlines()
-    blocks = _split_into_blocks(lines)
-
     entries: list[dict] = []
-    for block in blocks:
-        if len(block) < 2:
+    for block in split_into_blocks(text.splitlines()):
+        parsed = parse_block(block)
+        if not parsed["read_later_checked"] or not parsed["title"]:
             continue
-        if not _READ_LATER_RE.match(block[1]):
-            continue
-
-        title_match = _TITLE_RE.match(block[0])
-        if not title_match:
-            continue
-        title = title_match.group(1)
-
-        authors = block[2].strip() if len(block) > 2 else ""
-        journal_date = block[3].strip() if len(block) > 3 else ""
-        parts = journal_date.split(" | ", 1)
-        journal = parts[0] if parts else ""
-        pub_date = parts[1] if len(parts) > 1 else ""
-
-        doi = ""
-        if len(block) > 4:
-            doi_match = _DOI_RE.search(block[4])
-            if doi_match:
-                doi = doi_match.group(2)
-
-        abstract = ""
-        for i, line in enumerate(block):
-            if line.strip() == "> [!abstract]-":
-                if i + 1 < len(block):
-                    raw = block[i + 1]
-                    abstract = raw[4:] if raw.startswith("  > ") else raw.strip()
-                break
-
+        abstract = parsed["abstract"].splitlines()
         entries.append({
-            "title": title,
-            "authors": authors,
-            "journal": journal,
-            "pub_date": pub_date,
-            "doi": doi,
-            "abstract": abstract,
+            "title": parsed["title"],
+            "authors": parsed["authors"],
+            "journal": parsed["journal"],
+            "pub_date": parsed["pub_date"],
+            "doi": parsed["doi"],
+            "abstract": abstract[0] if abstract else "",
             "digest_date": digest_date,
         })
 
@@ -130,19 +82,6 @@ def append_entries(
     return len(new_blocks)
 
 
-def _find_recent_digests(papers_dir: pathlib.Path, window: int) -> list[tuple[pathlib.Path, date]]:
-    """Return up to window most-recent digest files, newest first."""
-    results: list[tuple[pathlib.Path, date]] = []
-    for p in papers_dir.glob("*.md"):
-        try:
-            d = date.fromisoformat(p.stem)
-        except ValueError:
-            continue
-        results.append((p, d))
-    results.sort(key=lambda x: x[1], reverse=True)
-    return results[:window]
-
-
 def run(vault_root: str, window: int = 7, digest_date: date | None = None) -> None:
     """Scan a trailing window of digest files and append new Read later entries to the rolling note."""
     papers_dir = pathlib.Path(vault_root) / "Inbox" / "Papers"
@@ -154,7 +93,7 @@ def run(vault_root: str, window: int = 7, digest_date: date | None = None) -> No
             return
         targets = [(digest_path, digest_date)]
     else:
-        targets = _find_recent_digests(papers_dir, window)
+        targets = find_recent_digests(papers_dir, window)
         if not targets:
             logger.info("No digest files found in %s", papers_dir)
             return

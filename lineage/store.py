@@ -80,16 +80,10 @@ def selection_path(run_id: str, runs_dir: Path = Path("runs")) -> Path:
     return Path(runs_dir) / f"{run_id}.selection.json"
 
 
-def write_selection(block: dict, run_id: str, runs_dir: Path = Path("runs")) -> Path:
-    """Write a validated selection block to the sidecar, overwriting if present.
-
-    Atomic (temp-file-plus-rename), like update_run: an interrupted re-select
-    cannot corrupt an existing sidecar. The crawl run file is never touched.
-    """
-    runs_dir = Path(runs_dir)
-    runs_dir.mkdir(parents=True, exist_ok=True)
-    path = selection_path(run_id, runs_dir)
-    fd, tmp = tempfile.mkstemp(dir=runs_dir, suffix=".tmp")
+def _write_sidecar(block: dict, path: Path) -> Path:
+    """Atomic overwrite-permitted sidecar write (temp-file-plus-rename)."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as f:
             json.dump(block, f, indent=2, ensure_ascii=False)
@@ -100,5 +94,32 @@ def write_selection(block: dict, run_id: str, runs_dir: Path = Path("runs")) -> 
     return path
 
 
+def write_selection(block: dict, run_id: str, runs_dir: Path = Path("runs")) -> Path:
+    """Write a validated selection block to the sidecar, overwriting if present.
+
+    Atomic, like update_run: an interrupted re-select cannot corrupt an
+    existing sidecar. The crawl run file is never touched.
+    """
+    return _write_sidecar(block, selection_path(run_id, Path(runs_dir)))
+
+
 def read_selection(run_id: str, runs_dir: Path = Path("runs")) -> dict:
     return json.loads(selection_path(run_id, runs_dir).read_text(encoding="utf-8"))
+
+
+def forward_path(run_id: str, runs_dir: Path = Path("runs")) -> Path:
+    """Sidecar path for a run's forward walk: runs/{run_id}.forward.json.
+
+    Same sidecar pattern as the selection: the crawl run file stays immutable
+    and re-running the forward walk overwrites only the sidecar.
+    """
+    return Path(runs_dir) / f"{run_id}.forward.json"
+
+
+def write_forward(block: dict, run_id: str, runs_dir: Path = Path("runs")) -> Path:
+    """Write a forward-walk block to its sidecar, overwriting if present. Atomic."""
+    return _write_sidecar(block, forward_path(run_id, Path(runs_dir)))
+
+
+def read_forward(run_id: str, runs_dir: Path = Path("runs")) -> dict:
+    return json.loads(forward_path(run_id, runs_dir).read_text(encoding="utf-8"))

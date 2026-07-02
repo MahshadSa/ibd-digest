@@ -39,11 +39,18 @@ jobs:
           python -c "from transformers import AutoModel, AutoTokenizer; AutoTokenizer.from_pretrained('allenai/specter2_base'); AutoModel.from_pretrained('allenai/specter2_base')"
           du -sh ~/.cache/huggingface/hub
 
+      # days_back=3 overlaps fetch windows so a failed run self-heals on the
+      # next one; the seen-DOI list makes the overlap free.
       - name: Fetch papers
         env:
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
-        run: python -m src.fetch
+        run: python -m src.fetch 3
+
+      # Feedback loop: checked Relevant boxes in recent digests become corpus
+      # notes, which the rebuild step below embeds. Must run before the rebuild.
+      - name: Sweep Relevant ticks into corpus notes
+        run: python -m src.digest.feedback . --window 7
 
       - name: Rebuild corpus from committed notes
         run: python -m src.corpus from-notes
@@ -57,11 +64,17 @@ jobs:
       - name: Sweep to-read
         run: python -m src.digest.to_read . --window 7
 
+      - name: Write weekly column packet
+        run: python -m src.digest.column .
+
+      - name: Record run metrics
+        run: python -m src.metrics
+
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Inbox/Papers/ "Inbox/To Read.md" data/seen_dois.txt
+          git add Inbox/Papers/ "Inbox/To Read.md" Inbox/Column/ Corpus/ data/seen_dois.txt data/metrics.txt
           if git diff --staged --quiet; then
             echo "Nothing to commit, skipping."
             exit 0
