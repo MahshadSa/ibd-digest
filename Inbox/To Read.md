@@ -1,3 +1,29 @@
+## Trained immunity: Breaking a dogma and a missing opportunity in IBD?
+
+Added: 2026-06-30 | Source: [[Inbox/Papers/2026-06-30]]
+Claudio Fiocchi, Dimitrios Iliopoulos | Inflammatory Bowel Diseases | 2026-06-27
+[10.1093/ibd/izag115](https://doi.org/10.1093/ibd/izag115)
+
+---
+
+## Artificial intelligence in the imaging diagnosis of gallbladder and bile duct stones: a systematic review
+
+Added: 2026-06-29 | Source: [[Inbox/Papers/2026-06-29]]
+Ali Hajihashemi, Mohammadsadegh Kalantary, Abolfazl Koozari | Abdominal Radiology | 2026-06-29
+[10.1007/s00261-026-05648-1](https://doi.org/10.1007/s00261-026-05648-1)
+
+---
+
+## Ultrasound for detection of complications and evaluation of treatment response in inflammatory bowel disease (IBD)?
+
+Added: 2026-06-27 | Source: [[Inbox/Papers/2026-06-27]]
+Dietrich CF, Petersen F, Jenssen C | Medical ultrasonography | 2026-06-26
+[10.11152/mu-4493](https://doi.org/10.11152/mu-4493)
+
+Ultrasound (US) can be performed at the point of care by the treating physician, is safe, well tolerated and, therefore, can be repeated as often as clinically required and shortens the time to decision. An invaluable advantage of US is that the imaging is real-time and pathophysiological phenomena can be visualized dynamically. In addition, the multiparametric capabilities of US facilitate the evaluation of intestinal, peri-intestinal and some of the extra-intestinal manifestations of inflammatory boweldiseases (IBD).In the current series of papers a synopsis of recommendations for ultrasound in IBD guidelines, ultrasound parameters in inflammatory bowel disease including activities scores, the value of contrast enhanced ultrasound (CEUS), small intestinal contrast ultrasound (SICUS) and elastography, perineal ultrasound (PNUS), endoscopic ultrasound (EUS) including endorectal ultrasound (ERUS) and interventional ultrasound (INVUS) have been discussed and illustrated. This review discusses advantages, accuracy and limitations of ultrasound techniques for the diagnosis of intestinal, periintestinal and extra-intestinal complications of MC and CU and for monitoring treatment response.
+
+---
+
 ## Εsophageal Crohn's disease in adults: A systematic review of the literature.
 
 Added: 2026-06-14 | Source: [[Inbox/Papers/2026-06-14]]
