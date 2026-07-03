@@ -140,7 +140,7 @@ BACKGROUND: The effect of computer-aided detection (CADe) on performance of endo
 
 ---
 
-## ReclAIm: A Multi-Agent Framework for Monitoring and Correcting                     Performance Decline in Medical Imaging AI
+## ReclAIm: A Multi-Agent Framework for Monitoring and Correcting Performance Decline in Medical Imaging AI
 
 Added: 2026-06-04 | Source: [[Inbox/Papers/2026-06-04]]
 Eleftherios Tzanis, Michail E. Klontzas | Radiology: Artificial Intelligence | 2026-06-03

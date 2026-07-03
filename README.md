@@ -280,6 +280,29 @@ and never touches the crawl. Both the timeline and the deterministic
 chart-everything note (`python -m lineage.render runs/<run_id>.json .`) refuse to
 overwrite an existing note without `--force`.
 
+### One-command wrapper for the single-seed flow
+
+`lineage.flow` chains the single-seed crawl-to-dossier flow into one interactive
+command with a single pause for the manual paste. It computes `run_id`
+internally, so no run filename is ever typed.
+
+\`\`\`
+.venv\Scripts\python.exe -m lineage.flow            # prompts for the seed DOI
+.venv\Scripts\python.exe -m lineage.flow <seed_doi> # or pass it inline
+\`\`\`
+
+The wrapper runs, in order: an optional prompt to clear leftover `payload.txt`
+/ `reply.json` from a previous run, the crawl (reusing today's run file if it
+already exists rather than re-fetching), the selection payload (written to
+`payload.txt` and copied to the clipboard), then it pauses. Paste the payload
+into a Claude session, save the JSON reply to `reply.json`, and press Enter; a
+malformed reply loops with an error instead of discarding the crawl. It then
+ingests, runs the forward walk, and renders the dossier to
+`Inbox/Lineages/{run_id}-dossier.md`. This is the `forward` plus `dossier`
+output, not the curated timeline; run `lineage.timeline` separately for that.
+The two network stages (crawl, forward walk) run on the laptop; the rest is
+offline. Pass `--force` to overwrite an existing dossier.
+
 ### Topic dossier for multiple seeds
 
 \`\`\`

@@ -1126,6 +1126,53 @@ cheaply. Then read a rendered dossier in the vault, same as the stage-6 human
 read. Until that read, the dossier is built and tested but its VALUE is
 unproven, per the run-the-experiment doctrine.
 
+### Single-seed flow wrapper (BUILT 2026-07-02)
+
+lineage/flow.py chains the single-seed crawl-to-dossier flow into ONE
+interactive command with a single pause for the manual Claude paste, so the run
+sequence (traverse -> select payload -> [paste] -> ingest -> forward -> dossier)
+is no longer typed one line at a time. It adds NO new logic to any stage: it
+imports and orchestrates the existing stage functions, so the anti-hallucination
+validation and the overwrite guards keep working unchanged. Zero coupling to the
+digest, stdlib-only, no new dependency. Entry point: `python -m lineage.flow
+[seed_doi] [--force]` (prompts for the DOI if omitted).
+
+run_flow is the testable core, taking injectable fetch/fetch_citing/prompt/
+confirm/clipboard callables; __main__ wires openalex.http_fetch,
+openalex.http_fetch_citing, and stdin prompts. Sequence:
+  - clear_scratch: at the START of the run, if payload.txt/reply.json from a
+    previous run exist, prompt to delete them (guards against ingesting a stale
+    reply). This is the only cleanup; there is no end-of-run delete.
+  - crawl_or_reuse: run_id is computed internally via store.make_run_id on the
+    normalized input DOI, so no filename is typed. If today's run file already
+    exists it is reused (no re-fetch); a FileExistsError from write_run (resolved
+    DOI slugifies differently) falls back to reusing the on-disk run.
+  - build_payload written to payload.txt AND copied to the clipboard
+    (copy_to_clipboard, best-effort via PowerShell Set-Clipboard reading the
+    UTF-8 file; a failure only warns, payload.txt is the reliable path).
+  - ingest_reply: blocks on the paste, reads reply.json, and RETRIES on a
+    ValueError from parse/validate (prose instead of JSON, no id matched) so a
+    fumbled paste never discards the crawl. Returns the validated selection block
+    (calls select.ingest to persist the sidecar, then store.read_selection).
+  - forward walk, then prune-in-memory-if-v1, then dossier.write_note to
+    Inbox/Lineages/{run_id}-dossier.md.
+
+This produces the forward + dossier output (the topic-dossier artifact), NOT the
+curated timeline; run lineage.timeline separately for that. The two network
+stages (crawl, forward walk) still require the laptop (OpenAlex unreachable in
+the container). Tested in lineage/tests/test_flow.py (fixture/injected-fetch):
+scratch cleanup (delete on confirm, keep on decline, no prompt when nothing
+stale), crawl-then-reuse without re-fetching, the bad-then-good ingest retry, and
+a full end-to-end run asserting the dossier and both sidecars are written. The
+multi-seed merge flow (Option B) is unchanged and still run stage by stage;
+flow.py is single-seed only.
+
+Fixed in passing: lineage/tests/test_prune.py REAL_RUNS globbed runs/*-2026*.json
+and excluded .selection.json but not .forward.json, so a forward sidecar in runs/
+(from a real dossier run) made the skipUnless prune tests crash with
+KeyError: 'nodes'. The glob now excludes both sidecar suffixes. Pre-existing, not
+caused by flow.py; surfaced when the suite ran with a forward sidecar present.
+
 ## 2026-07-02 overhaul (digest arm)
 
 Applied as one batch on explicit instruction. All changes TDD-tested (30 tests

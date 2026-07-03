@@ -13,7 +13,9 @@ from lineage.traverse import build_run
 # Selection sidecars (runs/{run_id}.selection.json) share the date suffix but
 # are not crawl runs, so they are excluded.
 REAL_RUNS = sorted(
-    p for p in Path("runs").glob("*-2026*.json") if not p.name.endswith(".selection.json")
+    p
+    for p in Path("runs").glob("*-2026*.json")
+    if not p.name.endswith((".selection.json", ".forward.json"))
 )
 
 
