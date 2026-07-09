@@ -116,8 +116,11 @@ def get_existing_dois(conn: sqlite3.Connection) -> set[str]:
     return {row["doi"] for row in rows}
 
 
-def insert_paper(conn: sqlite3.Connection, paper: dict) -> None:
-    """Insert a paper dict into papers; skips silently if DOI already exists."""
+def insert_paper(conn: sqlite3.Connection, paper: dict, seen_date: str | None = None) -> None:
+    """Insert a paper dict into papers; skips silently if DOI already exists.
+
+    seen_date defaults to today; regeneration passes the original digest date.
+    """
     conn.execute(
         """
         INSERT OR IGNORE INTO papers
@@ -134,6 +137,6 @@ def insert_paper(conn: sqlite3.Connection, paper: dict) -> None:
             paper["pub_date"],
             paper.get("abstract"),
             paper["source"],
-            date.today().isoformat(),
+            seen_date or date.today().isoformat(),
         ),
     )
