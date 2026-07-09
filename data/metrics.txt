@@ -1,6 +1,6 @@
-2026-07-03 new=33 must=0 skim=0 archive=33 thr_must=0.974990 thr_skim=0.967412
-2026-07-04 new=28 must=0 skim=0 archive=28 thr_must=0.974990 thr_skim=0.967412
-2026-07-05 new=20 must=0 skim=0 archive=20 thr_must=0.974990 thr_skim=0.967412
-2026-07-06 new=8 must=0 skim=0 archive=8 thr_must=0.974990 thr_skim=0.967412
-2026-07-07 new=28 must=0 skim=0 archive=28 thr_must=0.974990 thr_skim=0.967412
-2026-07-08 new=33 must=0 skim=0 archive=33 thr_must=0.974990 thr_skim=0.967412
+2026-07-03 new=33 must=7 skim=13 archive=13 thr_must=0.946253 thr_skim=0.899666
+2026-07-04 new=28 must=6 skim=13 archive=9 thr_must=0.946253 thr_skim=0.899666
+2026-07-05 new=20 must=0 skim=8 archive=12 thr_must=0.946253 thr_skim=0.899666
+2026-07-06 new=8 must=0 skim=4 archive=4 thr_must=0.946253 thr_skim=0.899666
+2026-07-07 new=28 must=1 skim=14 archive=13 thr_must=0.946253 thr_skim=0.899666
+2026-07-08 new=33 must=3 skim=12 archive=18 thr_must=0.946253 thr_skim=0.899666
