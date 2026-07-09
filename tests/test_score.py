@@ -47,21 +47,21 @@ class TestTopKMean(unittest.TestCase):
 
 
 class TestComputeThresholds(unittest.TestCase):
-    def test_small_corpus_falls_back_to_fixed(self):
-        matrix = np.vstack(CORPUS_VECS[: MIN_CALIBRATION - 1])
-        must, skim = compute_thresholds(matrix)
+    def test_small_history_falls_back_to_fixed(self):
+        history = np.array([0.9, 0.91, 0.92], dtype=np.float64)
+        must, skim = compute_thresholds(history)
         self.assertEqual(must, FALLBACK_MUST_READ)
         self.assertEqual(skim, FALLBACK_SKIM)
 
-    def test_loo_percentiles(self):
-        matrix = np.vstack(CORPUS_VECS)
-        must, skim = compute_thresholds(matrix)
-        self.assertAlmostEqual(must, float(np.percentile(LOO_DIST, 90)), places=5)
-        self.assertAlmostEqual(skim, float(np.percentile(LOO_DIST, 50)), places=5)
+    def test_percentiles_of_history(self):
+        history = np.linspace(0.80, 0.99, 100)
+        must, skim = compute_thresholds(history)
+        self.assertAlmostEqual(must, float(np.percentile(history, 85)), places=6)
+        self.assertAlmostEqual(skim, float(np.percentile(history, 40)), places=6)
 
     def test_must_at_least_skim(self):
-        matrix = np.vstack(CORPUS_VECS)
-        must, skim = compute_thresholds(matrix)
+        history = np.linspace(0.80, 0.99, 100)
+        must, skim = compute_thresholds(history)
         self.assertGreaterEqual(must, skim)
 
 

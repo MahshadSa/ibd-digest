@@ -17,8 +17,8 @@ FALLBACK_SKIM = 0.924
 
 TOP_K_SIM = 3
 MIN_CALIBRATION = 5
-MUST_PERCENTILE = 90
-SKIM_PERCENTILE = 50
+MUST_PERCENTILE = 85
+SKIM_PERCENTILE = 40
 
 
 def top_k_mean(sims: np.ndarray, k: int = TOP_K_SIM) -> float:
@@ -29,30 +29,23 @@ def top_k_mean(sims: np.ndarray, k: int = TOP_K_SIM) -> float:
     return float(top.mean())
 
 
-def compute_thresholds(corpus_normed: np.ndarray) -> tuple[float, float]:
-    """Percentile-anchored tier thresholds from the corpus leave-one-out distribution.
+def compute_thresholds(score_history: np.ndarray) -> tuple[float, float]:
+    """Percentile-anchored tier thresholds from the candidate-score distribution.
 
-    Each corpus paper is scored against the rest with the same top-k mean
-    statistic used for candidates, and the must-read/skim cuts are the 90th and
-    50th percentiles of that distribution. Falls back to the fixed constants
-    when the corpus is too small to calibrate.
+    The thresholds are the MUST_PERCENTILE / SKIM_PERCENTILE percentiles of the
+    scores candidates have actually produced (the persisted rolling window), so
+    the cutoffs track where papers land rather than how self-similar the corpus
+    is. Falls back to the fixed constants when the window is too small.
     """
-    n = corpus_normed.shape[0]
-    if n < MIN_CALIBRATION:
+    if score_history.size < MIN_CALIBRATION:
         logger.warning(
-            "Corpus too small to calibrate thresholds (%d < %d); using fallbacks",
-            n,
+            "Score history too small to calibrate (%d < %d); using fallbacks",
+            score_history.size,
             MIN_CALIBRATION,
         )
         return FALLBACK_MUST_READ, FALLBACK_SKIM
-    all_sims = corpus_normed @ corpus_normed.T
-    k = min(TOP_K_SIM, n - 1)
-    dist = []
-    for i in range(n):
-        others = np.delete(all_sims[i], i)
-        dist.append(top_k_mean(others, k))
-    must = float(np.percentile(dist, MUST_PERCENTILE))
-    skim = float(np.percentile(dist, SKIM_PERCENTILE))
+    must = float(np.percentile(score_history, MUST_PERCENTILE))
+    skim = float(np.percentile(score_history, SKIM_PERCENTILE))
     return must, skim
 
 
