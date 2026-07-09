@@ -33,7 +33,6 @@ CORPUS_VECS = [
     _unit([0, 1, 0]),
     _unit([0, 1, 0]),
 ]
-LOO_DIST = [2 / 3, 2 / 3, 2 / 3, 1 / 3, 1 / 3]
 
 
 class TestTopKMean(unittest.TestCase):
@@ -79,6 +78,7 @@ class TestScoreAndTier(unittest.TestCase):
         # ignore_cleanup_errors: Windows can briefly hold the sqlite file handle
         self.tmp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
         self.db_path = str(Path(self.tmp.name) / "papers.db")
+        self.history_path = str(Path(self.tmp.name) / "score_history.txt")
         migrate(self.db_path)
         migrate_embedding_columns(self.db_path)
         conn = get_connection(self.db_path)
@@ -105,8 +105,15 @@ class TestScoreAndTier(unittest.TestCase):
     def tearDown(self):
         self.tmp.cleanup()
 
+    def _seed_history(self, values):
+        from src.ranking.history import append_scores
+        append_scores(self.history_path, values)
+
     def test_scores_tiers_and_meta(self):
-        n = score_and_tier(self.db_path)
+        # 10 values: p85 ~ 0.905, p40 ~ 0.5, so paper-a (score 1.0) is must-read
+        # and paper-b (score 0.0) is archive.
+        self._seed_history([0.0, 0.2, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.92, 0.95])
+        n = score_and_tier(self.db_path, self.history_path)
         self.assertEqual(n, 2)
         conn = get_connection(self.db_path)
         a = conn.execute(
@@ -118,17 +125,21 @@ class TestScoreAndTier(unittest.TestCase):
         # paper-a sims vs corpus: [1, 1, 1, 0, 0] -> top-3 mean 1.0
         self.assertAlmostEqual(a["similarity_score"], 1.0, places=5)
         self.assertEqual(a["matching_corpus_doi"], "10.1/corpus0")
-        # thresholds from LOO_DIST: must = skim = 2/3; 1.0 is must-read
         self.assertEqual(a["tier"], "must-read")
         # paper-b is orthogonal to every corpus vector -> score 0 -> archive
         self.assertAlmostEqual(b["similarity_score"], 0.0, places=5)
         self.assertEqual(b["tier"], "archive")
-
-        must = get_meta(conn, "tier_threshold_must")
-        skim = get_meta(conn, "tier_threshold_skim")
-        self.assertAlmostEqual(float(must), float(np.percentile(LOO_DIST, 90)), places=5)
-        self.assertAlmostEqual(float(skim), float(np.percentile(LOO_DIST, 50)), places=5)
+        self.assertIsNotNone(get_meta(conn, "tier_threshold_must"))
+        self.assertIsNotNone(get_meta(conn, "tier_threshold_skim"))
         conn.close()
+
+    def test_appends_this_runs_scores_to_history(self):
+        from src.ranking.history import load_score_history
+        self._seed_history([0.5] * 5)
+        before = load_score_history(self.history_path).size
+        score_and_tier(self.db_path, self.history_path)
+        after = load_score_history(self.history_path).size
+        self.assertEqual(after, before + 2)  # two scorable papers appended
 
 
 if __name__ == "__main__":

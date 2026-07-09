@@ -5,6 +5,7 @@ import numpy as np
 from src.db import get_connection, set_meta
 from src.ranking.embed import embed as embed_texts
 from src.ranking.embed import load_model
+from src.ranking.history import append_scores, load_score_history
 
 logger = logging.getLogger(__name__)
 
@@ -89,39 +90,56 @@ def embed_pending(db_path: str, model_name: str) -> int:
     return len(rows)
 
 
-def score_and_tier(db_path: str) -> int:
-    """Score papers as top-k mean cosine similarity vs corpus; store score, matching_corpus_doi, tier.
+def _load_corpus(conn) -> tuple[list[str], np.ndarray]:
+    """Return corpus DOIs and the L2-normalized corpus embedding matrix."""
+    rows = conn.execute(
+        "SELECT doi, embedding FROM corpus WHERE embedding IS NOT NULL"
+    ).fetchall()
+    dois = [r["doi"] for r in rows]
+    matrix = np.vstack(
+        [np.frombuffer(r["embedding"], dtype=np.float32) for r in rows]
+    )
+    norms = np.linalg.norm(matrix, axis=1, keepdims=True)
+    return dois, matrix / np.maximum(norms, 1e-8)
 
-    Thresholds are recalibrated from the corpus each run and recorded in the
-    meta table (tier_threshold_must, tier_threshold_skim) for telemetry.
-    Returns count updated.
+
+def score_papers(
+    corpus_dois: list[str], corpus_normed: np.ndarray, paper_rows
+) -> list[tuple[str, float, str]]:
+    """Score each paper as top-k mean cosine vs corpus.
+
+    Returns (doi, score, matching_corpus_doi) per scorable paper; papers with a
+    degenerate (zero-norm) embedding are skipped.
+    """
+    scored: list[tuple[str, float, str]] = []
+    for row in paper_rows:
+        emb = np.frombuffer(row["embedding"], dtype=np.float32)
+        norm = np.linalg.norm(emb)
+        if norm < 1e-8:
+            continue
+        sims = corpus_normed @ (emb / norm)
+        best_idx = int(np.argmax(sims))
+        scored.append((row["doi"], top_k_mean(sims), corpus_dois[best_idx]))
+    return scored
+
+
+def score_and_tier(
+    db_path: str, score_history_path: str = "data/score_history.txt"
+) -> int:
+    """Score papers vs corpus, append scores to the history window, calibrate
+    thresholds from that window, then tier. Returns count updated.
+
+    Two-pass: scoring is independent of the thresholds, and the thresholds come
+    from the accumulated candidate-score distribution (this run's scores
+    included), so scoring must complete before tiering.
     """
     conn = get_connection(db_path)
 
-    corpus_rows = conn.execute(
-        "SELECT doi, embedding FROM corpus WHERE embedding IS NOT NULL"
-    ).fetchall()
-    if not corpus_rows:
+    corpus_dois, corpus_normed = _load_corpus(conn)
+    if not corpus_dois:
         logger.warning("Corpus is empty; cannot score papers")
         conn.close()
         return 0
-
-    corpus_dois = [r["doi"] for r in corpus_rows]
-    corpus_matrix = np.vstack(
-        [np.frombuffer(r["embedding"], dtype=np.float32) for r in corpus_rows]
-    )
-    norms = np.linalg.norm(corpus_matrix, axis=1, keepdims=True)
-    corpus_normed = corpus_matrix / np.maximum(norms, 1e-8)
-
-    must_threshold, skim_threshold = compute_thresholds(corpus_normed)
-    logger.info(
-        "Tier thresholds this run: must-read >= %.4f, skim >= %.4f",
-        must_threshold,
-        skim_threshold,
-    )
-    with conn:
-        set_meta(conn, "tier_threshold_must", f"{must_threshold:.6f}")
-        set_meta(conn, "tier_threshold_skim", f"{skim_threshold:.6f}")
 
     paper_rows = conn.execute(
         "SELECT doi, embedding FROM papers WHERE embedding IS NOT NULL"
@@ -131,16 +149,21 @@ def score_and_tier(db_path: str) -> int:
         conn.close()
         return 0
 
-    updated = 0
+    scored = score_papers(corpus_dois, corpus_normed, paper_rows)
+
+    append_scores(score_history_path, [s for _, s, _ in scored])
+    window = load_score_history(score_history_path)
+    must_threshold, skim_threshold = compute_thresholds(window)
+    logger.info(
+        "Tier thresholds this run: must-read >= %.4f, skim >= %.4f (window n=%d)",
+        must_threshold,
+        skim_threshold,
+        window.size,
+    )
     with conn:
-        for row in paper_rows:
-            paper_emb = np.frombuffer(row["embedding"], dtype=np.float32)
-            norm = np.linalg.norm(paper_emb)
-            if norm < 1e-8:
-                continue
-            sims = corpus_normed @ (paper_emb / norm)
-            best_idx = int(np.argmax(sims))
-            score = top_k_mean(sims)
+        set_meta(conn, "tier_threshold_must", f"{must_threshold:.6f}")
+        set_meta(conn, "tier_threshold_skim", f"{skim_threshold:.6f}")
+        for doi, score, matching_doi in scored:
             conn.execute(
                 """
                 UPDATE papers
@@ -149,13 +172,12 @@ def score_and_tier(db_path: str) -> int:
                 """,
                 (
                     score,
-                    corpus_dois[best_idx],
+                    matching_doi,
                     assign_tier(score, must_threshold, skim_threshold),
-                    row["doi"],
+                    doi,
                 ),
             )
-            updated += 1
 
     conn.close()
-    logger.info("Scored and tiered %d papers", updated)
-    return updated
+    logger.info("Scored and tiered %d papers", len(scored))
+    return len(scored)
