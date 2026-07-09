@@ -24,7 +24,7 @@ from src.ranking.score import embed_pending, score_and_tier
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-DATES = ["2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08"]
+DATES = ["2026-07-03", "2026-07-04", "2026-07-05", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09"]
 MODEL_NAME = "allenai/specter2_base"
 CORPUS_DIR = "Corpus"
 METRICS_PATH = "data/metrics.txt"
@@ -42,7 +42,8 @@ def dois_from_digest(path: str) -> list[str]:
     return list(seen)
 
 
-def run(vault_root: str, db_path: str, email: str, api_key: str | None) -> None:
+def run(vault_root: str, db_path: str, email: str, api_key: str | None,
+        dates: list[str] = DATES) -> None:
     if Path(db_path).exists():
         Path(db_path).unlink()  # start from a clean DB; the snapshot is expendable
     migrate(db_path)
@@ -50,7 +51,7 @@ def run(vault_root: str, db_path: str, email: str, api_key: str | None) -> None:
     rebuild_corpus_from_notes(db_path, CORPUS_DIR, MODEL_NAME)
 
     conn = get_connection(db_path)
-    for d in DATES:
+    for d in dates:
         digest = Path(vault_root) / "Inbox" / "Papers" / f"{d}.md"
         dois = dois_from_digest(str(digest))
         logger.info("%s: %d DOIs", d, len(dois))
@@ -66,15 +67,16 @@ def run(vault_root: str, db_path: str, email: str, api_key: str | None) -> None:
     embed_pending(db_path, MODEL_NAME)
     score_and_tier(db_path)
 
-    for d in DATES:
+    for d in dates:
         target = date.fromisoformat(d)
         writer.run(db_path, vault_root, target_date=target, force=True)
         metrics.run(db_path, METRICS_PATH, target_date=target)
-    logger.info("Regenerated %d digests", len(DATES))
+    logger.info("Regenerated %d digests", len(dates))
 
 
 if __name__ == "__main__":
     load_dotenv()
     _vault = sys.argv[1] if len(sys.argv) > 1 else "."
     _db = sys.argv[2] if len(sys.argv) > 2 else "data/papers.db"
-    run(_vault, _db, os.environ["NCBI_EMAIL"], os.environ.get("NCBI_API_KEY"))
+    _dates = sys.argv[3:] or DATES  # optional: pass specific YYYY-MM-DD dates to regenerate
+    run(_vault, _db, os.environ["NCBI_EMAIL"], os.environ.get("NCBI_API_KEY"), _dates)
