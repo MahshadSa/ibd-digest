@@ -24,9 +24,9 @@ from reading behavior over time.
 3. **Rank.** Each paper is scored as the mean of its top 3 cosine similarities
    against a corpus of seed papers representing the research interests of the
    maintainer. Papers are sorted into three tiers (must-read, skim, archive)
-   using thresholds recalibrated every run from the corpus's own leave-one-out
-   similarity distribution (90th and 50th percentiles), so tiering adapts as
-   the corpus grows with no manual re-check. The corpus embeddings are rebuilt
+   using thresholds recalibrated every run as the 85th and 40th percentiles of
+   the rolling candidate-score distribution (data/score_history.txt), so the
+   cutoffs track where incoming papers actually land. The corpus embeddings are rebuilt
    from committed Markdown notes at the start of each run, so ranking works
    even though the database itself is not persisted.
 4. **Deliver.** A Markdown digest is written to the Obsidian vault at
@@ -203,13 +203,14 @@ Required environment variables (local `.env`, or repo secrets for Actions):
 ### Ranking calibration
 
 SPECTER2 produces high cosine similarities for in-domain biomedical text, so
-fixed thresholds do not generalize. Since 2026-07-02 thresholds self-calibrate
-every run: each corpus paper is scored against the rest with the same top-3
-mean statistic used for candidates, and the must-read/skim cuts are the 90th
-and 50th percentiles of that leave-one-out distribution. The values are logged
-per run in `data/metrics.txt`; watch that file for tier drift instead of
-re-checking thresholds by hand. Fixed fallbacks apply only below 5 corpus
-papers.
+fixed thresholds do not generalize. Thresholds self-calibrate every run as the
+85th (must-read) and 40th (skim) percentiles of a rolling window of candidate
+scores (`data/score_history.txt`, last 2000). Calibrating on the candidate
+distribution, not on corpus self-similarity, is deliberate: the earlier
+corpus-leave-one-out cutoffs sat at the 96th/98th percentile of real candidate
+scores and archived everything. The values are logged per run in
+`data/metrics.txt`; watch that file for tier drift. Fixed fallbacks apply only
+below 5 scores in the window.
 
 ### Known limitations
 

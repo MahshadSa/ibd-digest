@@ -74,7 +74,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Inbox/Papers/ "Inbox/To Read.md" Inbox/Column/ Corpus/ data/seen_dois.txt data/metrics.txt
+          git add Inbox/Papers/ "Inbox/To Read.md" Inbox/Column/ Corpus/ data/seen_dois.txt data/metrics.txt data/score_history.txt
           if git diff --staged --quiet; then
             echo "Nothing to commit, skipping."
             exit 0

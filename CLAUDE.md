@@ -48,16 +48,19 @@ Crossref journal policy: focused journals fetched unfiltered because hit rate is
 - Score: mean of the top 3 cosine similarities between candidate and corpus
   (top-3 mean, replaced single max 2026-07-02: with a ~40-paper corpus one
   atypical seed note could pull an off-topic paper into must-read)
-- Tiers are SELF-CALIBRATING per run (2026-07-02): thresholds come from the
-  corpus leave-one-out distribution, each seed scored against the rest with the
-  same top-3 mean statistic; must-read = 90th percentile, skim = 50th.
-  compute_thresholds in src/ranking/score.py; values recorded in the DB meta
-  table (tier_threshold_must/skim) and data/metrics.txt. Fixed fallbacks
-  (0.958/0.924) apply only when the corpus is under 5 papers. The monthly
-  manual threshold re-check is obsolete; watch data/metrics.txt for drift.
-  Measured on the real 42-note corpus at build time: must >= 0.9750,
-  skim >= 0.9674 (higher than the old fixed pair; the statistic changed with
-  the calibration, so tier composition shifts on the first ranked run).
+- Tiers are SELF-CALIBRATING per run: thresholds are the 85th (must-read) and
+  40th (skim) percentiles of the CANDIDATE-score distribution, a rolling window
+  of the scores papers actually produced, persisted in data/score_history.txt
+  (last 2000 scores). This replaced the corpus leave-one-out calibration on
+  2026-07-08: that version drew cutoffs from corpus self-similarity, which sat
+  at the 96th/98th percentile of real candidate scores, so every run archived
+  100% of papers (see data/metrics.txt 07-03 through 07-08). compute_thresholds
+  in src/ranking/score.py; values recorded in the DB meta table
+  (tier_threshold_must/skim) and data/metrics.txt. Fixed fallbacks
+  (0.958/0.924) apply only when the window is under 5 scores. Anchor knobs:
+  MUST_PERCENTILE/SKIM_PERCENTILE in src/ranking/score.py. Watch
+  data/metrics.txt for drift. Seeded from the mid-June DB snapshot at build
+  time (n=1233): must >= 0.9468, skim >= 0.9003.
 
 ### Daily digest format
 One Markdown note per day at `Inbox/Papers/YYYY-MM-DD.md` in the Obsidian vault.
