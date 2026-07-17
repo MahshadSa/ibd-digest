@@ -1,3 +1,199 @@
+## The Israeli IBD Research Nucleus: collaborative advancements in Israeli IBD research.
+
+Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
+Dotan I, Ben-Horin S, Turner D | Therapeutic advances in gastroenterology | 2026-01-01
+[10.1177/17562848261463603](https://doi.org/10.1177/17562848261463603)
+
+Inflammatory bowel diseases (IBD) are increasing worldwide, requiring multidisciplinary care and coordinated research infrastructures. Leveraging Israel's integrated healthcare system with IBD centers of specific and complementary research expertise, a national collaborative consortium was established: the Israeli IBD Research Nucleus (IIRN). In this narrative article, we review a decade of IIRN structure, scientific outputs, and lessons learned. The IIRN included five tertiary academic IBD referral centers across Israel, with expertise in epidemiology, mucosal immunology, diet and microbiome, imaging, and psychosocial care. We summarized the IIRN key activities, findings, and contributions across these domains. Publications (2015-2025) were identified using a structured bibliometric approach and included studies aligned with core research programs of the IIRN. This collaborative consortium has been supported since its inauguration by the Leona M. and Harry B. Helmsley Charitable Trust, providing funding, advice, and partnership. The IIRN provided significant contributions in several domains. It established a population-based nationwide registry (epi-IIRN) that integrates data from the four national health maintenance organizations, enabling studies of disease prevalence, course, comorbidities, and treatment patterns. Prospective cohorts of patients with Crohn's disease provided longitudinal insights linking multidisciplinary programs, Mediterranean diet and lifestyle, and psychosocial interventions with patient-reported outcomes, inflammatory markers, and microbiome features. Integrating imaging, video-capsule endoscopy, and biomarker assessment informed monitoring strategies and treat-to-target concepts. Exploratory translational work in microbiome, transcriptomics, and therapeutic drug monitoring refined insights regarding treatment response and sequencing. Artificial intelligence applications explored image and report interpretation to predict Crohn's disease. The IIRN experience illustrates how coordinated national collaborations can leverage epidemiology, prospective cohorts, translational research, and multidisciplinary care programs. This experience highlights both the opportunities and challenges of shared research infrastructure and may inform similar collaborative efforts in other healthcare settings.
+
+---
+
+## Impact of Inflammatory Activity on Anorectal Function in Patients With Ulcerative Colitis: A Prospective Study
+
+Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
+Ana Sanahuja Martínez, Pilar Mas Mercader, Miguel Mínguez Pérez | Alimentary Pharmacology &amp; Therapeutics | 2026-07-15
+[10.1111/apt.70855](https://doi.org/10.1111/apt.70855)
+
+ABSTRACT
+
+---
+
+## Metabolic Profiling of the Gut-Brain Axis in a Murine Model of Ulcerative Colitis with Raman Spectroscopy.
+
+Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
+Kandavelkumar V, Cutshaw G, Bardhan R | ACS applied materials & interfaces | 2026-07-15
+[10.1021/acsami.6c03103](https://doi.org/10.1021/acsami.6c03103)
+
+The gut-brain axis (GBA) enables a bidirectional crosstalk between the enteric and central nervous systems and plays a critical role in inflammatory diseases of the gut. This study is the first demonstration of the utility of Raman spectroscopy (RS) in capturing a snapshot of the biochemical changes that modulate the GBA and identify vibrational bands that are evidence of metabolites present in a murine model of ulcerative colitis. Acute colitis was induced in mice by administering dextran sulfate sodium (DSS) in drinking water. RS measurements identified 21 significant peaks in the serum, 21 in the cecum, and 22 in the thalamus region of the brain; these peaks were associated with broad metabolite classes and showed strong correlation to disease activity in colitis mice relative to healthy mice. Our findings showed that the thalamus has the most metabolite changes in the DSS-colitis model rather than the hypothalamus, which is known to be crucial in GBA communication. We identified six biochemical species, including unsaturated fatty acids, lipids, triglycerides, proteins/amide III, tryptophan, and threonine, that were common between the serum, cecum, and thalamus and may serve as early biomarkers of inflammatory response that drive gut-brain communication. Further, a Pearson's correlation analysis highlighted that neurotransmitters in the thalamus had moderate-to-strong correlations to serum amino acids and lipids/fatty acids in the gut. This fundamental study provides a snapshot of the early biochemical changes that enable crosstalk between the gut and brain in ulcerative colitis that can be translated to other disorders of the gut or brain in the future.
+
+---
+
+## Automated generation of impressions in abdominal radiology reports using an artificial intelligence-based tool: performance compared to manual impressions.
+
+Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
+Mojtahed A, Ghosh S, Kambadakone AR | Abdominal radiology (New York) | 2026-07-15
+[10.1007/s00261-026-05688-7](https://doi.org/10.1007/s00261-026-05688-7)
+
+OBJECTIVES: Recent years have seen a rapid development of artificial intelligence (AI) tools to enhance radiologists' workflow, but most have focused on image acquisition and interpretation. Generating radiology reports is a critical element of practice but remains a source of inefficiency and cognitive load. PURPOSE: To investigate the performance of an AI based tool integrated into dictation software to automate generation of report impressions and compare it with radiologist generated impressions. METHODS: One hundred consecutive abdominal radiology reports were retrospectively selected in January 2024 from a single center. An AI-generated impression (GI) was created for each report and compared with the original radiologist impression (RI). Ten subspecialty abdominal radiologists evaluated the blinded, randomized pairs. Each impression was evaluated on a 5-point Likert scale for coherence, comprehensiveness, and factual consistency, and an overall preference for the impression was recorded. Cumulative link mixed models and binomial logistic regression were used where appropriate. RESULTS: GI was preferred in 38% of reports (95% CI 32-45%), RI in 45% (95% CI 39-50%), with no preference in 17% of instances. Mixed-effects logistic regression demonstrated that GI was rated as equivalent or preferred to RI (odds ratio 1.34, 95% CI 1.004-1.788, p = 0.02). Radiologists rated GI equivalent or superior to RI in 79% of cases for coherence, 66% for comprehensiveness, and 77% for factual consistency. CONCLUSION: The AI generated impressions were clinically acceptable and rated equivalent or superior to radiologist-generated impressions in the majority of cases across key quality metrics.
+
+---
+
+## Artificial Intelligence-Augmented Diagnostic Synthesis: Extending the Radiologist's Clinical Role
+
+Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
+Francis Deng | American Journal of Roentgenology | 2026-07-15
+[10.2214/ajr.26.35305](https://doi.org/10.2214/ajr.26.35305)
+
+---
+
+## Beyond faster reporting: risk-aware implementation of large language models in radiology
+
+Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
+Pin Bao, Fanghong Hong | European Radiology | 2026-07-15
+[10.1007/s00330-026-12755-6](https://doi.org/10.1007/s00330-026-12755-6)
+
+---
+
+## Increasing Use of Large Language Models for Scholarly Writing in Radiology
+
+Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
+Vidith Phillips, Ammar A. Pallikonda Latheef, Paul H. Yi | American Journal of Roentgenology | 2026-07-15
+[10.2214/ajr.25.34273](https://doi.org/10.2214/ajr.25.34273)
+
+---
+
+## Interpretable agentic AI system with localized reasoning for radiology
+
+Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
+Wenting Chen, Yi Dong, Xiang Li | npj Digital Medicine | 2026-07-15
+[10.1038/s41746-026-02994-8](https://doi.org/10.1038/s41746-026-02994-8)
+
+---
+
+## Development and validation of a LASSO-logistic regression model for predicting subtherapeutic infliximab trough concentrations in patients with Crohn's disease.
+
+Added: 2026-07-15 | Source: [[Inbox/Papers/2026-07-15]]
+Song J, Li X, Wang Y | International journal of clinical pharmacy | 2026-08-01
+[10.1007/s11096-026-02106-2](https://doi.org/10.1007/s11096-026-02106-2)
+
+BACKGROUND: Infliximab (IFX), a monoclonal antibody that neutralizes tumor necrosis factor-α, is widely used as a biologic treatment for Crohn's disease (CD). Despite its established efficacy, a substantial proportion of patients develop subtherapeutic IFX trough concentrations (< 3 μg/mL), leading to diminished clinical response and treatment failure. Early identification of high-risk individuals remains challenging due to the multifactorial nature of IFX pharmacokinetics. AIM: This study integrated Least Absolute Shrinkage and Selection Operator (LASSO)-based variable selection with multivariable logistic regression to identify CD patients at risk for subtherapeutic IFX trough levels during induction. METHOD: A total of 347 patients diagnosed with CD who commenced IFX induction therapy at the Sixth Affiliated Hospital of Sun Yat-sen University from January to December 2023 were retrospectively reviewed in this study. Comprehensive demographic, clinical, and biochemical data were retrieved from electronic records. Variable selection was performed using the Least Absolute Shrinkage and Selection Operator (LASSO), after which a multivariable logistic model was developed. Model discrimination, calibration and clinical usefulness were assessed through the area under the receiver operating characteristic curve (AUC), calibration curves, decision curve analysis (DCA) and clinical impact curves (CIC). RESULTS: Of the 347 participants, 148 (42.7%) exhibited subtherapeutic IFX trough concentrations. LASSO and multivariable logistic analyses identified four independent predictors: older age at diagnosis (> 40 years), elevated anti-drug antibody levels, higher erythrocyte sedimentation rate and reduced albumin (P < 0.05). The model demonstrated an AUC of 0.737 (95% CI 0.684-0.790), with a bootstrap-adjusted AUC of 0.726 (95% CI 0.697-0.739) based on 1000 resamples. Calibration demonstrated close alignment with observed outcomes, validated by a non-significant Hosmer-Lemeshow test (χ2 = 8.447, P = 0.391). DCA and CIC analyses indicated meaningful clinical utility. CONCLUSION: The proposed LASSO-logistic regression model demonstrates promising predictive performance for identifying subtherapeutic IFX exposure in CD patients. By leveraging readily available clinical data, it enables early risk stratification and individualized therapeutic decision-making, thereby facilitating more effective treatment optimization.
+
+---
+
+## Fairness in multimodal machine learning applications in clinical decision support: a systematic review
+
+Added: 2026-07-15 | Source: [[Inbox/Papers/2026-07-15]]
+Amit Saha, Lexuan Shao, Adam G. Dunn | npj Digital Medicine | 2026-07-14
+[10.1038/s41746-026-03000-x](https://doi.org/10.1038/s41746-026-03000-x)
+
+---
+
+## A scoping review of explainable artificial intelligence for medical multimodal data
+
+Added: 2026-07-15 | Source: [[Inbox/Papers/2026-07-15]]
+Kaiyuan Hu, Xingyue Fu, Jinman Kim | npj Digital Medicine | 2026-07-15
+[10.1038/s41746-026-02953-3](https://doi.org/10.1038/s41746-026-02953-3)
+
+---
+
+## Understanding Automation Bias in Imaging AI: An Early Career Perspective
+
+Added: 2026-07-15 | Source: [[Inbox/Papers/2026-07-15]]
+Nooshin Abbasi, Catherine S. Giess | Radiology | 2026-07-01
+[10.1148/radiol.261864](https://doi.org/10.1148/radiol.261864)
+
+---
+
+## A scoping review on emerging biomarkers in inflammatory bowel disease: Towards precision medicine in diagnosis and therapeutic management.
+
+Added: 2026-07-14 | Source: [[Inbox/Papers/2026-07-14]]
+da Silva MQ, Souza Menezes JD, André JC | PloS one | 2026-01-01
+[10.1371/journal.pone.0353295](https://doi.org/10.1371/journal.pone.0353295)
+
+BACKGROUND: Inflammatory Bowel Diseases (IBD) are chronic conditions presenting significant diagnostic and management challenges. Current invasive methods and traditional biomarkers often lack sufficient accuracy and fail to address the disease's heterogeneity and unpredictable therapeutic responses. This necessitates more precise, personalized clinical tools. METHODS: This scoping review synthesized recent findings on emerging biomarkers for IBD. We focused on technological advances in omics platforms (genomics, transcriptomics, proteomics, metabolomics, microbiomics), artificial intelligence, biosensors, and imaging techniques. Analysis identified biomarker potential for early diagnosis, disease activity monitoring, progression prognosis, and therapeutic response prediction. The review adhered to PRISMA-ScR guidelines and was registered with the Open Science Framework (OSF). The search encompassed five major databases: PubMed/MEDLINE, Scopus, Web of Science, Embase, and Google Scholar. RESULTS: Studies demonstrate vast potential in non-invasive biomarkers for refined early diagnosis, optimized disease monitoring, and treatment response prediction. Key findings include metabolomic and gut microbiota profiles, genetic and epigenetic markers, and AI integration of complex data. These approaches promise to overcome conventional indicator limitations. From 784 initial records, 27 articles were included, published between 2021 and 2025. CONCLUSION: Emerging biomarkers are fundamental for the transition to precision medicine in IBD. Their implementation aims to enhance pathogenesis understanding, personalize therapies, and improve patient quality of life, establishing pathways for more effective, individualized management approaches.
+
+---
+
+## Small intestinal contrast ultrasonography (SICUS) in Crohn’s disease: Ready for wider implementation?
+
+Added: 2026-07-14 | Source: [[Inbox/Papers/2026-07-14]]
+Isabelle De Kock, Stuart A. Taylor | European Radiology | 2026-07-13
+[10.1007/s00330-026-12771-6](https://doi.org/10.1007/s00330-026-12771-6)
+
+---
+
+## All-cause and cause-specific mortality in inflammatory bowel disease across the biologic era: a population-based matched cohort study
+
+Added: 2026-07-14 | Source: [[Inbox/Papers/2026-07-14]]
+Onuma Sattayalertyanyong, Zoann Nugent, Charles N Bernstein | Journal of Crohn's and Colitis | 2026-07-13
+[10.1093/ecco-jcc/jjag105](https://doi.org/10.1093/ecco-jcc/jjag105)
+
+Abstract
+
+---
+
+## Functional MRI in PSC: translating prognostic potential into clinical practice
+
+Added: 2026-07-14 | Source: [[Inbox/Papers/2026-07-14]]
+Sarah Poetter-Lang, Ahmed Ba-Ssalamah, Ulrike Attenberger | European Radiology | 2026-07-13
+[10.1007/s00330-026-12759-2](https://doi.org/10.1007/s00330-026-12759-2)
+
+---
+
+## Author Correction: The STARD-AI reporting guideline for diagnostic accuracy studies using artificial intelligence
+
+Added: 2026-07-14 | Source: [[Inbox/Papers/2026-07-14]]
+Viknesh Sounderajah, Ahmad Guni, Suchi Saria | Nature Medicine | 2026-07-13
+[10.1038/s41591-026-04570-9](https://doi.org/10.1038/s41591-026-04570-9)
+
+---
+
+## Embedded transparency in artificial intelligence: a prerequisite for equity and representation in AI-enabled clinical trials
+
+Added: 2026-07-12 | Source: [[Inbox/Papers/2026-07-12]]
+Johanna M. C. Blom, Luca Pani | npj Digital Medicine | 2026-07-11
+[10.1038/s41746-026-02987-7](https://doi.org/10.1038/s41746-026-02987-7)
+
+---
+
+## Intestinal muscularis in health and disease.
+
+Added: 2026-07-11 | Source: [[Inbox/Papers/2026-07-11]]
+Yang W, Yang J, Tu H | Communications biology | 2026-07-09
+[10.1038/s42003-026-10594-1](https://doi.org/10.1038/s42003-026-10594-1)
+
+The intestinal muscularis is a multifunctional tissue that coordinates motility, immune responses, and tissue homeostasis through interactions among enteric neurons, smooth muscle cells (SMCs), and immune cells. Beyond its classical role in peristalsis, emerging evidence identifies the intestinal muscularis as an active regulatory hub integrating neural, immune, and microbial signals. Here, we review the anatomical organization, physiological functions, and pathological alterations in inflammatory bowel diseases, irritable bowel syndrome, infection, and Hirschsprung disease. We further highlight how disruption of integrated neuromuscular and immune networks drives pathological remodeling and discuss emerging concepts and future directions in muscularis biology.
+
+---
+
+## Redefining Neutrophil Function in Inflammatory Bowel Disease: From Tissue Injury to Immune Resolution.
+
+Added: 2026-07-11 | Source: [[Inbox/Papers/2026-07-11]]
+Khademi M, Kazemifard N, Shahrokh S | Molecular biology reports | 2026-07-10
+[10.1007/s11033-026-12291-y](https://doi.org/10.1007/s11033-026-12291-y)
+
+Inflammatory bowel disease (IBD) is characterized by chronic intestinal inflammation driven by dysregulated immune responses and impaired mucosal homeostasis. Although neutrophils have traditionally been viewed as short-lived pro-inflammatory effector cells that contribute to epithelial injury, emerging evidence indicates that they also possess important pro-resolving and tissue-repairing functions. This narrative mini-review critically evaluates recent advances in understanding neutrophil functional heterogeneity in IBD, with particular emphasis on CD177⁺ neutrophils, neutrophil extracellular trap formation, efferocytosis, and mechanisms involved in immune resolution and mucosal healing. Accumulating data suggest that specialized neutrophil subsets can balance antimicrobial defense with controlled inflammatory signaling, thereby contributing to epithelial protection and restoration of intestinal homeostasis. In parallel, efficient efferocytosis of apoptotic neutrophils by macrophages emerges as a central mechanism promoting resolution of inflammation, whereas impaired clearance sustains chronic inflammatory responses. Recent studies further highlight the therapeutic potential of targeting pro-resolving neutrophil pathways and enhancing efferocytosis; however, most current evidence remains preclinical, and significant challenges persist in translating these findings into human therapies. Collectively, these insights redefine neutrophils as dynamic regulators of both tissue injury and immune resolution in IBD and support the development of therapeutic strategies aimed at restoring immune balance and durable mucosal healing.
+
+---
+
+## A vision transformer deep learning model for assessing pediatric ileocolic intussusception severity using ultrasound images
+
+Added: 2026-07-11 | Source: [[Inbox/Papers/2026-07-11]]
+Jie Liu, Yue Wang, Min Li | npj Digital Medicine | 2026-07-10
+[10.1038/s41746-026-02941-7](https://doi.org/10.1038/s41746-026-02941-7)
+
+---
+
+## Enhancing patient care with AI agents: integrating advanced chatbot technologies for improved healthcare delivery.
+
+Added: 2026-07-11 | Source: [[Inbox/Papers/2026-07-11]]
+Adla YA, Hajj AE | BMC medical informatics and decision making | 2026-07-09
+[10.1186/s12911-026-03694-9](https://doi.org/10.1186/s12911-026-03694-9)
+
+The integration of artificial intelligence (AI) in healthcare presents significant opportunities to enhance patient care and streamline medical workflows. However, challenges related to accuracy, reliability, and accessibility continue to limit the widespread adoption of AI-driven medical assistants. To the best of our knowledge, this is the first study to integrate multiple advanced AI techniques into a unified system designed to provide real-time, context-aware medical insights while ensuring accuracy, engagement, and interpretability. This study aims to develop an AI-powered medical agent capable of assisting both patients and healthcare professionals by generating informed medical responses, automating healthcare-related tasks, and improving patient interaction through interactive and reliable assistance. The methods employed in this research include Retrieval-Augmented Generation (RAG) for contextualized medical responses, the Wikipedia API for real-time knowledge retrieval, and knowledge graphs for mapping symptoms to potential diseases. Additionally, a symptom checker tool enables preliminary diagnosis and personalized health recommendations using a prompt-based system. The system was evaluated through automated performance assessments and expert reviews. The results demonstrate that the knowledge graph tool achieved 95% accuracy in medical query responses, showcasing its reliability in symptom-disease mapping. Additionally, sentiment analysis of patient interactions reached 97% accuracy, reinforcing the system's ability to understand and respond empathetically. The Wikipedia-based retrieval system maintained an average response time of 10 seconds, ensuring real-time applicability. Furthermore, 100 medical experts rated the AI agent's responses 4.6 for comprehensiveness, 4.5 for engagement, and 4.5 for empathy and tone on a 5-point scale. These findings suggest that integrating advanced AI techniques enhances the accuracy, responsiveness, and contextual relevance of AI-driven medical agents. This scalable and reliable system presents a viable solution to reduce healthcare workload, enhance patient engagement, and democratize access to trusted medical information, reinforcing its potential as a transformative tool in modern healthcare.
+
+---
+
 ## Trained immunity: Breaking a dogma and a missing opportunity in IBD?
 
 Added: 2026-06-30 | Source: [[Inbox/Papers/2026-06-30]]
