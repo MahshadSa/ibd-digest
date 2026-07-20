@@ -1,6 +1,6 @@
 """Stage 5: deterministic render of a pruned (v2) run to an Obsidian note.
 
-Reads one pruned run and writes Inbox/Lineages/{slug}-{date}.md: a Mermaid
+Reads one pruned run and writes Inbox/Lineages/{author-year}-{date}.md: a Mermaid
 flowchart grouped into decade subgraphs (oldest to newest, seed styled) followed
 by a bulleted trajectory. No network, no SPECTER2, no LLM (the narrative pass is
 stage 6, out of scope here). stdlib plus lineage.store only.
@@ -77,6 +77,22 @@ def build_label(node: dict) -> str:
 def _mermaid_label(text: str) -> str:
     """Sanitize a label for a double-quoted Mermaid node."""
     return text.replace('"', "'").replace("\n", " ").strip()
+
+
+def seed_node(run: dict) -> dict:
+    """The seed's own entry in run['nodes'] (carries authors/pub_year; run['seed'] does not)."""
+    seed_id = run["seed"]["openalex_id"]
+    return next(n for n in run["nodes"] if n["openalex_id"] == seed_id)
+
+
+def seed_slug(run: dict) -> str:
+    """Filesystem-safe author-year label for the seed, e.g. 'lovelace-2022'.
+
+    Used for output note filenames instead of the DOI slug, which is unreadable
+    (e.g. 's2468-1253-25-00263-8'). The run file itself keeps the DOI-based
+    run_id (store.make_run_id): uniqueness matters there, readability here.
+    """
+    return store.slugify(build_label(seed_node(run)))
 
 
 def _era_id(phase: int | None) -> str:
@@ -156,12 +172,12 @@ def render_note(run: dict) -> str:
 
 
 def write_note(run: dict, vault_root: Path = Path("."), force: bool = False) -> Path:
-    """Write the rendered note to Inbox/Lineages/{slug}-{date}.md.
+    """Write the rendered note to Inbox/Lineages/{author-year}-{date}.md.
 
     Refuses to overwrite an existing note unless force is set (the note may carry
     hand annotations); regenerating is then explicit, like the digest writer.
     """
-    slug = store.slugify(run["seed"]["doi"])
+    slug = seed_slug(run)
     path = Path(vault_root) / "Inbox" / "Lineages" / f"{slug}-{date.today():%Y-%m-%d}.md"
     if path.exists() and not force:
         raise FileExistsError(f"note already exists: {path}; pass --force to regenerate")

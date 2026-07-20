@@ -139,6 +139,18 @@ class TestWriteNote(unittest.TestCase):
             with self.assertRaises(FileExistsError):
                 write_note(merged, SELECTION, None, vault_root=Path(tmp))
 
+    def test_single_seed_uses_author_year_not_doi_run_id(self):
+        # A single (unmerged) run's run_id is DOI-based and unreadable
+        # (store.make_run_id); the filename swaps it for author-year instead.
+        run_a, _ = _make_runs()
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+            out = write_note(run_a, SELECTION, None, vault_root=Path(tmp))
+            expected = (
+                Path(tmp) / "Inbox" / "Lineages"
+                / f"author-2020-{date.today():%Y-%m-%d}-dossier.md"
+            )
+            self.assertEqual(out, expected)
+
 
 if __name__ == "__main__":
     unittest.main()

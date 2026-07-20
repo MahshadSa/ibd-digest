@@ -133,7 +133,7 @@ class TestWriteNote(unittest.TestCase):
         run = _synthetic_run()
         with tempfile.TemporaryDirectory() as tmp:
             path = render.write_note(run, vault_root=Path(tmp))
-            expected = Path(tmp) / "Inbox" / "Lineages" / f"10-1-seed-{date.today():%Y-%m-%d}.md"
+            expected = Path(tmp) / "Inbox" / "Lineages" / f"lovelace-2022-{date.today():%Y-%m-%d}.md"
             self.assertEqual(path, expected)
             self.assertTrue(path.exists())
             with self.assertRaises(FileExistsError):

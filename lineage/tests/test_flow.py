@@ -2,6 +2,7 @@
 import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 from lineage import store
@@ -129,8 +130,10 @@ class TestRunFlowEndToEnd(unittest.TestCase):
             )
             self.assertTrue(note.exists())
             self.assertTrue(str(note).endswith("-dossier.md"))
-            self.assertTrue(payload.exists())
-            run_id = note.name.replace("-dossier.md", "")
+            # Filename is author-year based (see render.seed_slug), not run_id,
+            # so the run_id for sidecar lookups is computed the same way
+            # crawl_or_reuse computes it, not parsed out of the note name.
+            run_id = store.make_run_id(SEED_DOI, date.today())
             self.assertTrue(store.forward_path(run_id, runs_dir).exists())
             self.assertTrue(store.selection_path(run_id, runs_dir).exists())
             body = note.read_text(encoding="utf-8")

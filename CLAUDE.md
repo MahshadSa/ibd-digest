@@ -454,8 +454,9 @@ once per run. No database, no binary, no shared mutable state. This is
 deliberate, to avoid the binary-merge push/pull problems papers.db has.
 All run IO goes through store.py. See the store.py contract.
 
-Output: rendered notes to Inbox/Lineages/{slug}-{date}.md, containing a
-Mermaid flowchart grouped by phase followed by the bulleted trajectory.
+Output: rendered notes to Inbox/Lineages/{author-year}-{date}.md, containing a
+Mermaid flowchart grouped by phase followed by the bulleted trajectory (see
+Output note filenames, 2026-07-19, for the author-year slug).
 Parallel to the digest's Inbox/Papers/, never overlapping it.
 
 Pipeline stages (deterministic):
@@ -1175,6 +1176,34 @@ and excluded .selection.json but not .forward.json, so a forward sidecar in runs
 (from a real dossier run) made the skipUnless prune tests crash with
 KeyError: 'nodes'. The glob now excludes both sidecar suffixes. Pre-existing, not
 caused by flow.py; surfaced when the suite ran with a forward sidecar present.
+
+### Output note filenames: author-year instead of DOI (2026-07-19)
+
+The rendered note filenames (Inbox/Lineages/*) were `{doi-slug}-{date}.md`, e.g.
+`10-1016-s2468-1253-25-00263-8-20260719-dossier.md`: unreadable, and Elsevier/
+Lancet-style DOIs (`S....-....(YY)NNNNN-N`) also break naive shell quoting on the
+DOI argument, which is a separate, already-known problem (quote the DOI). Output
+filenames now use `{author-year}-{date}` instead: `render.seed_slug(run)` looks
+up the seed's own node in `run["nodes"]` (run["seed"] itself carries only doi/
+openalex_id/title, not authors/pub_year) and slugifies `build_label` (the
+existing "Surname Year" Mermaid node-label format, e.g. "Bousvaros 2007" ->
+`bousvaros-2007`). Falls back to the openalex_id if the seed has no authors, same
+fallback build_label already used for chart labels.
+
+Applied to render.py (`{author-year}-{date}.md`), timeline.py
+(`{author-year}-{date}-selected.md`), and dossier.py (`{author-year}-{date}-
+dossier.md` for a single-seed run). A merged (multi-seed topic) dossier keeps
+`{run_id}-dossier.md`: merge.py's run_id is already a readable topic slug
+(`{topic}-merged-{YYYYMMDD}`), not DOI-based, so there is nothing to fix there.
+
+The runs/*.json run file itself is UNCHANGED: run_id (store.make_run_id) stays
+DOI-slug-based, because uniqueness matters there (two papers can share an author
+and year; DOIs never collide) and it is never meant to be read, only looked up
+by code. Only the human-facing vault note names changed. flow.py's
+`run["run_id"]` is therefore no longer recoverable by stripping `-dossier.md`
+off the note filename; test_flow.py's end-to-end test now recomputes it via
+`store.make_run_id(SEED_DOI, date.today())`, the same way crawl_or_reuse does,
+instead of parsing the note name.
 
 ## 2026-07-02 overhaul (digest arm)
 

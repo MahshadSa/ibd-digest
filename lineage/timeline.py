@@ -18,7 +18,7 @@ from pathlib import Path
 
 from lineage import store
 from lineage.prune import prune
-from lineage.render import group_by_phase
+from lineage.render import group_by_phase, seed_slug
 
 logger = logging.getLogger(__name__)
 
@@ -110,12 +110,12 @@ def render_note(run: dict, selection: dict) -> str:
 def write_note(
     run: dict, selection: dict, vault_root: Path = Path("."), force: bool = False
 ) -> Path:
-    """Write the selected timeline to Inbox/Lineages/{slug}-{date}-selected.md.
+    """Write the selected timeline to Inbox/Lineages/{author-year}-{date}-selected.md.
 
     A new note alongside the stage-5 chart render, which stays the raw record.
     Refuses to overwrite unless force (the note may carry hand annotations).
     """
-    slug = store.slugify(run["seed"]["doi"])
+    slug = seed_slug(run)
     name = f"{slug}-{date.today():%Y-%m-%d}-selected.md"
     path = Path(vault_root) / "Inbox" / "Lineages" / name
     if path.exists() and not force:

@@ -16,7 +16,7 @@ from datetime import date
 from pathlib import Path
 
 from lineage import store
-from lineage.render import build_label, group_by_phase, _mermaid_label
+from lineage.render import build_label, group_by_phase, seed_slug, _mermaid_label
 from lineage.timeline import selected_nodes
 
 logger = logging.getLogger(__name__)
@@ -179,8 +179,15 @@ def write_note(
     vault_root: Path = Path("."),
     force: bool = False,
 ) -> Path:
-    """Write the dossier to Inbox/Lineages/{run_id}-dossier.md. Refuses overwrite unless force."""
-    path = Path(vault_root) / "Inbox" / "Lineages" / f"{run['run_id']}-dossier.md"
+    """Write the dossier to Inbox/Lineages/{name}-dossier.md. Refuses overwrite unless force.
+
+    A merged (multi-seed) run already has a readable topic-based run_id
+    (see merge.py); a single-seed run's run_id is DOI-based (see
+    store.make_run_id) and unreadable, so it is swapped for an author-year slug.
+    """
+    is_merged = bool(run.get("meta", {}).get("seeds"))
+    name = run["run_id"] if is_merged else f"{seed_slug(run)}-{date.today():%Y-%m-%d}"
+    path = Path(vault_root) / "Inbox" / "Lineages" / f"{name}-dossier.md"
     if path.exists() and not force:
         raise FileExistsError(f"note already exists: {path}; pass --force to regenerate")
     path.parent.mkdir(parents=True, exist_ok=True)

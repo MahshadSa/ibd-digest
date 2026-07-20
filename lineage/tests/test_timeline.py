@@ -95,7 +95,7 @@ class TestWriteNote(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path = timeline.write_note(_run(), _selection(), vault_root=Path(tmp))
             expected = (Path(tmp) / "Inbox" / "Lineages"
-                        / f"10-1-seed-{date.today():%Y-%m-%d}-selected.md")
+                        / f"lovelace-2022-{date.today():%Y-%m-%d}-selected.md")
             self.assertEqual(path, expected)
             self.assertTrue(path.exists())
             with self.assertRaises(FileExistsError):
