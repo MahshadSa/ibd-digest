@@ -1,3 +1,153 @@
+## Human evaluators vs. LLM-as-a-Judge: toward scalable evaluation of GenAI in global health
+
+Added: 2026-07-20 | Source: [[Inbox/Papers/2026-07-20]]
+Gwydion Williams, Samuel Rutunda, Bilal A. Mateen | npj Digital Medicine | 2026-07-20
+[10.1038/s41746-026-02992-w](https://doi.org/10.1038/s41746-026-02992-w)
+
+Abstract
+
+---
+
+## A knowledge-enhanced domain-aware large language model agent for atrial fibrillation management
+
+Added: 2026-07-20 | Source: [[Inbox/Papers/2026-07-20]]
+Yijun Wang, Chen Peng, Jun Wang | npj Digital Medicine | 2026-07-20
+[10.1038/s41746-026-03038-x](https://doi.org/10.1038/s41746-026-03038-x)
+
+---
+
+## Lowering the C‐Reactive Protein ( CRP ) Threshold Improves Risk Stratification in Acute Ulcerative Colitis: A Propensity‐Matched Analysis
+
+Added: 2026-07-19 | Source: [[Inbox/Papers/2026-07-19]]
+Amirah Etchegaray, Naeman Goetz, Anthony Croft | Alimentary Pharmacology &amp; Therapeutics | 2026-07-18
+[10.1111/apt.70825](https://doi.org/10.1111/apt.70825)
+
+ABSTRACT
+
+---
+
+## Editorial on ‘Lowering the C‐Reactive Protein ( CRP ) Threshold Improves Risk Stratification in Acute Ulcerative Colitis: A Propensity‐Matched Analysis’
+
+Added: 2026-07-19 | Source: [[Inbox/Papers/2026-07-19]]
+Molly Bradbury, Jonathan Tyrrell‐Price | Alimentary Pharmacology &amp; Therapeutics | 2026-07-18
+[10.1111/apt.70849](https://doi.org/10.1111/apt.70849)
+
+---
+
+## Machine unlearning as a governance imperative for clinical AI
+
+Added: 2026-07-19 | Source: [[Inbox/Papers/2026-07-19]]
+Anthony Porter, Emily Kirkpatrick, Johan Verjans | npj Digital Medicine | 2026-07-18
+[10.1038/s41746-026-03050-1](https://doi.org/10.1038/s41746-026-03050-1)
+
+Abstract
+
+---
+
+## Artificial intelligence assessment of endoscopic severity and extent: A machine learning approach to continuous evaluation of endoscopic inflammation in ulcerative colitis.
+
+Added: 2026-07-18 | Source: [[Inbox/Papers/2026-07-18]]
+George AT, Gottlieb K, Rubin DT | Inflammatory bowel diseases | 2026-07-17
+[10.1093/ibd/izag135](https://doi.org/10.1093/ibd/izag135)
+
+BACKGROUND: The endoscopy subscore is a therapeutic endpoint in ulcerative colitis trials but is limited by reader variability and inability to fully capture the degree of inflammation across the colon. We developed the artificial intelligence assessment of endoscopic severity and extent (AI-ESe), a continuous, more granular assessment of inflammation throughout the colon to better capture the totality of inflammation, rather than a single score based on the worst lesion. METHODS: AI-ESe analyzes endoscopic videos through a multistep process including preprocessing for image quality, endoscope stalling (pausing) detection to mitigate mucosal oversampling, and disease severity assessments, generating an inflammatory heatmap. We aimed to validate the stalling and severity algorithms and analyze the overall output of AI-ESe to measure the construct validity and the heterogeneity of inflammation on holdout endoscopic video datasets. RESULTS: Stalling detection reduced the mean absolute temporal disagreement in position estimates from 39 seconds with uniform sampling to 23 seconds using this novel model against a human reference standard, which is comparable to the interreader variability of humans (16 seconds). Model assessment of disease severity achieved a quadratic weighted kappa of 0.80. The overall output of AI-ESe correlated with conventional classifications of the endoscopy subscore, while capturing substantial heterogeneity in inflammation severity. Among videos with an endoscopy subscore of 3, the proportion of moderately to severely inflamed mucosa ranged from 17.9% to 100%. CONCLUSIONS: AI-ESe enabled detailed assessment of endoscopic inflammation, capturing heterogeneous burden of disease within conventional endoscopic severity classifications in ulcerative colitis. Granular disease assessments using AI-ESe demonstrate an enhanced approach to disease evaluation.
+
+---
+
+## Trained immunity: An unexplored component of IBD pathogenesis
+
+Added: 2026-07-18 | Source: [[Inbox/Papers/2026-07-18]]
+Michael Doulberis, Stergios A Polyzos, Jannis Kountouras | Inflammatory Bowel Diseases | 2026-07-17
+[10.1093/ibd/izag119](https://doi.org/10.1093/ibd/izag119)
+
+Abstract
+
+---
+
+## Smartly engineered biomaterials drive immune remodeling: A new paradigm for precise treatment of inflammatory bowel disease.
+
+Added: 2026-07-18 | Source: [[Inbox/Papers/2026-07-18]]
+Liu S, Tang D, Li Y | International immunopharmacology | 2026-09-15
+[10.1016/j.intimp.2026.116965](https://doi.org/10.1016/j.intimp.2026.116965)
+
+Inflammatory bowel disease (IBD) is a group of autoimmune disorders characterized by chronic and relapsing intestinal inflammation. Although drug therapy can alleviate clinical symptoms to some extent, it generally has limited efficacy, significant adverse effects, and high relapse rates. There is a pressing need to develop more precise and safer therapeutic strategies. In recent years, extensive studies have focused on the rational design of biomaterials by tailoring their physical and chemical properties and introduced features such as intelligent responsiveness, mucosal adhesion, and tissue penetration. These improvements enable the targeted delivery and controlled release of therapeutic agents at sites of intestinal inflammation. In addition, the dysregulation of the intestinal immune microenvironment in IBD, particularly abnormal immune cell function, provides important therapeutic targets. Biomaterials can suppress intestinal inflammatory responses by targeting or modulating key immune cell populations. Furthermore, with the rapid development of cell engineering technologies, engineered immune cells and their derivatives have gradually emerged as promising therapeutic approaches for IBD. Therefore, therapeutic strategies that integrate biomaterials with immunomodulatory approaches are increasingly recognized as a key avenue toward precision therapy for IBD. This review summarizes recent advances in the application of biomaterials for IBD treatment, with a focus on four major immune cell types-macrophages, neutrophils, dendritic cells, and T lymphocytes-highlighting the underlying immunoregulatory mechanisms and the application of engineered immune cells, thereby providing useful insights into the development of novel therapeutic strategies for IBD.
+
+---
+
+## Artificial intelligence needs better health systems to reduce inequalities
+
+Added: 2026-07-18 | Source: [[Inbox/Papers/2026-07-18]]
+Robin van Kessel, Alexander W. Carter, Elias Mossialos | npj Digital Medicine | 2026-07-17
+[10.1038/s41746-026-03041-2](https://doi.org/10.1038/s41746-026-03041-2)
+
+Abstract
+
+---
+
+## Comparative performance of intestinal ultrasound activity indices in pediatric ulcerative colitis: a prospective study
+
+Added: 2026-07-17 | Source: [[Inbox/Papers/2026-07-17]]
+Sara Massironi, Giacomo Mulinacci, Marta Maino | Journal of Crohn's and Colitis | 2026-07-16
+[10.1093/ecco-jcc/jjag106](https://doi.org/10.1093/ecco-jcc/jjag106)
+
+Abstract
+
+---
+
+## Intestinal ultrasound in inflammatory bowel disease: diagnostic accuracy and impact on clinical decision making in a New Zealand tertiary centre.
+
+Added: 2026-07-17 | Source: [[Inbox/Papers/2026-07-17]]
+Kang D, Kok ZY, Jiang C | The New Zealand medical journal | 2026-07-17
+[10.26635/6965.7422](https://doi.org/10.26635/6965.7422)
+
+AIMS: We aimed to evaluate the diagnostic correlation between intestinal ultrasound (IUS) and follow-up investigations, and to describe the impact of IUS on clinical decision making, particularly point-of-care use. METHODS: A retrospective audit of consecutive IUS examinations in Wellington Regional Hospital for inflammatory bowel disease (IBD) from December 2021 to February 2025 was conducted. Follow-up investigations (faecal calprotectin [FCP], endoscopy, cross-sectional imaging or repeat IUS) within 6 months were collated and correlation assessed using two pre-specified composites, using two FCP thresholds: a conservative cutoff of <50mcg/g and a more liberal threshold of <150mcg/g.1 Additional outcomes included decision-altering impact and time to decision. RESULTS: We analysed 373 IUS examinations in 253 patients (89.5% Crohn's disease [CD]; 34.6% point-of-care). IUS directly altered clinical decisions in 134/373 (35.9%), with 70/134 (52.2%) decisions made the same day. Follow-up occurred after 160/373 scans (42.9%). Excluding five "not commentable" scans, correlation was 141/155 (91.0%) using FCP <150mcg/g and 128/155 (82.6%) using FCP <50mcg/g. CONCLUSION: In this real-world New Zealand cohort, IUS correlated strongly with follow-up investigations, particularly using an FCP <150mcg/g threshold, and frequently altered management, often on the same day. These findings support wider implementation of IUS as a radiation-sparing, point-of-care monitoring tool in New Zealand.
+
+---
+
+## The shifting burden of early-onset inflammatory bowel disease: a global analysis.
+
+Added: 2026-07-17 | Source: [[Inbox/Papers/2026-07-17]]
+Yue C, Zhou Z, Chen Y | Pediatric research | 2026-07-16
+[10.1038/s41390-026-05226-7](https://doi.org/10.1038/s41390-026-05226-7)
+
+BACKGROUND: Early-onset inflammatory bowel disease (EO-IBD), affecting children under age 10 years, has an emerged as a distinct global pediatric health concern with increasing clinical and epidemiological features. Existing data, however, remain insufficient to characterize its full global burden or associated socioeconomic disparities. METHODS: Using Global Burden of Disease 2021 data, we analyzed EO-IBD incidence, mortality, prevalence, and disability-adjusted life years (DALYs) across 204 countries and territories from 1990 to 2021. Decomposition analysis, inequality metrics, and frontier benchmarking were applied to assess temporal trends, cross-national disparities, and burden shifts across levels of Socio-demographic index (SDI). RESULTS: Between 1990 and 2021, global EO-IBD mortality declined by roughly 70%, while incidence remained relatively stable. Prevalence rose, reflecting a growing population of children living with the condition. High-SDI regions recorded the highest incidence but the lowest mortality. Inequality analyses pointed a shifting mortality burden toward lower-SDI populations, and frontier analysis revealed substantial health system performance disparities independent of socioeconomic status. CONCLUSIONS: This comprehensive global assessment of EO-IBD in children reveals diverging mortality and incidence trends alongside persistent socioeconomic inequalities. The findings underscore the urgent need for equitable healthcare access and targeted preventive strategies worldwide, and improved monitoring of pediatric health system equity. IMPACT: Global mortality from early-onset inflammatory bowel disease (EO-IBD) declined by approximately 70% between 1990 and 2021. Despite substantial progress, marked socioeconomic inequalities in EO-IBD mortality persist across regions. This study provides the first comprehensive global assessment of EO-IBD mortality trends and disparities. The findings highlight the need for equitable pediatric IBD care and targeted prevention strategies in resource-limited settings.
+
+---
+
+## Artificial intelligence agent for delirium screening among patients in oncology and cardiac intensive care units: a proof-of-concept study.
+
+Added: 2026-07-17 | Source: [[Inbox/Papers/2026-07-17]]
+Zeng Y, Xie H, Lau ST | European journal of cardiovascular nursing | 2026-07-16
+[10.1093/eurjcn/zvag029](https://doi.org/10.1093/eurjcn/zvag029)
+
+AIMS: This study aims to develop and initially test an autonomous artificial intelligence (AI) agent to support nurse-led delirium screening and guideline-concordant prevention and management. METHODS AND RESULTS: We constructed a delirium-specific knowledge graph from publicly available clinical guidelines and implemented an autonomous AI agent that integrates retrieval-augmented generation with validated delirium assessment tools to simulate decision support in nursing workflows. In this proof-of-concept evaluation, the agent was benchmarked on 20 clinical patient cases to assess (i) tool selection accuracy, (ii) fidelity of clinical conclusions, and (iii) adherence to guideline-based delirium care recommendations. Human experts review rated coherence, relevance, and clinical interpretability of the outputs. The 20 cases were drawn from post-operative care (n = 6), cardiac intensive care unit care (n = 5), and cancer wards (n = 9), including 6 males (30%) and 14 females (70%), with a mean age of 56.5 years (SD 17.9; range 21-82). Two experienced registered nurses independently validated the agent's outputs, benchmarked them against guideline-based recommendations. The agent achieved 100% accuracy in selecting appropriate tools and 90% overall accuracy in generating conclusions and care recommendations, compared with 45% for other large language model baselines. Recommendations were presented in a structured, actionable format and aligned with guideline-based delirium care. CONCLUSION: This proof-of-concept study suggests that an autonomous AI agent can deliver clinically interpretable, guideline-aligned delirium decision support and may help reduce missed or delayed recognition while standardizing nursing actions. Given the high delirium burden in cardiovascular pathways (e.g. cardiac intensive care units and post-operative care), prospective validation in cardiovascular settings is warranted to evaluate clinical impact, safety, and workflow integration.
+
+---
+
+## Mesenteric Adipose Radiomics for Structural Damage Stratification in Chronic Ulcerative Colitis.
+
+Added: 2026-07-17 | Source: [[Inbox/Papers/2026-07-17]]
+Xing J, Mei Z | Diseases of the colon and rectum | 2026-08-01
+[10.1097/dcr.0000000000004275](https://doi.org/10.1097/dcr.0000000000004275)
+
+---
+
+## Pathophysiology of irritable bowel syndrome
+
+Added: 2026-07-17 | Source: [[Inbox/Papers/2026-07-17]]
+Yasmin Nasser, Andrea Shin, Christopher J Black | The Lancet Gastroenterology &amp; Hepatology | 2026-07-01
+[10.1016/s2468-1253(26](https://doi.org/10.1016/s2468-1253(26)
+
+---
+
+## Handling missing data: AI approach for survival prediction in lung cancer despite missing data
+
+Added: 2026-07-17 | Source: [[Inbox/Papers/2026-07-17]]
+Margaret Y. Sui, Kyra L. Rosen, Joseph C. Kvedar | npj Digital Medicine | 2026-07-16
+[10.1038/s41746-026-03019-0](https://doi.org/10.1038/s41746-026-03019-0)
+
+---
+
 ## The Israeli IBD Research Nucleus: collaborative advancements in Israeli IBD research.
 
 Added: 2026-07-16 | Source: [[Inbox/Papers/2026-07-16]]
