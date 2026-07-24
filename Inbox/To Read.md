@@ -1,3 +1,71 @@
+## Intestinal ultrasound for the detection of postoperative recurrence in Crohn’s disease: a systematic review and meta-analysis
+
+Added: 2026-07-22 | Source: [[Inbox/Papers/2026-07-22]]
+Viviana Parra-Izquierdo, Juan Sebastian Frías Ordoñez, Bram Verstockt | Journal of Crohn's and Colitis | 2026-07-20
+[10.1093/ecco-jcc/jjag094](https://doi.org/10.1093/ecco-jcc/jjag094)
+
+Abstract
+
+---
+
+## Demonstrating the real-world impact of an artificial intelligence tool in radiology: are we focusing our efforts in the proper direction?
+
+Added: 2026-07-22 | Source: [[Inbox/Papers/2026-07-22]]
+Juana María Plasencia-Martínez | European Radiology | 2026-07-21
+[10.1007/s00330-026-12772-5](https://doi.org/10.1007/s00330-026-12772-5)
+
+---
+
+## Automated quantification of mesenteric hyperaemia in Crohn's disease using time-of-flight magnetic resonance angiography.
+
+Added: 2026-07-22 | Source: [[Inbox/Papers/2026-07-22]]
+Naim I, Hoad C, Moran GW | Abdominal radiology (New York) | 2026-08-01
+[10.1007/s00261-026-05384-6](https://doi.org/10.1007/s00261-026-05384-6)
+
+BACKGROUND: Mesenteric hypervascularity ("comb sign") reflects active inflammation in Crohn's disease (CD) but is judged qualitatively on cross-sectional imaging. Despite its clinical relevance, no objective, quantitative MRI-based measures exist to assess this feature. This study aims to develop and evaluate an automated, contrast-free time-of-flight MR angiography (ToF-MRA) method for quantifying mesenteric vascularity in CD by comparing these measurements with healthy controls and assess the method's repeatability and susceptibility to confounding by adiposity or prior bowel resection surgery. METHODS: Twenty-three patients with active CD and seventeen healthy controls underwent abdominal ToF-MRA scans. A fully automated pipeline was developed to segment mesenteric vessels on 18 rotating maximum-intensity projections, skeletonised vessels, and count branching points to compute an Arborisation Index. Secondary analyses included a BMI-matched sub-cohort, a prior-resection comparison, and associations with BMI and visceral adipose tissue from Dixon MRI scans. Repeatability was assessed using repeated scans acquired during the same visit. RESULTS: The Arborisation Index was higher in CD patients than in healthy controls (122.7 ± 37.1 vs. 98.4 ± 24.6; p = 0.02; d = 0.7) and this difference persisted in 10 BMI-matched pairs (145 ± 36 vs. 103 ± 24; p = 0.008; d = 1.4). Prior bowel resection (n = 11) did not influence the measure (p = 0.42). Short-term repeatability was good, with coefficients of variation of 8.9 ± 6% in CD and 8.5 ± 5% in controls. The Arborisation Index showed no significant correlation with BMI or visceral adipose volume. CONCLUSION: The Arborisation Index demonstrated significant group-level differences between CD patients and healthy controls, showed good short-term repeatability, and appears technically robust to adiposity and surgical history. Larger longitudinal studies are required to establish its biological meaning, clinical relevance, and responsiveness to inflammatory activity.
+
+---
+
+## AI for screening in healthcare: promise and challenges.
+
+Added: 2026-07-22 | Source: [[Inbox/Papers/2026-07-22]]
+Saito K, Walston SL, Ueda D | Abdominal radiology (New York) | 2026-08-01
+[10.1007/s00261-025-05370-4](https://doi.org/10.1007/s00261-025-05370-4)
+
+Artificial intelligence (AI) is reshaping population screening, yet the translation from laboratory performance to population benefit remains limited. This narrative review describes current uses of AI across major screening pathways. Prospective trials in mammography demonstrate non‑inferior cancer detection with large reductions in radiologist workload. In diabetic retinopathy, the first FDA‑authorized autonomous system extends specialist‑level screening into primary care and improves uptake. During colonoscopy, real‑time computer vision improves adenoma detection without increasing removal of non‑neoplastic tissue. Emerging multimodal approaches, including transformer‑based and large language model-enabled systems, integrate images, clinical variables, and molecular signals and underpin multi‑cancer early detection tests. Despite these gains, three constraints currently limit impact: the base‑rate problem in low‑prevalence cohorts, which magnifies the burden of false positives; limited generalizability and potential bias across institutions and populations; and practical barriers in workflow, regulation, and trust. Opportunities ahead include foundation models pre‑trained on diverse data, uncertainty‑aware "decision referral," federated learning, larger representative datasets, and prospective trials that track interval cancers, stage shift, and cost‑effectiveness. The overarching conclusion is cautious optimism: when validated and invisibly integrated, AI augments physicians, expands access, and improves efficiency; realizing durable public‑health benefits will depend on equity‑focused design, rigorous evaluation, and sustained human oversight.
+
+---
+
+## Colon-targeting pH-responsive Bletilla striata polysaccharide coacervate microdroplets for ulcerative colitis therapy via macrophage reprogramming.
+
+Added: 2026-07-21 | Source: [[Inbox/Papers/2026-07-21]]
+Zhang Q, Chai L, Zhu B | Journal of nanobiotechnology | 2026-07-20
+[10.1186/s12951-026-04824-1](https://doi.org/10.1186/s12951-026-04824-1)
+
+Ulcerative colitis (UC) is an immune-mediated chronic inflammatory bowel disease that severely impairs patients' quality of life. Efficient oral colon-targeted delivery systems are urgently needed to improve local therapeutic efficacy while minimizing systemic exposure. Herein, we developed a pH-responsive Eudragit S100-coated coacervate microdroplet system for the oral delivery of natural Bletilla striata polysaccharide (BSP), termed BSP@EU-Coac. The optimized BSP@EU-Coac microdroplets exhibited a spherical morphology with an average hydrodynamic diameter of 3.86 ± 0.82 μm, an encapsulation efficiency of 85.03 ± 3.66%, and a drug loading capacity of 9.29 ± 0.93%. In vitro release studies showed that BSP@EU-Coac effectively limited premature BSP release under simulated gastric and small intestinal conditions, while achieving pH-triggered sustained release in simulated colonic medium, with a cumulative release of approximately 88.25% within 96 h. In vitro assays further demonstrated that BSP@EU-Coac showed good cytocompatibility at the working concentration and markedly reduced intracellular ROS levels, with ROS fluorescence intensity decreased by 53.95% and 51.13% in RAW264.7 macrophages and Caco-2 cells, respectively. After oral administration, fluorescence imaging confirmed that BSP@EU-Coac preferentially accumulated in the inflamed colon and maintained detectable colonic retention for up to 24 h. In a DSS-induced colitis mouse model, BSP@EU-Coac significantly alleviated UC symptoms, as evidenced by improved body weight recovery, reduced disease activity index, and restoration of colon length from 4.99 ± 1.23 cm in the model group to 8.66 ± 1.92 cm. Mechanistically, BSP@EU-Coac modulated macrophage polarization by reducing the M1-like CD86⁺CD206⁻ population from 29.26% to 8.95% and increasing the M2-like CD86⁻CD206⁺ population to 20.70%, accompanied by suppressed pro-inflammatory cytokine expression, enhanced tight junction protein expression, reduced oxidative stress, and partial restoration of gut microbiota homeostasis. Overall, this study demonstrates that BSP@EU-Coac is a promising oral colon-targeted polysaccharide delivery platform for UC therapy through integrated regulation of oxidative stress, immune response, epithelial barrier repair, and gut microbiota.
+
+---
+
+## Multimodal prediction of metachronous liver metastasis in stage I-III colorectal cancer patients: multicenter cohort study employing machine learning.
+
+Added: 2026-07-21 | Source: [[Inbox/Papers/2026-07-21]]
+Liang L, Zhang Y, Yang J | Abdominal radiology (New York) | 2026-07-20
+[10.1007/s00261-026-05700-0](https://doi.org/10.1007/s00261-026-05700-0)
+
+OBJECTIVE: Postoperative metachronous liver metastasis (MLM) in colorectal cancer (CRC) patients is often difficult to predict using conventional clinical and radiological methods, which may result in delayed diagnosis and treatment. We aimed to develop and validate an artificial intelligence integrated model to improve MLM prediction after CRC surgery. METHODS: A retrospective study was analyzed (n = 522) CRC patients underwent for radical surgery between 2014 and 2019. Categorized into MLM (n = 106) and non-MLM (n = 416) groups based on the presence of postoperative liver metastasis within 5 years. The dataset was split 8:2 for training and validation, utilizing 5-fold cross-validation. Data included demographic factors, tumor characteristics, laboratory results, and CT arterial-phase images. Feature selection employed Random Forest Boruta and Lasso Regression with 5-fold cross-validation to identify key predictors. A Multimodal model integrated numerical and image data (CMLM) was developed, integrating value-based features through a Self-Attention Dense ResNet (SAD) module and image-based features through a Convolution Vision Transformer (CVT) module. Features extracted from SAD and CVT were fused by feature splicing, and MLM was predicted by full connection layer. Model performance was assessed by ROC curves, calibration curves, decision curves, and survival analyses. Interpretability was enhanced through Shapley values for numerical data and Grad-CAM for imaging data. RESULTS: The fusion model CMLM predicts the accuracy of MLM at 0.88 (0.84-0.91), with a recall rate of 0.80 (0.75-0.84), an F1 score of 0.78 (0.75-0.81), and an AUC value of 0.85 (0.84-0.86), which is higher than the accuracy, recall rate, F1 score, and AUC values of the single-modality models SAD the performance metrics for the model are as follows: an accuracy rate of 0.71 (0.56-0.86), a recall rate of 0.60 (0.53-0.68), an F1 score of 0.55 (0.45-0.65), and the AUC value of 0.69 (0.68-0.69). In comparison, the CVT model exhibits an accuracy rate of 0.66 (0.50-0.83), recall rate of 0.65 (0.63-0.67), F1 score of 0.57 (0.49-0.65), and the AUC value of 0.72 (0.70-0.73), with a statistically significant difference (p < 0.001). The top five key predictive factors for SAD included ANC, ALB, ALC, pT stage, and PNI. Grad-CAM highlighted key regions for predicting MLM in imaging information of the preoperative primary lesions, showing similar results in independent external data validation, exhibits robust generalization. CONCLUSION: The model that integrates clinical modalities and primary tumor lesion modalities can significantly improve the prediction of MLM after CRC surgery, providing a valuable tool for early detection, diagnosis, and treatment.
+
+---
+
+## Deep learning reconstruction versus conventional parallel imaging for sagittal T2-weighted MRI in cervical cancer: a comparison of acceleration factors.
+
+Added: 2026-07-21 | Source: [[Inbox/Papers/2026-07-21]]
+Zhang M, Lu Y, Chen T | Abdominal radiology (New York) | 2026-07-20
+[10.1007/s00261-026-05685-w](https://doi.org/10.1007/s00261-026-05685-w)
+
+BACKGROUND: The optimal acceleration strategy for deep learning reconstruction (DLR) in cervical cancer T2-weighted imaging (T2WI) remains unestablished. METHODS: Forty-eight patients with primary cervical cancer prospectively underwent 3.0T pelvic MRI. Sagittal T2WI was acquired using conventional parallel imaging (Conv) and DLR at acceleration factors (AF) 2 and 3. Two radiologists evaluated quantitative metrics and six qualitative metrics. RESULTS: Compared to conventional imaging at the same acceleration, DLR significantly improved signal-to-noise ratio (SNR) and contrast-to-noise ratio (CNR) (DL_AF2 vs. Conv_AF2, adjusted p = 0.005; DL_AF3 vs. Conv_AF3, adjusted p < 0.001). No significant quantitative differences were found between AF2 and AF3 for either reconstruction method. Despite statistically comparable objective metrics between DL_AF2 and DL_AF3, DL_AF2 received significantly higher subjective scores across all six qualitative dimensions (all adjusted p < 0.001), with median scores of 5 for all image quality metrics. DL_AF3 demonstrated significantly lower diagnostic confidence scores, suggesting perceptual over-smoothing at higher acceleration. CONCLUSION: At equivalent scan times, DLR with moderate acceleration (AF 2) achieves the optimal balance between objective image quality and subjective anatomical fidelity for sagittal T2WI in cervical cancer evaluation.
+
+---
+
 ## Human evaluators vs. LLM-as-a-Judge: toward scalable evaluation of GenAI in global health
 
 Added: 2026-07-20 | Source: [[Inbox/Papers/2026-07-20]]
