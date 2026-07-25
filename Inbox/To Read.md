@@ -1,3 +1,51 @@
+## AI-Assisted Capsule Endoscopy for Detection of Ulcers and Erosions in Crohn’s Disease: A Multicenter Validation Study
+
+Added: 2026-07-23 | Source: [[Inbox/Papers/2026-07-23]]
+Ana Patrícia Ribeiro Andrade, Miguel Mascarenhas, Guilherme Macedo | Clinical Gastroenterology and Hepatology | 2026-08-01
+[10.1016/j.cgh.2025.09.036](https://doi.org/10.1016/j.cgh.2025.09.036)
+
+---
+
+## Clinical Characteristics and Treatment Outcomes in Patients With Incomplete Microscopic Colitis: Consideration for Expanding the Definition of Microscopic Colitis
+
+Added: 2026-07-23 | Source: [[Inbox/Papers/2026-07-23]]
+June Tome, Jacob M. Bauss, Darrell S. Pardi | Clinical Gastroenterology and Hepatology | 2026-08-01
+[10.1016/j.cgh.2025.12.012](https://doi.org/10.1016/j.cgh.2025.12.012)
+
+---
+
+## Shaping the future of cancer screening with artificial intelligence-empowered multi-cancer early detection
+
+Added: 2026-07-23 | Source: [[Inbox/Papers/2026-07-23]]
+Yongjie Xu, Sibo Zhu, Wanqing Chen | npj Digital Medicine | 2026-07-22
+[10.1038/s41746-026-03047-w](https://doi.org/10.1038/s41746-026-03047-w)
+
+---
+
+## Artificial Intelligence Tools for Gastrointestinal Research: A Practical Guide
+
+Added: 2026-07-23 | Source: [[Inbox/Papers/2026-07-23]]
+Christina S. Gainey, Hersh Shroff, Oren K. Fix | Clinical Gastroenterology and Hepatology | 2026-08-01
+[10.1016/j.cgh.2026.03.032](https://doi.org/10.1016/j.cgh.2026.03.032)
+
+---
+
+## Cost-Effectiveness of Novel Colorectal Neoplasia Screening Tests
+
+Added: 2026-07-23 | Source: [[Inbox/Papers/2026-07-23]]
+Paul J. Limburg, A. Mark Fendrick, John B. Kisiel | Clinical Gastroenterology and Hepatology | 2026-08-01
+[10.1016/j.cgh.2025.10.033](https://doi.org/10.1016/j.cgh.2025.10.033)
+
+---
+
+## Complex Adaptive Systems and Individual Radiologist Responsibility
+
+Added: 2026-07-23 | Source: [[Inbox/Papers/2026-07-23]]
+Bettina Siewert | American Journal of Roentgenology | 2026-07-22
+[10.2214/ajr.26.35106](https://doi.org/10.2214/ajr.26.35106)
+
+---
+
 ## Intestinal ultrasound for the detection of postoperative recurrence in Crohn’s disease: a systematic review and meta-analysis
 
 Added: 2026-07-22 | Source: [[Inbox/Papers/2026-07-22]]
