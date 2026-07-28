@@ -23,3 +23,4 @@
 2026-07-25 new=19 must=6 skim=11 archive=2 thr_must=0.946421 thr_skim=0.900472
 2026-07-26 new=11 must=3 skim=7 archive=1 thr_must=0.946525 thr_skim=0.900643
 2026-07-27 new=8 must=2 skim=3 archive=3 thr_must=0.946579 thr_skim=0.900645
+2026-07-28 new=24 must=3 skim=12 archive=9 thr_must=0.946579 thr_skim=0.900626
