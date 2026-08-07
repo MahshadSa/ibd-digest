@@ -1,3 +1,79 @@
+## Novel biomarkers and multi-omics approaches for diagnosis and management of ulcerative colitis.
+
+Added: 2026-08-02 | Source: [[Inbox/Papers/2026-08-02]]
+Dey A, Gautam MK, Sen S | Gastroenterologia y hepatologia | 2026-01-01
+[10.1016/j.gastrohep.2026.502764](https://doi.org/10.1016/j.gastrohep.2026.502764)
+
+BACKGROUND: Ulcerative colitis (UC) remains challenging to diagnose, monitor, and treat due to heterogeneous disease presentation and lack of reliable non-invasive markers. Current diagnostic tools, including endoscopy and routine laboratory tests, are limited by invasiveness, cost, and low sensitivity. AIM: This review evaluates emerging biomarkers and multi-omics strategies in UC, highlighting their potential role in disease diagnosis, prognosis, and therapeutic response prediction. METHODS: A comprehensive literature analysis was conducted, focusing on faecal, serological, genetic, epigenetic, microbial, and metabolite-based biomarkers, as well as recent advances in transcriptomics, proteomics, and metabolomics. Integration with machine learning approaches was also assessed for their clinical applicability. RESULTS: Faecal calprotectin and lactoferrin remain reliable non-invasive markers for mucosal inflammation, while serological markers such as CRP and ESR show limited specificity. Genetic variants (IL23R, NOD2) and epigenetic regulators, particularly microRNAs, demonstrate potential for disease stratification. Dysbiosis and altered microbial metabolites further correlate with disease severity and treatment response. Multi-omics integration offers a systems-level view of UC, enabling biomarker panels that improve diagnostic precision and predict therapeutic outcomes. Machine learning tools enhance biomarker-based models, but clinical translation is constrained by variability, validation gaps, and regulatory hurdles. CONCLUSION: Emerging biomarkers, especially when integrated across omics platforms and supported by artificial intelligence, provide promising avenues for precision medicine in UC. However, standardisation, external validation, and regulatory qualification remain essential for their successful clinical implementation.
+
+---
+
+## Data-driven subphenotyping uncovers ulcerative colitis subtype with high risk for relapse in Japan: a prospective multicenter cohort study.
+
+Added: 2026-08-02 | Source: [[Inbox/Papers/2026-08-02]]
+Mikami Y, Yamazaki H, Matsuoka K | The Lancet regional health. Western Pacific | 2026-08-01
+[10.1016/j.lanwpc.2026.101932](https://doi.org/10.1016/j.lanwpc.2026.101932)
+
+BACKGROUND: Clinical symptoms do not necessarily align with disease activity in ulcerative colitis (UC). It remains unclear whether patient-reported outcomes (PROs), particularly quality of life (QOL) measures, can help characterize clinically meaningful subphenotypes among Japanese patients with UC in remission. This study aimed to identify and characterize UC subphenotypes using clustering analysis. METHODS: We used data from a multicenter, prospective UC patient registry in Japan, called "YOu and Ulcerative colitis: Registry and Social network (YOURS)" (December 2018-June 2022). We assessed laboratory values and PRO data, including clinical symptoms and QOL data (e.g., fatigue, anxiety, disease-specific QOL), of patients with UC in remission. Discovery (N = 365) and replication (N = 982) datasets were independently created and subjected to clustering analysis. Data were standardized for sex (a potential confounder for various measures). FINDINGS: PRO data correlated poorly with traditional clinical laboratory parameters. Three reproducible clusters were detected in both datasets: one cluster was characterized by lower QOL and average laboratory profiles, while the other two clusters showed preserved QOL scores either with or without distinct laboratory profiles. The cluster with lower QOL and average laboratory profiles demonstrated increased relapse rates during a 3-year follow-up in each dataset compared with the respective other two clusters. INTERPRETATION: PRO assessments offer unique, clinically relevant data, distinct from routine biomarkers and clinical scores. Stratifying patients with UC using combined QOL and clinical laboratory parameters may help identify patients at higher risk of relapse and warrants further evaluation for its potential role in clinical decision-making. FUNDING: This study was funded by Takeda Pharmaceutical Company Limited.
+
+---
+
+## Subclinical atherosclerosis in inflammatory bowel disease: Prevalence, vascular distribution and implications for cardiovascular risk stratification.
+
+Added: 2026-08-02 | Source: [[Inbox/Papers/2026-08-02]]
+Fernández Villar G, Garagoli F, Pizarro R | Gastroenterologia y hepatologia | 2026-01-01
+[10.1016/j.gastrohep.2026.502755](https://doi.org/10.1016/j.gastrohep.2026.502755)
+
+OBJECTIVE: Cardiovascular (CV) risk assessment in patients with inflammatory bowel disease (IBD) remains insufficiently explored. This study aimed to assess the role of vascular Doppler ultrasound in refining CV risk stratification in patients with IBD. PATIENTS AND METHODS: We conducted a cross-sectional study including patients with Crohn's disease (CD) and ulcerative colitis (UC) under active follow-up in a tertiary referral center. Consecutive patients referred for cardiology assessment according to predefined clinical criteria between May 2024 and December 2025 underwent carotid and femoral Doppler ultrasound to estimate the prevalence of atherosclerosis. Ultrasound operators were blinded to the CV risk score results and clinical risk stratification at time to image acquisition and interpretation. In the primary prevention cohort, the ability of the PREVENT 10-year risk score for detecting subclinical atherosclerosis was assessed using receiver operating characteristic (ROC) analysis. The optimal cutoff point was determined using the Youden index. RESULTS: A total of 106 patients were included, of whom 100 without established atherosclerotic cardiovascular disease (ASCVD) constituted the main analytical population. The median age was 54.4 years, and 59% were men. Before Doppler assessment, 55% of patients were classified as low risk, 10% as borderline risk, 28% as intermediate risk, and 7% as high risk. Subclinical atherosclerosis was detected in 46%, prompting risk reclassification. Overall upward reclassification occurred in 41% and downward reclassification in 5%, yielding a net reclassification of 36%. The PREVENT 10-year risk score showed good discriminatory performance for the detection of subclinical atherosclerosis (AUC=0.85; 95% CI, 0.77-0.93), with an optimal cutoff value of 2.8%. CONCLUSIONS: Vascular Doppler imaging revealed a high prevalence of subclinical atherosclerosis and was associated with substantial CV risk reclassification beyond traditional scores.
+
+---
+
+## Correlation and Assessment of Small Bowel Lesions Using Cross-Sectional Imaging Techniques Compared With Small Intestinal Contrast Ultrasonography in Known Crohn's Disease (the CACTUS-CD Study): A Paired, Prospective, Confirmatory Study.
+
+Added: 2026-08-01 | Source: [[Inbox/Papers/2026-08-01]]
+Pal P, Mateen MA, Reddy DN | The American journal of gastroenterology | 2026-08-01
+[10.14309/ajg.0000000000003776](https://doi.org/10.14309/ajg.0000000000003776)
+
+INTRODUCTION: Guidelines endorse intestinal ultrasound (IUS) for small bowel (SB) Crohn's disease (CD) monitoring but lack clarity on when to use magnetic resonance enterography (MRE) or computed tomography enterography (CTE). Small intestinal contrast ultrasound (SICUS) may improve detection, yet its added value-especially for proximal disease and treatment decisions-has not been prospectively validated against MRE/CTE in real-world settings. METHODS: This prospective study at a high-volume tertiary gastroenterology center recruited established patients with CD (18-75 years) requiring SB evaluation. The accuracy of IUS followed by SICUS was assessed against CTE/MRE (within 24-48 hours) for detecting activity, extent, bowel wall thickness, length, complications, and treatment impact. RESULTS: A total of 407 patients (median age 36 years; 60.2% male) underwent IUS/SICUS followed by CTE (n = 215) or MRE (n = 192). SICUS showed sensitivity/specificity of 95.3%/93.0% for disease activity and 90.7%/90.5% for extent. It significantly improved stricture detection over IUS (86.8% vs 71.3%, P = 0.0005), with sensitivity of 91.7% for fistulas and 87.5% for abscesses. SICUS correlated strongly with CTE/MRE for bowel wall thickness (Spearman rho, R = 0.667) and disease length ( R = 0.839) ( P < 0.001). Most missed lesions (n = 17) and strictures (n = 22) were in the proximal/mid-SB. Cross-sectional imaging changed management in 9.3% (n = 38), mainly for surgical planning, therapy escalation, or stricture intervention. DISCUSSION: IUS is a highly accurate, noninvasive tool for monitoring SB CD, with SICUS enhancing stricture detection. Although CTE/MRE remains essential for evaluating proximal and mid-SB disease and surgical planning, the limited overall incremental impact support a scalable, ultrasound-first approach (ClinicalTrials.gov: NCT06125678).
+
+---
+
+## Gut Microbiota Are More Strongly Associated With Impairments in Health-Related Quality of Life Than Disease Activity in Inflammatory Bowel Disease.
+
+Added: 2026-08-01 | Source: [[Inbox/Papers/2026-08-01]]
+Little RD, Jayawardana TC, Hold GL | The American journal of gastroenterology | 2026-08-01
+[10.14309/ajg.0000000000003773](https://doi.org/10.14309/ajg.0000000000003773)
+
+INTRODUCTION: Inflammatory bowel disease (IBD) affects health-related quality of life (HRQoL). Gut dysbiosis in IBD is common and may contribute to this observation. The aims of this study were to measure HRQoL and its association with clinical and microbial features in patients with IBD and healthy controls (HCs). METHODS: Fecal and oral samples, demographics, 36-item Short-Form Health Survey (SF-36), and 32-item Inflammatory Bowel Disease Questionnaire (IBDQ-32) surveys were collected at baseline from patients with Crohn's disease (CD), ulcerative colitis (UC) and HCs enrolled in The Australian IBD Microbiome Study. Samples underwent 16S rRNA sequencing. Associations between HRQoL variables and alpha diversity, beta diversity, and microbial taxa abundance were measured using R. RESULTS: A total of 751 participants (305 HCs, 232 CD, 214 UC) were included. HRQoL was lower in IBD participants compared with HCs using the SF-36 (physical component summary 51.6 vs 55.7, P < 0.0001 and mental component summary score 45.1 vs 52.2, P < 0.001). Despite high rates of remission, impaired IBD-HRQoL (IBDQ-32 score <170) was common in patients with CD (42%) and UC (41%). Patients with impaired IBDQ-32 scores demonstrated lower alpha diversity (Chao1 155.2 vs 172.4, P = 0.015) and distinct beta diversity ( R2 = 0.003, P = 0.019) compared with those with preserved IBD-HRQoL. Sixty-two genera were associated with at least one HRQoL measure in both patients with UC and patients with CD. The number and strength of associations between genera and HRQoL measures outweighed microbial associations with clinical and biochemical activity. DISCUSSION: Alterations in gut microbiota are associated with HRQoL outcomes in patients with IBD and HCs.
+
+---
+
+## Correction: Multimodal AI for early prediction of adverse clinical outcomes in acute pancreatitis
+
+Added: 2026-08-01 | Source: [[Inbox/Papers/2026-08-01]]
+Ahmet Yasin Karkas, Yavuz B. Taktak, Sukru Mehmet Erturk | Abdominal Radiology | 2026-07-31
+[10.1007/s00261-026-05657-0](https://doi.org/10.1007/s00261-026-05657-0)
+
+---
+
+## Learning from routine health system data builds better neuroimaging AI models
+
+Added: 2026-08-01 | Source: [[Inbox/Papers/2026-08-01]]
+ | Nature Medicine | 2026-07-31
+[10.1038/s41591-026-04567-4](https://doi.org/10.1038/s41591-026-04567-4)
+
+---
+
+## End-to-end multimodal pathology foundation model with clinical dialogue
+
+Added: 2026-08-01 | Source: [[Inbox/Papers/2026-08-01]]
+Eugene Vorontsov, George Shaikovski, Siqi Liu | Nature Medicine | 2026-07-31
+[10.1038/s41591-026-04521-4](https://doi.org/10.1038/s41591-026-04521-4)
+
+Abstract
+
+---
+
 ## AI-Assisted Capsule Endoscopy for Detection of Ulcers and Erosions in Crohn’s Disease: A Multicenter Validation Study
 
 Added: 2026-07-23 | Source: [[Inbox/Papers/2026-07-23]]
