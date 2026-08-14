@@ -40,3 +40,4 @@
 2026-08-11 new=34 must=4 skim=20 archive=10 thr_must=0.941351 thr_skim=0.898253
 2026-08-12 new=35 must=3 skim=18 archive=14 thr_must=0.941444 thr_skim=0.898325
 2026-08-13 new=54 must=10 skim=25 archive=19 thr_must=0.942014 thr_skim=0.898854
+2026-08-14 new=37 must=7 skim=21 archive=9 thr_must=0.942725 thr_skim=0.899168
