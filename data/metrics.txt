@@ -61,3 +61,4 @@
 2026-09-01 new=23 must=7 skim=11 archive=5 thr_must=0.945896 thr_skim=0.904696
 2026-09-02 new=41 must=13 skim=13 archive=15 thr_must=0.946580 thr_skim=0.905255
 2026-09-03 new=57 must=8 skim=28 archive=21 thr_must=0.946942 thr_skim=0.906106
+2026-09-04 new=32 must=5 skim=14 archive=13 thr_must=0.947156 thr_skim=0.906106
