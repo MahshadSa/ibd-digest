@@ -1,3 +1,159 @@
+## Monitoring Crohn's disease beyond endoscopy: what does healing mean when biomarkers, imaging and histology disagree?
+
+Added: 2026-09-22 | Source: [[Inbox/Papers/2026-09-22]]
+Bertin L, Zingone F | Digestive and liver disease : official journal of the Italian Society of Gastroenterology and the Italian Association for the Study of the Liver | 2026-09-21
+[10.1016/j.dld.2026.08.025](https://doi.org/10.1016/j.dld.2026.08.025)
+
+---
+
+## Development and Prospective Validation of a Machine Learning‐Based Mobile Application (CROHN'S AID ) for Differentiating Crohn's Disease From Intestinal Tuberculosis in Tuberculosis‐Endemic Regions
+
+Added: 2026-09-22 | Source: [[Inbox/Papers/2026-09-22]]
+Srikant Mohta, Rintu Kutum, Vineet Ahuja | Alimentary Pharmacology &amp; Therapeutics | 2026-09-21
+[10.1111/apt.70984](https://doi.org/10.1111/apt.70984)
+
+ABSTRACT
+
+---
+
+## Why responsible AI needs regional networks in low-resource health systems
+
+Added: 2026-09-22 | Source: [[Inbox/Papers/2026-09-22]]
+Emma-Jane Spencer, Jerome Singh, Michel E. van Genderen | npj Digital Medicine | 2026-09-21
+[10.1038/s41746-026-03208-x](https://doi.org/10.1038/s41746-026-03208-x)
+
+---
+
+## Artificial intelligence in clinical trials-state of the evidence, gaps, and next steps.
+
+Added: 2026-09-21 | Source: [[Inbox/Papers/2026-09-21]]
+Armoundas AA, Tarabanis C, Loscalzo J | EClinicalMedicine | 2026-10-01
+[10.1016/j.eclinm.2026.104196](https://doi.org/10.1016/j.eclinm.2026.104196)
+
+UNLABELLED: Artificial intelligence (AI) affects clinical trials in two distinct but overlapping ways: as the intervention under evaluation and as infrastructure supporting trial design, recruitment, monitoring, endpoint assessment, analysis, and reporting. In this manuscript, we define AI-as-intervention as AI whose output is itself part of the assigned clinical intervention being evaluated for its effect on participant care or outcomes, and AI-for-trial-operations as AI used to support trial design, conduct, or analysis without itself constituting the treatment under study. This is an important distinction because AI-as-intervention generally requires prospective clinical evaluation with prespecified estimands, prospectively governed model behaviour, and protocol-level oversight, whereas AI-for-trial-operations is often judged by workflow accuracy, impact of the decision, transportability, and safety under real-world constraints, although some uses, such as endpoint support or inferential modelling, may also require similarly explicit change control and oversight. Using this distinction as an analytical framework rather than as a division into separate parts, we examine how AI can improve each phase of the clinical-trial lifecycle, what evidence currently supports these applications, what limitations constrain their validity and transportability, and what methodological and governance safeguards are required. We synthesise evidence across safety, efficacy, operational risk prediction, network medicine, digital health technologies, retrieval-augmented generation, and agentic workflows, while aligning the discussion to ICH E6(R3), ICH E9(R1), and emerging structured-protocol standards. FUNDING: AAA was partly supported by the Institute of Precision Medicine (17UNPG33840017) from the AHA, the RICBAC Foundation, and NIH grants R01HL173935-01, 1 R01 HL161008-01.
+
+---
+
+## Making Wearables Matter: Patient-Centered Digital Monitoring in IBD.
+
+Added: 2026-09-21 | Source: [[Inbox/Papers/2026-09-21]]
+Subhaharan D, Kannan P, Noor NM | Digestive diseases and sciences | 2026-09-19
+[10.1007/s10620-026-10257-5](https://doi.org/10.1007/s10620-026-10257-5)
+
+---
+
+## Intestinal Fibrosis in IBD: Rethinking the Inflammatory Paradigm and Emerging Therapeutic Opportunities.
+
+Added: 2026-09-20 | Source: [[Inbox/Papers/2026-09-20]]
+Wang W, Sun Y, Li J | Digestive diseases and sciences | 2026-11-01
+[10.1007/s10620-026-10105-6](https://doi.org/10.1007/s10620-026-10105-6)
+
+Intestinal fibrosis is a common and severe complication in the progression of inflammatory bowel disease (IBD). Its pathological essence lies in the excessive synthesis and abnormal deposition of extracellular matrix (ECM) components within the intestinal tissue, leading to structural remodeling and dysfunction of the intestinal wall. As the disease progresses, fibrosis is primarily characterized by the pathological thickening of the muscularis propria, which subsequently triggers irreversible structural damage, such as intestinal strictures, severely impacting patients' quality of life and prognosis. Currently, clinical interventions for intestinal fibrosis are relatively limited, mainly relying on pharmacotherapy and surgical resection. However, existing drugs primarily focus on controlling the inflammatory response in IBD rather than directly targeting the fibrotic process, making it difficult to effectively block or reverse ECM accumulation. Although surgery can temporarily relieve obstruction, it is associated with a high postoperative recurrence rate and fails to fundamentally intervene in the pathological mechanisms of fibrosis. Therefore, a deeper understanding of the mechanisms underlying the initiation and progression of intestinal fibrosis is of great significance for developing specific anti-fibrotic therapeutic strategies and improving long-term patient outcomes. This review aims to systematically summarize the cellular and molecular mechanisms of intestinal fibrosis, with a focus on the roles of fibroblast activation, epithelial-mesenchymal transition, and immune microenvironment regulation in the fibrotic process. The goal is to provide a theoretical basis and novel research insights for the subsequent development of targeted drugs and the optimization of clinical treatment strategies.
+
+---
+
+## Bridging the Gap Between Endoscopy and Histology Indices: A Multi-Index Comparison in 146 Ulcerative Colitis Patients.
+
+Added: 2026-09-20 | Source: [[Inbox/Papers/2026-09-20]]
+Qamer ZA, Durgapal P, Phulware RH | International journal of surgical pathology | 2026-09-19
+[10.1177/10668969261470847](https://doi.org/10.1177/10668969261470847)
+
+BackgroundUlcerative Colitis (UC) is a chronic inflammatory bowel disease affecting the colonic mucosa, with a relapsing-remitting course. Disease activity is assessed using clinical, serologic, endoscopic, and histological parameters, among which the latter two remain the cornerstone for assessing disease severity and therapeutic response. However, limited studies have evaluated the correlation between endoscopic and histological activity. This study evaluates the correlation between the Mayo endoscopic score (MES) and validated histological indices, namely the Geboes score (GS), Nancy index (NI), and Robarts histological index (RHI), to determine the most practical and reliable histological scoring system.MethodsThis cross-sectional study was conducted over a period of two and a half years at a tertiary care hospital in North India and included 146 established UC patients. Colonoscopic evaluation was performed by a single gastroenterologist, and biopsies were obtained from areas showing the highest possible MES. Subsequent histopathological examination and scoring using the histological indices (GS, NI, and RHI) were performed independently by pathologists masked to the endoscopic findings. Correlations were assessed using the Chi-Square test and Spearman's rho to evaluate relationships between endoscopic and histopathological scores.ResultsA total of 146 biopsies were analyzed, with a median patient age of 34 years; male patients constituted 56% of patients, and the recto-sigmoid region was the most commonly affected site (62%). Moderate (50%) and severe (32%) endoscopic aspects suggestive of UC activity were predominant. Correlation coefficients between MES and GS/RHI/NI were moderate (rho = .617/.622/.599, respectively; P < .001 for all three correlations). The NI was the fastest to evaluate and demonstrated a similar correlation with the MES compared to the GS and RHI.ConclusionA moderate yet consistent correlation was observed between the MES and all three histopathological indices, highlighting their reliability in reflecting disease severity and supporting their interchangeable use in routine practice. Among them, the NI emerged as the most practical and user-friendly scoring system due to its simplicity and rapid applicability, while maintaining diagnostic performance comparable to the GS and RHI.
+
+---
+
+## An Explainable Multimodal Model for Assessing Mucosal Healing in Small Bowel Crohn's Disease: A Multicenter Study with Prospective Validation.
+
+Added: 2026-09-20 | Source: [[Inbox/Papers/2026-09-20]]
+Cheng T, Rong C, Wu X | Journal of imaging informatics in medicine | 2026-09-18
+[10.1007/s10278-026-02300-8](https://doi.org/10.1007/s10278-026-02300-8)
+
+Accurate assessment of mucosal healing (MH) in small bowel Crohn's disease (SBCD) remains challenging because double-balloon enteroscopy (DBE), the reference standard, is invasive and unsuitable for repeated monitoring. This study was aimed at developing and validating an explainable multimodal model integrating CT enterography (CTE)-based radiomics with clinical data for post-biologic MH assessment in SBCD. This multicenter study included 206 retrospective patients (training: n = 114; internal validation: n = 50; external test: n = 42) and 20 prospective patients. Clinical predictors were identified by logistic regression, with C-reactive protein (CRP) as the only independent predictor. CTE radiomics features were processed by Pearson correlation and SelectKBest, then compared across six feature-selection methods and nine classifiers to determine the optimal radiomics pipeline. Clinical models used CRP alone, while multimodal models combined CRP with selected radiomics features. Performance was evaluated using AUC, calibration, DCA, and DeLong testing. The SHapley Additive exPlanations (SHAP) provided interpretability. MH was achieved in 52.6%, 54.0%, and 21.4% of patients across cohorts. The LASSO-XGBoost radiomics model achieved AUCs of 0.854, 0.821, and 0.808 across retrospective cohorts and 0.824 in the prospective cohort. The XGBoost multimodal model achieved AUCs of 0.860 and 0.842 in internal and external validation, significantly outperforming the clinical model (P < 0.05). SHAP identified CRP and two radiomics features as top predictors. The explainable multimodal model integrating CTE radiomics and CRP enables accurate, non-invasive MH assessment with prospective-validated generalizability, supporting its potential as a clinical decision-support tool.
+
+---
+
+## Vedolizumab trough concentrations and clinical and endoscopic outcomes in inflammatory bowel disease: a systematic review and meta-analysis.
+
+Added: 2026-09-19 | Source: [[Inbox/Papers/2026-09-19]]
+Soliman MA, Saraga A, Papamichael K | Clinical gastroenterology and hepatology : the official clinical practice journal of the American Gastroenterological Association | 2026-09-18
+[10.1016/j.cgh.2026.09.009](https://doi.org/10.1016/j.cgh.2026.09.009)
+
+BACKGROUND AND AIMS: The role of therapeutic drug monitoring (TDM) in optimizing vedolizumab (VDZ) therapy for Crohn's disease (CD) and ulcerative colitis (UC) remains unclear. Prior evidence was limited by small sample size and heterogeneous endpoints. We synthesized the available evidence on the association of VDZ trough concentrations with clinical and endoscopic remission. METHODS: Following PRISMA 2020 guidelines, we searched the literature from inception to April 2026 for studies reporting VDZ trough concentrations stratified by remission status in CD and UC. Outcomes were clinical remission (CR) and endoscopic remission (ER). Pooled mean differences (MDs) were estimated using random-effects models with restricted maximum likelihood estimation; heterogeneity was quantified using I2 statistic. RESULTS: Twenty-three studies (6,753 patients) met inclusion criteria; 18 contributed to quantitative synthesis. Higher VDZ trough concentrations were strongly associated with ER in UC (MD 4.86 μg/mL, 95% CI 2.75-6.98; p < 0.0001; I2 = 0.0%). Higher concentrations were also associated with CR in UC (MD 3.18 μg/mL; p = 0.025) and CD (MD 3.08 μg/mL; p < 0.0001), although these clinical-remission estimates were statistically heterogeneous; no association was observed for ER in CD (MD 1.40 μg/mL; p = 0.453). Pooled remission-associated concentrations were presented descriptively and supported maintenance targets of ≥13-15 μg/mL in UC and ≥10-12 μg/mL in CD. CONCLUSIONS: Higher VDZ trough concentrations were associated with remission, most robustly for endoscopic remission in UC. As these associations are largely cross-sectional, they may reflect reverse causation rather than a dose-response relationship. Prospective interventional trials are required before proactive TDM can be recommended.
+
+---
+
+## Implementing Artificial Intelligence in a Gastroenterology Practice
+
+Added: 2026-09-19 | Source: [[Inbox/Papers/2026-09-19]]
+James Aisenberg, Neville Bamji, John I. Allen | Clinical Gastroenterology and Hepatology | 2026-09-01
+[10.1016/j.cgh.2026.09.008](https://doi.org/10.1016/j.cgh.2026.09.008)
+
+---
+
+## Essential Updates in the Surgical Management of Inflammatory Bowel Disease: Current Topics From 2024 to Mid-2026.
+
+Added: 2026-09-18 | Source: [[Inbox/Papers/2026-09-18]]
+Okita Y, Shimura T, Toiyama Y | Annals of gastroenterological surgery | 2026-09-16
+[10.1002/ags3.70271](https://doi.org/10.1002/ags3.70271)
+
+Inflammatory bowel disease management has undergone a major transformation with the introduction of treat-to-target strategies and highly effective biologic and small-molecule therapies. Although these advances have reduced the overall requirement for surgery, operative intervention remains essential for selected patients with ulcerative colitis (UC) and Crohn's disease (CD). Additionally, the role of surgery has evolved considerably, driven by changes in the disease phenotype, advances in minimally invasive techniques, and growing interest in disease-modifying surgical strategies. In UC, colectomy rates have declined, while surgical indications have increasingly shifted toward acute severe colitis, dysplasia, and colorectal cancer. Minimally invasive approaches, including robotic-assisted and transanal techniques, have expanded rapidly and are associated with improved perioperative and functional outcomes. In CD, overall surgical rates have decreased; however, surgery remains indispensable for fibrostenotic, penetrating, and perianal disease. Recent developments include increasing evidence supporting Kono-S anastomosis for reducing postoperative recurrence and ongoing investigation of mesentery-based surgical strategies. Robotic-assisted ileocolic resection has emerged as a safe and feasible minimally invasive option in selected patients. The prevention of postoperative recurrence has evolved toward risk-stratified prophylaxis, early biologic therapy, and treat-to-target monitoring. In perianal CD, multidisciplinary management combining medical and surgical treatment remains the cornerstone of care, while newer biologics and small-molecule therapies continue to expand therapeutic options. This review summarizes the major advances in the surgical management of UC and CD reported between January 2024 and June 2026 and highlights the evolving role of surgery in contemporary multidisciplinary care of inflammatory bowel disease.
+
+---
+
+## Clinical utility of magnetic resonance enterography for pediatric Crohn's disease: a review with illustrative cases and a focus on Japan.
+
+Added: 2026-09-18 | Source: [[Inbox/Papers/2026-09-18]]
+Shimizu M, Kitazume Y, Fujii T | Japanese journal of radiology | 2026-09-17
+[10.1007/s11604-026-02074-7](https://doi.org/10.1007/s11604-026-02074-7)
+
+Magnetic resonance enterography (MRE) is increasingly used in pediatric Crohn's disease (CD) because it enables repeated assessment of disease extent, transmural inflammation, strictures, fistulas, abscesses, and treatment response without ionizing radiation. This is particularly important in children, in whom CD may be extensive and active, symptoms can be nonspecific, and long-term follow-up is required. Pediatric MRE requires both adequate luminal distention and patient cooperation during scanning; therefore, preparation should be adapted to age, body size, and tolerance. Oral MRE is the mainstay technique for assessing small-bowel CD, whereas MR enterocolonography (MREC) generally refers to an oral MRE-based approach with additional bowel preparation to facilitate colonic assessment rather than true MR colonography requiring transanal catheterization. The core protocol elements and inflammatory findings used for activity assessment are broadly similar to those in adults, although pediatric protocols should be adapted to patient cooperation and institutional practice. T2-weighted imaging provides the morphological basis for evaluating bowel wall thickening, luminal narrowing, prestenotic dilatation, ulcer-related mural deformity, mural edema, and perienteric inflammatory changes. When gadolinium is used, fat-suppressed T1-weighted imaging provides complementary information on mural hyperenhancement, stratified enhancement, and penetrating complications. Diffusion-weighted imaging can complement morphological assessment and is incorporated into pediatric activity scoring. Cine balanced steady-state free-precession imaging may provide adjunctive information on motility and functionally significant strictures but should be used selectively. For activity monitoring, MRE-based indices translate imaging findings into reproducible scores. This review summarizes MRE preparation, imaging technique, interpretation, and quantitative activity assessment in pediatric CD, with emphasis on the Pediatric Inflammatory Crohn's MRE Index (PICMI), the Japanese 5-point MREC classification, and the derived MREC score, using representative pediatric cases.
+
+---
+
+## Single-cell insights into drug response and resistance in inflammatory bowel disease: cellular hallmarks and precision therapy
+
+Added: 2026-09-18 | Source: [[Inbox/Papers/2026-09-18]]
+Chunshan Yin, Ruohang He, Yu Fu | Journal of Crohn's and Colitis | 2026-09-17
+[10.1093/ecco-jcc/jjag136](https://doi.org/10.1093/ecco-jcc/jjag136)
+
+Abstract
+
+---
+
+## The evidence challenge facing large language models in medicine
+
+Added: 2026-09-18 | Source: [[Inbox/Papers/2026-09-18]]
+Arjun Mahajan, Nigam H. Shah, Dylan Powell | npj Digital Medicine | 2026-09-17
+[10.1038/s41746-026-03262-5](https://doi.org/10.1038/s41746-026-03262-5)
+
+---
+
+## Using Artificial Intelligence to Build the Radiology Clinical Trial Office of the Future: Functional, Fast, and Cost-Effective
+
+Added: 2026-09-17 | Source: [[Inbox/Papers/2026-09-17]]
+Julius Chapiro | American Journal of Roentgenology | 2026-09-16
+[10.2214/ajr.26.35912](https://doi.org/10.2214/ajr.26.35912)
+
+---
+
+## Artificial Intelligence Sees the Image, Radiologists See the Patient
+
+Added: 2026-09-17 | Source: [[Inbox/Papers/2026-09-17]]
+Yee Seng Ng, Antonio C. Westphalen | American Journal of Roentgenology | 2026-09-16
+[10.2214/ajr.26.34823](https://doi.org/10.2214/ajr.26.34823)
+
+---
+
+## Prompt Injection in Clinical Artificial Intelligence Systems: The Emerging Security Challenge of Large Language Models and Agentic AI.
+
+Added: 2026-09-17 | Source: [[Inbox/Papers/2026-09-17]]
+Waisberg E, Guarnieri JW | Annals of biomedical engineering | 2026-09-15
+[10.1007/s10439-026-04376-3](https://doi.org/10.1007/s10439-026-04376-3)
+
+Clinical discussion of artificial intelligence safety has concentrated on accuracy, bias, and hallucination, each of which describes a model failing at its assigned task. Prompt injection describes the opposite condition: a model performing exactly as instructed, by an instruction the clinician neither wrote nor can see. The vulnerability arises from a fundamental property of current language-model architectures, which receive an undifferentiated stream of tokens and possess no mechanism for distinguishing content that carries authority from content that does not. Medicine is particularly exposed, because the clinical record is assembled from material originating outside the institution, including referral correspondence, patient-entered messages, external reports, scanned documents, and imaging acquired elsewhere. We argue that prompt injection warrants classification as a patient safety hazard with an articulated threat model rather than as a technical curiosity, that improved prompting and input filtering do not address it, and that the workable response lies in provenance-aware context handling, restricted privileges for irreversible actions, and adversarial testing before deployment.
+
+---
+
 ## Novel biomarkers and multi-omics approaches for diagnosis and management of ulcerative colitis.
 
 Added: 2026-08-02 | Source: [[Inbox/Papers/2026-08-02]]
