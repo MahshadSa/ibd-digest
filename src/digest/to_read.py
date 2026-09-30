@@ -1,6 +1,7 @@
 import argparse
 import logging
 import pathlib
+import re
 from datetime import date, datetime, timezone
 
 from src.digest.blocks import find_recent_digests, parse_block, split_into_blocks
@@ -8,6 +9,30 @@ from src.digest.blocks import find_recent_digests, parse_block, split_into_block
 logger = logging.getLogger(__name__)
 
 _TO_READ_PATH = "Inbox/To Read.md"
+_CATEGORIES = ("IBD", "AI")
+_IBD_RE = re.compile(
+    r"\b(?:inflammatory bowel diseases?|IBD|Crohn|ulcerative colitis|pouchitis|colitis)\b",
+    re.IGNORECASE,
+)
+_AI_RE = re.compile(
+    r"\b(?:artificial intelligence|machine learning|deep learning|neural networks?|"
+    r"large language models?|foundation models?|radiomics|vision transformers?|"
+    r"agentic|computer-aided)\b",
+    re.IGNORECASE,
+)
+_AI_ACRONYM_RE = re.compile(r"\b(?:AI|LLMs?|GenAI)\b")
+_CATEGORY_HEADER_RE = re.compile(r"(?m)^# (?:IBD|AI)\s*$\n?")
+_ENTRY_START_RE = re.compile(r"(?m)^#{2,3} ")
+
+
+def categorize_paper(title: str, abstract: str) -> str:
+    """Return IBD or AI, giving IBD precedence when a paper matches both."""
+    text = f"{title}\n{abstract}"
+    if _IBD_RE.search(text):
+        return "IBD"
+    if _AI_RE.search(text) or _AI_ACRONYM_RE.search(text):
+        return "AI"
+    return "IBD"
 
 
 def extract_read_later_entries(
@@ -30,6 +55,7 @@ def extract_read_later_entries(
             "doi": parsed["doi"],
             "abstract": abstract[0] if abstract else "",
             "digest_date": digest_date,
+            "category": categorize_paper(parsed["title"], parsed["abstract"]),
         })
 
     return entries
@@ -40,7 +66,7 @@ def _format_entry(entry: dict) -> str:
     date_str = entry["digest_date"].isoformat()
     digest_note = f"Inbox/Papers/{date_str}"
     lines = [
-        f"## {entry['title']}",
+        f"### {entry['title']}",
         "",
         f"Added: {date_str} | Source: [[{digest_note}]]",
         f"{entry['authors']} | {entry['journal']} | {entry['pub_date']}",
@@ -48,21 +74,93 @@ def _format_entry(entry: dict) -> str:
     ]
     if entry["abstract"]:
         lines.append("")
-        lines.append(entry["abstract"])
+        lines.append("> [!abstract]- Abstract")
+        for abstract_line in entry["abstract"].splitlines():
+            stripped = abstract_line.strip()
+            lines.append(f"> {stripped}" if stripped else ">")
     lines.append("")
     lines.append("---")
     return "\n".join(lines)
+
+
+def _entry_blocks(text: str) -> list[str]:
+    """Return entry blocks from either the legacy flat note or categorized note."""
+    without_headers = _CATEGORY_HEADER_RE.sub("", text).strip()
+    starts = [match.start() for match in _ENTRY_START_RE.finditer(without_headers)]
+    return [
+        without_headers[start:end].strip()
+        for start, end in zip(starts, starts[1:] + [len(without_headers)])
+    ]
+
+
+def _block_title_abstract(block: str) -> tuple[str, str]:
+    """Read classification text from a rendered entry, excluding its metadata."""
+    lines = block.splitlines()
+    title = re.sub(r"^#{2,3} ", "", lines[0]) if lines else ""
+    doi_index = next(
+        (index for index, line in enumerate(lines) if "https://doi.org/" in line),
+        len(lines),
+    )
+    abstract = "\n".join(
+        line.strip()
+        for line in lines[doi_index + 1 :]
+        if line.strip() and line.strip() != "---"
+    )
+    return title, abstract
+
+
+def _normalize_entry_block(block: str) -> str:
+    """Render a legacy or current entry with an H3 title and abstract callout."""
+    lines = block.splitlines()
+    if not lines:
+        return block
+    lines[0] = re.sub(r"^#{2,3} ", "### ", lines[0])
+    doi_index = next(
+        (index for index, line in enumerate(lines) if "https://doi.org/" in line),
+        len(lines),
+    )
+    if doi_index == len(lines):
+        return "\n".join(lines)
+
+    tail = [line for line in lines[doi_index + 1 :] if line.strip() != "---"]
+    while tail and not tail[0].strip():
+        tail.pop(0)
+    while tail and not tail[-1].strip():
+        tail.pop()
+
+    if tail and tail[0].strip().startswith("> [!abstract]"):
+        abstract_callout = tail
+    elif tail:
+        abstract_callout = ["> [!abstract]- Abstract"] + [
+            f"> {line.strip()}" if line.strip() else ">" for line in tail
+        ]
+    else:
+        abstract_callout = []
+
+    normalized = lines[: doi_index + 1]
+    if abstract_callout:
+        normalized.extend(["", *abstract_callout])
+    normalized.extend(["", "---"])
+    return "\n".join(normalized)
+
+
+def _render_categories(blocks: dict[str, list[str]]) -> str:
+    sections: list[str] = []
+    for category in _CATEGORIES:
+        entries = "\n\n".join(blocks[category])
+        sections.append(f"# {category}" + (f"\n\n{entries}" if entries else ""))
+    return "\n\n".join(sections) + "\n"
 
 
 def append_entries(
     to_read_path: pathlib.Path,
     entries: list[dict],
 ) -> int:
-    """Prepend entries whose DOI is not already present. Returns count added."""
+    """Categorize the note and prepend entries whose DOI is not already present."""
     existing = to_read_path.read_text(encoding="utf-8") if to_read_path.exists() else ""
 
     seen: set[str] = set()
-    new_blocks: list[str] = []
+    new_blocks = {category: [] for category in _CATEGORIES}
     for entry in entries:
         if not entry["doi"]:
             logger.warning("Skipping entry with no DOI: %s", entry["title"])
@@ -72,14 +170,26 @@ def append_entries(
             logger.debug("Already present, skipping: %s", entry["doi"])
             continue
         seen.add(entry["doi"])
-        new_blocks.append(_format_entry(entry))
+        category = entry.get("category")
+        if category not in _CATEGORIES:
+            category = categorize_paper(entry["title"], entry["abstract"])
+        new_blocks[category].append(_format_entry(entry))
 
-    if not new_blocks:
-        return 0
+    existing_blocks = {category: [] for category in _CATEGORIES}
+    for block in _entry_blocks(existing):
+        block = _normalize_entry_block(block)
+        title, abstract = _block_title_abstract(block)
+        category = categorize_paper(title, abstract)
+        existing_blocks[category].append(block)
 
-    prepend = "\n\n".join(new_blocks) + ("\n\n" if existing else "\n")
-    to_read_path.write_text(prepend + existing, encoding="utf-8")
-    return len(new_blocks)
+    categorized = {
+        category: new_blocks[category] + existing_blocks[category]
+        for category in _CATEGORIES
+    }
+    rendered = _render_categories(categorized)
+    if rendered != existing:
+        to_read_path.write_text(rendered, encoding="utf-8")
+    return sum(len(blocks) for blocks in new_blocks.values())
 
 
 def run(vault_root: str, window: int = 7, digest_date: date | None = None) -> None:

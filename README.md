@@ -179,8 +179,12 @@ The writer refuses to overwrite an existing daily digest by default. Pass
 `--force` to overwrite (used by the scheduled workflow).
 
 After marking `Read later` boxes in a digest, run `src.digest.to_read` to append
-those papers to `Inbox/To Read.md`. Pass `--date YYYY-MM-DD` to process a past
-digest. Re-running the same date is safe; entries already in the note are skipped.
+those papers to `Inbox/To Read.md`. The note is split into `IBD` and `AI`
+sections using the paper title and abstract. IBD matches take precedence, so a
+paper about both IBD and AI is filed under `IBD`; unmatched papers also default
+to `IBD`. Paper titles use level-three headings and abstracts are collapsible
+Markdown callouts. Pass `--date YYYY-MM-DD` to process a past digest. Re-running
+the same date is safe; entries already in the note are skipped.
 
 ### Scheduled runs
 
