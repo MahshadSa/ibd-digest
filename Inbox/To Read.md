@@ -1,5 +1,71 @@
 # IBD
 
+### TREAT-TO-TARGET IN INFLAMMATORY BOWEL DISEASE: PROMISE, PERILS, AND THE PATH FORWARD.
+
+Added: 2026-10-04 | Source: [[Inbox/Papers/2026-10-04]]
+Singh S, Nardone OM, Jairath V | Clinical gastroenterology and hepatology : the official clinical practice journal of the American Gastroenterological Association | 2026-10-03
+[10.1016/j.cgh.2026.09.033](https://doi.org/10.1016/j.cgh.2026.09.033)
+
+> [!abstract]- Abstract
+> Treat-to-target has become the organising framework for contemporary inflammatory bowel disease (IBD) management, yet its evidence base is less robust than its widespread endorsement might suggest. The approach rests on two equally essential pillars: defining the right therapeutic target, and adjusting treatment iteratively until that target is achieved. Over the past decade, the first pillar has advanced substantially: targets have deepened from symptomatic remission through endoscopic and histologic healing toward transmural and emerging molecular endpoints, supported largely by association data linking deeper remission to better long-term outcomes. The second pillar has received considerably less scrutiny. Completed randomised trials of iterative treatment adjustment have yielded mixed results in unselected populations, real-world monitoring remains inconsistent, and the most clinically pressing question, whether asymptomatic patients with residual inflammation benefit from optimising or switching advanced therapies, remains unanswered. In this review, we critically examine both pillars: the evolution and evidence base for treatment targets in IBD, the ability of current therapies to achieve them, the lessons from pivotal treat-to-target trials, and the barriers to real-world implementation. We propose a framework for individualising treat-to-target decisions based on disease history, inflammatory trajectory, therapeutic options, and patient preferences. Ongoing trials including QUOTIENT, VERDICT, and VECTORS may define whether the second pillar can be placed on as firm a footing as the first.
+
+---
+
+### Review Article: Beyond the Therapeutic Ceiling in Inflammatory Bowel Disease—Mechanism‐Based Positioning and Emerging Therapeutic Strategies
+
+Added: 2026-10-03 | Source: [[Inbox/Papers/2026-10-03]]
+Deloshaan Subhaharan, Sreedhar Subramanian | Alimentary Pharmacology &amp; Therapeutics | 2026-10-02
+[10.1111/apt.70978](https://doi.org/10.1111/apt.70978)
+
+> [!abstract]- Abstract
+> ABSTRACT
+
+---
+
+### Small language models in clinical medicine: a systematic review of performance, safety, and deployment feasibility.
+
+Added: 2026-10-02 | Source: [[Inbox/Papers/2026-10-02]]
+Gorenshtein A, Omar M, Klang E | Journal of the American Medical Informatics Association : JAMIA | 2026-10-01
+[10.1093/jamia/ocag164](https://doi.org/10.1093/jamia/ocag164)
+
+> [!abstract]- Abstract
+> OBJECTIVES: To review the clinical evidence for small language models (SLMs), 4 billion parameters or fewer, for performance, safety, and deployment feasibility. MATERIALS AND METHODS: We searched 5 databases through February 10, 2026 for English-language reports of an SLM on a clinical task, following PRISMA 2020 under a PROSPERO-registered protocol. Two reviewers independently assessed eligibility (Cohen κ = 0.93) and rated methodological quality and transparency. We calculated a relative task score (RTS): the primary metric of each study's best-performing qualifying SLM, divided by a study-specific reference comparator selected by a uniform hierarchy, calculated by the review authors. RESULTS: Eleven studies (7 peer-reviewed, 4 preprint or technical-report) were eligible. Across the 9 studies with a ratio-scale reference comparator, RTS ranged from 0.30 to 2.36; 1 was a raw difference on a non-ratio scale and 1 had no comparator. We did not pool estimates, given heterogeneity. Hallucination was evaluated in 6 of 11 studies, a scalar calibration-error metric or epistemic uncertainty in 0 of 11 (1 reported a calibration curve only), and on-hardware inference timing in 2 of 11. Our memory model estimated that a 4-billion-parameter model requires about 9.3 GB at a 2048-token context, indicating single-GPU memory feasibility rather than demonstrated deployment. DISCUSSION: Domain-adapted SLMs are memory-feasible, but the evidence base is too small and heterogeneous for inferential comparison with larger models, and safety properties (including adversarial robustness) go unmeasured. CONCLUSION: Routine reporting of calibration and uncertainty and measurement of end-to-end clinical performance are prerequisites for responsible SLM deployment. PROSPERO REGISTRATION: CRD420261331444.
+
+---
+
+### Intestinal ultrasound versus magnetic resonance enterography for detecting small bowel Crohn's disease in children.
+
+Added: 2026-10-01 | Source: [[Inbox/Papers/2026-10-01]]
+Vos JMBW, Wassenaer EAV, Koot BGP | Journal of pediatric gastroenterology and nutrition | 2026-09-29
+[10.1002/jpn3.70580](https://doi.org/10.1002/jpn3.70580)
+
+> [!abstract]- Abstract
+> OBJECTIVES: In Crohn's disease (CD), magnetic resonance enterography (MRE) is used to assess small bowel disease activity. Intestinal ultrasound (IUS) is a less invasive, cheaper and more easily accessible imaging modality in CD. This study assesses the diagnostic accuracy of IUS versus MRE and defines an optimal bowel wall thickness (BWT) cut-off in children. METHODS: Children with CD undergoing MRE as routine care had IUS within 7 days. MRE disease activity was assessed using the segmental grading system and compared to IUS BWT and IUS scores. The terminal ileum (TI), ileum and jejunum were analysed separately. RESULTS: Seventy-eight paediatric CD patients (median age: 15 years; 49% female) were included. Based on MRE, 44 bowel segments had mild and 37 moderate-severe disease activity. The area under the receiver operating characteristic of IUS BWT for disease activity in the TI was 0.91 (95% confidence interval [CI] 0.84-0.98) with an optimal cut-off of 2.4 mm, 0.80 (95% CI 0.66-0.94) for the ileum with an optimal cut-off of 2.0 mm (sensitivity 76%; specificity 93%) and 0.69 (95% CI 0.52-0.86) for the jejunum. Due to the low number of affected segments in the jejunum, an accurate BWT cut-off value could not be determined. Previously developed IUS scores did not outperform BWT. CONCLUSIONS: IUS is an accurate tool to non-invasively assess CD activity in the TI and ileum. Based on our results, a BWT cut-off of 2.4 mm in the TI and 2.0 mm in the ileum in paediatric CD is optimal to distinguish active from inactive disease.
+
+---
+
+### Intestinal Ultrasound for Inflammatory Bowel Disease: Expanding the Role of Point-of-Care Ultrasound in the Emergency Department.
+
+Added: 2026-10-01 | Source: [[Inbox/Papers/2026-10-01]]
+Law CCY, Kharasch SJ | Pediatric emergency care | 2026-10-01
+[10.1097/pec.0000000000003681](https://doi.org/10.1097/pec.0000000000003681)
+
+> [!abstract]- Abstract
+> Patients with inflammatory bowel disease (IBD) frequently utilize emergency department (ED) care. Intestinal ultrasound (IUS) is a noninvasive, point-of-care, radiation-free imaging modality increasingly used in outpatient IBD management. The purpose of this article is to introduce the use of IUS for the evaluation of IBD to emergency medicine physicians who utilize ultrasound as part of their clinical practice. Studies demonstrate that IUS is highly sensitive and specific for detecting active bowel inflammation. Key sonographic findings include increased bowel wall thickness and bowel wall hyperemia. IUS can also identify important IBD-related complications such as strictures and abscesses. IUS represents a promising addition to ED assessment of IBD and may serve as a valuable complementary tool for the initial evaluation of suspected IBD flare or disease-related complications. Its rapid bedside application, lack of required bowel preparation, and absence of radiation exposure make it particularly attractive in emergency and pediatric settings. Emerging evidence supports the feasibility of IUS using cart-based ultrasound systems and handheld ultrasound devices. With appropriate training, this may allow broad implementation in the ED. Further studies are needed to define optimal implementation strategies and evaluate its impact on clinical efficiency, reduction in radiation exposure, cost-effectiveness, and patient outcomes.
+
+---
+
+### Pharmacological treatments for moderate-to-severe ulcerative colitis: a systematic review and Bayesian network meta-analysis.
+
+Added: 2026-10-01 | Source: [[Inbox/Papers/2026-10-01]]
+Qi J, Tian Q, Chen Z | Scandinavian journal of gastroenterology | 2026-10-01
+[10.1080/00365521.2026.2698847](https://doi.org/10.1080/00365521.2026.2698847)
+
+> [!abstract]- Abstract
+> BACKGROUNDS: To systematically compare the relative efficacy of different therapeutic agents for the induction and maintenance treatment of moderate-to-severe active ulcerative colitis (UC) in adult patients. METHODS: We retrieved RCTs from PubMed, Embase, Scopus and CENTRAL (2020.1.1 - 2026.1.1). A Bayesian random-effects NMA was performed, with treatment efficacy ranked by SUCRA. (Registration No. CRD420261293873). RESULTS: A total of 41 RCTs comprising 22,619 patients with moderate-to-severe active UC were included. Compared with placebo, JAK-STAT inhibitors (RR = 4.5, 95% CI 3.0-7.2), anti-TNF-α biologics (RR = 3.0, 95% CI 1.8-5.3), S1P receptor modulators (RR = 3.0, 95% CI 2.1-4.5), anti-IL-23 biologics (RR = 2.8, 95% CI 2.0-4.0), anti-integrin biologics (RR = 2.2, 95% CI 1.5-3.2) and anti-TL1A biologics (RR = 4.0, 95% CI 2.0-9.0) significantly improved clinical remission during the induction phase. Furthermore, JAK-STAT inhibitors, S1P receptor modulators, anti-IL-23 biologics, anti-TNF-α biologics, and anti-integrin biologics effectively maintained clinical remission. Monotherapy with 5-aminosalicylates (5-ASA) or immunomodulators did not demonstrate a significant benefit over placebo. Based on SUCRA probabilities, the top three regimens for induction of clinical remission were JAK-STAT inhibitors (91.5%), anti-TL1A biologics (82.3%), and anti-TNF-α biologics (70.1%). For the maintenance phase, the top three were JAK-STAT inhibitors (86.3%), S1P receptor modulators (80.5%), and anti-IL-23 biologics (59.4%). CONCLUSIONS: JAK-STAT inhibitors demonstrated optimal efficacy for achieving clinical remission in both the induction and maintenance phases of UC treatment. Additionally, targeted therapies, including anti-TNF-α, anti-IL-23, and S1P receptor modulators, provided substantial therapeutic benefits.
+
+---
+
 ### AI-generated guidance for non-specialist physicians managing inflammatory bowel disease: expert evaluation and case-based testing of GPT-4 and DeepSeek.
 
 Added: 2026-09-30 | Source: [[Inbox/Papers/2026-09-30]]
@@ -669,7 +735,53 @@ Whittle I, Brown Hajdukova E, Jones K | Advances in therapy | 2026-06-01
 
 ---
 
+### Generalizable CT vision-language modeling for population health and disease risk
+
+Added: 2026-09-29 | Source: [[Inbox/Papers/2026-09-29]]
+Cameron A. Beeche, Joonghyun Kim, Walter R. Witschey | npj Digital Medicine | 2026-09-29
+[10.1038/s41746-026-03257-2](https://doi.org/10.1038/s41746-026-03257-2)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
 # AI
+
+### Healthcare professionals’ perceptions on AI-assisted decision-making in clinical practice: a qualitative meta-synthesis
+
+Added: 2026-10-02 | Source: [[Inbox/Papers/2026-10-02]]
+Zihao Song, Dongjiang Hou, Jing Gao | npj Digital Medicine | 2026-10-01
+[10.1038/s41746-026-03338-2](https://doi.org/10.1038/s41746-026-03338-2)
+
+---
+
+### Implementation of Artificial Intelligence in Breast Imaging for Detection, Diagnosis, and Workflow: Counterpoint—Zeal Should Not Outrun Discretion
+
+Added: 2026-10-01 | Source: [[Inbox/Papers/2026-10-01]]
+Eun L. Langman, Vilert A. Loving | American Journal of Roentgenology | 2026-09-30
+[10.2214/ajr.26.35828](https://doi.org/10.2214/ajr.26.35828)
+
+---
+
+### Implementation of Artificial Intelligence in Breast Imaging for Detection, Diagnosis, and Workflow: Point—The Evidence Supports Implementation Now
+
+Added: 2026-10-01 | Source: [[Inbox/Papers/2026-10-01]]
+Manisha Bahl | American Journal of Roentgenology | 2026-09-30
+[10.2214/ajr.26.35940](https://doi.org/10.2214/ajr.26.35940)
+
+---
+
+### Checklist for Artificial Intelligence in Medical Imaging (CLAIM):                     Explanation, Elaboration, and Examples
+
+Added: 2026-10-01 | Source: [[Inbox/Papers/2026-10-01]]
+Tugba Akinci D'Antonoli, Lisa C. Adams, John Mongan | Radiology: Artificial Intelligence | 2026-09-30
+[10.1148/ryai.260835](https://doi.org/10.1148/ryai.260835)
+
+> [!abstract]- Abstract
+> The Checklist for Artificial Intelligence in Medical Imaging (CLAIM) provides a structured framework for transparent and reproducible reporting of AI studies in medical imaging. Since its introduction in 2020, CLAIM has been widely adopted by researchers, reviewers, and journal editors, but variability in its interpretation has limited consistent application. In 2024, the CLAIM Steering Committee published an updated checklist developed through a structured Delphi consensus process involving 72 experts across imaging-related medical specialties, AI science, journal editing, and biostatistics. This article provides a detailed explanation and elaboration of each of the 44 items in the CLAIM 2024 Update, clarifying the intent, common misinterpretations, and appropriate implementation of each item. Illustrative examples from the published literature demonstrating adherence to each item are provided in an accompanying Supplement and through a user-friendly online tool at https://rsna.github.io/claim/ . The scope of this work spans the full AI study lifecycle covered by CLAIM, from study design and data sourcing to model development, evaluation, and reporting of results. This resource is intended to support authors, reviewers, and editors in the accurate and consistent application of CLAIM, thereby improving the quality, transparency, and reproducibility of AI research in medical imaging.
+
+---
 
 ### Large Language Models in Radiology Workflow: Refinement of Differential Diagnosis—An Early Career Perspective
 
@@ -695,17 +807,6 @@ Thomas J, Pozdeyev N | The Journal of clinical endocrinology and metabolism | 20
 Added: 2026-09-30 | Source: [[Inbox/Papers/2026-09-30]]
 Yilan Wu, Ariel Yuhan Ong, Tien Yin Wong | The Lancet Digital Health | 2026-09-01
 [10.1016/j.landig.2026.101077](https://doi.org/10.1016/j.landig.2026.101077)
-
----
-
-### Generalizable CT vision-language modeling for population health and disease risk
-
-Added: 2026-09-29 | Source: [[Inbox/Papers/2026-09-29]]
-Cameron A. Beeche, Joonghyun Kim, Walter R. Witschey | npj Digital Medicine | 2026-09-29
-[10.1038/s41746-026-03257-2](https://doi.org/10.1038/s41746-026-03257-2)
-
-> [!abstract]- Abstract
-> Abstract
 
 ---
 
