@@ -1,5 +1,13 @@
 # IBD
 
+### State-change learning for prediction of future events in endoscopic videos
+
+Added: 2026-10-05 | Source: [[Inbox/Papers/2026-10-05]]
+Saurav Sharma, Chinedu Innocent Nwoye, Nicolas Padoy | Medical Image Analysis | 2027-01-01
+[10.1016/j.media.2026.104325](https://doi.org/10.1016/j.media.2026.104325)
+
+---
+
 ### TREAT-TO-TARGET IN INFLAMMATORY BOWEL DISEASE: PROMISE, PERILS, AND THE PATH FORWARD.
 
 Added: 2026-10-04 | Source: [[Inbox/Papers/2026-10-04]]
@@ -747,6 +755,17 @@ Cameron A. Beeche, Joonghyun Kim, Walter R. Witschey | npj Digital Medicine | 20
 ---
 
 # AI
+
+### Application of large language models for assigning clear cell likelihood score v2.0 from free–text MRI reports: a feasibility study
+
+Added: 2026-10-05 | Source: [[Inbox/Papers/2026-10-05]]
+Yanting Duan, Yilei Zhao, Zhan Feng | Abdominal Radiology | 2026-10-05
+[10.1007/s00261-026-05818-1](https://doi.org/10.1007/s00261-026-05818-1)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
 
 ### Healthcare professionals’ perceptions on AI-assisted decision-making in clinical practice: a qualitative meta-synthesis
 
