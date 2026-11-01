@@ -20,6 +20,30 @@ Automated daily digest of new IBD imaging papers, ranked by semantic relevance t
 - Prefer standard library over dependencies. Justify each third-party package.
 - Use the logging module from the start. No print statements for logging.
 
+## Git safety
+
+- Forbidden unless explicitly approved in a message: git rm --cached, any
+  history rewrite (filter-repo, filter-branch, rebase -i, commit --amend on
+  pushed commits), push --force, reset --hard, git clean (any flags),
+  stash -u, deleting or re-cloning the repo.
+- Never delete a file the user has not named.
+- Never start a pull, rebase or merge with uncommitted changes.
+- On any conflict in a pull, rebase or merge: abort it (git rebase --abort or
+  git merge --abort), stop, show git status. Never resolve a conflict by
+  deleting a file or by taking one side of To Read.md, Corpus/ or data/*.txt
+  without asking.
+- Gitignored laptop-only state cannot be recovered from git: runs/*.json and
+  sidecars, Inbox/Lineages/, data/papers.db, .env. Never touch it.
+- Leave the local branch fix/candidate-distribution-calibration untouched.
+- Commit only named files, never git add -A.
+- The bot commits to main daily, landing around 08:15 to 08:30 UTC. Always
+  git pull --rebase immediately before git push.
+- Merging a branch into main: git checkout main, git pull --rebase,
+  git merge --no-ff <branch>, then git push immediately. If the push is
+  rejected because the bot got in first: git pull --rebase=merges, then
+  git push. Never plain pull --rebase while an unpushed merge commit is on
+  main. Any conflict: abort and stop.
+
 ## Project plan
 
 ### Goal
@@ -94,15 +118,18 @@ Empty days: note still generated, says "no new papers today, pipeline ran succes
 
 ### Feedback loop (BUILT 2026-07-02)
 - User ticks `- [x] Relevant` on papers in the digest and pushes
-- src/digest/feedback.py scans a trailing window of digests (workflow: 7 days)
-  for checked Relevant boxes ONLY (a Read later tick never reaches the corpus;
-  see the checkbox parsing contract) and writes each as a Corpus/{slug}.md note
-  in the exact format src.corpus emits and parses
+- src/digest/feedback.py scans EVERY digest (since 2026-11-01; was a 7-digest
+  window, see Ranking hygiene) for checked Relevant boxes ONLY (a Read later
+  tick never reaches the corpus; see the checkbox parsing contract) and writes
+  each as a Corpus/{slug}.md note in the exact format src.corpus emits and
+  parses
 - Fully offline: the digest block already carries title and abstract, so no
   refetch is needed. The next `src.corpus from-notes` step embeds the new notes;
   ranking sharpens with no further action. The complete human loop is: tick the
   box in Obsidian, git push.
 - Idempotent: an existing Corpus/{slug}.md is never rewritten
+- Deleting a corpus note by hand only sticks if its Relevant box is also
+  unticked: the all-digest sweep recreates any note whose box is still checked
 - Old-format digests (pre 2026-07-02, no literal Relevant line) contribute
   nothing; the loop starts with new-format digests
 - Filter-bubble mitigation: the Wildcard digest section surfaces low-scoring
@@ -122,8 +149,10 @@ Empty days: note still generated, says "no new papers today, pipeline ran succes
 - [x] Step 3: Embedding layer (SPECTER2, corpus from Zotero selection, scoring and tiering)
 - [x] Step 4: Obsidian integration (file paths, callouts, checkbox convention)
 - [x] Step 5: GitHub Actions scheduling and git sync
-- [x] Step 6: Feedback loop (feedback.py parses checked Relevant boxes into Corpus/ notes, windowed + automated) -- BUILT 2026-07-02
-- [x] Read later layer (to_read.py: parses checked Read later boxes into Inbox/To Read.md, windowed + automated)
+- [x] Step 6: Feedback loop (feedback.py parses checked Relevant boxes into Corpus/ notes, all digests + automated) -- BUILT 2026-07-02
+- [x] Read later layer (to_read.py: parses checked Read later boxes into Inbox/To Read.md, all digests, deduped by data/queued_dois.txt, automated)
+- [x] Ranking hygiene: unwindowed sweeps, queued_dois.txt, parenthesised-DOI regex -- 2026-11-01
+- [ ] Next: SPECTER2 proximity adapter (see Next session, 2026-11-01)
 - [x] Weekly column packet (column.py: one prep note per completed ISO week at Inbox/Column/YYYY-Www.md) -- 2026-07-02
 - [x] Run telemetry (metrics.py: one committed line per run in data/metrics.txt) -- 2026-07-02
 
@@ -246,7 +275,17 @@ Scope includes adult and pediatric IBD imaging, treatment response and monitorin
 - Author override filters (always surface specific authors regardless of score)
 - Europe PMC, bioRxiv, medRxiv, arXiv sources
 - Telegram or email notification for top-tier hits
-- Crossref keyword prefilter for broad journals (Nature Medicine, npj Digital
+- Crossref keyword prefilter for broad journals (Nature Medicine, npj Digital Medicine, Lancet Digital Health, AP&T, Lancet GI, CGH): defer until 2-4 weeks of data at expanded volume shows which terms anchor relevant papers
+- GitHub Actions Node 24 bumps (actions/checkout, setup-python, cache to their
+  Node 24 majors) before the Node 20 runtime is retired
+- CPU-only torch wheel index in CI (pip --extra-index-url
+  https://download.pytorch.org/whl/cpu) to shrink install time and cache size
+- Errata/comment filter: drop Crossref/PubMed items that are corrections,
+  errata, retraction notices, or letters/comments before ranking
+- Empty-abstract placeholders: papers with no abstract embed title-only and
+  render an empty callout; decide on a placeholder or a refetch path
+- OpenAlex API key for lineage: openalex.http_fetch sends only mailto and treats
+  401/403 as fatal; add key support before OpenAlex enforces keys
 
 ## Step 4: Obsidian integration (done)
 
@@ -285,8 +324,11 @@ identically.
   `^>?\s*- \[[xX]\] Relevant$` (RELEVANT_RE in blocks.py).
 - `Read later` (feeds Inbox/To Read.md, consumed by to_read.py, BUILT):
   `^>?\s*- \[[xX]\] Read later$` (READ_LATER_RE).
-- DOI extraction: `\[([^\]]+)\]\(https://doi\.org/([^\)]+)\)` (DOI_RE), searched
-  on the metadata lines only, so a DOI link inside an abstract cannot match.
+- DOI extraction: `\[([^\]]+)\]\(https://doi\.org/((?:[^()\s]|\([^()\s]*\))+)\)`
+  (DOI_RE), searched on the metadata lines only, so a DOI link inside an
+  abstract cannot match. The URL group allows balanced parentheses (since
+  2026-11-01; see Ranking hygiene). src/seen.py and
+  scripts/regenerate_digests.py import the same DOI_RE.
 - Score extraction: `Score: (\d+\.\d+)` (SCORE_RE).
 - Both patterns tolerate a `> ` prefix.
 
@@ -301,14 +343,15 @@ Workflow: `.github/workflows/daily-digest.yml`
 Schedule: `0 2 * * *` UTC (5:30 AM Tehran)
 Manual trigger: `workflow_dispatch` available in Actions tab
 
-Pipeline order (since 2026-07-02): `src.fetch 3` -> `src.digest.feedback .
---window 7` -> `src.corpus from-notes` -> `src.rank` -> `src.digest.writer .
---force` -> `src.digest.to_read . --window 7` -> `src.digest.column .` ->
-`src.metrics`. Fetch runs with days_back=3 so a failed run self-heals on the
-next one (the seen-DOI list makes the overlap free). The feedback sweep runs
-BEFORE the corpus rebuild so new Relevant notes are embedded the same run. The
-commit step adds `Inbox/Papers/`, `Inbox/To Read.md`, `Inbox/Column/`,
-`Corpus/`, `data/seen_dois.txt`, `data/metrics.txt`.
+Pipeline order (since 2026-07-02; sweeps unwindowed since 2026-11-01):
+`src.fetch 3` -> `src.digest.feedback .` -> `src.corpus from-notes` ->
+`src.rank` -> `src.digest.writer . --force` -> `src.digest.to_read .` ->
+`src.digest.column .` -> `src.metrics`. Fetch runs with days_back=3 so a failed
+run self-heals on the next one (the seen-DOI list makes the overlap free). The
+feedback sweep runs BEFORE the corpus rebuild so new Relevant notes are
+embedded the same run. The commit step adds `Inbox/Papers/`,
+`Inbox/To Read.md`, `Inbox/Column/`, `Corpus/`, `data/seen_dois.txt`,
+`data/metrics.txt`, `data/score_history.txt`, `data/queued_dois.txt`.
 The `src.corpus from-notes` step rebuilds the
 corpus embeddings from the committed `Corpus/*.md` notes on every run because
 the DB is ephemeral (see DB persistence); without it the corpus table is empty
@@ -432,6 +475,86 @@ against the same corpus, which shifts the tier distribution. After one week
 of digests at the new volume, check whether the must-read/skim/archive splits
 (0.958/0.924) still produce useful groupings, and adjust if needed.
 
+
+## Ranking hygiene (2026-11-01)
+
+Two interacting bugs, fixed on branch ranking-hygiene.
+
+Window bug: feedback.py and to_read.py ran with --window 7 (the 7 newest
+digests), but ticks are pushed in batches more than 7 days late, so they were
+silently dropped. Measured before the fix: 412 Relevant-ticked DOIs with 256
+missing from Corpus/, 421 Read-later-ticked DOIs with 305 missing from
+To Read.md. Fix: blocks.find_recent_digests(papers_dir, window: int | None),
+None meaning every digest; both CLIs default to all digests (--window N still
+works) and the workflow dropped --window 7.
+
+queued_dois record: to_read.py no longer dedups by searching To Read.md text
+(a hand-removed entry would be re-added by the all-digest sweep). It dedups
+against data/queued_dois.txt, every DOI ever queued (same format as
+data/seen_dois.txt: lowercased, sorted, one per line). New entries are ticked
+DOIs not in that set; added DOIs are appended to it. A missing file RAISES
+(FileNotFoundError, non-zero exit): it must never read as empty. Seeded once
+locally with `python -m src.digest.to_read seed-queued [vault_root]`, which
+collects every DOI that ever appeared in Inbox/To Read.md via
+`git log -p --follow`; it refuses to run on a shallow clone (CI checkouts are
+shallow). Seeded 2026-11-01: 117 DOIs. Every path the two sweeps touch
+(Inbox/Papers, Corpus/, Inbox/To Read.md, data/queued_dois.txt) resolves under
+vault_root; tests/test_vault_isolation.py pins that nothing is written to cwd.
+
+Backfill section: entries from digests dated before BACKFILL_CUTOFF
+(date(2026, 11, 2), to_read.py) go under `# Backfilled late ticks` at the top
+of To Read.md; entries from digests on or after it go to IBD/AI as normal,
+however late they are ticked. A fixed date, not an age rule, because ticks are
+routinely pushed more than 7 days late, which would route most future entries
+into the backfill section. The section persists across runs (the parser keeps
+its blocks there instead of recategorizing them) and is omitted when empty.
+
+DOI regex: DOI_RE was `[^\)]+`, which cut Lancet, CGH, MedIA and Lancet Rheum
+DOIs (10.1016/s2468-1253(26)00292-x) at "(26". With the window bug this meant
+every Lancet GH (26) Relevant tick collapsed to 10.1016/s2468-1253(26, so the
+single Corpus/10.1016_s2468-1253(26.md note blocked all the others, and one
+truncated To Read entry blocked the rest through the old substring check. The
+new pattern allows balanced parentheses (see the checkbox parsing contract).
+Re-parsing all 3539 digest blocks: 113 change, every one to a full
+parenthesised DOI; none lost its DOI; the seen-DOI set is unchanged.
+Repaired: Corpus/10.1016_s2468-1253(26.md deleted (the next CI run writes the
+full-slug notes); the one truncated To Read entry (Pathophysiology of irritable
+bowel syndrome) restored to 10.1016/s2468-1253(26)00148-2 from its source
+digest. NOT rewritten (write-once, may carry hand notes): column packets
+2026-W29, W32, W33, W37, W41, W43 each still carry one truncated
+10.1016/s2468-1253(26 link.
+
+Backfill via CI (procedure): the backfill is NOT run on the laptop. After the
+merge to main, trigger the workflow by hand (Actions tab, workflow_dispatch);
+the unwindowed sweeps write the missing corpus notes and To Read entries, the
+corpus rebuild embeds the new notes the same run, and the commit carries
+Corpus/, To Read.md and data/queued_dois.txt. Dry run on a scratch export of
+the branch tree (2026-11-01, the backup copy at
+~/Documents/ibd-digest-backup-20261101 turned out stale, around 2026-10-24, so
+it was not used): 266 corpus notes added (421 Relevant-ticked DOIs, all now
+covered), 313 To Read entries added (313 backfilled, 0 normal; 429
+Read-later-ticked DOIs, all now queued), no parse warnings. Counts exceed the
+pre-fix measurement because truncated DOIs had merged distinct papers. Compare
+the CI commit's diff against these counts.
+
+Known leftover, not fixed: Inbox/To Read.md carries a merge-conflict remnant
+from 96bb464 (a duplicated "Novel biomarkers and multi-omics..." heading with
+`=======` and `>>>>>>> 857c848` lines). It has no DOI and does not affect
+parsing; remove by hand.
+
+## Next session (2026-11-01): SPECTER2 proximity adapter
+
+Planned, not built. Runs after the CI backfill so the corpus is complete.
+- Load the adapter from a pinned local snapshot path, not source="hf".
+- One-time allclose check against source="hf" on a few papers, recorded here.
+- Exact adapters and transformers pins: adapters targets transformers 4.x and
+  the laptop has 5.9.0, so use a separate .venv-adapter and leave .venv
+  untouched.
+- Pinned revisions; one model-name constant.
+- Workflow cache key specter2-base-proximity-<base sha8>-<adapter sha8>;
+  HF_HUB_OFFLINE=1 on the corpus and rank steps.
+- Reseed data/score_history.txt with the new model from the last 2000 digest
+  DOIs, refetching archive-tier abstracts on the laptop.
 
 ## Lineage module (separate from the digest)
 

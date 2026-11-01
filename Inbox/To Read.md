@@ -223,10 +223,6 @@ Chunshan Yin, Ruohang He, Yu Fu | Journal of Crohn's and Colitis | 2026-09-17
 ---
 
 ### Novel biomarkers and multi-omics approaches for diagnosis and management of ulcerative colitis.
-=======
-
-### Novel biomarkers and multi-omics approaches for diagnosis and management of ulcerative colitis.
->>>>>>> 857c848 (changes in to-read file)
 
 Added: 2026-08-02 | Source: [[Inbox/Papers/2026-08-02]]
 Dey A, Gautam MK, Sen S | Gastroenterologia y hepatologia | 2026-01-01
@@ -443,7 +439,7 @@ Xing J, Mei Z | Diseases of the colon and rectum | 2026-08-01
 
 Added: 2026-07-17 | Source: [[Inbox/Papers/2026-07-17]]
 Yasmin Nasser, Andrea Shin, Christopher J Black | The Lancet Gastroenterology &amp; Hepatology | 2026-07-01
-[10.1016/s2468-1253(26](https://doi.org/10.1016/s2468-1253(26)
+[10.1016/s2468-1253(26)00148-2](https://doi.org/10.1016/s2468-1253(26)00148-2)
 
 ---
 

@@ -1,10 +1,9 @@
 import logging
-import re
 from pathlib import Path
 
-logger = logging.getLogger(__name__)
+from src.digest.blocks import DOI_RE
 
-_DOI_LINK_RE = re.compile(r"\[([^\]]+)\]\(https://doi\.org/[^)]+\)")
+logger = logging.getLogger(__name__)
 
 
 def load_seen_dois(path: str) -> set[str]:
@@ -43,7 +42,7 @@ def dois_from_notes(notes_dir: str) -> set[str]:
     """
     dois: set[str] = set()
     for path in Path(notes_dir).glob("*.md"):
-        for m in _DOI_LINK_RE.finditer(path.read_text(encoding="utf-8")):
+        for m in DOI_RE.finditer(path.read_text(encoding="utf-8")):
             d = m.group(1).strip().lower()
             if d.startswith("10."):
                 dois.add(d)

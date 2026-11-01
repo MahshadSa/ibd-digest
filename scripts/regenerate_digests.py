@@ -7,7 +7,6 @@ part of the daily pipeline.
 """
 import logging
 import os
-import re
 import sys
 from datetime import date
 from pathlib import Path
@@ -18,6 +17,7 @@ from src import metrics
 from src.corpus import rebuild_corpus_from_notes
 from src.db import get_connection, insert_paper, migrate, migrate_embedding_columns
 from src.digest import writer
+from src.digest.blocks import DOI_RE
 from src.fetchers.by_doi import fetch_by_doi
 from src.ranking.score import embed_pending, score_and_tier
 
@@ -29,13 +29,11 @@ MODEL_NAME = "allenai/specter2_base"
 CORPUS_DIR = "Corpus"
 METRICS_PATH = "data/metrics.txt"
 
-_DOI_LINK_RE = re.compile(r"\[([^\]]+)\]\(https://doi\.org/[^)]+\)")
-
 
 def dois_from_digest(path: str) -> list[str]:
     """Ordered, de-duplicated DOIs linked in one digest file."""
     seen: dict[str, None] = {}
-    for m in _DOI_LINK_RE.finditer(Path(path).read_text(encoding="utf-8")):
+    for m in DOI_RE.finditer(Path(path).read_text(encoding="utf-8")):
         doi = m.group(1).strip().lower()
         if doi.startswith("10."):
             seen.setdefault(doi, None)
