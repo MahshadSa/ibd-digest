@@ -296,10 +296,10 @@ def run(vault_root: str, window: int | None = None, digest_date: date | None = N
     added = append_entries(to_read_path, all_entries, queued)
     if added:
         save_queued_dois(queued_path, queued | set(added))
-    backfilled = sum(
-        1 for e in all_entries
-        if e["doi"].lower() in added and e["digest_date"] < BACKFILL_CUTOFF
-    )
+    first_seen: dict[str, date] = {}
+    for e in all_entries:
+        first_seen.setdefault(e["doi"].lower(), e["digest_date"])
+    backfilled = sum(1 for doi in added if first_seen[doi] < BACKFILL_CUTOFF)
     logger.info(
         "Added %d new entries to %s (%d backfilled, %d normal)",
         len(added), to_read_path, backfilled, len(added) - backfilled,
