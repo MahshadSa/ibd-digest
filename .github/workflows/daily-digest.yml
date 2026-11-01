@@ -47,10 +47,10 @@ jobs:
           NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
         run: python -m src.fetch 3
 
-      # Feedback loop: checked Relevant boxes in recent digests become corpus
+      # Feedback loop: checked Relevant boxes in all digests become corpus
       # notes, which the rebuild step below embeds. Must run before the rebuild.
       - name: Sweep Relevant ticks into corpus notes
-        run: python -m src.digest.feedback . --window 7
+        run: python -m src.digest.feedback .
 
       - name: Rebuild corpus from committed notes
         run: python -m src.corpus from-notes
@@ -62,7 +62,7 @@ jobs:
         run: python -m src.digest.writer . --force
 
       - name: Sweep to-read
-        run: python -m src.digest.to_read . --window 7
+        run: python -m src.digest.to_read .
 
       - name: Write weekly column packet
         run: python -m src.digest.column .
@@ -74,7 +74,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Inbox/Papers/ "Inbox/To Read.md" Inbox/Column/ Corpus/ data/seen_dois.txt data/metrics.txt data/score_history.txt
+          git add Inbox/Papers/ "Inbox/To Read.md" Inbox/Column/ Corpus/ data/seen_dois.txt data/metrics.txt data/score_history.txt data/queued_dois.txt
           if git diff --staged --quiet; then
             echo "Nothing to commit, skipping."
             exit 0

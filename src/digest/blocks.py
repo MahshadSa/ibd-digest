@@ -13,7 +13,9 @@ from datetime import date
 TITLE_RE = re.compile(r"^>?\s?- \[.\] \*\*(.+)\*\*$")
 RELEVANT_RE = re.compile(r"^>?\s*- \[[xX]\] Relevant\s*$")
 READ_LATER_RE = re.compile(r"^>?\s*- \[[xX]\] Read later\s*$")
-DOI_RE = re.compile(r"\[([^\]]+)\]\(https://doi\.org/([^\)]+)\)")
+# The URL group allows balanced parentheses: Lancet, CGH and MedIA DOIs look
+# like 10.1016/s2468-1253(26)00292-x, which [^\)]+ truncated at "(26".
+DOI_RE = re.compile(r"\[([^\]]+)\]\(https://doi\.org/((?:[^()\s]|\([^()\s]*\))+)\)")
 SCORE_RE = re.compile(r"Score: (\d+\.\d+)")
 _ABSTRACT_MARKER = "> [!abstract]-"
 
@@ -94,9 +96,9 @@ def parse_block(block: list[str]) -> dict:
 
 
 def find_recent_digests(
-    papers_dir: pathlib.Path, window: int
+    papers_dir: pathlib.Path, window: int | None
 ) -> list[tuple[pathlib.Path, date]]:
-    """Return up to window most-recent digest files, newest first."""
+    """Return up to window most-recent digest files (all if None), newest first."""
     results: list[tuple[pathlib.Path, date]] = []
     for p in papers_dir.glob("*.md"):
         try:
@@ -105,4 +107,4 @@ def find_recent_digests(
             continue
         results.append((p, d))
     results.sort(key=lambda x: x[1], reverse=True)
-    return results[:window]
+    return results if window is None else results[:window]

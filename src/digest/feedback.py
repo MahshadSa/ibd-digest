@@ -1,10 +1,15 @@
 """Feedback loop consumer: checked Relevant boxes become corpus seed notes.
 
-Scans a trailing window of digest files for papers whose Relevant box is
-checked and writes each as a Corpus/{slug}.md note in the same format
-src.corpus emits and parses. The next `src.corpus from-notes` rebuild embeds
-the new notes into the corpus table, so the ranker sharpens with no further
-step. Fully offline: the digest block already carries title and abstract.
+Scans every digest file (or a trailing --window of them) for papers whose
+Relevant box is checked and writes each as a Corpus/{slug}.md note in the same
+format src.corpus emits and parses. The next `src.corpus from-notes` rebuild
+embeds the new notes into the corpus table, so the ranker sharpens with no
+further step. Fully offline: the digest block already carries title and
+abstract. All digests by default because ticks are pushed in late batches; a
+trailing window silently dropped them.
+
+Deleting a corpus note by hand only sticks if its Relevant box is also
+unticked: the next sweep recreates any note whose box is still checked.
 
 Contract: matches ONLY the Relevant checkbox. A Read later tick must never
 reach the corpus (see the checkbox parsing contract in CLAUDE.md).
@@ -38,8 +43,8 @@ def extract_relevant_entries(digest_path: pathlib.Path) -> list[dict]:
     return entries
 
 
-def run(vault_root: str, window: int = 7) -> int:
-    """Scan recent digests for Relevant ticks and write missing corpus notes. Returns count added."""
+def run(vault_root: str, window: int | None = None) -> int:
+    """Scan digests for Relevant ticks and write missing corpus notes. Returns count added."""
     papers_dir = pathlib.Path(vault_root) / "Inbox" / "Papers"
     corpus_dir = pathlib.Path(vault_root) / "Corpus"
     targets = find_recent_digests(papers_dir, window)
@@ -71,6 +76,6 @@ if __name__ == "__main__":
     )
     _parser = argparse.ArgumentParser()
     _parser.add_argument("vault_root", nargs="?", default=".")
-    _parser.add_argument("--window", type=int, default=7)
+    _parser.add_argument("--window", type=int, default=None)
     _args = _parser.parse_args()
     run(_args.vault_root, window=_args.window)

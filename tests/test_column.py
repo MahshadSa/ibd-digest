@@ -49,6 +49,13 @@ DIGEST_B = """# IBD Imaging Digest - {d}
   D. Four
   Nature Medicine | 2026-06-21
   [10.1/wild](https://doi.org/10.1/wild) | Score: 0.80
+
+- [ ] **Ticked Lancet wildcard**
+- [x] Relevant
+- [ ] Read later
+  E. Five
+  The Lancet Gastroenterology & Hepatology | 2026-06-21
+  [10.1016/s2468-1253(26)00292-x](https://doi.org/10.1016/s2468-1253(26)00292-x) | Score: 0.79
 """
 
 
@@ -98,6 +105,11 @@ class TestColumnPacket(unittest.TestCase):
         self.assertIn("Ticked wildcard paper", text)
         self.assertIn("## Queued to read", text)
         self.assertIn("Queued skim paper", text)
+
+    def test_parenthesised_doi_kept_whole(self):
+        text = column_run(str(self.vault), today=self.today).read_text(encoding="utf-8")
+        doi = "10.1016/s2468-1253(26)00292-x"
+        self.assertIn(f"[{doi}](https://doi.org/{doi})", text)
 
     def test_write_once(self):
         column_run(str(self.vault), today=self.today)
