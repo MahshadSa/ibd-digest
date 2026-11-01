@@ -360,8 +360,9 @@ run because the writer guard (added pre-Step 5) refuses to overwrite existing
 daily digests by default. Local manual runs should omit `--force` to preserve
 any notes added to today's file.
 
-State persistence: `Inbox/Papers/*.md`, `Inbox/To Read.md`, and
-`data/seen_dois.txt` committed back to `main` by `github-actions[bot]` with
+State persistence: `Inbox/Papers/*.md`, `Inbox/To Read.md`, `Inbox/Column/`,
+`Corpus/`, and the `data/*.txt` files listed above committed back to `main` by
+`github-actions[bot]` with
 `[skip ci]` in the commit message. Commit step is a no-op if nothing changed.
 `data/papers.db` is intentionally not committed to `main` (gitignored via
 `data/*.db`); it is rebuilt empty every run -- see DB persistence (2026-06-15).
@@ -529,22 +530,28 @@ merge to main, trigger the workflow by hand (Actions tab, workflow_dispatch);
 the unwindowed sweeps write the missing corpus notes and To Read entries, the
 corpus rebuild embeds the new notes the same run, and the commit carries
 Corpus/, To Read.md and data/queued_dois.txt. Dry run on a scratch export of
-the branch tree (2026-11-01, the backup copy at
+the branch tree (2026-11-01; the backup copy at
 ~/Documents/ibd-digest-backup-20261101 turned out stale, around 2026-10-24, so
-it was not used): 266 corpus notes added (421 Relevant-ticked DOIs, all now
-covered), 313 To Read entries added (313 backfilled, 0 normal; 429
-Read-later-ticked DOIs, all now queued), no parse warnings. Counts exceed the
-pre-fix measurement because truncated DOIs had merged distinct papers. Compare
-the CI commit's diff against these counts.
+it was not used; the refreshed backup is ~/Documents/ibd-digest-backup-20261101b):
+266 corpus notes added (421 Relevant-ticked DOIs, all now covered), 313 To Read
+entries added (313 backfilled, 0 normal; 429 Read-later-ticked DOIs, all now
+queued), no parse warnings. Counts exceed the pre-fix measurement because
+truncated DOIs had merged distinct papers.
 
-Known leftover, not fixed: Inbox/To Read.md carries a merge-conflict remnant
-from 96bb464 (a duplicated "Novel biomarkers and multi-omics..." heading with
-`=======` and `>>>>>>> 857c848` lines). It has no DOI and does not affect
-parsing; remove by hand.
+Backfill DONE 2026-11-01: merged as a241a67, workflow_dispatch run committed
+c28705a, matching the dry run exactly: 266 corpus notes added (no other
+Corpus/ changes, the truncated note did not return), 313 entries under
+`# Backfilled late ticks` plus 117 under IBD/AI (72 + 45), data/queued_dois.txt
+117 -> 430 lines and in sync with To Read.md both ways.
+
+The merge-conflict remnant from 96bb464 in Inbox/To Read.md (a duplicated
+"Novel biomarkers and multi-omics..." heading with `=======` and
+`>>>>>>> 857c848` lines) was removed in ac698aa, one copy of the entry kept.
 
 ## Next session (2026-11-01): SPECTER2 proximity adapter
 
-Planned, not built. Runs after the CI backfill so the corpus is complete.
+Planned, not built; this is the next build step. The CI backfill it waited on
+is done (c28705a), so the corpus is complete.
 - Load the adapter from a pinned local snapshot path, not source="hf".
 - One-time allclose check against source="hf" on a few papers, recorded here.
 - Exact adapters and transformers pins: adapters targets transformers 4.x and
