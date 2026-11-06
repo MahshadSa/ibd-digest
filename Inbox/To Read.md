@@ -1,5 +1,412 @@
 # Backfilled late ticks
 
+### Understanding clinical reasoning variability in medical large language models: a mechanistic interpretability study
+
+Added: 2026-11-01 | Source: [[Inbox/Papers/2026-11-01]]
+Mirage Modi, Jordan E. Krull, Qin Ma | npj Digital Medicine | 2026-10-31
+[10.1038/s41746-026-03423-6](https://doi.org/10.1038/s41746-026-03423-6)
+
+---
+
+### Generation of synthetic clinical text: a systematic review
+
+Added: 2026-11-01 | Source: [[Inbox/Papers/2026-11-01]]
+Basel Alshaikhdeeb, Anne Lorant, Venkata Satagopam | npj Digital Medicine | 2026-10-31
+[10.1038/s41746-026-03438-z](https://doi.org/10.1038/s41746-026-03438-z)
+
+---
+
+### ESR Essentials: susceptibility-weighted imaging—practice recommendations by the European Society for Magnetic Resonance in Medicine and Biology
+
+Added: 2026-11-01 | Source: [[Inbox/Papers/2026-11-01]]
+Marco Parillo, Andreas Deistung, Àlex Rovira | European Radiology | 2026-10-31
+[10.1007/s00330-026-12988-5](https://doi.org/10.1007/s00330-026-12988-5)
+
+---
+
+### Mechanisms and therapeutic perspectives of mucosal glycosylation-innate immunity crosstalk in inflammatory bowel disease (Review).
+
+Added: 2026-10-31 | Source: [[Inbox/Papers/2026-10-31]]
+Liu X, Zhang T, Han X | International journal of molecular medicine | 2026-12-01
+[10.3892/ijmm.2026.6032](https://doi.org/10.3892/ijmm.2026.6032)
+
+> [!abstract]- Abstract
+> Inflammatory bowel disease (IBD) is a group of chronic, relapsing inflammatory disorders of the gastrointestinal tract, driven by a complex interplay of genetic susceptibility, environmental exposures, intestinal microbiota dysbiosis and immune dysregulation. In recent years, mucosal glycosylation has emerged as a fundamental molecular determinant of intestinal barrier integrity and function and is increasingly recognized as a key regulatory interface linking the microbiota with host immune responses. Concurrently, the innate immune system serves an important role in mucosal defense and inflammatory responses through pattern recognition receptor‑mediated signaling, and its aberrant activation represents a key driver of persistent inflammation in IBD. The present review systematically summarizes the bidirectional regulatory crosstalk between mucosal glycosylation and innate immunity. The mechanistic roles of glycosylation modifications are highlighted in pathogen recognition, inflammatory signal transduction, inflammasome activation and maintenance of mucosal barrier integrity. Conversely, it is discussed how innate immune activation regulates glycan biosynthesis and remodeling through inflammatory cytokines, oxidative stress and major signaling pathways, thereby reshaping the mucosal glycome in disease contexts. On this basis, the dynamic alterations of glycosylation‑innate immunity interactions across different stages of IBD, including disease initiation, progression and relapse, are delineated, emphasizing their important role in sustaining chronic inflammation and driving tissue remodeling. In addition, emerging therapeutic strategies targeting glycosylation pathways, glycan‑lectin interactions, mucosal barrier restoration and microbiota modulation are summarized. The potential of glycomics, multi‑omics integration and glyco‑immune biomarkers in disease stratification and precision medicine are also discussed. By integrating perspectives from glycobiology and immunology, the present review aims to provide a conceptual framework and novel directions for mechanistic research and targeted therapy in IBD.
+
+---
+
+### An agentic AI system enhances clinical detection of immune-related adverse events in a multi-phase validation study.
+
+Added: 2026-10-31 | Source: [[Inbox/Papers/2026-10-31]]
+Gallifant J, Chen S, Bitterman DS | Nature cancer | 2026-10-29
+[10.1038/s43018-026-01264-6](https://doi.org/10.1038/s43018-026-01264-6)
+
+> [!abstract]- Abstract
+> Immune-related adverse events (irAEs) affect up to 40% of patients receiving immune checkpoint inhibitors, yet identification requires laborious, inconsistent manual chart review. Here we show that agentic artificial intelligence coupled with human verification could enhance efficiency, performance and consistency for irAE assessment. We developed and evaluated an agentic large language model system to extract the presence, temporality, severity grade, attribution and certainty of six irAE types from clinical notes. Retrospectively, the system achieved a macro-averaged F1 of 0.92 for current-event detection and 0.66 for multi-class severity grading; self-consistency improved F1 by 0.14. The best-performing configuration cost approximately US$0.02 per note. In prospective silent deployment over 3 months, the binary F1 was 0.72-0.79. In a randomized crossover study of clinical trial staff, agentic assistance reduced annotation time by 2.71 min (P < 0.001), increased complete-match accuracy (odds ratio 1.45; 95% confidence interval 1.01-2.08; P = 0.045) and improved interannotator agreement (Krippendorff's α from 0.22-0.51 to 0.82-0.85).
+
+---
+
+### Accuracy and impact of an AI safety system for missed specialist referrals in primary care
+
+Added: 2026-10-31 | Source: [[Inbox/Papers/2026-10-31]]
+Wayne Han Lee, Lawrence Teck Meng Lam, Sky Wei Chee Koh | npj Digital Medicine | 2026-10-30
+[10.1038/s41746-026-03444-1](https://doi.org/10.1038/s41746-026-03444-1)
+
+---
+
+### Cyclosporine A in acute severe ulcerative colitis: practical considerations for dosing, monitoring, and prophylaxis
+
+Added: 2026-10-31 | Source: [[Inbox/Papers/2026-10-31]]
+André Jefremow, Markus F Neurath | Journal of Crohn's and Colitis | 2026-10-30
+[10.1093/ecco-jcc/jjag185](https://doi.org/10.1093/ecco-jcc/jjag185)
+
+---
+
+### Interpretable graph learning of spatial TME patterns in digital pathology for gastric cancer prognosis
+
+Added: 2026-10-31 | Source: [[Inbox/Papers/2026-10-31]]
+Menglei Hua, Xiaohan Zheng, Shenghan Lou | npj Digital Medicine | 2026-10-30
+[10.1038/s41746-026-03398-4](https://doi.org/10.1038/s41746-026-03398-4)
+
+---
+
+### Comparing real-world continuous clinical remission rates of anti-tumor necrosis factor, vedolizumab, ustekinumab, tofacitinib, and upadacitinib in ulcerative colitis
+
+Added: 2026-10-30 | Source: [[Inbox/Papers/2026-10-30]]
+Andrea Cassinotti, Simone Saibeni, Fabio Pace | Inflammatory Bowel Diseases | 2026-10-29
+[10.1093/ibd/izag229](https://doi.org/10.1093/ibd/izag229)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Handheld intestinal ultrasound and the point-of-care questions in pediatric IBD: a commentary—authors’ reply
+
+Added: 2026-10-30 | Source: [[Inbox/Papers/2026-10-30]]
+Yusuke Miyatani, Alexandra Hudson, Michael W Winter | Inflammatory Bowel Diseases | 2026-10-30
+[10.1093/ibd/izag199](https://doi.org/10.1093/ibd/izag199)
+
+---
+
+### Fecal calprotectin testing for inflammatory bowel disease in patients presenting with lower gastrointestinal symptoms: a retrospective primary care cohort study in the United Kingdom
+
+Added: 2026-10-30 | Source: [[Inbox/Papers/2026-10-30]]
+Nosheen Umar, Steven Wambua, Nigel Trudgill | Inflammatory Bowel Diseases | 2026-10-29
+[10.1093/ibd/izag218](https://doi.org/10.1093/ibd/izag218)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Generating patient-friendly radiology reports with a local large language model: expert evaluation of quality and readability
+
+Added: 2026-10-30 | Source: [[Inbox/Papers/2026-10-30]]
+Frederieke A. M. van der Mee, Rens Broos, Ralph T. H. Leijenaar | European Radiology | 2026-10-29
+[10.1007/s00330-026-12971-0](https://doi.org/10.1007/s00330-026-12971-0)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### A clinical multimodal vision language foundation model with fine-grain explainability
+
+Added: 2026-10-30 | Source: [[Inbox/Papers/2026-10-30]]
+Yang Bai, Haoran Cheng, Daniel Shu Wei Ting | Nature Medicine | 2026-10-29
+[10.1038/s41591-026-04655-5](https://doi.org/10.1038/s41591-026-04655-5)
+
+---
+
+### A Framework for Identifying and Understanding Cognitive Biases in Artificial Intelligence–Assisted Radiology
+
+Added: 2026-10-29 | Source: [[Inbox/Papers/2026-10-29]]
+Bonnie A. Armstrong, Lina Cheuy, David B. Larson | American Journal of Roentgenology | 2026-10-28
+[10.2214/ajr.26.35826](https://doi.org/10.2214/ajr.26.35826)
+
+---
+
+### More than meets the eye: Intestinal ultrasound versus magnetic resonance enterography for detecting small bowel Crohn's disease in children.
+
+Added: 2026-10-29 | Source: [[Inbox/Papers/2026-10-29]]
+Scarallo L, Lionetti P | Journal of pediatric gastroenterology and nutrition | 2026-10-28
+[10.1002/jpn3.70579](https://doi.org/10.1002/jpn3.70579)
+
+---
+
+### Optimizing Artificial Intelligence (AI) Generated Guidance: Calibrating AI's Communicative Style in Radiology
+
+Added: 2026-10-29 | Source: [[Inbox/Papers/2026-10-29]]
+Pratik P. Patel | American Journal of Roentgenology | 2026-10-28
+[10.2214/ajr.26.35909](https://doi.org/10.2214/ajr.26.35909)
+
+---
+
+### Primary Sclerosing Cholangitis in Children: Unique Aspects and Approaches.
+
+Added: 2026-10-28 | Source: [[Inbox/Papers/2026-10-28]]
+Kavarian P, Miethke AG | Clinics in liver disease | 2026-11-01
+[10.1016/j.cld.2026.08.003](https://doi.org/10.1016/j.cld.2026.08.003)
+
+> [!abstract]- Abstract
+> This review provides a comprehensive overview of pediatric autoimmune cholangiopathies, with particular emphasis on primary sclerosing cholangitis (PSC). It summarizes the epidemiology, clinical presentation, diagnostic evaluation, and natural history of these chronic immune-mediated liver diseases in children. Key aspects include the frequent overlap between PSC and autoimmune hepatitis, the strong association with inflammatory bowel disease, and current approaches to laboratory, imaging, and histological assessment. The challenges of disease monitoring and prognostication in pediatric PSC are highlighted. In addition, this review discusses current management strategies, advances in understanding disease pathogenesis, and ongoing efforts to develop effective disease-modifying therapies for affected children.
+
+---
+
+### Colonic Mast Cell Density and Diarrhoea: Evidence Against a Threshold Effect in Biopsies From 3508 Patients
+
+Added: 2026-10-28 | Source: [[Inbox/Papers/2026-10-28]]
+Marlena Langreiter, Robert M. Genta, Philipp Schreiner | Alimentary Pharmacology &amp; Therapeutics | 2026-10-27
+[10.1111/apt.71075](https://doi.org/10.1111/apt.71075)
+
+> [!abstract]- Abstract
+> ABSTRACT
+
+---
+
+### Agentic AI Systems in Radiology: Design, Applications, Evaluation,                     and Challenges
+
+Added: 2026-10-28 | Source: [[Inbox/Papers/2026-10-28]]
+Christian Bluethgen, Dave Van Veen, Farhad Nooralahzadeh | Radiology | 2026-10-01
+[10.1148/radiol.253226](https://doi.org/10.1148/radiol.253226)
+
+> [!abstract]- Abstract
+> Large language model (LLM)–driven agentic systems extend beyond simple text generation by using tools and feedback loops to automate multistep radiology tasks.
+
+---
+
+### Genetics of Inflammatory Bowel Disease-What is Unsought Goes Undetected.
+
+Added: 2026-10-27 | Source: [[Inbox/Papers/2026-10-27]]
+O'Donnell JEM, Zeef DH, Muise AM | Gastroenterology clinics of North America | 2026-12-01
+[10.1016/j.gtc.2026.05.016](https://doi.org/10.1016/j.gtc.2026.05.016)
+
+> [!abstract]- Abstract
+> Inflammatory bowel disease (IBD) affects nearly 1% of North Americans and arises from complex interactions between genetics, environment, and the gut microbiome. This article examines IBD's genetic architecture-spanning monogenic, oligogenic, and polygenic disease-and highlights that genetic evaluation should not be limited by age. A negative genetic screen does not exclude a genetic basis for disease, as emerging mechanisms like mosaicism and regulatory variants may go undetected. The authors advocate for immunogenetic pathway-based classification to enable precision therapeutics, improve treatment outcomes, and reduce adverse effects, emphasizing that what is unsought in genetic testing will inevitably go undetected.
+
+---
+
+### Review: optimizing rescue therapy in acute severe ulcerative colitis using infliximab pharmacokinetics—a practical guide for clinicians
+
+Added: 2026-10-24 | Source: [[Inbox/Papers/2026-10-24]]
+Danny Con, Christopher Li Wai Suen, Peter De Cruz | Journal of Crohn's and Colitis | 2026-10-23
+[10.1093/ecco-jcc/jjag160](https://doi.org/10.1093/ecco-jcc/jjag160)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Humanity in the loop: Reframing artificial intelligence and the global medical imaging divide.
+
+Added: 2026-10-24 | Source: [[Inbox/Papers/2026-10-24]]
+Currie JJ, Nelson T, Currie GM | Radiography (London, England : 1995) | 2026-10-22
+[10.1016/j.radi.2026.103604](https://doi.org/10.1016/j.radi.2026.103604)
+
+> [!abstract]- Abstract
+> OBJECTIVES: Access to radiology and nuclear medicine remains profoundly unequal across global health systems. Low- and middle-income countries (LMICs) face persistent shortages in imaging equipment, specialist workforce, digital infrastructure, maintenance, regulation and sustainable financing. Artificial intelligence (AI) is increasingly positioned as a mechanism to improve imaging access, but it may also reinforce existing inequities. This narrative review examines the potential for discriminative, generative and agentic AI to reduce or widen inequities in LMIC medical imaging and proposes a sociotechnical governance framework based on the concept of Humanity-in-the-Loop. KEY FINDINGS: Discriminative AI may improve image interpretation, triage, segmentation, quantification and image-quality assessment; generative AI may enhance reporting, education, translation, communication, synthetic data generation and research workflows; and agentic AI may coordinate referrals, scheduling, follow-up, supply logistics and imaging pathways. They may also exacerbate inequity through data colonialism, algorithmic under-performance, dataset shift, infrastructure dependence, commercial lock-in, second-tier automation, liability transfer and unequal participation in AI research and development. CONCLUSION: Human-in-the-loop governance is insufficient for equitable AI implementation in LMIC medical imaging because the assumptions underpinning effective human oversight are often absent in resource-constrained settings. The proposed Humanity-in-the-Loop sociotechnical framework embeds equity, local agency, contextual validity and public benefit throughout the AI lifecycle. The framework comprises six interconnected domains: patient humanity, workforce humanity, community humanity, data humanity, system humanity and global humanity. IMPLICATIONS FOR PRACTICE: Responsible implementation of AI in medical imaging requires governance frameworks that extend beyond algorithm performance to include workforce development, data sovereignty, infrastructure, community priorities, equitable partnerships and sustainable capacity building. Adoption of a Humanity-in-the-Loop approach may help ensure that AI narrows rather than widens the medical imaging divide between high-income countries and LMICs.
+
+---
+
+### Examining reliance patterns on AI advice in medical imaging: a mixed-methods, randomised, crossover experiment
+
+Added: 2026-10-24 | Source: [[Inbox/Papers/2026-10-24]]
+Susanne Gaube, Ekaterina Jussupow, Errol Colak | The Lancet Digital Health | 2026-10-01
+[10.1016/j.landig.2026.101050](https://doi.org/10.1016/j.landig.2026.101050)
+
+---
+
+### Use of Intestinal Ultrasound in a Tight Monitoring Approach in Crohn’s Disease: A Multicenter Prospective Study
+
+Added: 2026-10-23 | Source: [[Inbox/Papers/2026-10-23]]
+Carolina Palmela, Joana Revés, Joana Torres | Clinical Gastroenterology and Hepatology | 2026-11-01
+[10.1016/j.cgh.2026.03.042](https://doi.org/10.1016/j.cgh.2026.03.042)
+
+---
+
+### Treatment and Outcomes of Crohn’s Disease and Ulcerative Colitis in Newly Diagnosed Adults in the United States, 2007 to 2023
+
+Added: 2026-10-23 | Source: [[Inbox/Papers/2026-10-23]]
+Dhruv Ahuja, Soo-Kyung Park, Siddharth Singh | Clinical Gastroenterology and Hepatology | 2026-11-01
+[10.1016/j.cgh.2026.04.006](https://doi.org/10.1016/j.cgh.2026.04.006)
+
+---
+
+### Large language models for multimodal clinical predictive modeling: a systematic review
+
+Added: 2026-10-23 | Source: [[Inbox/Papers/2026-10-23]]
+Levi Kaster, Abigail E. Lewis, Aditi Gupta | npj Digital Medicine | 2026-10-22
+[10.1038/s41746-026-03349-z](https://doi.org/10.1038/s41746-026-03349-z)
+
+---
+
+### Meta‐Analysis: Safety and Effectiveness of Advanced Therapies in Inflammatory Bowel Disease Patients With Concomitant Primary Sclerosing Cholangitis
+
+Added: 2026-10-22 | Source: [[Inbox/Papers/2026-10-22]]
+Amera Elzubeir, Anjana Kumar, Kate D. Lynch | Alimentary Pharmacology &amp; Therapeutics | 2026-10-21
+[10.1111/apt.71045](https://doi.org/10.1111/apt.71045)
+
+> [!abstract]- Abstract
+> ABSTRACT
+
+---
+
+### TRAM-AI: A Framework for Transparency in Reporting of Medical Imaging                     Datasets for Artificial Intelligence Development
+
+Added: 2026-10-22 | Source: [[Inbox/Papers/2026-10-22]]
+Kartik Bose, Pankaj Gupta, Charles E. Kahn | Radiology: Artificial Intelligence | 2026-10-21
+[10.1148/ryai.260538](https://doi.org/10.1148/ryai.260538)
+
+> [!abstract]- Abstract
+> Purpose To develop and evaluate TRAM-AI, a consensus-based checklist for verifying whether medical imaging datasets described as publicly accessible are functionally usable for AI development. Materials and Methods A modified Delphi study was conducted. A steering committee generated candidate checklist items through a targeted literature review. An international expert panel ( n = 33) rated items on criticality and feasibility across two Delphi rounds. Consensus was defined as ≥ 75% agreement on both dimensions. The checklist was pilot-validated in 10 publicly available datasets. An advisory group of four experts from Latin America and sub-Saharan Africa evaluated cross-regional applicability. Results Of 16 candidate items, 14 were retained in the final checklist; one item was removed because of feasibility concerns, and another was merged with an existing item because of conceptual redundancy. All 14 final items achieved consensus for both criticality and feasibility. The final TRAM-AI checklist comprises 14 items across four domains: Dataset Access and Persistence (3 items), Technical Interoperability (4 items), Metadata and Reproducibility (4 items), and Ethical, Legal, and Maintenance considerations (3 items). In pilot validation, all items were applicable to all 10 datasets, compliance was 90% for trusted repository, de-dentification, and subject-level mapping, 10% for archive validation, and 30% for partition keys. All four advisory group members endorsed the checklist. Conclusion TRAM-AI provides a practical framework for verifying the functional accessibility of medical imaging datasets, complementing existing methodological reporting standards. Further evaluation and broader validation across diverse geographic settings are warranted. ©RSNA, 2026
+
+---
+
+### Endoscopic and histologic healing distribution and persistent rectosigmoiditis in moderate-to-severe ulcerative colitis
+
+Added: 2026-10-22 | Source: [[Inbox/Papers/2026-10-22]]
+Christopher Ma, Jurij Hanzel, Vipul Jairath | Inflammatory Bowel Diseases | 2026-10-21
+[10.1093/ibd/izag184](https://doi.org/10.1093/ibd/izag184)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Workflow Topology-Guided Skill Loading for Agentic AI in Clinical Trial Data Pipelines: Sequential Exploratory Evaluation.
+
+Added: 2026-10-21 | Source: [[Inbox/Papers/2026-10-21]]
+Yan J | JMIR formative research | 2026-10-20
+[10.2196/100769](https://doi.org/10.2196/100769)
+
+> [!abstract]- Abstract
+> BACKGROUND: Clinical trial data pipelines must follow Clinical Data Interchange Standards Consortium (CDISC) standards, including the study data tabulation model (SDTM) and analysis data model (ADaM). General-purpose large language models (LLMs) can produce plausible artifacts that omit required variables, misuse terminology, or invent derivation logic. Curated context may reduce these errors, but the value of organizing that context by workflow topology has not been separated from corpus access alone. OBJECTIVE: This study aimed to examine when workflow topology-guided skill loading adds value beyond a domain prompt, nonrouted curated context, or lexical retrieval, and whether bounded scheduling retains quality with less injected context. METHODS: A 45-node, 7-layer directed acyclic workflow graph was linked to 59 modular rule files (SKILL.md). A sequential exploratory evaluation examined 4 evidence regimes spanning domain-context, component isolation, lexically reachable, and topology-dependent conditions (10 tasks, 90 runs; 10 tasks, 180 and 120 runs; 24 tasks, 288 runs; and 18 tasks, 324 runs; the task, not the agent run, was the inferential unit). End points included LLM rubric scores, deterministic atomic criteria, required-evidence recall, and manifest checks. A blinded practicing statistical programmer independently rescored 60 outputs. Task-level paired inference used bootstrap 95% CIs, exact sign-flip tests, and Holm adjustment. RESULTS: Routed context scored 4.63 versus 4.20 for prompt-only (difference 0.43 on a 1-5 scale; 95% CI 0.25-0.63; Holm-adjusted P=.01) but did not exceed flat or random loading. The lower-context scheduler used 28.82% less context while retaining quality; all 559 injected fragments had recorded sources, and all 120 manifests were reproduced exactly. On lexically reachable tasks, graph+Best Match 25 (BM25) and BM25-only were equivalent within a 0.05 margin (difference +0.009; 95% CI -0.028 to 0.046; P=.67), where BM25 already recalled 95.8% of required evidence. On topology-dependent stress tasks, graph-only selection outperformed BM25-only (difference 0.348; 95% CI 0.178-0.530; nominal P=.002; dz=0.89) and raised required-evidence recall from 0.500 to 1.000. Expert-judge agreement was substantial for terminology (weighted κ=0.61) and moderate overall (intraclass correlation coefficient=0.60). CONCLUSIONS: Workflow topology serves as a conditional retrieval prior. It adds little when lexical retrieval already reaches the required evidence but recovers dependency-linked evidence when task wording does not identify it lexically. These findings, from a synthetic benchmark using one generator backbone and one expert rater, support topology-guided selection as a promising approach for controlled context assembly and motivate independent factorial validation.
+
+---
+
+### From Diagnostic Consensus to Clinical Validation: The Next Step for REFINED-ASUC
+
+Added: 2026-10-21 | Source: [[Inbox/Papers/2026-10-21]]
+Deloshaan Subhaharan, Waled Mohsen, Pradeep Kakkadasam Ramaswamy | Clinical Gastroenterology and Hepatology | 2026-10-01
+[10.1016/j.cgh.2026.09.053](https://doi.org/10.1016/j.cgh.2026.09.053)
+
+---
+
+### Updated treatment targets in inflammatory bowel disease (STRIDE-III): an initiative of the International Organization for the Study of IBD.
+
+Added: 2026-10-20 | Source: [[Inbox/Papers/2026-10-20]]
+Turner D, Ricciuto A, Dignass A | The lancet. Gastroenterology & hepatology | 2026-10-19
+[10.1016/s2468-1253(26)00292-x](https://doi.org/10.1016/s2468-1253(26)00292-x)
+
+> [!abstract]- Abstract
+> Since Selecting Therapeutic Targets in Inflammatory Bowel Disease-II (STRIDE-II), new evidence has become available across inflammatory and patient-centred outcomes. We aimed to update the STRIDE recommendations for Crohn's disease and ulcerative colitis. We searched MEDLINE, Embase, and Cochrane CENTRAL for studies published after the STRIDE-II search period. Findings were integrated with surveys of International Organization for the Study of IBD (IOIBD) members and paediatric gastroenterologists from the Porto group of the European Society for Paediatric Gastroenterology, Hepatology and Nutrition. Statements were subsequently voted on using a modified Delphi approach; consensus was defined as ≥75% of participants rating a statement 7-10 on a 10-point scale. Of 13 071 records identified in the systematic review, 1018 were included. Surveys were completed by 60 of 79 IOIBD gastroenterologists and 23 of 30 paediatric gastroenterologists in the Porto group. STRIDE-III defines three conceptually distinct categories of treatment targets. Actionable targets include clinical response and remission, which reflect patient priorities, and objective inflammatory targets (C-reactive protein normalisation, faecal calprotectin within target range, and endoscopic remission), supported by interventional evidence demonstrating benefits of target-guided treatment modification. Adjunctive targets (ie, urgency, histological remission in ulcerative colitis, transmural remission in Crohn's disease, and growth) are supported by studies showing association with favourable outcomes and guide treatment optimisation and tighter monitoring but do not necessarily require a change in therapeutic class. Patient-centred targets (ie, disability, fatigue, and quality of life) directly reflect patients' well-being and are impaired in a substantial proportion of patients with inflammatory bowel disease; impairment should prompt assessment of inflammation and alternative causes and management through shared decision-making. Targets are further classified as immediate, short-term, intermediate, and long-term. STRIDE-III also defines treatment-specific times to target achievement, new faecal calprotectin thresholds, and adaptations for resource-limited settings. STRIDE-III distinguishes targets that should prompt treatment change from those that primarily guide optimisation and monitoring, while establishing a separate patient-centred pathway based on shared decision-making. This framework supports consistent, evidence-based treat-to-target care.
+
+---
+
+### Safety and tolerability of anti-toll-like receptor 3, monoclonal antibody PRV-300 in patients with moderate-to-severe ulcerative colitis: a randomized phase 1B clinical trial (PULSE)
+
+Added: 2026-10-20 | Source: [[Inbox/Papers/2026-10-20]]
+Jagoda Pokryszka, Gail M Comer, Walter Reinisch | Journal of Crohn's and Colitis | 2026-10-20
+[10.1093/ecco-jcc/jjag154](https://doi.org/10.1093/ecco-jcc/jjag154)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### REFINED-ASUC: an important framework requiring prospective validation
+
+Added: 2026-10-18 | Source: [[Inbox/Papers/2026-10-18]]
+Alexander Elford, Shaji Sebastian, Neeraj Bhala | Clinical Gastroenterology and Hepatology | 2026-10-01
+[10.1016/j.cgh.2026.09.054](https://doi.org/10.1016/j.cgh.2026.09.054)
+
+---
+
+### EsoEinstein: A Multimodal AI System Integrating EGD and FLIP for Esophageal Motility Assessment
+
+Added: 2026-10-18 | Source: [[Inbox/Papers/2026-10-18]]
+Evandros Kaklamanos, Kristjana Kristinsdottir, John E. Pandolfino | Clinical Gastroenterology and Hepatology | 2026-10-01
+[10.1016/j.cgh.2026.09.051](https://doi.org/10.1016/j.cgh.2026.09.051)
+
+---
+
+### Defining and measuring disease burden in Crohn's disease: a systematic literature review.
+
+Added: 2026-10-17 | Source: [[Inbox/Papers/2026-10-17]]
+Radford SJ, Olsen BJ, Moran G | Scandinavian journal of gastroenterology | 2026-10-16
+[10.1080/00365521.2026.2745974](https://doi.org/10.1080/00365521.2026.2745974)
+
+> [!abstract]- Abstract
+> OBJECTIVES: Crohn's disease (CD) is a chronic, progressive inflammatory bowel disease with evolving disease behaviour, cumulative bowel damage, and long-term impact on patients and health systems. While treat-to-target strategies focus on inflammatory control, disease burden extends beyond active inflammation to include functional, psychosocial, and economic effects. This review aimed to synthesise how disease burden in CD is defined and measured across the literature. METHODS: A systematic literature review and narrative synthesis were conducted (PROSPERO protocol CRD420251182987). MEDLINE, EMBASE, CINAHL, and PsycINFO were searched on 3 November 2025 for primary studies involving adults with CD that referenced disease burden. Screening and data extraction were performed in duplicate. Study quality was appraised using Joanna Briggs Institute (JBI) tools and considered during narrative synthesis. RESULTS: Twenty-eight studies from diverse regions and study designs were included. Disease burden was variably defined, encompassing clinical activity, cumulative complications, patient-reported symptoms, functional and societal impact, healthcare utilisation, and population-level epidemiology. Measures clustered into five domains: disease activity and inflammation, patient-reported burden, functional and societal impact, healthcare utilisation and treatment burden, and population-level burden. These domains were typically assessed in isolation, and no study integrated objective clinical measures with patient-reported or quality-of-life outcomes. CONCLUSIONS: Disease burden in Crohn's disease is inconsistently defined and measured, reflecting its multidimensional nature but highlighting the absence of an integrated framework. Development of longitudinal, multidimensional tools combining biological, patient-reported, functional, and economic measures is needed to better capture disease burden and support holistic clinical care.
+
+---
+
+### GLP-1 receptor agonists and symptomatic remission in ulcerative colitis: A credible signal that welcomes prospective study
+
+Added: 2026-10-17 | Source: [[Inbox/Papers/2026-10-17]]
+Budoor Alqinai, Swapna Gayam, Jennifer Hadam-Veverka | Inflammatory Bowel Diseases | 2026-10-16
+[10.1093/ibd/izag216](https://doi.org/10.1093/ibd/izag216)
+
+---
+
+### Building a Better Model for Fecal Calprotectin Monitoring in IBD: Room for Some Home Improvement.
+
+Added: 2026-10-17 | Source: [[Inbox/Papers/2026-10-17]]
+Rubin DT | Gastroenterology | 2026-10-16
+[10.1053/j.gastro.2026.10.004](https://doi.org/10.1053/j.gastro.2026.10.004)
+
+---
+
+### Performance uncertainty in medical image analysis: A large-scale investigation of confidence intervals
+
+Added: 2026-10-17 | Source: [[Inbox/Papers/2026-10-17]]
+Pascaline André, Charles Heitz, Olivier Colliot | Medical Image Analysis | 2027-02-01
+[10.1016/j.media.2026.104349](https://doi.org/10.1016/j.media.2026.104349)
+
+---
+
+### Development and validation of a model combining bowel ultrasound and inflammatory biomarkers for evaluating disease activity in ulcerative colitis: a dual centre retrospective study.
+
+Added: 2026-10-16 | Source: [[Inbox/Papers/2026-10-16]]
+Wu L, Yao J, Gong L | Clinical radiology | 2026-11-01
+[10.1016/j.crad.2026.107463](https://doi.org/10.1016/j.crad.2026.107463)
+
+> [!abstract]- Abstract
+> AIM: This study evaluated the diagnostic accuracy of bowel ultrasound combined with inflammatory biomarkers for assessing ulcerative colitis disease activity. MATERIALS AND METHODS: The single-centre derivation cohort retrospectively enrolled 60 patients with ulcerative colitis from our institution who underwent colonoscopy and bowel ultrasound. Patients were stratified into active disease and remission groups. Bowel ultrasound parameters and clinical features were analysed. Diagnostic performance was assessed using receiver operating characteristic curve analysis. The resulting model was externally validated from 35 patients at an independent tertiary hospital retrospectively. A nomogram was plotted for clinical application. RESULTS: In the derivation cohort (31 remission: age 42.6 ± 18.3 years, male 48%; 29 active: age 44.4 ± 14.5 years, male 48%), univariate analysis identified bowel wall thickness (cutoff value 3.95 mm), submucosal index (cutoff value 46.1%), bowel wall flow (cutoff value grade 2), faecal calprotectin (cutoff value ≥ 200 μg/g), and erythrocyte sedimentation rate (cutoff value 26.5 mm/h) as significant predictors of disease activity. Bowel wall thickness and flow were independent risk factors. The combined model demonstrated an area under the curve of 0.908 (95% CI 0.829-0.986). External validation (19 remission and 16 active) provided preliminary evidence supporting the model's discriminative ability, showing an area under the curve of 0.862 (95% CI 0.743-0.981). The nomogram provided individualised risk prediction with acceptable calibration in both cohorts. CONCLUSION: An integrated model combining bowel ultrasound and inflammatory biomarkers was developed and externally validated for the assessment of ulcerative colitis activity. The model, presented as a clinically practical nomogram, exhibits acceptable calibration, supporting its potential as a valuable noninvasive tool for patient management.
+
+---
+
+### Real-World Effectiveness and Safety of Advanced Combination Treatment in Patients with Refractory Inflammatory Bowel Disease.
+
+Added: 2026-10-16 | Source: [[Inbox/Papers/2026-10-16]]
+Ahmed EF, Oribiana CC, Quraishi MN | Advances in therapy | 2026-10-15
+[10.1007/s12325-026-03828-5](https://doi.org/10.1007/s12325-026-03828-5)
+
+> [!abstract]- Abstract
+> INTRODUCTION: Advanced combination treatment (ACT) pairs two advanced therapies with distinct mechanisms of action for inflammatory bowel disease (IBD) that has not responded to single agents. However, real-world evidence on individual regimens remains limited. METHODS: We retrospectively identified all ACT courses at a tertiary centre in Abu Dhabi (June 2021 to May 2026). A course required the concurrent use of two advanced therapies with documented clinical intent, with no minimum duration. Disease activity, laboratory values, endoscopic findings and therapeutic drug monitoring were recorded prospectively in the centre's IBD registry, and every rate is reported over the whole cohort. The primary outcome was composite remission (clinical and biochemical remission together); endoscopic outcomes were reported separately. RESULTS: A total of 16 patients (11 Crohn's disease, 5 ulcerative colitis) received 21 courses across 12 regimens; 13 (81%) were Emirati. The commonest combinations paired a selective anti-interleukin-23 agent with a Janus kinase inhibitor (10 courses) or with an anti-tumour necrosis factor agent (5). Patients had failed a median of four prior advanced therapies, and the median course duration was 218 days. Composite remission was achieved in 11 of 21 courses (52%, 95% confidence interval [CI] 30-74%; 11 of 16 patients), clinical remission in 15 of 21 (71%) and biochemical remission in 11 of 21 (52%); 14 of 21 (67%) were corticosteroid-free. Clinically timed endoscopic reassessment in 14 courses showed endoscopic remission in five. Twelve courses (57%) were discontinued, seven for treatment failure. One serious adverse event, a urinary tract infection requiring admission, occurred during combination therapy. CONCLUSION: ACT achieved composite remission in just over half of courses in this multi-refractory cohort, with one serious adverse event. These findings support consideration of ACT in carefully selected multi-refractory patients under close monitoring; further real-world data on individual regimens are needed to guide the choice of combination.
+
+---
+
+### Abbreviated magnetic resonance (MR) enterography for Crohn's disease: is intravenous contrast enhancement always necessary?
+
+Added: 2026-10-16 | Source: [[Inbox/Papers/2026-10-16]]
+Mattio B, Korshunova M, Colarieti A | Clinical radiology | 2026-11-01
+[10.1016/j.crad.2026.107473](https://doi.org/10.1016/j.crad.2026.107473)
+
+> [!abstract]- Abstract
+> AIM: The aim of the study is to evaluate the diagnostic performance and noninferiority of an abbreviated, nonintravenous contrast-enhanced magnetic resonance enterography (MRE) protocol compared with a standard gadolinium-enhanced protocol for the assessment of Crohn's disease activity, extent and complications. MATERIALS AND METHODS: This retrospective, single-centre study included 50 consecutive patients (mean age 42.7 ± 16.9 years) with suspected or established Crohn's disease who underwent standard MRE. Two radiologists, blinded to clinical data and reference reports, independently evaluated abbreviated protocol sequences (balanced turbo field echo [BTFE], T2-weighted spectral attenuated inversion recovery [SPAIR] and turbo spin echo [TSE], diffusion-weighted imaging [DWI]/apparent diffusion coefficient [ADC]). Diagnostic performance was assessed against the report as the reference standard. Interobserver agreement for categorical variables was analysed using Cohen's and Fleiss' kappa coefficients, while continuous variables were evaluated using intraclass correlation coefficients (ICCs), with 95% confidence intervals. Bland-Altman analysis was performed. RESULTS: Agreement for disease activity was almost perfect (κ = 0.83, 95% confidence interval [CI]: 0.64-0.96). (Reader A: sensitivity 93.5% (95% CI: 78.6-99.2), specificity 84.2% (60.4-96.6); reader B: sensitivity 90.3% (74.2-98.0), specificity 94.7% (74.0-99.9)). Agreement for anatomical location was also almost perfect. Substantial agreement was observed for stenosis detection (κ from 0.66 (95% CI: 0.29-0.89) to 0.73 (0.44-0.92)), whereas agreement for ulceration and penetrating complications was lower and heterogeneous. Quantitative measurements demonstrated excellent reproducibility (ICC > 0.87, 95% CI: 0.79-0.93). CONCLUSION: The abbreviated, nonintravenous contrast-enhanced MRE protocol demonstrates noninferior diagnostic performance for the evaluation of disease activity, extent and stenosis in Crohn's disease. Its implementation may reduce examination time and contrast exposure, although contrast-enhanced imaging remains indicated for the assessment of ulcerations and penetrating complications.
+
+---
+
+### GLP-1 receptor agonists and symptomatic remission in ulcerative colitis: how large an effect is credible?
+
+Added: 2026-10-16 | Source: [[Inbox/Papers/2026-10-16]]
+Besim Fazil Agargun, Burce Isik, Filiz Akyuz | Inflammatory Bowel Diseases | 2026-10-15
+[10.1093/ibd/izag215](https://doi.org/10.1093/ibd/izag215)
+
+---
+
 ### An agentic AI system for multi-framework communication coding
 
 Added: 2026-10-12 | Source: [[Inbox/Papers/2026-10-12]]
@@ -3100,6 +3507,61 @@ Jie Feng | American Journal of Roentgenology | 2026-05-20
 
 # IBD
 
+### ECCO Topical Review on Optimisation of Therapy for Inflammatory Bowel Disease
+
+Added: 2026-11-04 | Source: [[Inbox/Papers/2026-11-04]]
+Kenneth Ernest-Suarez, Bella Ungar, Uri Kopylov | Journal of Crohn's and Colitis | 2026-11-03
+[10.1093/ecco-jcc/jjag117](https://doi.org/10.1093/ecco-jcc/jjag117)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Interpretable machine learning models for early prediction of Crohn’s disease and ulcerative colitis in a nationwide health system
+
+Added: 2026-11-04 | Source: [[Inbox/Papers/2026-11-04]]
+Eyal Haluts, Emma C Dyer, Nathaniel Aviv Cohen | Journal of Crohn's and Colitis | 2026-11-03
+[10.1093/ecco-jcc/jjag166](https://doi.org/10.1093/ecco-jcc/jjag166)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Longitudinal timepoint assessment of patient-reported clinical disease activity in ulcerative colitis and Crohn’s disease: suitability of a rapid Patient-Reported Outcome 2 (PRO-2) assessment
+
+Added: 2026-11-04 | Source: [[Inbox/Papers/2026-11-04]]
+Lauren C Beck, Gregory R Young, Christopher A Lamb | Journal of Crohn's and Colitis | 2026-11-03
+[10.1093/ecco-jcc/jjag153](https://doi.org/10.1093/ecco-jcc/jjag153)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Microenvironment-adaptive drug delivery systems for ulcerative colitis: from pathological constraints to rational design.
+
+Added: 2026-11-03 | Source: [[Inbox/Papers/2026-11-03]]
+Lin X, Han Y, Liang Z | Expert opinion on drug delivery | 2026-11-01
+[10.1080/17425247.2026.2726474](https://doi.org/10.1080/17425247.2026.2726474)
+
+> [!abstract]- Abstract
+> INTRODUCTION: Ulcerative colitis (UC) is characterized by recurrent, chronic, and nonspecific intestinal inflammation. It is strongly associated with an increased risk of colorectal cancer, representing a global public health challenge. However, the complex pathological microenvironment of UC, characterized by mucus barrier disruption, increased epithelial permeability, immune dysregulation, and oxidative stress, substantially compromises the therapeutic efficacy of conventional drugs. AREAS COVERED: Nanomedicine delivery systems have offered new opportunities for UC treatment, these systems can optimize drug transport, distribution, and controlled release, thereby better addressing the therapeutic requirements of UC. Relevant literature was identified through PubMed, with a primary focus on studies published between January 2016 and August 2026. EXPERT OPINION: The fundamental relationship between disease pathology and delivery system design remains insufficiently explored. To address this gap, this review proposes a pathology-driven microenvironment-adaptive framework and critically evaluates the limitations of current delivery strategies. We translate the key pathological barriers into actionable design criteria, followed by a discussion of how molecular building blocks and delivery platforms can be engineered to realize microenvironment-adaptive therapeutic strategies. This review provides insights and new perspectives for the rational design of microenvironment-adaptive systems for UC.
+
+---
+
+### A cross-sectional study on pharmacotherapy and predictors of clinical remission in patients with inflammatory bowel disease.
+
+Added: 2026-11-03 | Source: [[Inbox/Papers/2026-11-03]]
+Shivanna A, Panchaksharimath P | Indian journal of pharmacology | 2026-11-01
+[10.4103/ijp.ijp_137_26](https://doi.org/10.4103/ijp.ijp_137_26)
+
+> [!abstract]- Abstract
+> BACKGROUND: Inflammatory bowel disease (IBD) is a chronic, progressive, and disabling disorder that includes ulcerative colitis and Crohn's disease, characterized by periods of remission and relapse. Pharmacological management is the primary treatment option with the goal to induce mucosal healing and reduce relapse rates. OBJECTIVES: The main objective of the present study was to determine the pattern of pharmacotherapy and to evaluate the factors that predict clinical remission in patients with IBD. MATERIALS AND METHODS: A cross-sectional analysis was conducted involving fifty participants diagnosed with IBD. All the participants met predefined study inclusion criteria and voluntarily provided written informed consent. Data encompassing patient demographics, clinical parameters, prescribed medications, and ADRs were collected. The disease activity was evaluated using Simple Clinical Colitis Activity Index/Harvey-Bradshaw Index score. Univariate and multivariate logistic regression analysis was done to assess predictors of clinical remission. RESULTS: The commonly prescribed drugs were mesalamine in 72%, steroids in 50%, and azathioprine in 46% patients. 30% patients had an ADR to the prescribed drug; the most common ADR was anemia and pancytopenia with azathioprine use. 52% patients were in clinical remission. Univariate analysis identified medication adherence as a significant predictor, which was confirmed on multivariate analysis. Patient's adherent to medication were 32 times more likely to be in remission compared to nonadherent patients. CONCLUSION: Mesalamine and azathioprine were the most commonly prescribed monotherapy drugs. The most frequently prescribed combination therapies were mesalamine in conjunction with either steroids or azathioprine. Adherence to medication was the only factor statistically significantly linked to achieving clinical remission of the disease.
+
+---
+
 ### State-change learning for prediction of future events in endoscopic videos
 
 Added: 2026-10-05 | Source: [[Inbox/Papers/2026-10-05]]
@@ -3851,6 +4313,25 @@ Cameron A. Beeche, Joonghyun Kim, Walter R. Witschey | npj Digital Medicine | 20
 ---
 
 # AI
+
+### AI-accelerated compressed sensing and deep learning reconstruction for colon MRI: prospective validation of image quality and preliminary assessment of staging accuracy versus contrast-enhanced CT.
+
+Added: 2026-11-04 | Source: [[Inbox/Papers/2026-11-04]]
+Guan Z, Sun N, Sun YS | Insights into imaging | 2026-11-03
+[10.1186/s13244-026-02445-8](https://doi.org/10.1186/s13244-026-02445-8)
+
+> [!abstract]- Abstract
+> OBJECTIVES: To prospectively validate an AI-accelerated MRI protocol combining L₁-regularized compressed sensing and deep learning reconstruction for colon cancer staging, compared with contrast-enhanced CT (CECT). MATERIALS AND METHODS: This single-center study (August 2022-April 2024) enrolled 132 patients with pathologically confirmed colon cancer who underwent both 3.0-T non-contrast MRI and CECT within 1 week. Patients unable to complete an MRI were excluded. MRI sequences included T1- and T2-weighted imaging and diffusion-weighted imaging. Image quality was assessed using a 4-point Likert scale, alongside quantitative analysis of contrast-to-noise ratio (CNR) and edge rise distance (ERD). Surgical pathology correlation was available for 33 cases. Five radiologists independently reviewed the images. RESULTS: Among 153 matched examination pairs from 132 patients (mean age, 58 ± 11 years), AI-MRI outperformed CECT in both qualitative and quantitative measures. MRI yielded higher image quality scores (4 [IQR 3-4] vs. 3 [IQR 3-3]), improved CNR (5.5 [IQR 4.2-7.0] vs. 1.3 [IQR 0.7-2.2]), and reduced ERD (1.6 mm [IQR 1.2-2.8] vs. 3.7 mm [IQR 2.8-5.0]). MRI provided superior peritoneal sharpness (75.8%) and colonic wall visualization (100%), and superior or equivalent tumor conspicuity (92.2%) and nodal assessment (86.9%), whereas CECT demonstrated better artifact control (45.1%). In preliminary analyses, MRI achieved higher T-staging accuracy (78.8% vs. 30.3%) and N-staging specificity (93.3% vs. 13.3%). CONCLUSION: The AI-accelerated MRI protocol significantly outperformed CECT in image quality and preliminary staging accuracy for colon cancer evaluation while eliminating radiation exposure. KEY POINTS: Question Can an AI-accelerated MRI protocol provide superior image quality and staging performance compared with contrast-enhanced CT, which has limited diagnostic accuracy for colon cancer staging? Findings AI-accelerated MRI using L₁-regularized compressed sensing and deep learning reconstruction achieved superior image quality and higher preliminary staging accuracy than contrast-enhanced CT. Critical Relevance Statement AI-accelerated MRI improves image quality and staging confidence without radiation exposure, supporting its potential to enhance preoperative assessment and clinical decision-making in colon cancer.
+
+---
+
+### Context is built, not given: context readiness as the next benchmark for clinical use of artificial intelligence
+
+Added: 2026-11-04 | Source: [[Inbox/Papers/2026-11-04]]
+Taro Shimizu, Ethan Goh | The Lancet Digital Health | 2026-11-01
+[10.1016/j.landig.2026.101124](https://doi.org/10.1016/j.landig.2026.101124)
+
+---
 
 ### Application of large language models for assigning clear cell likelihood score v2.0 from free–text MRI reports: a feasibility study
 
