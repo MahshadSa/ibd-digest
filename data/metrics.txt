@@ -125,3 +125,4 @@
 2026-11-06 new=74 must=20 skim=38 archive=16 thr_must=0.950719 thr_skim=0.912499
 2026-11-07 new=25 must=5 skim=11 archive=9 thr_must=0.950719 thr_skim=0.912518
 2026-11-08 new=18 must=7 skim=7 archive=4 thr_must=0.950911 thr_skim=0.912605
+2026-11-09 new=6 must=1 skim=1 archive=4 thr_must=0.950834 thr_skim=0.912499
