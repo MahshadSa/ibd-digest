@@ -3507,6 +3507,69 @@ Jie Feng | American Journal of Roentgenology | 2026-05-20
 
 # IBD
 
+### Performance of an infliximab precision-guided dosing tool from a capillary blood–based self-collection device in inflammatory bowel disease patients
+
+Added: 2026-11-06 | Source: [[Inbox/Papers/2026-11-06]]
+Cindy C Y Law, Arafa Djalal, Jean-Frederic Colombel | Inflammatory Bowel Diseases | 2026-11-05
+[10.1093/ibd/izag214](https://doi.org/10.1093/ibd/izag214)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Effects of upadacitinib on lipid profiles and their relationship with inflammation in patients with inflammatory bowel disease: a real-world longitudinal cohort study.
+
+Added: 2026-11-06 | Source: [[Inbox/Papers/2026-11-06]]
+He S, Zhang W, Tian Y | Inflammatory bowel diseases | 2026-11-05
+[10.1093/ibd/izag241](https://doi.org/10.1093/ibd/izag241)
+
+> [!abstract]- Abstract
+> BACKGROUND: Upadacitinib (UPA), a selective Janus kinase 1 inhibitor, is approved for moderate-to-severe inflammatory bowel disease (IBD). JAK inhibitors affect lipid metabolism, but longitudinal real-world data on lipid changes during UPA therapy, and their relation to inflammatory activity, are scarce. METHODS: In this single-center retrospective cohort study, patients with ulcerative colitis or Crohn's disease treated with upadacitinib were followed for up to 2 years. Serial fasting lipid profiles and inflammatory markers (fecal calprotectin, C-reactive protein [CRP], high-sensitivity CRP) were collected at baseline, end of induction (weeks 8-12), 1 year, and 2 years. Lipid trajectories were analyzed with linear mixed-effects models; paired changes were compared with paired t-tests. RESULTS: Among 159 patients (mean age 43.3 ± 14.0 years; 62.3% male), total cholesterol (TC) rose from 4.19 ± 0.87 mmol/L at baseline to 4.92, 5.03, and 5.21 mmol/L at the end of induction, 1 year, and 2 years (mixed-effects estimates +0.70 to +0.90; all P < .001). Low-density lipoprotein cholesterol (LDL-C) and high-density lipoprotein cholesterol (HDL-C) rose in parallel, and the LDL-C/HDL-C ratio did not increase. CRP reductions correlated with lipid rises (Spearman rho = -0.45 to -0.47; all P ≤ .02). No cardiovascular death, myocardial infarction, or stroke occurred (0/159); one venous thromboembolism and 3 hypertension cases were recorded. CONCLUSIONS: In patients with IBD treated with UPA, TC and LDL-C rose modestly alongside the resolution of inflammation; HDL-C improved and the LDL-C/HDL-C ratio did not increase. Lipid monitoring and individualized cardiovascular risk assessment are warranted during UPA therapy.
+
+---
+
+### Multi-matrix metabolome and microbiome profiling in diarrhea-predominant irritable bowel syndrome and ulcerative colitis in remission with IBS-like symptoms
+
+Added: 2026-11-06 | Source: [[Inbox/Papers/2026-11-06]]
+Guorong Chen, Shiyu Du, Yanli Zhang | Inflammatory Bowel Diseases | 2026-11-04
+[10.1093/ibd/izag243](https://doi.org/10.1093/ibd/izag243)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Editorial: Therapeutic Drug Monitoring of Infliximab During Induction Therapy in IBD-Is This the Time for Model Informed Precision Dosing?
+
+Added: 2026-11-06 | Source: [[Inbox/Papers/2026-11-06]]
+Mecsas-Faxon B, Papamichael K, Cheifetz AS | Alimentary pharmacology & therapeutics | 2026-11-04
+[10.1111/apt.71087](https://doi.org/10.1111/apt.71087)
+
+---
+
+### Normative Measures of Colon Length in Children With Inflammatory Bowel Disease, Aged 11-17 Years, Based on MRI.
+
+Added: 2026-11-06 | Source: [[Inbox/Papers/2026-11-06]]
+Jonker CAL, Gorter RR, van Schuppen J | Clinical anatomy (New York, N.Y.) | 2026-11-05
+[10.1002/ca.70228](https://doi.org/10.1002/ca.70228)
+
+> [!abstract]- Abstract
+> To better understand (abnormal) colonic anatomy on imaging, data on normal colonic anatomy in the unaffected population are crucial. We assessed colon lengths in children without constipation on MRI. This retrospective study included patients (< 18 years), who underwent MRI-enterography between 2016 and 2020 for suspected inflammatory bowel disease, and did not meet Rome-IV criteria for functional constipation. Patients with colonic inflammation were excluded. Primary outcome was the mean total colon length/BSA (cm/m2) (95% CI; ±2SD), and the secondary outcomes were total colon length (cm), rectosigmoid length/BSA (cm/m2), and rectosigmoid length (cm). Colon segments were independently measured on coronal T2-weighted MRI using 3D multiple-point measurements. Linear regression was used to evaluate associations between total colon length and sex, age, height, weight, body surface area (BSA). Eighty-one patients (median age 15 years; range 11-17; 53% male) were included. The mean total colon length/BSA was 72.9 ± 21.0 cm/m2. Mean total colon length was 115.8 ± 13.8 cm, mean rectosigmoid length/BSA was 24.2 ± 12.3 cm/m2, and mean rectosigmoid length was 38.2 ± 7.9 cm. Additionally, we assessed colonic segments per age group. Colon length significantly correlated with age (p = 0.03), height (p < 0.001), weight (p < 0.001), and BSA (p < 0.001). In a multivariable linear regression analysis, BSA was significantly correlated with total colon length (95% CI 21.4-49.4; p < 0.0001). This study provides data on colon and rectosigmoid lengths in children, aged 11-17 years, without constipation measured on MRI-enterography. This knowledge can be used for the identification of abnormal colonic anatomy in children with therapy-resistant constipation on imaging.
+
+---
+
+### Long-term trends and projections of CT and MRI utilization across selected OECD countries: a framework for sustainable imaging service planning
+
+Added: 2026-11-06 | Source: [[Inbox/Papers/2026-11-06]]
+Giovanni Aguzzi, Katia Iaccarino, Marco Alì | Insights into Imaging | 2026-11-05
+[10.1186/s13244-026-02458-3](https://doi.org/10.1186/s13244-026-02458-3)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
 ### ECCO Topical Review on Optimisation of Therapy for Inflammatory Bowel Disease
 
 Added: 2026-11-04 | Source: [[Inbox/Papers/2026-11-04]]
@@ -4313,6 +4376,14 @@ Cameron A. Beeche, Joonghyun Kim, Walter R. Witschey | npj Digital Medicine | 20
 ---
 
 # AI
+
+### False Reassurances from False Negatives: AI Stroke Algorithms and Their Anatomical Blind Spots
+
+Added: 2026-11-06 | Source: [[Inbox/Papers/2026-11-06]]
+Abhinav Suri | Radiology: Artificial Intelligence | 2026-11-01
+[10.1148/ryai.260969](https://doi.org/10.1148/ryai.260969)
+
+---
 
 ### AI-accelerated compressed sensing and deep learning reconstruction for colon MRI: prospective validation of image quality and preliminary assessment of staging accuracy versus contrast-enhanced CT.
 
