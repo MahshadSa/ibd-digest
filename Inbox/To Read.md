@@ -3507,6 +3507,110 @@ Jie Feng | American Journal of Roentgenology | 2026-05-20
 
 # IBD
 
+### Extending health equity in IBD to incarcerated populations
+
+Added: 2026-11-14 | Source: [[Inbox/Papers/2026-11-14]]
+Jessica L Sheehan | Inflammatory Bowel Diseases | 2026-11-13
+[10.1093/ibd/izag249](https://doi.org/10.1093/ibd/izag249)
+
+> [!abstract]- Abstract
+> ABSTRACT
+
+---
+
+### Making patient-reported outcomes reusable at scale
+
+Added: 2026-11-14 | Source: [[Inbox/Papers/2026-11-14]]
+Laurent Boyer, Stefan Leucht, Christopher G Chute | The Lancet Digital Health | 2026-11-01
+[10.1016/j.landig.2026.101089](https://doi.org/10.1016/j.landig.2026.101089)
+
+---
+
+### Carbon Footprint of Diagnostic Modalities Used in Inflammatory Bowel Disease Care: The EVERGREEN-IBD Study (EVERGREEN-IBD: Evaluating Value, Emissions, Resource Use, and GREEN diagnostics in IBD).
+
+Added: 2026-11-14 | Source: [[Inbox/Papers/2026-11-14]]
+Rughwani H, Banerjee R, Reddy DN | Alimentary pharmacology & therapeutics | 2026-11-13
+[10.1111/apt.71091](https://doi.org/10.1111/apt.71091)
+
+> [!abstract]- Abstract
+> BACKGROUND: Healthcare contributes 4.4%-5% of global greenhouse gas emissions. Inflammatory bowel disease (IBD) requires repeated diagnostic investigations throughout a patient's lifetime, adding to healthcare's environmental footprint. However, the carbon footprint and cost of IBD diagnostic modalities have not been systematically compared AIMS: To quantify per-procedure emissions and relative costs of IBD diagnostics and model potential savings from intestinal ultrasound (IUS) when clinically appropriate. METHODS: This prospective observational study quantified operational emissions at AIG Hospitals, Hyderabad, India, during December 2025 using the Greenhouse Gas Protocol, institutional data, and a three-state power model. Procedures included laboratory tests (27,330), colonoscopy/enteroscopy (1290), CT (1520), MRI (589), and IUS (923). Sensitivity analyses were performed to assess the robustness of emission estimates by varying assumptions regarding infrastructure allocation, equipment power consumption, procedure volumes, and electricity grid emission factors. RESULTS: Emissions ranged from 0.462 kg CO2e per laboratory test to 21.25 kg CO2e per MRI. IUS (0.850 kg CO2e) was the lowest-carbon imaging modality, with 4.6-, 6.8-, and 25.0-fold lower emissions than colonoscopy/enteroscopy, CT, and MRI, respectively. Cross-sectional imaging contributed 53.7% of total emissions (39,778 kg CO2e), versus 2.0% for IUS. Costs increased with emissions. When clinically appropriate, substituting IUS for colonoscopy or MR enterography could reduce per-procedure emissions by 78.0% and 96.0%, respectively. CONCLUSIONS: Carbon emissions and cost rise together across IBD diagnostics; when clinically appropriate, IUS is the lowest-carbon, lowest-cost imaging modality. Patient-level studies are needed to confirm modelled savings. TRIAL REGISTRATION: ClinicalTrials.gov NCT07431983.
+
+---
+
+### Prognostic factors and outcomes in upper gastrointestinal Crohn’s disease: A scoping review
+
+Added: 2026-11-13 | Source: [[Inbox/Papers/2026-11-13]]
+Reyad Elzaanoun, Navneet Natt, Rocio Sedano | Inflammatory Bowel Diseases | 2026-11-12
+[10.1093/ibd/izag200](https://doi.org/10.1093/ibd/izag200)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### TL1A-DR3 Signaling in Inflammatory Bowel Disease: From Pathogenesis to Therapeutic Targeting.
+
+Added: 2026-11-12 | Source: [[Inbox/Papers/2026-11-12]]
+Tsuruta K, Yoshioka S, Takedatsu H | The Kurume medical journal | 2026-11-11
+[10.2739/kurumemedj.ms7312004](https://doi.org/10.2739/kurumemedj.ms7312004)
+
+> [!abstract]- Abstract
+> TNF-like cytokine 1A (TL1A) and its receptor DR3 form a key regulatory axis within mucosal immunity, integrating signals that promote Th1/Th17 responses, modulate innate lymphoid cells, and influence epithelial repair. Beyond inflammation, TL1A directly activates intestinal fibroblasts and contributes to extracellular matrix deposition, positioning the TL1A-DR3 pathway as a central driver of both chronic inflammation and fibrosis in inflammatory bowel disease (IBD). Genetic variants in TNFSF15, which encodes TL1A, further support a causal role, linking increased TL1A expression with susceptibility to Crohn's disease, ulcerative colitis, and fibrostenotic complications. Recent clinical trials of TL1A-neutralizing antibodies, including afimkibart, tulisokibart, and duvakitug, have demonstrated encouraging efficacy and safety in moderate-to-severe IBD, with emerging biomarker strategies suggesting potential for personalized treatment. Collectively, current evidence highlights TL1A blockade as a promising dual-pathway therapeutic approach targeting inflammation and fibrotic remodeling, with ongoing studies expected to define its long-term impact on disease modification.
+
+---
+
+### An ulcerative colitis taxonomy defined by individual patient-reported response trajectories
+
+Added: 2026-11-11 | Source: [[Inbox/Papers/2026-11-11]]
+Stefan Schreiber, Vijay Yajnik, Parambir S. Dulai | Nature Medicine | 2026-11-09
+[10.1038/s41591-026-04741-8](https://doi.org/10.1038/s41591-026-04741-8)
+
+> [!abstract]- Abstract
+> Abstract
+
+---
+
+### Cellular therapies and immune reprogramming in inflammatory bowel disease: lessons learned and the promise of CAR T-cell therapy.
+
+Added: 2026-11-11 | Source: [[Inbox/Papers/2026-11-11]]
+Parigi TL, Islam BN, Cominelli F | Inflammatory bowel diseases | 2026-11-10
+[10.1093/ibd/izag233](https://doi.org/10.1093/ibd/izag233)
+
+> [!abstract]- Abstract
+> Despite major therapeutic advances, inflammatory bowel disease (IBD) remains incurable, and many patients experience primary non-response, secondary loss of response, progressive bowel damage, or lifelong dependence on immunomodulatory therapy. Cellular immunotherapies offer the possibility of moving beyond chronic immune suppression toward durable immune reprogramming. Earlier approaches in IBD, including hematopoietic stem cell transplantation, mesenchymal stem cells, and regulatory T-cell-based therapies, have provided important proof-of-concept but have been limited by toxicity, inconsistent efficacy, local rather than systemic effects, or unresolved manufacturing and durability challenges. Chimeric antigen receptor (CAR) T-cell therapy represents the next-generation strategy that combines potent immune remodeling with antigen-specific targeting. Initially developed for hematological malignancies, CAR T cells have recently shown striking efficacy in refractory autoimmune diseases, particularly through CD19-mediated depletion of B-lineage cells and induction of drug-free remission. In ulcerative colitis, renewed interest in B cells has been driven by evidence of plasmablast expansion, IgG-skewed humoral responses, anti-integrin αvβ6 autoantibodies, and the limitations of conventional anti-CD20 depletion. The first reported case of multidrug-resistant ulcerative colitis treated with CD19 CAR T cells demonstrated rapid clinical, biochemical, endoscopic, and histological remission, providing proof-of-concept for deep B-cell targeting in IBD. However, major uncertainties remain, including long-term durability, relapse after B-cell reconstitution, safety, cost, feasibility, and the risk of CAR T-associated gastrointestinal toxicity. Prospective trials with mechanistic mucosal monitoring are now needed to define the therapeutic potential and appropriate positioning of CAR-based strategies in IBD.
+
+---
+
+### Value of non-contrast magnetic resonance imaging for diagnosis of perianal fistulas in Crohn's disease.
+
+Added: 2026-11-08 | Source: [[Inbox/Papers/2026-11-08]]
+Lewis S, Ahluwalia A, Taouli B | Journal of Crohn's & colitis | 2026-11-07
+[10.1093/ecco-jcc/jjag183](https://doi.org/10.1093/ecco-jcc/jjag183)
+
+> [!abstract]- Abstract
+> PURPOSE: To compare non-contrast (NC)-MRI and contrast-enhanced (CE)-T1-weighted imaging (T1-WI) for the detection and characterization of perianal fistulizing Crohn's disease (PFCD). METHODS: This Institutional Review Board-approved retrospective study included patients with Crohn's disease (CD) who underwent pelvic MRI (T2-WI, diffusion-weighted imaging [DWI], pre and post-contrast T1-WI) from 10/2021 to 12/2022. Two independent observers assessed presence and severity of perianal disease (St. James Criteria) and abscesses (presence/size) in 2 separate sessions: NC-MRI (T2-WI, DWI, pre-contrast-T1-WI) and CE-MRI (NC-MRI + post-contrast-T1-WI) separated by 6 weeks. Agreement between modalities was evaluated using weighted Cohen's kappa. Performance of NC-MRI was assessed against CE-MRI as the reference standard. RESULTS: One hundred and forty-five patients (M/F 92/53, mean age 36.2 ± 15.1 years) were included. On NC-MRI, an index fistula was detected in 115/145 patients (grade 1 [n = 55]/grade 2 [n = 15]/grade 3 [n = 16]/grade 4 [n = 33]/grade 5 [n = 6]). On CE-MRI, an index fistula was detected in 117/145 patients (grade 1 [n = 36]/grade 2 [n = 39]/grade 3 [n = 8]/grade 4 [n = 29]/grade 5 [n = 5]). An abscess was detected on NC-MRI in 53 patients (37%) (mean size = 3.3 cm) and on CE-MRI in 63 patients (43%) (mean size = 3.0 cm). There was fair-to-substantial agreement between NC-MRI and CE-MRI (range, 0.46 [presence of secondary tracts] to 0.87 [presence of index fistula]), except for secondary fistula length (no agreement, kappa = 0.008). Compared to CE-MRI, NC-MRI demonstrated a sensitivity/specificity/PPV/NPV/accuracy of 0.96/0.93/0.98/0.84/0.95 for index fistula detection and 0.77/0.95/0.92/0/84/0.87 for abscess detection. CONCLUSIONS: NC-MRI has high agreement with CE-MRI for index perianal fistula and abscess detection with clinical feasibility in CD patients. CE-MRI had added value for assessment of complex PFCD, including secondary fistulas and tracts. CLINICAL RELEVANCE: NC-MRI had high agreement with CE-MRI for detecting perianal fistulas and substantial agreement for grading. CE-MRI has added value in diagnosing complex perianal disease. NC-MRI of the pelvis is a reasonable alternative for perianal fistula detection and grading for patients who cannot receive contrast or for potentially abbreviated exams.
+
+---
+
+### Open-IBD: protocol for a longitudinal multi-omics inception cohort in inflammatory bowel disease.
+
+Added: 2026-11-07 | Source: [[Inbox/Papers/2026-11-07]]
+Mulligan RJ, Cotobal Martin C, Lamb CA | BMJ open gastroenterology | 2026-11-04
+[10.1136/bmjgast-2026-002501](https://doi.org/10.1136/bmjgast-2026-002501)
+
+> [!abstract]- Abstract
+> INTRODUCTION: The clinical course of inflammatory bowel disease (IBD) is highly heterogeneous, yet the biological mechanisms underlying this variability, along with robust predictive biomarkers of disease course and treatment response, remain elusive. Most existing multi-omic cohorts recruit patients after IBD diagnosis and following therapeutic exposure, limiting the ability to distinguish between primary disease biology and downstream consequences of chronic inflammation and/or treatment. There is, therefore, a critical unmet need for large-scale, treatment-naïve inception cohorts integrating deep clinical phenotyping with longitudinal multi-omic profiling from the point of IBD diagnosis. METHODS AND ANALYSIS: Open-IBD is a prospective, multicentre UK inception cohort study recruiting up to 2000 adults referred with suspected IBD, prior to diagnosis and initiation of IBD-specific therapy. Baseline assessment includes detailed clinical metadata collection, patient-reported outcome measures and collection of blood, stool and intestinal biopsy samples. 1000 participants subsequently diagnosed with IBD will be followed for up to 48 months, with repeated clinical assessments, questionnaires and biosampling. Participants not diagnosed with IBD will form a symptomatic control cohort with longitudinal clinical record review. Multi-omic analyses will include human genetics, single-cell transcriptomics of blood and intestinal tissue, stool and intestinal mucosal microbiome characterisation, metabolomics and proteomics. Integrated longitudinal clinical and multi-omic datasets will be generated to characterise early-stage treatment-naïve IBD, identify biomarkers associated with long-term outcomes and nominate causal factors driving IBD pathophysiology. ETHICS AND DISSEMINATION: Ethical approval has been obtained from the Wales Research Ethics Committee 1 (24/WA/0338). All participants provide informed consent before enrolment. Recruitment is ongoing. Study findings will be disseminated through peer-reviewed publications, presentations at scientific meetings and lay summaries. STUDY REGISTRATION NUMBER: ISRCTN15535639.
+
+---
+
+### Response to Letter “Visceral adiposity in pediatric Crohn disease: phenotype or disease-activity biomarker?”
+
+Added: 2026-11-07 | Source: [[Inbox/Papers/2026-11-07]]
+Dhamyanthi Thangarajah, Karyn Chappell, John M E Fell | Inflammatory Bowel Diseases | 2026-11-06
+[10.1093/ibd/izag232](https://doi.org/10.1093/ibd/izag232)
+
+---
+
 ### Performance of an infliximab precision-guided dosing tool from a capillary blood–based self-collection device in inflammatory bowel disease patients
 
 Added: 2026-11-06 | Source: [[Inbox/Papers/2026-11-06]]
@@ -4376,6 +4480,17 @@ Cameron A. Beeche, Joonghyun Kim, Walter R. Witschey | npj Digital Medicine | 20
 ---
 
 # AI
+
+### RadStructAgent: agentic structuring of free-text chest X-ray reports with small language models.
+
+Added: 2026-11-07 | Source: [[Inbox/Papers/2026-11-07]]
+Miah MB, Buess L, Maier A | International journal of computer assisted radiology and surgery | 2026-11-06
+[10.1007/s11548-026-03811-z](https://doi.org/10.1007/s11548-026-03811-z)
+
+> [!abstract]- Abstract
+> PURPOSE: Variability in chest X-ray (CXR) reporting hinders training and evaluation of vision-language models (VLMs) for radiology report generation. Our previous study showed that Structured Radiology Report Generation (SRRG)-style supervision improves VLM-based CXR reporting over free-text supervision. Here, we examine this finding in a larger multi-institutional setting and address a key preprocessing challenge: reliable free-text-to-structured-report conversion using open-source small language models (SLMs). METHODS: We evaluate Qwen2.5-VL-3B using free-text and SRRG-style structured supervision across 10 institutions covering 97K samples. We then propose RadStructAgent, an agentic framework that converts free-text CXR reports into structured reports using SLMs, combining LLM-based orchestration, judge feedback, and feedback-guided revision. RadStructAgent is evaluated on 1,000 free-text CXR reports using Qwen3-4B and Qwen3-8B. RESULTS: For the report generation task, structured supervision improves Qwen2.5-VL-3B over free-text supervision, increasing GREEN from 0.494 to 0.539, with similar gains across other clinical metrics. For the structuring task, RadStructAgent improves both clinical quality (GREEN) and anatomy-level assignment (RadFAA): for Qwen3-4B, from 0.844 to 0.867 and 0.883 to 0.891; for Qwen3-8B, from 0.863 to 0.881 and 0.889 to 0.902. CONCLUSION: Structured supervision remains effective for VLM-based CXR report generation when evaluated in a larger multi-institutional setting. RadStructAgent shows that open-source SLMs can be strengthened through agentic verification and refinement, providing a resource-efficient approach for offline and privacy-preserving structured report preparation. Our code, prompt templates, and configuration files are publicly available at: https://github.com/badhon1512/RadStructAgent .
+
+---
 
 ### False Reassurances from False Negatives: AI Stroke Algorithms and Their Anatomical Blind Spots
 
